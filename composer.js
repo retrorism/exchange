@@ -9,12 +9,13 @@
       },
       {
         "name"    : "ZURB",
-        "homepage": "https://foundation.zurb.com
+        "homepage": "https://foundation.zurb.com"
+      },
       {
         "name"    : "Willem Prins",
         "email"   : "willem@somtijds.nl",
         "homepage": "http://www.somtijds.nl/"
-}
+       }
     ],
     "version": "0.1",
     "type": "wordpress-theme",
