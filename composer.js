@@ -19,8 +19,11 @@
     ],
     "version": "0.1",
     "type": "wordpress-theme",
-    "dist": {
-        "url": "https://github.com/retrorism/exchange-plugin.git",
-        "type": "git"
+    "source": {
+        "type": "git",
+        "url": "git@github.com:retrorism/exchange",
+    },
+    "require": {
+        "johnpbloch/wordpress": "^4.4.2",
     }
 }
