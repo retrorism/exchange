@@ -37,7 +37,7 @@ require_once(get_template_directory().'/assets/functions/related-posts.php');
 // require_once(get_template_directory().'/assets/functions/login.php');
 
 // Customize the WordPress admin
-// require_once(get_template_directory().'/assets/functions/admin.php');
+require_once(get_template_directory().'/assets/functions/admin.php');
 
 // Tandem admin functions
 require_once(get_template_directory().'/assets/functions/tandem_admin.php');

@@ -24,7 +24,7 @@ For more information on creating Dashboard Widgets, view:
 http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
-// RSS Dashboard Widget
+/* // RSS Dashboard Widget
 function joints_rss_dashboard_widget() {
 	if(function_exists('fetch_feed')) {
 		include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
@@ -44,25 +44,22 @@ function joints_rss_dashboard_widget() {
 		<?php echo substr($item->get_description(), 0, 200); ?>
 	</p>
 	<?php }
-}
+} */
 
 // Calling all custom dashboard widgets
-function joints_custom_dashboard_widgets() {
+/*function joints_custom_dashboard_widgets() {
 	wp_add_dashboard_widget('joints_rss_dashboard_widget', __('Custom RSS Feed (Customize in admin.php)', 'jointswp'), 'joints_rss_dashboard_widget');
-	/*
-	Be sure to drop any other created Dashboard Widgets
-	in this function and they will all load.
-	*/
-}
+}*/
+
 // removing the dashboard widgets
 add_action('admin_menu', 'disable_default_dashboard_widgets');
 // adding any custom widgets
-add_action('wp_dashboard_setup', 'joints_custom_dashboard_widgets');
+/*add_action('wp_dashboard_setup', 'joints_custom_dashboard_widgets');*/
 
 /************* CUSTOMIZE ADMIN *******************/
 // Custom Backend Footer
 function joints_custom_admin_footer() {
-	_e('<span id="footer-thankyou">Developed by <a href="#" target="_blank">Your Site Name</a></span>.', 'jointswp');
+	_e('<span id="footer-thankyou">Developed by <a href="http://www.somtijds.nl" target="_blank">Somtijds</a></span>.', 'jointswp');
 }
 
 // adding it to the admin area
