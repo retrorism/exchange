@@ -17,13 +17,14 @@
         "homepage": "http://www.somtijds.nl/"
        }
     ],
-    "version": "0.1",
+    "version": "0.1.0",
     "type": "wordpress-theme",
     "source": {
         "type": "git",
         "url": "git@github.com:retrorism/exchange",
     },
     "require": {
-        "johnpbloch/wordpress": "^4.4.2",
+        "johnpbloch/wordpress": "^4.4",
+        "retrorism/exchange-plugin": "~0.1"
     }
 }
