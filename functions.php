@@ -41,3 +41,6 @@ require_once(get_template_directory().'/assets/functions/admin.php');
 
 // Tandem admin functions
 require_once(get_template_directory().'/assets/functions/tandem_admin.php');
+
+// Tandem importer
+require_once(get_template_directory().'/assets/functions/import_projects.php');
