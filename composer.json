@@ -26,6 +26,6 @@
     },
     "require": {
         "johnpbloch/wordpress": "^4.4",
-        "retrorism/exchange-plugin": "~0.1"
+        "retrorism/exchange-plugin": "dev-master"
     }
 }
