@@ -24,6 +24,7 @@
         "type": "git",
         "url": "https://github.com/retrorism/exchange-plugin.git
     },
+    "reference": "dev-master",
     "require": {
         "retrorism/exchange-plugin": "dev-master"
     }
