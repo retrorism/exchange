@@ -23,9 +23,6 @@
         "url": "https://github.com/retrorism/exchange-plugin.git",
         "reference": "dev-master"
     },
-    "require": {
-        "retrorism/exchange-plugin": "0.1.*@dev"
-    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
