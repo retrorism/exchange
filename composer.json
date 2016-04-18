@@ -17,7 +17,6 @@
         "homepage": "http://www.somtijds.nl/"
        }
     ],
-    "version": "0.1.0",
     "type": "wordpress-theme",
     "minimum-stability" : "dev",
     "source": {
@@ -26,6 +25,12 @@
         "reference": "dev-master"
     },
     "require": {
-        "retrorism/exchange-plugin": "dev-master"
+        "retrorism/exchange-plugin": "0.1.*@dev"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
     }
+}
 }
