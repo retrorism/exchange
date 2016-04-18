@@ -22,7 +22,7 @@
 	"minimum-stability" : "dev",
     "source": {
         "type": "git",
-        "url": "https://github.com/retrorism/exchange-plugin.git,
+        "url": "https://github.com/retrorism/exchange-plugin.git
     },
     "require": {
         "retrorism/exchange-plugin": "dev-master"
