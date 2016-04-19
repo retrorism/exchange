@@ -17,14 +17,7 @@
        }
     ],
     "type": "wordpress-theme",
-<<<<<<< HEAD
     "minimum-stability" : "dev",
-    "source": {
-        "type": "git",
-        "url": "https://github.com/retrorism/exchange-plugin.git",
-        "reference": "master"
-=======
-	"minimum-stability" : "dev",
     "source": {
         "type": "git",
         "url": "https://github.com/retrorism/exchange-plugin.git",
@@ -32,6 +25,5 @@
     },
     "require": {
         "retrorism/exchange-plugin": "dev-master"
->>>>>>> 2dce100... composer update, template updates
     }
 }
