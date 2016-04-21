@@ -2,13 +2,13 @@
 // Register menus
 register_nav_menus(
 	array(
-		'main-nav' => __( 'The Main Menu', 'jointswp' ),   // Main nav in header
-		'footer-links' => __( 'Footer Links', 'jointswp' ) // Secondary nav in footer
+		'main-nav' => __( 'The Main Menu', 'exchange' ),   // Main nav in header
+		'footer-links' => __( 'Footer Links', 'exchange' ) // Secondary nav in footer
 	)
 );
 
 // The Top Menu
-function joints_top_nav() {
+function exchange_top_nav() {
 	 wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'vertical medium-horizontal menu',       // Adding custom nav class
@@ -29,7 +29,7 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 }
 
 // The Off Canvas Menu
-function joints_off_canvas_nav() {
+function exchange_off_canvas_nav() {
 	 wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'vertical menu',       // Adding custom nav class
@@ -49,10 +49,10 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 }
 
 // The Footer Menu
-function joints_footer_links() {
+function exchange_footer_links() {
     wp_nav_menu(array(
     	'container' => 'false',                         // Remove nav container
-    	'menu' => __( 'Footer Links', 'jointswp' ),   	// Nav name
+    	'menu' => __( 'Footer Links', 'exchange' ),   	// Nav name
     	'menu_class' => 'menu',      					// Adding custom nav class
     	'theme_location' => 'footer-links',             // Where it's located in the theme
         'depth' => 0,                                   // Limit the depth of the nav
@@ -61,7 +61,7 @@ function joints_footer_links() {
 } /* End Footer Menu */
 
 // Header Fallback Menu
-function joints_main_nav_fallback() {
+function exchange_main_nav_fallback() {
 	wp_page_menu( array(
 		'show_home' => true,
     	'menu_class' => '',      						// Adding custom nav class
@@ -74,7 +74,7 @@ function joints_main_nav_fallback() {
 }
 
 // Footer Fallback Menu
-function joints_footer_links_fallback() {
+function exchange_footer_links_fallback() {
 	/* You can put a default here if you like */
 }
 

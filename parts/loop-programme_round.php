@@ -40,6 +40,6 @@ $programme_round = new Programme_Round( $post );
 	<footer class="article-footer programme_round__footer">
 		<?php $programme_round->publish_related_content(); ?>
 
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
+		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'exchange' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
 
 </article> <!-- end article -->

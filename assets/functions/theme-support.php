@@ -3,7 +3,7 @@
 // Register the three useful image sizes for use in Add Media modal
 // http://wpshout.com/adding-using-custom-image-sizes-wordpress-guide-best-thing-ever/
 
-function tandem_custom_sizes( $sizes ) {
+function exchange_custom_sizes( $sizes ) {
 		return array_merge( $sizes, array(
 				'thumbnail' => __( 'Thumbnail' ),
 				'post-thumbnail' => __( 'Featured Image' ),
@@ -24,10 +24,10 @@ function tandem_custom_sizes( $sizes ) {
  *
  * @param string $sizes A source size value for use in a 'sizes' attribute.
  * @param array  $size  Image size. Accepts an array of width and height
- *                      values in pixels (in that order).
+ *				      values in pixels (in that order).
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
-function tandem_content_image_sizes_attr( $sizes, $size ) {
+function exchange_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 	840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
 	840 > $width && 600 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px';
@@ -35,10 +35,8 @@ function tandem_content_image_sizes_attr( $sizes, $size ) {
 	return $sizes;
 }
 
-
-
-// Adding WP Functions & Theme Support
-function tandem_theme_support() {
+// Adding WP Functions & Theme Support.
+function exchange_theme_support() {
 
 	// Add WP Thumbnail Support
 	add_theme_support( 'post-thumbnails' );
@@ -53,11 +51,11 @@ function tandem_theme_support() {
 	add_image_size( 'medium', get_option( 'medium_size_w' ), 9999 , false );
 	add_image_size( 'large', get_option( 'large_size_w' ), 9999 , false );
 	add_image_size( 'header-image', 1440, 720, true);
+
 	remove_image_size( 'medium_large' );
 
-	add_filter( 'image_size_names_choose', 'tandem_custom_sizes' );
-	add_filter( 'wp_calculate_image_sizes', 'tandem_content_image_sizes_attr', 10 , 2 );
-
+	add_filter( 'image_size_names_choose', 'exchange_custom_sizes' );
+	add_filter( 'wp_calculate_image_sizes', 'exchange_content_image_sizes_attr', 10 , 2 );
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );
@@ -67,26 +65,16 @@ function tandem_theme_support() {
 
 	// Add HTML5 Support
 	add_theme_support( 'html5',
-	         array(
-	         	'comment-list',
-	         	'comment-form',
-	         	'search-form',
-	         )
+		array(
+			'comment-list',
+			'comment-form',
+			'search-form',
+		)
 	);
 
-	// Adding post format support
-	/* add_theme_support( 'post-formats',
-		array(
-			'aside',             // title less blurb
-			'gallery',           // gallery of images
-			'link',              // quick link to other site
-			'image',             // an image
-			'quote',             // a quick quote
-			'status',            // a Facebook like status update
-			'video',             // video
-			'audio',             // audio
-			'chat'               // chat transcript
-		)
-	); */
+	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
+	$GLOBALS['content_width'] = apply_filters( 'exchange_theme_support', 1200 );
 
 } /* end theme support */
+
+add_action( 'after_setup_theme', 'exchange_theme_support' );

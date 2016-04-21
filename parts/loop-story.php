@@ -43,8 +43,9 @@ $story = new Story( $post );
 
 	<footer class="article-footer story__footer">
 		<?php $story->publish_byline(); ?>
+		<?php $story->publish_tags('grid'); ?>
 		<?php $story->publish_related_content(); ?>
 
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
+		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'exchange' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
 
 </article> <!-- end article -->

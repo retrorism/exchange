@@ -38,6 +38,6 @@ var_dump( $collaboration );
 
 	<footer class="article-footer collaboration__footer">
 
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
+		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'exchange' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
 
 </article> <!-- end article -->

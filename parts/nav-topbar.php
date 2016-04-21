@@ -5,6 +5,6 @@
 		</ul>
 	</div>
 	<div class="top-bar-right">
-		<?php joints_top_nav(); ?>
+		<?php exchange_top_nav(); ?>
 	</div>
 </div>

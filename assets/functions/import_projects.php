@@ -1,5 +1,5 @@
 <?php
-function tandem_importer() {
+function exchange_importer() {
   $result = array();
   $args = array(
     'post_type' => 'participant',

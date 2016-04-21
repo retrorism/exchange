@@ -1,6 +1,6 @@
 <?php
 /*
-Tandem story template
+Exchange story template
 */
 ?>
 
