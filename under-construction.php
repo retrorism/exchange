@@ -29,7 +29,7 @@
 
             <div class="text-wrapper">
               <div class="description">
-                <p class="english">This is where <a href="http://www.somtijds.nl" target="_blank">Somtijds</a> is building the new website for <a href="http://www.tandemexchange.eu">Tandem</a></p>
+                <p class="english">This is where <a href="http://www.somtijds.nl" target="_blank">Somtijds</a> is building the new website for <a href="http://www.tandemexchange.eu">Tandem</a>.</p>
 			</div>
             </div><!-- text-wrapper -->
 
