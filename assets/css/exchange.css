@@ -1,0 +1,112 @@
+/*
+    Created on : Mar 18, 2014, 8:23:00 PM
+    Author     : Willem
+*/
+
+* {margin: 0; padding: 0;}
+
+body, html {
+  font-size: 16px;
+}
+
+.red {
+  color: #c30015;
+}
+.blue {
+  color: #003682;
+}
+
+div.container
+{
+     width: 100%;
+     height:100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+div.exchange
+{
+  /*-webkit-transition:width 0.25s, height 0.25s, -webkit-transform 0.25s;
+  -moz-transition:width 0.25s, height 0.25s, -moz-transform 0.25s;*/
+   width: 20em;
+	 background: transparent;
+	 box-shadow: 0 0 0 0 rgba(0,0,0,0.3);
+}
+
+div.exchange img {
+	margin: 0;
+	display: block;
+	padding: 0;
+	border: 0;
+}
+
+div.exchange-content {
+	font-family: 'Open Sans', arial, sans-serif;
+	margin: 0;
+	width: 100%;
+	color: #444;
+	font-size: 1em;
+	font-weight: 300;
+	display: inline-block;
+}
+
+.exchange-content:after {
+	    content: " ";
+	    display: block;
+	    height: 0;
+	    clear: both;
+	    overflow: hidden;
+	    visibility: hidden;
+	}
+
+.exchange-content {
+	    display: block;
+	}
+
+div.exchange-content p {
+	display: block;
+	width: 100%;
+	margin-bottom: 1.5em;
+	letter-spacing: 1px;
+}
+
+div.exchange-content .text-wrapper {
+  margin: 1em;
+}
+
+div.exchange-content .text-wrapper div.description {
+	padding: 0;
+	margin: 0;
+	float: right;
+}
+
+div.exchange-content p strong {
+	font-weight: 400;
+}
+
+div.exchange-content p a {
+  color: #222;
+	text-decoration: none;
+}
+
+div.exchange-content p a:hover {
+	text-decoration: underline;
+}
+
+
+@media screen and (max-width : 640px) {
+
+	div.exchange-content p {
+		font-size: 0.9em;
+		letter-spacing: 0;
+	}
+
+}
+
+
+/*div.exchange:hover
+{
+    -webkit-transition:width 0.25s, height 0.25s, -webkit-transform 0.25s;
+	width: 66%;
+	height: 66%;
+}*/

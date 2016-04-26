@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>élami agency</title>
-		<meta property="og:title" content="élami agency" />
+		<meta property="og:title" content="Tandem Exchange" />
 		<meta property="og:description" content="This is where we build the new Tandem Website" />
 		<meta property="og:url" content="http://www.tandemexchange.eu" />
 		<meta property="og:image" content="http://www.tandemexchange.eu/assets/images/ampersand_white_bg.png" />
