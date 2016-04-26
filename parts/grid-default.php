@@ -6,7 +6,7 @@
 
 	<?php endif; ?>
 
-	<?php $exchange->publish_featured_image(); ?>
+	<?php $exchange->publish_featured_image('griditem'); ?>
 
 	<?php if ( ! empty( $exchange->has_editorial_intro ) ) {
 			$exchange->editorial_intro->publish_stripped();
