@@ -5,7 +5,7 @@
 	</header> <!-- end article header -->
 
     <section class="entry-content" itemprop="articleBody">
-	    <?php the_content();
+	    <?php the_content(); ?>
 
 	    <?php wp_link_pages(); ?>
 	</section> <!-- end article section -->
