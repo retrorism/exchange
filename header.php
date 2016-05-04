@@ -1,7 +1,9 @@
-<!doctype html>
-
-  <html class="no-js"  <?php language_attributes(); ?>>
-
+<!DOCTYPE html>
+<!--#if expr="$HTTP_COOKIE=/fonts\-loaded\=true/" -->
+<html lang="en" class="no-js fonts-loaded" <?php language_attributes(); ?>>
+<!--#else -->
+<html lang="en" class="no-js" <?php language_attributes(); ?>>
+<!--#endif -->
 	<head>
 		<meta charset="utf-8">
 
@@ -10,7 +12,7 @@
 
 		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
 		<!-- If Site Icon isn't set in customizer -->
 		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
 			<!-- Icons & Favicons -->
@@ -27,28 +29,24 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<?php wp_head(); ?>
-
+		<!-- http://labs.jonsuh.com/font-loading-with-font-events/ -->
+		<style>
+			@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,400,300,300italic,700,700italic,400italic&subset=latin,cyrillic);
+			body {
+			font-family: sans-serif;
+			}
+			.fonts-loaded body {
+				font-family: Open Sans, sans-serif;
+			}
+		</style>
 		<!-- Drop Google Analytics here -->
 		<!-- end analytics -->
 
 	</head>
 
-	<!-- Uncomment this line if using the Off-Canvas Menu -->
-
 	<body <?php body_class(); ?>>
-
-		<div class="off-canvas-wrapper">
-
-			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-
-				<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
-
-				<div class="off-canvas-content" data-off-canvas-content>
-
-					<header class="header" role="banner">
-
-						 <!-- This navs will be applied to the topbar, above all content
-							  To see additional nav styles, visit the /parts directory -->
-						 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
-
-					</header> <!-- end .header -->
+		<header id="header" role="banner">
+			<div class="inner-header">
+				<?php get_template_part( 'parts/nav', 'topbar' ); ?>
+			</div> <!-- end .inner-header -->
+		</header> <!-- end #header -->

@@ -8,11 +8,35 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 
+body {
+	font-family: inherit;
+}
+
+#header,
+#main,
+#footer {
+}
+
+.header-inner,
+.main-inner,
+.footer-inner {
+}
+
+figure {
+	margin: 0;
+}
+
+.section__slice p,
+.story__editorialintro p {
+	font-size: $body-font-size;
+}
+
+
 /*********************
 LINK STYLES
 *********************/
 a, a:visited {
-
+	color: $black;
 	// Mobile tap color
 	&:link {
 		//Highlight links on iOS, Similar to :hover for mobile devices.
@@ -44,22 +68,389 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	
+
 }
 
 h5, .h5 {
 
 }
 
+
 /*********************
-HEADER STYLES
+ARTICLE STYLES
 *********************/
-.header {
+
+.story__header__introduction,
+.story__content,
+.story__footer,
+.story__relatedgrid {
+	@include grid-row;
+}
+
+.story__extras {
+	padding-bottom: 2 * $global-padding;
+	padding-top: 2 * $global-padding;
+	margin-bottom: 2 * $global-margin;
+	margin-top: 2 * $global-margin;
+}
+
+.story__editorialintro,
+.story__title-wrapper,
+.story__intro,
+.section__slice,
+.story__footer__byline {
+	margin-bottom: 2 * $global-margin;
+	margin-top: 2 * $global-margin;
+	@include grid-column();
+	float: none !important;
+	@include breakpoint( small ) {
+		@include grid-column( 95% );
+		@include grid-column-position( center );
+	}
+	@include breakpoint( medium ) {
+		@include grid-column( 75% );
+		@include grid-column-position( center );
+	}
+	@include breakpoint( large ) {
+		@include grid-column( 8 );
+		@include grid-column-position( center );
+	}
+	@include breakpoint( xlarge ) {
+		@include grid-column( 60% );
+		@include grid-column-position( center );
+	}
+}
+
+.story__relatedgrid {
+	@include grid-column( 95%, 0 );
+	@include grid-column-position( center );
+}
+
+/*********************
+ARTICLE HEADER STYLES
+*********************/
+.article-header {
 	ul.off-canvas-list li {
 		list-style: none;
 	}
 }
-    
+
+.story__header__image-wrapper {
+	height: 12em;
+	@include breakpoint( medium ) {
+		height: 20em;
+	}
+	@include breakpoint( large ) {
+		height: 25em;
+	}
+	@include breakpoint( xlarge ) {
+		height: 30em;
+	}
+	@include breakpoint( xxlarge ) {
+		height: 35em;
+	}
+	overflow: hidden;
+	position: relative;
+	img {
+		@include vertical-center;
+	}
+
+}
+
+.story__editorialintro {
+	font-size: $lead-font-size;
+	line-height: $lead-lineheight;
+	font-style: italic;
+}
+
+/*********************
+ARTICLE PATTERN STYLES
+*********************/
+
+.section__slice:first-of-type {
+	margin-top: 0;
+}
+
+.story__section p {
+	font-weight: $global-weight-light;
+}
+
+.section__subheader {
+	margin-bottom: 0;
+}
+
+.section__subheader + .section__paragraph {
+	margin-top: 0;
+}
+
+.section__imageduo {
+	@include grid-column( 95%,0 );
+	padding-top: 2 * $global-padding;
+	padding-bottom: $global-padding;
+	background-color: $white;
+	z-index: 10;
+	position: relative;
+	z-index: 10;
+}
+
+.imageduo__wrapper {
+	@include grid-row;
+	@include breakpoint( medium ) {
+		@include grid-row-nest;
+	}
+}
+
+.imageduo__image {
+	@include grid-column;
+	@include grid-column-collapse;
+	@include breakpoint( small ) {
+		margin-bottom: 2*$global-margin;
+	}
+	@include breakpoint( medium ) {
+		@include grid-column( 6 );
+	}
+
+}
+
+.paragraph--question p {
+	font-weight: $global-weight-semibold;
+	margin-bottom: 0.5 * $global-margin;
+	margin-top: 1.5 * $global-margin;
+	line-height: $header-lineheight;
+}
+
+figcaption {
+	margin-top: $global-margin;
+	font-size: $small-font-size;
+	color: $dark-gray;
+}
+
+/*********************
+ARTICLE META STYLES
+*********************/
+
+.asides-wrapper {
+	width: 100%;
+	position: absolute;
+}
+
+.story__meta-wrapper {
+	@include grid-column-row;
+}
+
+.story__meta {
+	@include show-for( xlarge );
+	z-index: -5;
+}
+
+.story__meta-inner {
+	width: 100%;
+	padding: $global-padding;
+	background-color: $yellow-1;
+	text-align: right;
+}
+
+.story__meta__category,
+.story__meta__date {
+	font-size: $small-font-size;
+}
+
+.story__meta__category {
+	font-weight: $global-weight-semibold;
+}
+
+.story__meta__tags {
+	margin-top: $global-margin;
+}
+
+/*********************
+ARTICLE EXTRAS STYLES
+*********************/
+
+.story__extras {
+	background-color: $salmon-1-web;
+}
+
+.relatedgrid__griditem {
+	@include grid_column( 12 );
+	@include breakpoint( medium ) {
+		@include grid_column( 6 );
+	}
+	@include breakpoint( large ) {
+		@include grid_column( 4 );
+	}
+	margin-bottom: $global-margin;
+}
+
+.griditem__content {
+	padding: 0.5 * $global-padding;
+	background-color: $white;
+}
+
+.griditem__image {
+	margin: 0;
+	width: 100%;
+	max-height: 10em;
+	overflow: hidden;
+}
+
+.griditem__title {
+	margin-top: 1 * $global-margin;
+}
+
+.griditem__intro, .griditem__editorialintro {
+}
+
+/*********************
+TAG STYLES
+*********************/
+
+.story__meta__tags ol,
+.griditem__tags ol {
+	list-style: none;
+	margin-left: 0;
+}
+
+.griditem__tags ol li {
+	display: inline;
+}
+
+.story__meta__tags ol li {
+	display: block;
+	margin: 0.125 * $global-margin 0;
+}
+
+
+.tag, .griditem__tag, .story__meta__tag {
+	@include label;
+	font-size: $small-font-size;
+	&.post_tag {
+		border: 1px solid $yellow-tandem;
+	}
+	&.topic {
+		border: 1px solid $yellow-2;
+	}
+	&.language {
+		border: 1px solid $salmon-4;
+	}
+	&.location {
+		border: 1px solid $blue-3;
+	}
+}
+
+
+/*********************
+CONTENT STYLES
+*********************/
+
+.single-title,
+.page-title {
+
+}
+
+.single-title {
+}
+
+.page-title {
+	// Remove Foundation vcard styling from author page titles
+	.vcard {
+		border: 0px;
+		padding: 0px;
+	}
+}
+
+.archive-title {
+}
+
+// Post meta
+.byline {
+	color: #999;
+	time {}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.alignleft, img.alignleft {
+	margin-right: 1.5em;
+	display: inline;
+	float: left;
+}
+.alignright, img.alignright {
+	margin-left: 1.5em;
+	display: inline;
+	float: right;
+}
+.aligncenter, img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	clear: both;
+}
+
+video, object {
+	max-width: 100%;
+	height: auto;
+}
+
+pre {
+	background: #eee;
+	border: 1px solid #cecece;
+	padding: 10px;
+}
+
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
+
+	// Images inside wp-caption
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+}
+
+// Add Foundation styling to password protect button
+.post-password-form input[type="submit"] {
+	@include button;
+}
+
+/*********************
+IMAGE GALLERY STYLES
+*********************/
+.gallery {
+
+	dl {
+
+		a {}
+
+		img {}
+
+	}
+
+	dt {}
+
+	dd {}
+
+}
+
+// Gallery caption styles
+.gallery-caption {}
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -67,7 +458,7 @@ NAVIGATION STYLES
 	.title-area {
 		z-index: 1;
 	}
-} 
+}
 
 .off-canvas-list {
 	ul {
@@ -83,384 +474,12 @@ NAVIGATION STYLES
 	}
 }
 
-/*********************
-POSTS & CONTENT STYLES
-*********************/
-#content {
-	#inner-content {
-		padding: 1rem 0rem;
-	}
-}
-
-.single-title,
-.page-title {
-	
-}
-
-.single-title {
-	
-}
-
-.page-title {
-	
-	// Remove Foundation vcard styling from author page titles
-	.vcard {
-		border: 0px;
-		padding: 0px;
-	}
-}
-
-.archive-title {
-
-}
-
-// Post meta  
-.byline {
-	color: #999;
-	time {}
-}
-
-// Entry content  
-.entry-content {
-	
-	img {
-		max-width: 100%;
-		height: auto;
-	}
-
-	.alignleft, img.alignleft { 
-		margin-right: 1.5em; 
-		display: inline; 
-		float: left; 
-	}
-	.alignright, img.alignright { 
-		margin-left: 1.5em; 
-		display: inline; 
-		float: right; 
-	}
-	.aligncenter, img.aligncenter { 
-		margin-right: auto; 
-		margin-left: auto; 
-		display: block; 
-		clear: both; 
-	}
-			
-	video, object {
-		max-width: 100%;
-		height: auto;
-		}
-
-	pre {
-		background: #eee;
-		border: 1px solid #cecece;
-		padding: 10px;
-		}
-
-} 
-
-.wp-caption {
-	max-width: 100%;
-	background: #eee;
-	padding: 5px;
-
-	// Images inside wp-caption  
-	img {
-		max-width: 100%;
-		margin-bottom: 0;
-		width: 100%;
-	}
-
-	p.wp-caption-text {
-		font-size: 0.85em;
-		margin: 4px 0 7px;
-		text-align: center;
-	}
-} 
-
-// Add Foundation styling to password protect button
-.post-password-form input[type="submit"] {
-	@include button;
-}
-
-/*********************
-IMAGE GALLERY STYLES
-*********************/
-	.gallery {
-
-		dl {
-
-			a {}
-
-			img {}
-
-		}
-
-		dt {}
-
-		dd {}
-
-} 
-
-// Gallery caption styles
-.gallery-caption {}
-.size-full {}
-.size-large {}
-.size-medium {}
-.size-thumbnail {}
 
 /*********************
 PAGE NAVI STYLES
 *********************/
 .page-navigation {
 	margin-top: 1rem;
-}
-
-/*********************
-COMMENT STYLES
-*********************/
-#comments {
-	.commentlist {
-		margin-left: 0px;
-	}
-}
-
-#respond {
-	ul {
-		margin-left: 0px;
-	}
-}
-
-.commentlist {
-	li {
-		position: relative;
-		clear: both;
-		overflow: hidden;
-		list-style-type: none;
-		margin-bottom: 1.5em;
-		padding: 0.7335em 10px;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		ul.children {
-			margin: 0;
-
-			li {}
-
-			.comment {}
-			.alt {}
-			.odd {}
-			.even {}
-			.depth-1 {}           // Change number for different depth  
-			.byuser {}
-			.bypostauthor {}
-			.comment-author-admin {}
-
-		}
-	}
-
-	li[class*=depth-] {
-		margin-top: 1.1em;
-	}
-
-	li.depth-1 {
-		margin-left: 0;
-		margin-top: 0;
-	}
-
-	li:not(.depth-1) {
-		margin-left: 10px;
-		margin-top: 0;
-		padding-bottom: 0;
-	}
-
-	li.depth-2 {}
-	li.depth-3 {
-	}
-	li.depth-4 {}
-	li.depth-5 {}
-
-	// General comment classes  
-	.alt {}
-	.odd {
-	}
-	.even {
-	}
-	.parent {}
-	.comment {}
-	.children {}
-	.pingback {}
-	.bypostauthor {}
-	.comment-author {}
-	.comment-author-admin {}
-	.thread-alt {}
-	.thread-odd {}
-	.thread-even {}
-
-	// vcard  
-	.vcard {
-		margin-left: 50px;
-
-		cite.fn {
-			font-weight: 700;
-			font-style: normal;
-
-			a.url {}
-
-		}
-
-		time {
-			float: right;
-
-			a {
-				color: #999;
-				text-decoration: none;
-
-				&:hover {
-					text-decoration: underline;
-				}
-
-			}
-
-		}
-
-		img.photo {}
-
-		img.avatar {
-			position: absolute;
-			left: 10px;
-			padding: 2px;
-			border: 1px solid #cecece;
-			background: #fff;
-		}
-
-	} // end .commentlist .vcard  
-
-
-	// comment meta  
-	.comment-meta {
-
-		a {}
-
-	}
-
-	.commentmetadata {
-
-		a {}
-
-	}
-
-	// comment content  
-	.comment_content {
-
-		p {
-			margin: 0.7335em 0 1.5em;
-			font-size: 1em;
-			line-height: 1.5em;
-		}
-
-	} // end .commentlist .comment_content  
-
-	// comment reply link  
-	.comment-reply-link {
-		float: right;
-
-		&:hover,
-		&:focus {
-		
-		}
-
-	} // end .commentlist .comment-reply-link  
-
-} // end .commentlist  
-
-/*********************
-COMMENT FORM STYLES
-*********************/
-.respond-form {
-	margin: 1.5em 10px;
-	padding-bottom: 2.2em;
-
-	form {
-		margin: 0.75em 0;
-
-		li {
-			list-style-type: none;
-			clear: both;
-			margin-bottom: 0.7335em;
-
-			label,
-			small {
-				display: none;
-			}
-		}
-
-		input[type=text],
-		input[type=email],
-		input[type=url],
-		textarea {
-			padding: 3px 6px;
-			background: #efefef;
-			border: 2px solid #cecece;
-			line-height: 1.5em;
-
-			&:focus {
-				background: #fff;
-			}
-
-			// form validation  
-			&:invalid {
-				outline: none;
-				border-color: #fbc2c4;
-				background-color: #f6e7eb;
-				-webkit-box-shadow: none;
-				   -moz-box-shadow: none;
-				    -ms-box-shadow: none;
-						box-shadow: none;
-			}
-		}
-
-		input[type=text],
-		input[type=email],
-		input[type=url] {
-			max-width: 400px;
-			min-width: 250px;
-		}
-
-		textarea {
-			resize: none;
-			width: 97.3%;
-			height: 150px;
-		}
-
-	}
-}
-
-// comment submit button  
-#submit {}
-
-// comment form title  
-#comment-form-title {
-	margin: 0 0 1.1em;
-}
-
-// cancel comment reply link  
-#cancel-comment-reply {
-	a {}
-}
-
-// logged in comments  
-.comments-logged-in-as {}
-
-// allowed tags  
-#allowed_tags {
-	margin: 1.5em 10px 0.7335em 0;
-}
-
-// No comments  
-.nocomments {
-	margin: 0 20px 1.1em;
 }
 
 /*********************
@@ -488,7 +507,7 @@ SIDEBARS & ASIDES
 
 			a {}
 
-			// deep nesting  
+			// deep nesting
 			ul {}
 
 		}
@@ -501,7 +520,7 @@ FOOTER STYLES
 	clear: both;
 	margin-top: 1em;
 }
-	
+
 /*********************
 FOUNDATION STYLES
 *********************/

@@ -1,8 +1,9 @@
 {
   "name": "JointsWP",
   "private": true,
-  "ignore":  [],
+  "ignore": [],
   "dependencies": {
-    "foundation-sites": ">=6.1"
+    "foundation-sites": ">=6.1",
+    "fontfaceobserver": "^1.7.1"
   }
 }

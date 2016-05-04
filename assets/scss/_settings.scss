@@ -55,19 +55,42 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #ec5840,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
+$yellow-tandem : #f4c522; /* Tandem styleguide */
+$black-tandem : #4c4d53; /* Tandem styleguide */
+$white : #fefefe;
+$salmon-1-web : #fde1c7; /* Section / Box bg webguide */
+$yellow-1-web : #fffbdb; /* Section / Box bg webguide */
+$blue-1-web : #dceff0; /* Section bg webguide */
+$rose-1-web : #ff8e78; /* Box bg webguide */
+$blue-2-web : #dceff0; /* Box bg webguide */
+$yellow-1 : #fffac0; /* Sticky Notes styleguide */
+$yellow-2 : #f0c063;
+$yellow-3 : #eba847; /* Accents on yellow */
+$yellow-4 : #e27f20;
+$salmon-1 : #f7e6ce;
+$salmon-2 : #f0c590;
+$salmon-3 : #eaab73;
+$salmon-4 : #e07856; /* Accents on orange */
+$blue-1 : #bcdde9;
+$blue-2 : #93c9e4;
+$blue-3 : #0f9fd6; /* Accents on blue */
+$blue-4 : #1f588e;
+$black : darken( $black-tandem,10 );
+$light-gray: lighten( $black-tandem,60 );
+$medium-gray: lighten( $black-tandem, 40 );
+$dark-gray: lighten( $black-tandem, 20 );
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+//$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: sans-serif;
 $body-antialiased: true;
+$body-font-size: 1.125 * $global-font-size;
 $global-margin: 1rem;
 $global-padding: 1rem;
-$global-weight-normal: normal;
-$global-weight-bold: bold;
+$global-weight-light: 300;
+$global-weight-normal: 400;
+$global-weight-semibold: 600;
+$global-weight-bold: 700;
 $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: false;
@@ -80,12 +103,12 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
   small: 0,
-  medium: 640px,
-  large: 1024px,
+  medium: 480px,
+  large: 960px,
   xlarge: 1200px,
   xxlarge: 1440px,
 );
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xlarge xxlarge);
 
 // 3. The Grid
 // -----------
@@ -103,12 +126,12 @@ $block-grid-max: 8;
 // ------------------
 
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
+    'h1': 21,
     'h2': 20,
     'h3': 19,
     'h4': 18,
@@ -116,12 +139,12 @@ $header-sizes: (
     'h6': 16,
   ),
   medium: (
-    'h1': 48,
-    'h2': 40,
+    'h1': 42,
+    'h2': 36,
     'h3': 31,
     'h4': 25,
     'h5': 20,
-    'h6': 16,
+    'h6': 18,
   ),
 );
 $header-color: inherit;
@@ -170,8 +193,8 @@ $abbr-underline: 1px dotted $black;
 // 5. Typography Helpers
 // ---------------------
 
-$lead-font-size: $global-font-size * 1.25;
-$lead-lineheight: 1.6;
+$lead-font-size: $global-font-size * 1.125;
+$lead-lineheight: 1.4;
 $subheader-lineheight: 1.4;
 $subheader-color: $dark-gray;
 $subheader-font-weight: $global-weight-normal;

@@ -6,26 +6,22 @@ Exchange story template
 
 <?php get_header(); ?>
 
-<div id="content">
+<main id="main" role="main">
 
-	<div id="inner-content" class="row">
+	<div class="main-inner">
 
-		<main id="main" class="large-8 medium-8 columns first" role="main">
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php get_template_part( 'parts/loop', 'story' ); ?>
 
-		    	<?php get_template_part( 'parts/loop', 'story' ); ?>
+		<?php endwhile; else : ?>
 
-		    <?php endwhile; else : ?>
+			<?php get_template_part( 'parts/content', 'missing' ); ?>
 
-		   		<?php get_template_part( 'parts/content', 'missing' ); ?>
+		<?php endif; ?>
 
-		    <?php endif; ?>
+	</div><!-- end .main-inner -->
 
-		</main> <!-- end #main -->
-
-	</div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
+</main> <!-- end #main -->
 
 <?php get_footer(); ?>

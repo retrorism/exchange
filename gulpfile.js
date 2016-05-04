@@ -34,14 +34,14 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.write('.')) // Creates sourcemaps for minified styles
         .pipe(gulp.dest('./assets/css/'))
 });
-    
+
 // JSHint, concat, and minify JavaScript
 gulp.task('site-js', function() {
-  return gulp.src([	
-	  
+  return gulp.src([
+
            // Grab your custom scripts
   		  './assets/js/scripts/*.js'
-  		  
+
   ])
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -53,36 +53,36 @@ gulp.task('site-js', function() {
     .pipe(uglify())
     .pipe(sourcemaps.write('.')) // Creates sourcemap for minified JS
     .pipe(gulp.dest('./assets/js'))
-});    
+});
 
 // JSHint, concat, and minify Foundation JavaScript
 gulp.task('foundation-js', function() {
-  return gulp.src([	
-  		  
-  		  // Foundation core - needed if you want to use any of the components below
-          './vendor/foundation-sites/js/foundation.core.js',
-          './vendor/foundation-sites/js/foundation.util.*.js',
-          
-          // Pick the components you need in your project
-          './vendor/foundation-sites/js/foundation.abide.js',
-          './vendor/foundation-sites/js/foundation.accordion.js',
-          './vendor/foundation-sites/js/foundation.accordionMenu.js',
-          './vendor/foundation-sites/js/foundation.drilldown.js',
-          './vendor/foundation-sites/js/foundation.dropdown.js',
-          './vendor/foundation-sites/js/foundation.dropdownMenu.js',
-          './vendor/foundation-sites/js/foundation.equalizer.js',
-          './vendor/foundation-sites/js/foundation.interchange.js',
-          './vendor/foundation-sites/js/foundation.magellan.js',
-          './vendor/foundation-sites/js/foundation.offcanvas.js',
-          './vendor/foundation-sites/js/foundation.orbit.js',
-          './vendor/foundation-sites/js/foundation.responsiveMenu.js',
-          './vendor/foundation-sites/js/foundation.responsiveToggle.js',
-          './vendor/foundation-sites/js/foundation.reveal.js',
-          './vendor/foundation-sites/js/foundation.slider.js',
-          './vendor/foundation-sites/js/foundation.sticky.js',
-          './vendor/foundation-sites/js/foundation.tabs.js',
-          './vendor/foundation-sites/js/foundation.toggler.js',
-          './vendor/foundation-sites/js/foundation.tooltip.js',
+  return gulp.src([
+
+		// Foundation core - needed if you want to use any of the components below
+		'./vendor/foundation-sites/js/foundation.core.js',
+		'./vendor/foundation-sites/js/foundation.util.*.js',
+
+		// Pick the components you need in your project
+		//   './vendor/foundation-sites/js/foundation.abide.js',
+		//   './vendor/foundation-sites/js/foundation.accordion.js',
+		//   './vendor/foundation-sites/js/foundation.accordionMenu.js',
+		//   './vendor/foundation-sites/js/foundation.drilldown.js',
+		//   './vendor/foundation-sites/js/foundation.dropdown.js',
+		//   './vendor/foundation-sites/js/foundation.dropdownMenu.js',
+		//   './vendor/foundation-sites/js/foundation.equalizer.js',
+		//   './vendor/foundation-sites/js/foundation.interchange.js',
+		//   './vendor/foundation-sites/js/foundation.magellan.js',
+		//   './vendor/foundation-sites/js/foundation.offcanvas.js',
+		//   './vendor/foundation-sites/js/foundation.orbit.js',
+		//   './vendor/foundation-sites/js/foundation.responsiveMenu.js',
+		//   './vendor/foundation-sites/js/foundation.responsiveToggle.js',
+		//   './vendor/foundation-sites/js/foundation.reveal.js',
+		//   './vendor/foundation-sites/js/foundation.slider.js',
+		'./vendor/foundation-sites/js/foundation.sticky.js',
+		//   './vendor/foundation-sites/js/foundation.tabs.js',
+		//   './vendor/foundation-sites/js/foundation.toggler.js',
+		//   './vendor/foundation-sites/js/foundation.tooltip.js',
   ])
 	.pipe(babel({
 		presets: ['es2015'],
@@ -95,19 +95,19 @@ gulp.task('foundation-js', function() {
     .pipe(uglify())
     .pipe(sourcemaps.write('.')) // Creates sourcemap for minified Foundation JS
     .pipe(gulp.dest('./assets/js'))
-}); 
+});
 
 // Update Foundation with Bower and save to /vendor
 gulp.task('bower', function() {
   return bower({ cmd: 'update'})
     .pipe(gulp.dest('vendor/'))
-});  
+});
 
 // Browser-Sync watch files and inject changes
 gulp.task('browsersync', function() {
     // Watch files
     var files = [
-    	'./assets/css/*.css', 
+    	'./assets/css/*.css',
     	'./assets/js/*.js',
     	'**/*.php',
     	'assets/images/**/*.{png,jpg,gif,svg,webp}',
@@ -117,7 +117,7 @@ gulp.task('browsersync', function() {
 	    // Replace with URL of your local site
 	    proxy: "http://localhost/",
     });
-    
+
     gulp.watch('./assets/scss/**/*.scss', ['styles']);
     gulp.watch('./assets/js/scripts/*.js', ['site-js']).on('change', browserSync.reload);
 
@@ -131,11 +131,11 @@ gulp.task('watch', function() {
 
   // Watch site-js files
   gulp.watch('./assets/js/scripts/*.js', ['site-js']);
-  
+
   // Watch foundation-js files
   gulp.watch('./vendor/foundation-sites/js/*.js', ['foundation-js']);
 
-}); 
+});
 
 // Run styles, site-js and foundation-js
 gulp.task('default', function() {
