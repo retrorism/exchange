@@ -1,0 +1,5 @@
+<?php
+
+// Silece is golden.
+
+?>
