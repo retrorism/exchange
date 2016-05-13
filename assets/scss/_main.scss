@@ -81,6 +81,7 @@ ARTICLE STYLES
 *********************/
 
 .story__header__introduction,
+.story__header__lowres-image-wrapper,
 .story__content,
 .story__footer,
 .story__relatedgrid {
@@ -94,6 +95,7 @@ ARTICLE STYLES
 	margin-top: 2 * $global-margin;
 }
 
+.story__header__image.lowres,
 .story__editorialintro,
 .story__title-wrapper,
 .story__intro,
@@ -107,12 +109,12 @@ ARTICLE STYLES
 		@include grid-column( 95% );
 		@include grid-column-position( center );
 	}
-	@include breakpoint( medium ) {
-		@include grid-column( 75% );
+	@include breakpoint( medium and up ) {
+		@include grid-column( 85% );
 		@include grid-column-position( center );
 	}
 	@include breakpoint( large ) {
-		@include grid-column( 8 );
+		@include grid-column( 66.666667% );
 		@include grid-column-position( center );
 	}
 	@include breakpoint( xlarge ) {
@@ -134,6 +136,7 @@ ARTICLE HEADER STYLES
 		list-style: none;
 	}
 }
+
 
 .story__header__image-wrapper {
 	height: 12em;
@@ -183,7 +186,8 @@ ARTICLE PATTERN STYLES
 	margin-top: 0;
 }
 
-.section__imageduo {
+.section__imageduo,
+.section__simplemap.simplemap--wide {
 	@include grid-column( 95%,0 );
 	padding-top: 2 * $global-padding;
 	padding-bottom: $global-padding;

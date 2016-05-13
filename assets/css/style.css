@@ -2764,6 +2764,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
 ARTICLE STYLES
 *********************/
 .story__header__introduction,
+.story__header__lowres-image-wrapper,
 .story__content,
 .story__footer,
 .story__relatedgrid {
@@ -2771,6 +2772,8 @@ ARTICLE STYLES
   margin-left: auto;
   margin-right: auto; }
   .story__header__introduction::before, .story__header__introduction::after,
+  .story__header__lowres-image-wrapper::before,
+  .story__header__lowres-image-wrapper::after,
   .story__content::before,
   .story__content::after,
   .story__footer::before,
@@ -2780,6 +2783,7 @@ ARTICLE STYLES
     content: ' ';
     display: table; }
   .story__header__introduction::after,
+  .story__header__lowres-image-wrapper::after,
   .story__content::after,
   .story__footer::after,
   .story__relatedgrid::after {
@@ -2791,6 +2795,7 @@ ARTICLE STYLES
   margin-bottom: 2rem;
   margin-top: 2rem; }
 
+.story__header__image.lowres,
 .story__editorialintro,
 .story__title-wrapper,
 .story__intro,
@@ -2809,8 +2814,16 @@ ARTICLE STYLES
   padding-right: 0.625rem;
   float: none;
   margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  float: none;
+  margin-left: auto;
   margin-right: auto; }
   @media screen and (min-width: 30em) {
+    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
@@ -2818,6 +2831,7 @@ ARTICLE STYLES
     .story__footer__byline {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
+  .story__header__image.lowres:last-child:not(:first-child),
   .story__editorialintro:last-child:not(:first-child),
   .story__title-wrapper:last-child:not(:first-child),
   .story__intro:last-child:not(:first-child),
@@ -2825,6 +2839,7 @@ ARTICLE STYLES
   .story__footer__byline:last-child:not(:first-child) {
     float: right; }
   @media screen and (min-width: 30em) {
+    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
@@ -2832,6 +2847,7 @@ ARTICLE STYLES
     .story__footer__byline {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
+  .story__header__image.lowres:last-child:not(:first-child),
   .story__editorialintro:last-child:not(:first-child),
   .story__title-wrapper:last-child:not(:first-child),
   .story__intro:last-child:not(:first-child),
@@ -2839,19 +2855,7 @@ ARTICLE STYLES
   .story__footer__byline:last-child:not(:first-child) {
     float: right; }
   @media screen and (min-width: 30em) {
-    .story__editorialintro,
-    .story__title-wrapper,
-    .story__intro,
-    .section__slice,
-    .story__footer__byline {
-      width: 75%;
-      float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
-      float: none;
-      margin-left: auto;
-      margin-right: auto; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
@@ -2859,14 +2863,15 @@ ARTICLE STYLES
     .story__footer__byline {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
-      .story__editorialintro:last-child:not(:first-child),
-      .story__title-wrapper:last-child:not(:first-child),
-      .story__intro:last-child:not(:first-child),
-      .section__slice:last-child:not(:first-child),
-      .story__footer__byline:last-child:not(:first-child) {
-        float: right; } }
+  .story__header__image.lowres:last-child:not(:first-child),
+  .story__editorialintro:last-child:not(:first-child),
+  .story__title-wrapper:last-child:not(:first-child),
+  .story__intro:last-child:not(:first-child),
+  .section__slice:last-child:not(:first-child),
+  .story__footer__byline:last-child:not(:first-child) {
+    float: right; }
   @media screen and (min-width: 60em) {
+    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
@@ -2880,6 +2885,7 @@ ARTICLE STYLES
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 60em) and (min-width: 30em) {
+    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
@@ -2888,6 +2894,7 @@ ARTICLE STYLES
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
   @media screen and (min-width: 60em) {
+      .story__header__image.lowres:last-child:not(:first-child),
       .story__editorialintro:last-child:not(:first-child),
       .story__title-wrapper:last-child:not(:first-child),
       .story__intro:last-child:not(:first-child),
@@ -2895,6 +2902,7 @@ ARTICLE STYLES
       .story__footer__byline:last-child:not(:first-child) {
         float: right; } }
   @media screen and (min-width: 75em) {
+    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
@@ -2908,6 +2916,7 @@ ARTICLE STYLES
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 75em) and (min-width: 30em) {
+    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
@@ -2916,6 +2925,7 @@ ARTICLE STYLES
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
   @media screen and (min-width: 75em) {
+      .story__header__image.lowres:last-child:not(:first-child),
       .story__editorialintro:last-child:not(:first-child),
       .story__title-wrapper:last-child:not(:first-child),
       .story__intro:last-child:not(:first-child),
@@ -2980,7 +2990,8 @@ ARTICLE PATTERN STYLES
 .section__subheader + .section__paragraph {
   margin-top: 0; }
 
-.section__imageduo {
+.section__imageduo,
+.section__simplemap.simplemap--wide {
   width: 95%;
   float: left;
   padding-top: 2rem;
@@ -2989,7 +3000,8 @@ ARTICLE PATTERN STYLES
   z-index: 10;
   position: relative;
   z-index: 10; }
-  .section__imageduo:last-child:not(:first-child) {
+  .section__imageduo:last-child:not(:first-child),
+  .section__simplemap.simplemap--wide:last-child:not(:first-child) {
     float: right; }
 
 .imageduo__wrapper {
