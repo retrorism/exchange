@@ -3,6 +3,50 @@
     "title": "Collaboration Meta",
     "fields": [
         {
+            "key": "field_570b7d8c359c2",
+            "label": "Locations",
+            "name": "locations",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "location",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_56bdaddef24ea",
+            "label": "Topics",
+            "name": "topics",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "topic",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
             "key": "field_56bdae48e62f4",
             "label": "Disciplines",
             "name": "disciplines",
@@ -59,7 +103,7 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "output",
+            "taxonomy": "project_output",
             "field_type": "multi_select",
             "allow_null": 0,
             "add_term": 0,
@@ -78,13 +122,19 @@
             }
         ]
     ],
-    "menu_order": 3,
+    "menu_order": 0,
     "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "excerpt",
+        "discussion",
+        "comments",
+        "categories",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "Sidebar for collaboration editor",
-    "modified": 1462465796
+    "modified": 1463477956
 }

@@ -6,11 +6,9 @@ Tandem programme_round template
 
 <?php get_header(); ?>
 
-<div id="content">
+<main id="main" role="main">
 
-	<div id="inner-content" class="row">
-
-		<main id="main" class="large-8 medium-8 columns first" role="main">
+	<div class="main-inner">
 
 		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -18,13 +16,14 @@ Tandem programme_round template
 
 		    <?php endwhile; else : ?>
 
-		   		<?php get_template_part( 'parts/content', 'missing' ); ?>
+				<?php get_template_part( 'parts/content', 'missing' ); ?>
 
 		    <?php endif; ?>
 
-		</main> <!-- end #main -->
+		</div> <!-- end .main-inner -->
 
-	</div> <!-- end #inner-content -->
+	</main> <!-- end #main -->
+
 
 </div> <!-- end #content -->
 
