@@ -2778,7 +2778,7 @@ BANNER STYLES
   z-index: 20; }
 
 #main {
-  padding-top: 4.5em; }
+  padding-top: 4.25em; }
 
 /*********************
 NAVIGATION STYLES
@@ -3045,6 +3045,9 @@ ARTICLE PATTERN STYLES
 /***************
 Pattern 1. Title
 ****************/
+.story__title-wrapper {
+  margin-top: 4rem; }
+
 body.page .story__title-wrapper {
   text-align: center; }
 
@@ -3101,26 +3104,46 @@ Pattern 4. Tag list
 Pattern 5. Hero / cover image
 *****************************/
 .story__header__image-wrapper {
-  height: 12em;
-  overflow: hidden;
   position: relative; }
-  @media screen and (min-width: 30em) {
-    .story__header__image-wrapper {
-      height: 20em; } }
-  @media screen and (min-width: 60em) {
-    .story__header__image-wrapper {
-      height: 25em; } }
-  @media screen and (min-width: 75em) {
-    .story__header__image-wrapper {
-      height: 30em; } }
-  @media screen and (min-width: 90em) {
-    .story__header__image-wrapper {
-      height: 35em; } }
-  .story__header__image-wrapper img {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
+  .story__header__image-wrapper .story__header__image.highres {
+    overflow: hidden;
+    font-size: inherit;
+    max-height: 20rem; }
+    .story__header__image-wrapper .story__header__image.highres img {
+      max-width: 100%;
+      height: auto !important;
+      width: auto\9;
+      -ms-interpolation-mode: bicubic; }
+    .story__header__image-wrapper .story__header__image.highres .image__caption {
+      position: absolute;
+      width: 100%;
+      z-index: 20; }
+    .story__header__image-wrapper .story__header__image.highres .image__caption {
+      top: 20rem;
+      text-align: right;
+      padding-right: 1rem; }
+    @media screen and (min-width: 30em) {
+      .story__header__image-wrapper .story__header__image.highres {
+        max-height: 25rem; }
+        .story__header__image-wrapper .story__header__image.highres .image__caption {
+          top: 25rem;
+          text-align: right;
+          padding-right: 1rem; } }
+    @media screen and (min-width: 60em) {
+      .story__header__image-wrapper .story__header__image.highres {
+        max-height: 30rem; }
+        .story__header__image-wrapper .story__header__image.highres .image__caption {
+          top: 30rem; } }
+    @media screen and (min-width: 75em) {
+      .story__header__image-wrapper .story__header__image.highres {
+        max-height: 35rem; }
+        .story__header__image-wrapper .story__header__image.highres .image__caption {
+          top: 35rem; } }
+    @media screen and (min-width: 90em) {
+      .story__header__image-wrapper .story__header__image.highres {
+        max-height: 40rem; }
+        .story__header__image-wrapper .story__header__image.highres .image__caption {
+          top: 40rem; } }
 
 /*********************
 Pattern 6. Paragraph
@@ -3203,7 +3226,7 @@ Pattern 9. Image
         float: right; } }
 
 figcaption {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-size: 80%;
   color: #7d7f88; }
 

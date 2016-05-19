@@ -96,7 +96,7 @@ BANNER STYLES
 }
 
 #main {
-	padding-top: 4.5em;
+	padding-top: 4.25em;
 }
 
 /*********************
@@ -251,6 +251,10 @@ ARTICLE PATTERN STYLES
 Pattern 1. Title
 ****************/
 
+.story__title-wrapper {
+	margin-top: 4 * $global-margin;
+}
+
 body.page .story__title-wrapper {
 	text-align: center;
 }
@@ -318,26 +322,62 @@ Pattern 5. Hero / cover image
 *****************************/
 
 .story__header__image-wrapper {
-	height: 12em;
-	@include breakpoint( medium ) {
-		height: 20em;
-	}
-	@include breakpoint( large ) {
-		height: 25em;
-	}
-	@include breakpoint( xlarge ) {
-		height: 30em;
-	}
-	@include breakpoint( xxlarge ) {
-		height: 35em;
-	}
-	overflow: hidden;
 	position: relative;
-	img {
-		@include vertical-center;
-	}
+	.story__header__image.highres {
+		overflow: hidden;
+		font-size: inherit;
+		img {
+			max-width: 100%;
+			height: auto !important;
+			width: auto\9;
+			-ms-interpolation-mode: bicubic;
+		}
+		.image__caption {
+			position: absolute;
+			width: 100%;
+			z-index: 20;
+		}
+		@include breakpoint( small ) {
+			max-height: 20rem;
+			.image__caption {
+				top: 20rem;
+				text-align: right;
+				padding-right: $global-padding;
+			}
 
+		}
+		@include breakpoint( medium ) {
+			max-height: 25rem;
+			.image__caption {
+				top: 25rem;
+				text-align: right;
+				padding-right: $global-padding;
+			}
+
+		}
+		@include breakpoint( large ) {
+			max-height: 30rem;
+			.image__caption {
+				top: 30rem;
+			}
+
+		}
+		@include breakpoint( xlarge ) {
+			max-height: 35rem;
+			.image__caption {
+				top: 35rem;
+			}
+		}
+		@include breakpoint( xxlarge ) {
+			max-height: 40rem;
+			.image__caption {
+				top: 40rem;
+			}
+		}
+	}
 }
+
+
 
 /*********************
 Pattern 6. Paragraph
@@ -393,7 +433,7 @@ Pattern 9. Image
 }
 
 figcaption {
-	margin-top: $global-margin;
+	margin-top: $caption-margin;
 	font-size: $small-font-size;
 	color: $dark-gray;
 }
