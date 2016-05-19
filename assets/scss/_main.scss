@@ -147,8 +147,8 @@ ul#menu-main-menu-right {
 		display: block;
 		left: 50%;
 		right: 50%;
-		width: 10em;
 		margin-left: -5em;
+		width: 10em;
 	}
 }
 
@@ -442,9 +442,65 @@ figcaption {
 Pattern 10. Block quote
 ***********************/
 
+.section__slice.section__blockquote {
+	border-style: inset;
+	padding: 0 3 * $global-padding 0 1.5 * $global-padding;
+	border-image: 0 100% url('../images/T_line_Vert_WEB.png');
+	border-image: 0 100% url('../images/T_line_vert_WEB.svg');
+	border-left-width: 0.5 * $global-padding;
+	border-right-width: 0.5 * $global-padding;
+}
+
+blockquote {
+	border-width: 0;
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+.blockquote__caption cite,
+.pullquote__caption cite {
+	text-align: right;
+	font-style: normal;
+	&::before {
+		content: '';
+	}
+}
+
 /**********************************************
 Pattern 11. Pull quote (options for alignment)
 **********************************************/
+
+aside.section__pullquote {
+	box-sizing: padding-box;
+	box-shadow: inset 0 0 0 3 * $global-margin $white;
+	background-color: $yellow-1;
+	padding: 4 * $global-padding;
+	&.pullquote--blue-1-web {
+		background-color: $blue-1-web;
+	}
+	& > p {
+		padding: $global-padding 4 * $global-padding 0;
+		font-size: 1.25 * $body-font-size;
+	}
+}
+svg.pullquote__quote--open {
+	float: left;
+	margin-left: -3 * $global-margin;
+	margin-top: -2 * $global-margin;
+}
+svg.pullquote__quote--close {
+	float: right;
+	margin-right: -3 * $global-margin;
+}
+
+.pullquote--blue-1-web svg.pullquote__quote--close path,
+.pullquote--blue-1-web svg.pullquote__quote--open path {
+	fill: $blue-3;
+}
+
+.pullquote__caption cite {
+	margin-right: 4 * $global-margin;
+}
 
 /*************************
 Pattern 12. Embedded Tweet
