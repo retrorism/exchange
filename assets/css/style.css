@@ -981,7 +981,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: inherit;
   font-weight: 400;
   line-height: 1.5;
   color: #343438;
@@ -2230,7 +2230,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: sans-serif;
+  font-family: inherit;
   font-weight: 700;
   font-style: normal;
   color: inherit;
@@ -2260,10 +2260,10 @@ h4 {
   font-size: 1.125rem; }
 
 h5 {
-  font-size: 1.0625rem; }
+  font-size: 1rem; }
 
 h6 {
-  font-size: 1rem; }
+  font-size: 0.875rem; }
 
 @media screen and (min-width: 30em) {
   h1 {
@@ -2277,7 +2277,7 @@ h6 {
   h5 {
     font-size: 1.25rem; }
   h6 {
-    font-size: 1.125rem; } }
+    font-size: 1rem; } }
 
 a {
   color: #2199e8;
@@ -2737,9 +2737,6 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
-body {
-  font-family: inherit; }
-
 figure {
   margin: 0; }
 
@@ -2764,6 +2761,9 @@ H1, H2, H3, H4, H5 P STYLES
 *********************/
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none; }
+
+h6, .h6 {
+  text-transform: uppercase; }
 
 /*********************
 BANNER STYLES
@@ -2831,7 +2831,7 @@ ARTICLE STYLES
 *********************/
 .story__header__introduction,
 .story__header__lowres-image-wrapper,
-.story__content,
+.story__section .section-inner,
 .story__footer,
 .story__relatedgrid {
   max-width: 75rem;
@@ -2840,8 +2840,8 @@ ARTICLE STYLES
   .story__header__introduction::before, .story__header__introduction::after,
   .story__header__lowres-image-wrapper::before,
   .story__header__lowres-image-wrapper::after,
-  .story__content::before,
-  .story__content::after,
+  .story__section .section-inner::before,
+  .story__section .section-inner::after,
   .story__footer::before,
   .story__footer::after,
   .story__relatedgrid::before,
@@ -2850,12 +2850,13 @@ ARTICLE STYLES
     display: table; }
   .story__header__introduction::after,
   .story__header__lowres-image-wrapper::after,
-  .story__content::after,
+  .story__section .section-inner::after,
   .story__footer::after,
   .story__relatedgrid::after {
     clear: both; }
 
-.story__extras {
+.story__extras,
+.story__section.section--has_contact_details {
   padding-bottom: 2rem;
   padding-top: 2rem;
   margin-bottom: 2rem;
@@ -3016,6 +3017,9 @@ ARTICLE STYLES
   .story__relatedgrid:last-child:not(:first-child) {
     float: right; }
 
+.story__section.section--has_contact_details {
+  max-width: inherit; }
+
 /*********************
 ARTICLE HEADER STYLES
 *********************/
@@ -3031,6 +3035,12 @@ ARTICLE PATTERN STYLES
 .story__section p,
 .story__section li {
   font-weight: 300; }
+
+.story__extras {
+  background-color: #fde1c7; }
+
+.section--has_contact_details {
+  background-color: #f0c063; }
 
 /***************
 Pattern 1. Title
@@ -3221,6 +3231,161 @@ Pattern 14. Interview (two styles: QA and name-based)
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
+.contactblock__team-member {
+  color: #fefefe;
+  width: 66.66667%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  text-align: center; }
+  .contactblock__team-member li {
+    font-weight: 400; }
+  .contactblock__team-member a {
+    color: #fefefe; }
+  @media screen and (min-width: 30em) {
+    .contactblock__team-member {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .contactblock__team-member:last-child:not(:first-child) {
+    float: right; }
+  @media screen and (min-width: 30em) {
+    .contactblock__team-member {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .contactblock__team-member:last-child:not(:first-child) {
+    float: right; }
+  @media screen and (min-width: 30em) {
+    .contactblock__team-member {
+      width: 83.33333%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left; } }
+  @media screen and (min-width: 30em) and (min-width: 30em) {
+    .contactblock__team-member {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  @media screen and (min-width: 30em) {
+      .contactblock__team-member:last-child:not(:first-child) {
+        float: right; } }
+  @media screen and (min-width: 60em) {
+    .contactblock__team-member {
+      width: 66.66667%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+      float: none;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media screen and (min-width: 60em) and (min-width: 30em) {
+    .contactblock__team-member {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  @media screen and (min-width: 60em) {
+      .contactblock__team-member:last-child:not(:first-child) {
+        float: right; } }
+
+h6.team-member__cta {
+  margin-bottom: 2rem; }
+
+li.team-member__position {
+  margin-bottom: 1rem; }
+
+li.team-member__name {
+  font-weight: 600; }
+
+.contactblock__image {
+  width: 58.33333%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem; }
+  @media screen and (min-width: 30em) {
+    .contactblock__image {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .contactblock__image:last-child:not(:first-child) {
+    float: right; }
+  @media screen and (min-width: 30em) {
+    .contactblock__image {
+      width: 33.33333%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; } }
+  @media screen and (min-width: 30em) and (min-width: 30em) {
+    .contactblock__image {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  @media screen and (min-width: 30em) {
+      .contactblock__image:last-child:not(:first-child) {
+        float: right; } }
+  @media screen and (min-width: 60em) {
+    .contactblock__image {
+      width: 41.66667%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; } }
+  @media screen and (min-width: 60em) and (min-width: 30em) {
+    .contactblock__image {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  @media screen and (min-width: 60em) {
+      .contactblock__image:last-child:not(:first-child) {
+        float: right; } }
+  .contactblock__image img {
+    border-radius: 50%; }
+
+.contactblock__info {
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
+  @media screen and (min-width: 30em) {
+    .contactblock__info {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .contactblock__info:last-child:not(:first-child) {
+    float: right; }
+  @media screen and (min-width: 30em) {
+    .contactblock__info {
+      width: 66.66667%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; } }
+  @media screen and (min-width: 30em) and (min-width: 30em) {
+    .contactblock__info {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  @media screen and (min-width: 30em) {
+      .contactblock__info:last-child:not(:first-child) {
+        float: right; } }
+  @media screen and (min-width: 60em) {
+    .contactblock__info {
+      width: 58.33333%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; } }
+  @media screen and (min-width: 60em) and (min-width: 30em) {
+    .contactblock__info {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  @media screen and (min-width: 60em) {
+      .contactblock__info:last-child:not(:first-child) {
+        float: right; } }
+
 /**************************************************
 Pattern 16 becomes Content block for TANDEM partner
 ***************************************************/
@@ -3371,9 +3536,6 @@ ARTICLE META STYLES
 /*********************
 ARTICLE EXTRAS STYLES
 *********************/
-.story__extras {
-  background-color: #fde1c7; }
-
 .relatedgrid__griditem {
   width: 100%;
   float: left;

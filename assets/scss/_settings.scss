@@ -82,7 +82,7 @@ $dark-gray: lighten( $black-tandem, 20 );
 $body-background: $white;
 $body-font-color: $black;
 //$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$body-font-family: sans-serif;
+$body-font-family: inherit;
 $body-antialiased: true;
 $body-font-size: 1.125 * $global-font-size;
 $global-margin: 1rem;
@@ -135,8 +135,8 @@ $header-sizes: (
     'h2': 20,
     'h3': 19,
     'h4': 18,
-    'h5': 17,
-    'h6': 16,
+    'h5': 16,
+    'h6': 14,
   ),
   medium: (
     'h1': 42,
@@ -144,7 +144,7 @@ $header-sizes: (
     'h3': 31,
     'h4': 25,
     'h5': 20,
-    'h6': 18,
+    'h6': 16,
   ),
 );
 $header-color: inherit;

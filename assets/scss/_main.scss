@@ -8,10 +8,6 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 
-body {
-	font-family: inherit;
-}
-
 #header,
 #main,
 #footer {
@@ -78,6 +74,10 @@ h4, .h4 {
 
 h5, .h5 {
 
+}
+
+h6, .h6 {
+	text-transform: uppercase;
 }
 
 /*********************
@@ -162,13 +162,14 @@ ARTICLE STYLES
 
 .story__header__introduction,
 .story__header__lowres-image-wrapper,
-.story__content,
+.story__section .section-inner,
 .story__footer,
 .story__relatedgrid {
 	@include grid-row;
 }
 
-.story__extras {
+.story__extras,
+.story__section.section--has_contact_details {
 	padding-bottom: 2 * $global-padding;
 	padding-top: 2 * $global-padding;
 	margin-bottom: 2 * $global-margin;
@@ -180,7 +181,7 @@ ARTICLE STYLES
 .story__title-wrapper,
 .story__intro,
 .section__slice,
-.story__footer__byline {
+.story__footer__byline, {
 	margin-bottom: 2 * $global-margin;
 	margin-top: 2 * $global-margin;
 	@include grid-column();
@@ -208,6 +209,11 @@ ARTICLE STYLES
 	@include grid-column-position( center );
 }
 
+.story__section.section--has_contact_details {
+	max-width: inherit;
+
+}
+
 /*********************
 ARTICLE HEADER STYLES
 *********************/
@@ -222,7 +228,6 @@ ARTICLE HEADER STYLES
 ARTICLE PATTERN STYLES
 *********************/
 
-
 .section__slice:first-of-type {
 	margin-top: 0;
 }
@@ -231,6 +236,16 @@ ARTICLE PATTERN STYLES
 .story__section li {
 	font-weight: $global-weight-light;
 }
+
+.story__extras {
+	background-color: $salmon-1-web;
+}
+
+.section--has_contact_details {
+	background-color: $yellow-2;
+}
+
+
 
 /***************
 Pattern 1. Title
@@ -414,6 +429,72 @@ Pattern 14. Interview (two styles: QA and name-based)
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
 
+.contactblock__team-member {
+	color: $white;
+	li {
+		font-weight: $global-weight-normal;
+	}
+	a {
+		color: $white;
+	}
+	@include grid_column( 8 );
+	@include grid-column-position( center );
+	@include breakpoint( small ) {
+		@include grid_column( 12 );
+		text-align: center;
+	}
+	@include breakpoint( medium ) {
+		@include grid_column( 10 );
+		@include grid-column-position( center );
+		text-align: left;
+	}
+	@include breakpoint( large ) {
+		@include grid_column( 8 );
+		@include grid-column-position( center );
+	}
+}
+
+h6.team-member__cta {
+	margin-bottom: 2 * $global-margin;
+}
+
+li.team-member__position {
+	margin-bottom: $global-margin;
+}
+
+li.team-member__name {
+	font-weight: $global-weight-semibold;
+}
+
+.contactblock__image {
+	@include breakpoint( small ) {
+		@include grid_column( 7 );
+		@include grid-column-position( center );
+		margin-bottom: $global-margin;
+	}
+	@include breakpoint( medium ) {
+		@include grid_column( 4 );
+	}
+	@include breakpoint( large ) {
+		@include grid_column( 5 );
+	}
+	img {
+		border-radius: 50%;
+	}
+}
+
+.contactblock__info {
+	@include breakpoint( small ) {
+		@include grid_column( 12 );
+	}
+	@include breakpoint( medium ) {
+		@include grid_column( 8 );
+	}
+	@include breakpoint( large) {
+		@include grid_column( 7 );
+	}
+}
+
 /**************************************************
 Pattern 16 becomes Content block for TANDEM partner
 ***************************************************/
@@ -540,10 +621,6 @@ ARTICLE META STYLES
 /*********************
 ARTICLE EXTRAS STYLES
 *********************/
-
-.story__extras {
-	background-color: $salmon-1-web;
-}
 
 .relatedgrid__griditem {
 	@include grid_column( 12 );
