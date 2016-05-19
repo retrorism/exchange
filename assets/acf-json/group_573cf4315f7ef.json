@@ -1,0 +1,154 @@
+{
+    "key": "group_573cf4315f7ef",
+    "title": "Team Member Info",
+    "fields": [
+        {
+            "key": "field_573cf4a3e9a38",
+            "label": "Portrait Image (regular)",
+            "name": "user_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,gif"
+        },
+        {
+            "key": "field_573cf64be9a3d",
+            "label": "Position",
+            "name": "user_position",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_573cf51be9a39",
+            "label": "Organisation Name",
+            "name": "user_organisation",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 60,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_573cf6eae9a3e",
+            "label": "Organisation Link",
+            "name": "user_organisation_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "http:\/\/www.tandemexchange.eu",
+            "placeholder": ""
+        },
+        {
+            "key": "field_573cf60be9a3c",
+            "label": "Story Link",
+            "name": "user_story_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "story"
+            ],
+            "taxonomy": [],
+            "allow_null": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_573cfef6864bc",
+            "label": "Phone number",
+            "name": "user_phone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "edit"
+            }
+        ],
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "register"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1463617640
+}
