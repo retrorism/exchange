@@ -582,6 +582,42 @@ Pattern 14. Interview (two styles: QA and name-based)
 	line-height: $header-lineheight;
 }
 
+.interviewconversation__paragraph {
+	td.interviewconversation__voice {
+		font-size: $body-font-size;
+		line-height: $paragraph-lineheight;
+		font-weight: $global-weight-semibold;
+		vertical-align: top;
+		padding-right: $global-padding;
+
+	}
+	tr:nth-of-type(even) td.interviewconversation__voice {
+		color: $yellow-4;
+	}
+	tr:nth-of-type(odd) td.interviewconversation__voice {
+		color: $blue-3;
+	}
+	@include breakpoint( small ) {
+		td {
+			display: table-row;
+			&.interviewconversation__voice::after {
+				content: ':';
+			}
+		}
+	}
+	@include breakpoint( large ) {
+		td {
+			display: table-cell;
+			&.interviewconversation__voice::after {
+				content: '';
+			}
+		}
+
+	}
+}
+
+
+
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/

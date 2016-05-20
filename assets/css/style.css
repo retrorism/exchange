@@ -3337,6 +3337,30 @@ Pattern 14. Interview (two styles: QA and name-based)
   margin-top: 1.5rem;
   line-height: 1.4; }
 
+.interviewconversation__paragraph td.interviewconversation__voice {
+  font-size: 112.5%;
+  line-height: 1.6;
+  font-weight: 600;
+  vertical-align: top;
+  padding-right: 1rem; }
+
+.interviewconversation__paragraph tr:nth-of-type(even) td.interviewconversation__voice {
+  color: #e27f20; }
+
+.interviewconversation__paragraph tr:nth-of-type(odd) td.interviewconversation__voice {
+  color: #0f9fd6; }
+
+.interviewconversation__paragraph td {
+  display: table-row; }
+  .interviewconversation__paragraph td.interviewconversation__voice::after {
+    content: ':'; }
+
+@media screen and (min-width: 60em) {
+  .interviewconversation__paragraph td {
+    display: table-cell; }
+    .interviewconversation__paragraph td.interviewconversation__voice::after {
+      content: ''; } }
+
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
