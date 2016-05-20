@@ -2244,7 +2244,7 @@ h6 {
   h4 small,
   h5 small,
   h6 small {
-    color: #b2b3b9;
+    color: #A0A0A0;
     line-height: 0; }
 
 h1 {
@@ -2294,7 +2294,7 @@ hr {
   height: 0;
   border-right: 0;
   border-top: 0;
-  border-bottom: 1px solid #b2b3b9;
+  border-bottom: 1px solid #A0A0A0;
   border-left: 0;
   margin: 1.25rem auto;
   clear: both; }
@@ -2329,15 +2329,15 @@ dl {
 blockquote {
   margin: 0 0 1rem;
   padding: 0.5625rem 1.25rem 0 1.1875rem;
-  border-left: 1px solid #b2b3b9; }
+  border-left: 1px solid #A0A0A0; }
   blockquote, blockquote p {
     line-height: 1.6;
-    color: #7d7f88; }
+    color: #6d6d6d; }
 
 cite {
   display: block;
   font-size: 0.8125rem;
-  color: #7d7f88; }
+  color: #6d6d6d; }
   cite:before {
     content: '\2014 \0020'; }
 
@@ -2350,14 +2350,14 @@ code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: 400;
   color: #343438;
-  background-color: #e8e8e9;
-  border: 1px solid #b2b3b9;
+  background-color: lightgray;
+  border: 1px solid #A0A0A0;
   padding: 0.125rem 0.3125rem 0.0625rem; }
 
 kbd {
   padding: 0.125rem 0.25rem 0;
   margin: 0;
-  background-color: #e8e8e9;
+  background-color: lightgray;
   color: #343438;
   font-family: Consolas, "Liberation Mono", Courier, monospace; }
 
@@ -2366,7 +2366,7 @@ kbd {
   margin-bottom: 0.5rem;
   font-weight: 400;
   line-height: 1.4;
-  color: #7d7f88; }
+  color: #6d6d6d; }
 
 .lead {
   font-size: 112.5%;
@@ -2472,7 +2472,7 @@ kbd {
     content: " (" attr(title) ")"; }
   pre,
   blockquote {
-    border: 1px solid #7d7f88;
+    border: 1px solid #6d6d6d;
     page-break-inside: avoid; }
   thead {
     display: table-header-group; }
@@ -2630,8 +2630,8 @@ kbd {
     left: 0;
     box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe; }
   .menu-icon:hover::after {
-    background: #b2b3b9;
-    box-shadow: 0 7px 0 #b2b3b9, 0 14px 0 #b2b3b9; }
+    background: #A0A0A0;
+    box-shadow: 0 7px 0 #A0A0A0, 0 14px 0 #A0A0A0; }
 
 .menu-icon.dark {
   position: relative;
@@ -2651,8 +2651,8 @@ kbd {
     left: 0;
     box-shadow: 0 7px 0 #343438, 0 14px 0 #343438; }
   .menu-icon.dark:hover::after {
-    background: #7d7f88;
-    box-shadow: 0 7px 0 #7d7f88, 0 14px 0 #7d7f88; }
+    background: #6d6d6d;
+    box-shadow: 0 7px 0 #6d6d6d, 0 14px 0 #6d6d6d; }
 
 .sticky-container {
   position: relative; }
@@ -2687,7 +2687,7 @@ kbd {
     clear: both; }
   .top-bar,
   .top-bar ul {
-    background-color: #e8e8e9; }
+    background-color: lightgray; }
   .top-bar input {
     max-width: 200px;
     margin-right: 1rem; }
@@ -2773,7 +2773,7 @@ figcaption,
 caption {
   margin-top: 0.75rem;
   font-size: 80%;
-  color: #343438; }
+  color: #A0A0A0; }
 
 /*********************
 BANNER STYLES
@@ -2797,7 +2797,7 @@ nav.top-bar {
   background-color: #fefefe; }
 
 nav.top-bar {
-  border-bottom: 1px solid #e8e8e9; }
+  border-bottom: 1px solid lightgray; }
 
 ul#menu-main-menu-left,
 ul#menu-main-menu-right {
@@ -3239,7 +3239,6 @@ Pattern 9. Image
 Pattern 10. Block quote
 ***********************/
 .section__slice.section__blockquote {
-  border-style: inset;
   padding: 0 3rem 0 1.5rem;
   border-image: 0 100% url("../images/T_line_Vert_WEB.png");
   border-image: 0 100% url("../images/T_line_vert_WEB.svg");
