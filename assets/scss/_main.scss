@@ -18,14 +18,7 @@ GENERAL STYLES
 .footer-inner {
 }
 
-figure {
-	margin: 0;
-}
 
-.section__slice p,
-.story__editorialintro p {
-	font-size: $body-font-size;
-}
 
 /*********************
 LINK STYLES
@@ -78,6 +71,27 @@ h5, .h5 {
 
 h6, .h6 {
 	text-transform: uppercase;
+}
+
+figure {
+	margin: 0;
+}
+
+.section__slice p,
+.story__editorialintro p {
+	font-size: $body-font-size;
+}
+
+cite {
+	font-size: $global-font-size;
+	color: $black;
+}
+
+figcaption,
+caption {
+	margin-top: $caption-margin;
+	font-size: $small-font-size;
+	color: $black;
 }
 
 /*********************
@@ -432,12 +446,6 @@ Pattern 9. Image
 	}
 }
 
-figcaption {
-	margin-top: $caption-margin;
-	font-size: $small-font-size;
-	color: $dark-gray;
-}
-
 /***********************
 Pattern 10. Block quote
 ***********************/
@@ -466,41 +474,93 @@ blockquote {
 	}
 }
 
+.pullquote__source-name,
+.blockquote__source-name {
+	font-weight: $global-weight-semibold;
+}
+
 /**********************************************
 Pattern 11. Pull quote (options for alignment)
 **********************************************/
 
 aside.section__pullquote {
+	padding: $global-padding 2 * $global-padding;
 	box-sizing: padding-box;
-	box-shadow: inset 0 0 0 3 * $global-margin $white;
-	background-color: $yellow-1;
-	padding: 4 * $global-padding;
+	box-shadow: inset 0 0 0 $global-margin $white;
 	&.pullquote--blue-1-web {
 		background-color: $blue-1-web;
 	}
-	& > p {
-		padding: $global-padding 4 * $global-padding 0;
-		font-size: 1.25 * $body-font-size;
+	&.pullquote--salmon-1-web {
+		background-color: $salmon-1-web;
+	}
+	&.pullquote--yellow-1-web {
+		background-color: $yellow-1;
+	}
+	@include breakpoint( small ) {
+		& > p {
+			padding: 0 $global-padding;
+			margin-top: 1.5 * $global-margin;
+			font-size: 1.25 * $body-font-size;
+			font-style: italic;
+		}
+		div.pullquote__quote--open {
+			float: left;
+
+		}
+		div.pullquote__quote--close {
+			float: right;
+		}
+		div.pullquote__quote--open {
+			width: 4em;
+			margin-left: -1 * $global-margin;
+			margin-top: -2 * $global-margin;
+		}
+		div.pullquote__quote--close {
+			width: 4em;
+			margin-top: -1 * $global-margin;
+			margin-right: -1 * $global-margin;
+		}
+		.pullquote__caption cite {
+			margin-right: 2 * $global-margin;
+		}
+	}
+	@include breakpoint( large ) {
+		padding: 3 * $global-padding 4 * $global-padding;
+		box-shadow: inset 0 0 0 3 * $global-margin $white;
+		.pullquote__caption cite {
+			margin-right: 3 * $global-margin;
+		}
+		& > p {
+			padding: $global-padding 3 * $global-padding 0;
+			margin-top: 0;
+		}
+		div.pullquote__quote--open {
+			width: 6em;
+			margin-left: -3 * $global-margin;
+			margin-top: -2 * $global-margin;
+		}
+		div.pullquote__quote--close {
+			width: 6em;
+			margin-top: -1 * $global-margin;
+			margin-right: -3 * $global-margin;
+		}
 	}
 }
-svg.pullquote__quote--open {
-	float: left;
-	margin-left: -3 * $global-margin;
-	margin-top: -2 * $global-margin;
+
+.pullquote--blue-1-web {
+	.pullquote__quote--close svg path,
+	.pullquote__quote--open svg path {
+		fill: $blue-3;
+	}
 }
-svg.pullquote__quote--close {
-	float: right;
-	margin-right: -3 * $global-margin;
+.pullquote--salmon-1-web {
+	.pullquote__quote--close svg path,
+	.pullquote__quote--open svg path {
+		fill: $salmon-4;
+	}
 }
 
-.pullquote--blue-1-web svg.pullquote__quote--close path,
-.pullquote--blue-1-web svg.pullquote__quote--open path {
-	fill: $blue-3;
-}
 
-.pullquote__caption cite {
-	margin-right: 4 * $global-margin;
-}
 
 /*************************
 Pattern 12. Embedded Tweet

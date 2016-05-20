@@ -2737,13 +2737,6 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
-figure {
-  margin: 0; }
-
-.section__slice p,
-.story__editorialintro p {
-  font-size: 112.5%; }
-
 /*********************
 LINK STYLES
 *********************/
@@ -2764,6 +2757,23 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
 
 h6, .h6 {
   text-transform: uppercase; }
+
+figure {
+  margin: 0; }
+
+.section__slice p,
+.story__editorialintro p {
+  font-size: 112.5%; }
+
+cite {
+  font-size: 100%;
+  color: #343438; }
+
+figcaption,
+caption {
+  margin-top: 0.75rem;
+  font-size: 80%;
+  color: #343438; }
 
 /*********************
 BANNER STYLES
@@ -3225,11 +3235,6 @@ Pattern 9. Image
       .imageduo__image:last-child:not(:first-child) {
         float: right; } }
 
-figcaption {
-  margin-top: 0.75rem;
-  font-size: 80%;
-  color: #7d7f88; }
-
 /***********************
 Pattern 10. Block quote
 ***********************/
@@ -3254,35 +3259,67 @@ blockquote {
   .pullquote__caption cite::before {
     content: ''; }
 
+.pullquote__source-name,
+.blockquote__source-name {
+  font-weight: 600; }
+
 /**********************************************
 Pattern 11. Pull quote (options for alignment)
 **********************************************/
 aside.section__pullquote {
+  padding: 1rem 2rem;
   box-sizing: padding-box;
-  box-shadow: inset 0 0 0 3rem #fefefe;
-  background-color: #fffac0;
-  padding: 4rem; }
+  box-shadow: inset 0 0 0 1rem #fefefe; }
   aside.section__pullquote.pullquote--blue-1-web {
     background-color: #dceff0; }
+  aside.section__pullquote.pullquote--salmon-1-web {
+    background-color: #fde1c7; }
+  aside.section__pullquote.pullquote--yellow-1-web {
+    background-color: #fffac0; }
   aside.section__pullquote > p {
-    padding: 1rem 4rem 0;
-    font-size: 140.625%; }
+    padding: 0 1rem;
+    margin-top: 1.5rem;
+    font-size: 140.625%;
+    font-style: italic; }
+  aside.section__pullquote div.pullquote__quote--open {
+    float: left; }
+  aside.section__pullquote div.pullquote__quote--close {
+    float: right; }
+  aside.section__pullquote div.pullquote__quote--open {
+    width: 4em;
+    margin-left: -1rem;
+    margin-top: -2rem; }
+  aside.section__pullquote div.pullquote__quote--close {
+    width: 4em;
+    margin-top: -1rem;
+    margin-right: -1rem; }
+  aside.section__pullquote .pullquote__caption cite {
+    margin-right: 2rem; }
+  @media screen and (min-width: 60em) {
+    aside.section__pullquote {
+      padding: 3rem 4rem;
+      box-shadow: inset 0 0 0 3rem #fefefe; }
+      aside.section__pullquote .pullquote__caption cite {
+        margin-right: 3rem; }
+      aside.section__pullquote > p {
+        padding: 1rem 3rem 0;
+        margin-top: 0; }
+      aside.section__pullquote div.pullquote__quote--open {
+        width: 6em;
+        margin-left: -3rem;
+        margin-top: -2rem; }
+      aside.section__pullquote div.pullquote__quote--close {
+        width: 6em;
+        margin-top: -1rem;
+        margin-right: -3rem; } }
 
-svg.pullquote__quote--open {
-  float: left;
-  margin-left: -3rem;
-  margin-top: -2rem; }
-
-svg.pullquote__quote--close {
-  float: right;
-  margin-right: -3rem; }
-
-.pullquote--blue-1-web svg.pullquote__quote--close path,
-.pullquote--blue-1-web svg.pullquote__quote--open path {
+.pullquote--blue-1-web .pullquote__quote--close svg path,
+.pullquote--blue-1-web .pullquote__quote--open svg path {
   fill: #0f9fd6; }
 
-.pullquote__caption cite {
-  margin-right: 4rem; }
+.pullquote--salmon-1-web .pullquote__quote--close svg path,
+.pullquote--salmon-1-web .pullquote__quote--open svg path {
+  fill: #e07856; }
 
 /*************************
 Pattern 12. Embedded Tweet
