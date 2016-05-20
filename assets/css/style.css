@@ -3240,6 +3240,7 @@ Pattern 10. Block quote
 ***********************/
 .section__slice.section__blockquote {
   border-style: solid;
+  border-color: transparent;
   padding: 0 3rem 0 1.5rem;
   border-image: 0 100% url("../images/T_line_Vert_WEB.png");
   border-image: 0 100% url("../images/T_line_vert_WEB.svg");
