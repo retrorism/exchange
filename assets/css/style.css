@@ -3030,6 +3030,11 @@ ARTICLE STYLES
 .story__section.section--has_contact_details {
   max-width: inherit; }
 
+.focus img {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .2s, opacity 2.4s; }
+
 /*********************
 ARTICLE HEADER STYLES
 *********************/
@@ -3064,6 +3069,11 @@ body.page .story__title-wrapper {
 /*****************
 Pattern 2. Bylines
 ******************/
+.story__footer__byline {
+  font-size: 112.5%;
+  line-height: 1.4;
+  font-style: italic; }
+
 /********************************
 Pattern 3. Editorial introduction
 *********************************/
@@ -3118,7 +3128,7 @@ Pattern 5. Hero / cover image
   .story__header__image-wrapper .story__header__image.highres {
     overflow: hidden;
     font-size: inherit;
-    max-height: 20rem; }
+    height: 20rem; }
     .story__header__image-wrapper .story__header__image.highres img {
       max-width: 100%;
       height: auto !important;
@@ -3134,24 +3144,24 @@ Pattern 5. Hero / cover image
       padding-right: 1rem; }
     @media screen and (min-width: 30em) {
       .story__header__image-wrapper .story__header__image.highres {
-        max-height: 25rem; }
+        height: 25rem; }
         .story__header__image-wrapper .story__header__image.highres .image__caption {
           top: 25rem;
           text-align: right;
           padding-right: 1rem; } }
     @media screen and (min-width: 60em) {
       .story__header__image-wrapper .story__header__image.highres {
-        max-height: 30rem; }
+        height: 30rem; }
         .story__header__image-wrapper .story__header__image.highres .image__caption {
           top: 30rem; } }
     @media screen and (min-width: 75em) {
       .story__header__image-wrapper .story__header__image.highres {
-        max-height: 35rem; }
+        height: 35rem; }
         .story__header__image-wrapper .story__header__image.highres .image__caption {
           top: 35rem; } }
     @media screen and (min-width: 90em) {
       .story__header__image-wrapper .story__header__image.highres {
-        max-height: 40rem; }
+        height: 40rem; }
         .story__header__image-wrapper .story__header__image.highres .image__caption {
           top: 40rem; } }
 

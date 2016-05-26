@@ -228,6 +228,12 @@ ARTICLE STYLES
 
 }
 
+.focus img {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility .2s, opacity 2.4s;
+}
+
 /*********************
 ARTICLE HEADER STYLES
 *********************/
@@ -277,6 +283,12 @@ body.page .story__title-wrapper {
 /*****************
 Pattern 2. Bylines
 ******************/
+
+.story__footer__byline {
+	font-size: $lead-font-size;
+	line-height: $lead-lineheight;
+	font-style: italic;
+}
 
 /********************************
 Pattern 3. Editorial introduction
@@ -352,7 +364,7 @@ Pattern 5. Hero / cover image
 			z-index: 20;
 		}
 		@include breakpoint( small ) {
-			max-height: 20rem;
+			height: 20rem;
 			.image__caption {
 				top: 20rem;
 				text-align: right;
@@ -361,7 +373,7 @@ Pattern 5. Hero / cover image
 
 		}
 		@include breakpoint( medium ) {
-			max-height: 25rem;
+			height: 25rem;
 			.image__caption {
 				top: 25rem;
 				text-align: right;
@@ -370,20 +382,20 @@ Pattern 5. Hero / cover image
 
 		}
 		@include breakpoint( large ) {
-			max-height: 30rem;
+			height: 30rem;
 			.image__caption {
 				top: 30rem;
 			}
 
 		}
 		@include breakpoint( xlarge ) {
-			max-height: 35rem;
+			height: 35rem;
 			.image__caption {
 				top: 35rem;
 			}
 		}
 		@include breakpoint( xxlarge ) {
-			max-height: 40rem;
+			height: 40rem;
 			.image__caption {
 				top: 40rem;
 			}
