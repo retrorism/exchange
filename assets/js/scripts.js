@@ -28,12 +28,12 @@ var getFocusTranslate = function( img_container ) {
 		console.log( px_translate );
 		return false;
 	}
-	console.log( 'image height: ' + h );
-	console.log( 'container center ' + ( container_h / 2 ) );
-	console.log( 'focus point on ' + ( img_data.focus_h * h ) );
-	console.log( 'number of pixels to move: ' + px_translate );
-	console.log( 'number of percents to move: ' + translate );
-	console.log( 'max percent to move: ' + max_translate );
+	// console.log( 'image height: ' + h );
+	// console.log( 'container center ' + ( container_h / 2 ) );
+	// console.log( 'focus point on ' + ( img_data.focus_h * h ) );
+	// console.log( 'number of pixels to move: ' + px_translate );
+	// console.log( 'number of percents to move: ' + translate );
+	// console.log( 'max percent to move: ' + max_translate );
 	if ( translate > max_translate ) {
 		return max_translate;
 	} else {
