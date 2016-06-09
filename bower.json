@@ -4,6 +4,7 @@
   "ignore": [],
   "dependencies": {
     "foundation-sites": ">=6.1",
-    "fontfaceobserver": "^1.7.1"
+    "fontfaceobserver": "^1.7.1",
+    "vanilla-lazyload": "^1.6.0"
   }
 }

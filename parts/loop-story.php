@@ -66,10 +66,22 @@ $story = new Story( $post );
 		<?php $story->publish_byline( 'story__footer' ); ?>
 		<?php $story->publish_tags( 'story__footer' ); ?>
 
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'exchange' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
+		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'exchange' ) . '</span> ', ', ', ''); ?></p>
+	</footer> <!-- end article footer -->
 
 </article> <!-- end article -->
 
 <div class="article-related-content story__extras">
 	<?php $story->publish_related_content('story'); ?>
 </div>
+
+<?php if ( $story->has_gallery ) : ?>
+	<section class="story__modal--gallery" role="dialog" id="modalGallery" aria-labelledby="Pictur" aria-describedby="description">
+	    <a href="#" class="modal-exit" title="close"><i class="fa fa-times"></i></a>
+	    <div class="container">
+			<div class="orbit" role="region" aria-label="<?php printf( esc_html__('Gallery for "%s"', 'exchange' ), get_the_title() ); ?>" data-orbit>
+				<?php $story->publish_gallery( 'lightbox' ); ?>
+			</div>
+	    </div>
+	</section>
+<?php endif; ?>

@@ -2658,6 +2658,77 @@ kbd {
     background: #6d6d6d;
     box-shadow: 0 7px 0 #6d6d6d, 0 14px 0 #6d6d6d; }
 
+.orbit {
+  position: relative; }
+
+.orbit-container {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  list-style: none; }
+
+.orbit-slide {
+  width: 100%;
+  max-height: 100%; }
+  .orbit-slide.no-motionui.is-active {
+    top: 0;
+    left: 0; }
+
+.orbit-figure {
+  margin: 0; }
+
+.orbit-image {
+  margin: 0;
+  width: 100%;
+  max-width: 100%; }
+
+.orbit-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 0;
+  color: #fefefe;
+  background-color: rgba(52, 52, 56, 0.5); }
+
+.orbit-previous, .orbit-next {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 1rem;
+  color: #fefefe; }
+  [data-whatinput='mouse'] .orbit-previous, [data-whatinput='mouse'] .orbit-next {
+    outline: 0; }
+  .orbit-previous:hover, .orbit-next:hover, .orbit-previous:active, .orbit-next:active, .orbit-previous:focus, .orbit-next:focus {
+    background-color: rgba(52, 52, 56, 0.5); }
+
+.orbit-previous {
+  left: 0; }
+
+.orbit-next {
+  left: auto;
+  right: 0; }
+
+.orbit-bullets {
+  position: relative;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  text-align: center; }
+  [data-whatinput='mouse'] .orbit-bullets {
+    outline: 0; }
+  .orbit-bullets button {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0.1rem;
+    background-color: #A0A0A0;
+    border-radius: 50%; }
+    .orbit-bullets button:hover {
+      background-color: #6d6d6d; }
+    .orbit-bullets button.is-active {
+      background-color: #6d6d6d; }
+
 .sticky-container {
   position: relative; }
 
@@ -2752,6 +2823,39 @@ a, a:visited {
 .menu li.active > a {
   background: none;
   color: #343438; }
+
+a.button--big {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  background-color: transparent;
+  color: #4c4d53;
+  border: 2px solid #4c4d53; }
+  [data-whatinput='mouse'] a.button--big {
+    outline: 0; }
+  a.button--big:hover, a.button--big:focus {
+    background-color: transparent;
+    color: #4c4d53; }
+
+.emphasisblock--cta a.button--big,
+.emphasisblock--cta a.button--small {
+  border-color: #fefefe;
+  text-transform: uppercase; }
+  .emphasisblock--cta a.button--big:hover,
+  .emphasisblock--cta a.button--small:hover {
+    background-color: #fefefe; }
+
+.emphasisblock--default.emphasisblock--cta a.button--big:hover {
+  color: #ff8e78; }
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES
@@ -3041,8 +3145,6 @@ ARTICLE STYLES
   max-width: inherit; }
 
 .focus img {
-  visibility: hidden;
-  opacity: 0;
   transition: visibility .2s, opacity 2.4s; }
 
 /*********************
@@ -3059,7 +3161,11 @@ ARTICLE PATTERN STYLES
 
 .story__section p,
 .story__section li {
-  font-weight: 300; }
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; }
 
 .story__extras {
   background-color: #fde1c7; }
@@ -3147,7 +3253,9 @@ Pattern 5. Hero / cover image
     .story__header__image-wrapper .story__header__image.highres .image__caption {
       position: absolute;
       width: 100%;
-      z-index: 20; }
+      z-index: 20;
+      text-align: right;
+      padding-right: 1rem; }
     .story__header__image-wrapper .story__header__image.highres .image__caption {
       top: 20rem;
       text-align: right;
@@ -3174,6 +3282,8 @@ Pattern 5. Hero / cover image
         height: 40rem; }
         .story__header__image-wrapper .story__header__image.highres .image__caption {
           top: 40rem; } }
+  .story__header__image-wrapper .image__aspect-ratio {
+    padding-bottom: 50%; }
 
 /*********************
 Pattern 6. Paragraph
@@ -3271,6 +3381,67 @@ Pattern 9. Image
   @media screen and (min-width: 30em) {
       .imageduo__image:last-child:not(:first-child) {
         float: right; } }
+  .imageduo__image.image--portrait.image--right {
+    width: 41.66667%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
+    @media screen and (min-width: 30em) {
+      .imageduo__image.image--portrait.image--right {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .imageduo__image.image--portrait.image--right:last-child:not(:first-child) {
+      float: right; }
+    .imageduo__image.image--portrait.image--right:last-child:last-child {
+      float: left; }
+  .imageduo__image.image--landscape.image--left {
+    width: 50%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    margin-left: 8.33333%; }
+    @media screen and (min-width: 30em) {
+      .imageduo__image.image--landscape.image--left {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .imageduo__image.image--landscape.image--left:last-child:not(:first-child) {
+      float: right; }
+
+.image__placeholder {
+  background-color: #f6f6f6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden; }
+
+.image__placeholder img.lazy,
+.image__placeholder__thumb {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 1s linear; }
+
+.image__placeholder__thumb {
+  opacity: 1;
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  -webkit-transform: scale(1);
+  transform: scale(1); }
+
+.image__aspect-ratio {
+  padding-bottom: 66.67%; }
+
+.image--portrait .image__aspect-ratio {
+  padding-bottom: 150%; }
+
+.image--portrait {
+  max-width: 24em; }
+
+img.lazy.loaded {
+  opacity: 1; }
 
 /***********************
 Pattern 10. Block quote
@@ -3568,6 +3739,12 @@ Pattern 18. Embedded FormAssembly/Formidable form
 /******************
 Pattern 19. Gallery
 *******************/
+.gallery__item.orbit-slide {
+  text-align: center; }
+
+.lightbox__image {
+  margin: auto; }
+
 /**************************
 Pattern 20. Emphasis blocks
 ***************************/
@@ -3621,14 +3798,23 @@ Pattern 20. Emphasis blocks
       .section__emphasisblock:last-child:not(:first-child) {
         float: right; } }
 
+.emphasisblock--default {
+  background-color: #fffac0; }
+  .emphasisblock--default.emphasisblock--cta {
+    background-color: #ff8e78; }
+
+.emphasisblock__subheader {
+  margin-top: 1rem;
+  text-align: center; }
+
+.emphasisblock--cta .emphasisblock__subheader {
+  text-transform: uppercase; }
+
 .emphasisblock__paragraph {
   padding: 0.5rem 1rem; }
   .emphasisblock__paragraph p:last-child,
   .emphasisblock__paragraph ul:last-child {
     margin-bottom: 0.25rem; }
-
-.emphasisblock__subheader {
-  margin-top: 1rem; }
 
 .section__emphasisblock li {
   list-style: none;
@@ -3645,8 +3831,12 @@ Pattern 20. Emphasis blocks
 .emphasis-block--blue-2-web li {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAACWCAQAAABHw39cAAADf0lEQVR4Ae2dCbmjPBRAIyESkBAHEwl1UBz8OCgOpg6KgxcHjQPqgDoAB+ffZl/y1nDz7p2DgH6HhHCXkLo24MS3XDg6fXDhZx7US37irEly5PdELZKeld+TtGj2lFgtTFlAlab6p5MDZQYdmh1lZqcD7pQJOjTPNqZtoEyyMW2zFs2JIjYiIei0xLWAhQA+U2JUFfLpX2sjJRY9WWcZb+PdGV1LcOT06Tq+6SI0tKS48C0LxzdbhKY2FT/BTHgTzUVeMbJQondPgNRwOobnQpmCKIEP/10nPgJlJknJmadx+qFicOTCynNY8a1LAlzpPo3ghZfRy2heeS4LCy9nlolC6yOfkLGyP4NAIixA2lszIcEqMmWVP50EpOj31ByQYrKhueIFShqqXyp45MjyJQ11mhkx5CNadZoDcsQ/a60CTZFFSBAjmgQbmgdNOYp8v5NoQ3NEkiSw90OArCim/aOJEU06G5qjHk35SIgz0qwEHfmmfNWWSBs84BXFtAVWThVVaYmVg3rNT1xUPZsFFk54TZrlJ7Wr363W9aQy0jYf8RY0YSao1KwQDpLBgCgZ1Igq0IQVb0ETrjY0IdrQTC/VXJCnfkmF90ayodnVqh0oGMuB90Uvv5u2Pvdqu2kVvDXpkKd+G4KoasIqWIDuBN0pNcAZr71yAL3+Akkm6q8DDRaKl72FGm1voeLeW+if9AItXAV7S2iPyUILN9noVAcbmt5GQz7W0BxsaI5Ko9jmGwujDc2s6BPVArOFJxNQtSWxQKh/dI6WVwof+IsTV1ZVhRH8p4OnrlzV1tYJrBRQoYlnAf2aZ1CvSQcWNM8GNAmgXhPPrF3zk6R+zQdQr8lhr3Yco1iwh2elLonw5bc2odCdkboMlX9tc0+BmZr01UOQs3zk0+9wnEAnvTVt3OHGTvJHNcTqQeWGlw/XD79d22+7b3Ai7993xHN/hkzvHJ5IZGD8dEViK7sJFveJV4xowjd/PKBzZdEKfWiBYO/miuDJ9SXrP5/jK1L5jb5Gb2ST+mKASOZHJjpXA6Jk6YJIIn+6Et37Od87u1bhwLZrciQFnqn+GtsEdCSJ5o0ADPXX2CagY+Ird0YikVR7ygpAIHFjIpbfrwr/GpSzoin7qvw0Ow2QKNNb+OPBu9MC93JhRAkcNE3YAmTdkp8gsPE9E8Hpg8gNANgY8a5p/ga3e+CaVrGRdQAAAABJRU5ErkJggg=="); }
 
-.emphasisblock--default {
-  background-color: #fffac0; }
+.emphasisblock__imagesvg {
+  width: 60%;
+  margin: 2rem auto; }
+
+.emphasisblock__button-wrapper {
+  text-align: center; }
 
 /*****************************
 Pattern 21. Curated story list
@@ -3833,13 +4023,13 @@ pre {
   padding: 0.85em 1em;
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
-  background-color: #2199e8;
-  color: #fefefe; }
+  background-color: transparent;
+  color: #4c4d53; }
   [data-whatinput='mouse'] .post-password-form input[type="submit"] {
     outline: 0; }
   .post-password-form input[type="submit"]:hover, .post-password-form input[type="submit"]:focus {
-    background-color: #1583cc;
-    color: #fefefe; }
+    background-color: transparent;
+    color: #4c4d53; }
 
 /*********************
 IMAGE GALLERY STYLES

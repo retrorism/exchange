@@ -74,7 +74,7 @@ gulp.task('foundation-js', function() {
 		//   './vendor/foundation-sites/js/foundation.interchange.js',
 		//   './vendor/foundation-sites/js/foundation.magellan.js',
 		//   './vendor/foundation-sites/js/foundation.offcanvas.js',
-		//   './vendor/foundation-sites/js/foundation.orbit.js',
+		'./vendor/foundation-sites/js/foundation.orbit.js',
 		//   './vendor/foundation-sites/js/foundation.responsiveMenu.js',
 		//   './vendor/foundation-sites/js/foundation.responsiveToggle.js',
 		//   './vendor/foundation-sites/js/foundation.reveal.js',

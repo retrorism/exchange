@@ -30,12 +30,34 @@ a, a:visited {
 		//Highlight links on iOS, Similar to :hover for mobile devices.
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
+
 }
 
 .menu li.active > a {
 	background: none;
 	color: $black;
 	//border-bottom: 2px solid $yellow-tandem;
+}
+
+a.button--big {
+	@include button;
+	border: 2px solid $black-tandem;
+}
+
+.emphasisblock--cta a.button--big,
+.emphasisblock--cta a.button--small {
+	border-color: $white;
+	text-transform: uppercase;
+	&:hover {
+		background-color: $white;
+	}
+}
+.emphasisblock--default.emphasisblock--cta {
+	a.button--big {
+		&:hover {
+			color: $rose-1-web;
+		}
+	}
 }
 
 /*********************
@@ -232,12 +254,9 @@ ARTICLE STYLES
 
 .story__section.section--has_contact_details {
 	max-width: inherit;
-
 }
 
 .focus img {
-	visibility: hidden;
-	opacity: 0;
 	transition: visibility .2s, opacity 2.4s;
 }
 
@@ -250,7 +269,6 @@ ARTICLE HEADER STYLES
 	}
 }
 
-
 /*********************
 ARTICLE PATTERN STYLES
 *********************/
@@ -261,7 +279,9 @@ ARTICLE PATTERN STYLES
 
 .story__section p,
 .story__section li {
-	font-weight: $global-weight-light;
+	font-weight: $global-weight-normal;
+	line-height: $paragraph-lineheight;
+	hyphens: auto;
 }
 
 .story__extras {
@@ -271,8 +291,6 @@ ARTICLE PATTERN STYLES
 .section--has_contact_details {
 	background-color: $yellow-2;
 }
-
-
 
 /***************
 Pattern 1. Title
@@ -369,6 +387,8 @@ Pattern 5. Hero / cover image
 			position: absolute;
 			width: 100%;
 			z-index: 20;
+			text-align: right;
+			padding-right: $global-padding;
 		}
 		@include breakpoint( small ) {
 			height: 20rem;
@@ -408,9 +428,10 @@ Pattern 5. Hero / cover image
 			}
 		}
 	}
+	.image__aspect-ratio {
+		padding-bottom: 50%;
+	}
 }
-
-
 
 /*********************
 Pattern 6. Paragraph
@@ -452,8 +473,6 @@ Pattern 8. Embedded Video
 	}
 }
 
-
-
 /****************
 Pattern 9. Image
 ****************/
@@ -485,6 +504,55 @@ Pattern 9. Image
 	@include breakpoint( medium ) {
 		@include grid-column( 6 );
 	}
+	&.image--portrait.image--right {
+		@include grid-column( 5 );
+		@include grid-col-end();
+	}
+	&.image--landscape.image--left {
+		@include grid-column( 6 );
+		@include grid-column-offset( 1 );
+	}
+}
+
+.image__placeholder {
+  background-color: #f6f6f6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.image__placeholder img.lazy,
+.image__placeholder__thumb {
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: opacity 1s linear;
+}
+
+.image__placeholder__thumb {
+  opacity: 1;
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  transform: scale(1);
+}
+
+.image__aspect-ratio {
+	padding-bottom: 66.67%;
+}
+
+.image--portrait .image__aspect-ratio {
+	padding-bottom: 150%;
+}
+
+.image--portrait {
+	max-width: 24em;
+}
+
+img.lazy.loaded {
+	opacity: 1;
 }
 
 /***********************
@@ -745,6 +813,15 @@ Pattern 18. Embedded FormAssembly/Formidable form
 Pattern 19. Gallery
 *******************/
 
+
+.gallery__item.orbit-slide {
+	text-align: center;
+}
+
+.lightbox__image {
+	margin: auto;
+}
+
 /**************************
 Pattern 20. Emphasis blocks
 ***************************/
@@ -767,16 +844,28 @@ Pattern 20. Emphasis blocks
 	}
 }
 
+.emphasisblock--default {
+	background-color: $yellow-1;
+	&.emphasisblock--cta {
+		background-color: $rose-1-web;
+	}
+}
+
+.emphasisblock__subheader {
+	margin-top: $global-margin;
+	text-align: center;
+}
+
+.emphasisblock--cta .emphasisblock__subheader {
+	text-transform: uppercase;
+}
+
 .emphasisblock__paragraph {
 	padding: $global-padding / 2 $global-padding;
 	p:last-child,
 	ul:last-child {
 		margin-bottom: 0.25 * $global-margin;
 	}
-}
-
-.emphasisblock__subheader {
-	margin-top: $global-margin;
 }
 
 .section__emphasisblock li {
@@ -796,9 +885,13 @@ Pattern 20. Emphasis blocks
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAACWCAQAAABHw39cAAADf0lEQVR4Ae2dCbmjPBRAIyESkBAHEwl1UBz8OCgOpg6KgxcHjQPqgDoAB+ffZl/y1nDz7p2DgH6HhHCXkLo24MS3XDg6fXDhZx7US37irEly5PdELZKeld+TtGj2lFgtTFlAlab6p5MDZQYdmh1lZqcD7pQJOjTPNqZtoEyyMW2zFs2JIjYiIei0xLWAhQA+U2JUFfLpX2sjJRY9WWcZb+PdGV1LcOT06Tq+6SI0tKS48C0LxzdbhKY2FT/BTHgTzUVeMbJQondPgNRwOobnQpmCKIEP/10nPgJlJknJmadx+qFicOTCynNY8a1LAlzpPo3ghZfRy2heeS4LCy9nlolC6yOfkLGyP4NAIixA2lszIcEqMmWVP50EpOj31ByQYrKhueIFShqqXyp45MjyJQ11mhkx5CNadZoDcsQ/a60CTZFFSBAjmgQbmgdNOYp8v5NoQ3NEkiSw90OArCim/aOJEU06G5qjHk35SIgz0qwEHfmmfNWWSBs84BXFtAVWThVVaYmVg3rNT1xUPZsFFk54TZrlJ7Wr363W9aQy0jYf8RY0YSao1KwQDpLBgCgZ1Igq0IQVb0ETrjY0IdrQTC/VXJCnfkmF90ayodnVqh0oGMuB90Uvv5u2Pvdqu2kVvDXpkKd+G4KoasIqWIDuBN0pNcAZr71yAL3+Akkm6q8DDRaKl72FGm1voeLeW+if9AItXAV7S2iPyUILN9noVAcbmt5GQz7W0BxsaI5Ko9jmGwujDc2s6BPVArOFJxNQtSWxQKh/dI6WVwof+IsTV1ZVhRH8p4OnrlzV1tYJrBRQoYlnAf2aZ1CvSQcWNM8GNAmgXhPPrF3zk6R+zQdQr8lhr3Yco1iwh2elLonw5bc2odCdkboMlX9tc0+BmZr01UOQs3zk0+9wnEAnvTVt3OHGTvJHNcTqQeWGlw/XD79d22+7b3Ai7993xHN/hkzvHJ5IZGD8dEViK7sJFveJV4xowjd/PKBzZdEKfWiBYO/miuDJ9SXrP5/jK1L5jb5Gb2ST+mKASOZHJjpXA6Jk6YJIIn+6Et37Od87u1bhwLZrciQFnqn+GtsEdCSJ5o0ADPXX2CagY+Ird0YikVR7ygpAIHFjIpbfrwr/GpSzoin7qvw0Ow2QKNNb+OPBu9MC93JhRAkcNE3YAmTdkp8gsPE9E8Hpg8gNANgY8a5p/ga3e+CaVrGRdQAAAABJRU5ErkJggg==');
 }
 
-.emphasisblock--default {
-	background-color: $yellow-1;
+.emphasisblock__imagesvg {
+	width: 60%;
+	margin: 2 * $global-margin auto;
+}
 
+.emphasisblock__button-wrapper {
+	text-align: center;
 }
 
 /*****************************

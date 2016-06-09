@@ -5,6 +5,8 @@ add_action('after_setup_theme','exchange_start', 16);
 
 function exchange_start() {
 
+	define( 'EXCHANGE_THEME', true );
+
     // launching operation cleanup
     add_action('init', 'exchange_head_cleanup');
 

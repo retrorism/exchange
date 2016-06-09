@@ -1,0 +1,34 @@
+{
+  "name": "vanilla-lazyload",
+  "homepage": "http://verlok.github.io/lazyload/",
+  "authors": [
+    "Andrea Verlicchi <andrea.verlicchi@gmail.com>"
+  ],
+  "description": "LazyLoad is a fast, lightweight and flexible script for loading images only when they're about to enter the viewport of a scrollable area, with an excellent support to the progressive JPEG image format",
+  "main": "dist/lazyload.min.js",
+  "keywords": [
+    "lazy",
+    "load",
+    "progressive",
+    "JPEG",
+    "performance",
+    "no-jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "img",
+    "demos",
+    "Gruntfile.js",
+    "README.md",
+    "todo.md",
+    "favicon.ico",
+    "index.html",
+    "package.json"
+  ]
+}
