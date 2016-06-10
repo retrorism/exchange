@@ -3026,6 +3026,17 @@ a, a:visited {
   background: none;
   color: #343438; }
 
+.story__header p > a,
+.story__content p > a,
+.story__footer p > a {
+  border-bottom: 2px solid #f4c522;
+  background-color: transparent;
+  transition: background-color 0.5s; }
+  .story__header p > a:hover,
+  .story__content p > a:hover,
+  .story__footer p > a:hover {
+    background-color: #f4c522; }
+
 a.button--big {
   display: inline-block;
   text-align: center;
@@ -3411,8 +3422,7 @@ Pattern 3. Editorial introduction
 *********************************/
 .story__editorialintro {
   font-size: 112.5%;
-  line-height: 1.4;
-  font-style: italic; }
+  line-height: 1.4; }
 
 body.page .story__editorialintro {
   font-style: normal;

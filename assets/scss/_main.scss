@@ -39,6 +39,20 @@ a, a:visited {
 	//border-bottom: 2px solid $yellow-tandem;
 }
 
+
+.story__header,
+.story__content,
+.story__footer {
+	p > a {
+		border-bottom: 2px solid $yellow-tandem;
+		background-color: transparent;
+		transition: background-color 0.5s;
+		&:hover {
+			background-color: $yellow-tandem;
+		}
+	}
+}
+
 a.button--big {
 	@include button;
 	border: 2px solid $black-tandem;
@@ -59,6 +73,7 @@ a.button--big {
 		}
 	}
 }
+
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES
@@ -323,7 +338,6 @@ Pattern 3. Editorial introduction
 .story__editorialintro {
 	font-size: $lead-font-size;
 	line-height: $lead-lineheight;
-	font-style: italic;
 }
 
 body.page .story__editorialintro {
