@@ -224,7 +224,8 @@ ARTICLE STYLES
 .story__title-wrapper,
 .story__intro,
 .section__slice,
-.story__footer__byline, {
+.story__footer__byline,
+.section--has_gravity_forms .section-inner > div {
 	margin-bottom: 2 * $global-margin;
 	margin-top: 2 * $global-margin;
 	@include grid-column();
