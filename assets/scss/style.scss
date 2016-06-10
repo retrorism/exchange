@@ -30,7 +30,7 @@ CSS file.
 	@include foundation-typography;
 	// @include foundation-forms;
 	// @include foundation-button;
-	// @include foundation-visibility-classes;
+	@include foundation-visibility-classes;
 	// @include foundation-float-classes;
 	// @include foundation-accordion;
 	// @include foundation-accordion-menu;
@@ -53,7 +53,7 @@ CSS file.
 	// @include foundation-progress-bar;
 	// @include foundation-slider;
 	@include foundation-sticky;
-	// @include foundation-reveal;
+	@include foundation-reveal;
 	// @include foundation-switch;
 	// @include foundation-table;
 	// @include foundation-tabs;

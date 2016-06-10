@@ -986,16 +986,45 @@ ARTICLE EXTRAS STYLES
 .griditem__intro, .griditem__editorialintro {
 }
 
+.orbit {
+	overflow: hidden;
+}
+
+.orbit-container {
+	min-height: 100vh;
+}
+
+.orbit-slide figure {
+	position: absolute;
+	top: 50vh;
+	width: 100%;
+	max-height: 80vh;
+	transform: translateY(-50%);
+	overflow: hidden;
+}
+
+.orbit-previous,
+.orbit-next {
+	height: 5em;
+	svg {
+		height: 100%;
+	}
+}
+
+.orbit-previous svg {
+	transform: rotate( 180deg );
+}
+
+.modal__button--close {
+	float: right;
+	height: 2em;
+	width: 2em;
+}
 
 
 /*********************
 CONTENT STYLES
 *********************/
-
-.single-title,
-.page-title {
-
-}
 
 .single-title {
 }

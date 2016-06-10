@@ -27,7 +27,7 @@ var getFocusTranslate = function( img_placeholder, img ) {
 	} else {
 		return translate;
 	}
-}
+};
 
 var doFocusTranslate = function( img ) {
 	var img_placeholder = img.parentNode;
@@ -38,7 +38,7 @@ var doFocusTranslate = function( img ) {
 		transform = 'transform: translateY(' + translateNeg + '%);';
 		img.setAttribute( 'style', transform );
 	}
-}
+};
 
 jQuery(document).foundation();
 /*
