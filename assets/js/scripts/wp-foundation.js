@@ -14,12 +14,25 @@ jQuery(document).ready(function() {
 	});
 
 	var focus_img_containers = document.querySelectorAll('.focus');
-	for (var i = 0; i < focus_img_containers.length; i++) {
+	for ( var i = 0; i < focus_img_containers.length; i++ ) {
   		var img_container = focus_img_containers[i];
 		img = img_container.getElementsByClassName('image--main')[0];
 		if ( ! img.classList.contains( 'lazy' ) ) {
 			console.log('no lazy image detected');
 			doFocusTranslate( img );
+		}
+	}
+
+	var floated_elements = document.querySelectorAll('.floated');
+	for (var ii = 0; ii < floated_elements.length; ii++ ) {
+		var equal_element = floated_elements[ii].nextElementSibling,
+		h = floated_elements[ii].offsetHeight,
+		equal_h = equal_element.offsetHeight;
+		console.log( floated_elements[ii] );
+		console.log( equal_element );
+		console.log( 'neighbour: ' + equal_h + ' px');
+		if ( h > equal_h ) {
+			equal_element.style.height = h + 'px';
 		}
 	}
 
