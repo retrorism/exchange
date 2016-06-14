@@ -114,8 +114,8 @@
                 },
                 {
                     "key": "field_56df0290e595a",
-                    "label": "Section Header Tape colour",
-                    "name": "section_header_tape_colour",
+                    "label": "Tape colour",
+                    "name": "tape_colour",
                     "type": "color_picker",
                     "instructions": "",
                     "required": 0,
@@ -2367,5 +2367,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1465901455
+    "modified": 1465922560
 }
