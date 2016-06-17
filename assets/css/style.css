@@ -3372,6 +3372,31 @@ ARTICLE STYLES
   margin-left: auto;
   margin-right: auto; }
 
+.section--blue-1-web,
+.section--blue-1-web .section__imageduo {
+  background-color: #dceff0; }
+
+.section--yellow-1-web,
+.section--syellow-1-web .section__imageduo {
+  background-color: #fffbdb; }
+
+.section--salmon-1-web,
+.section--salmon-1-web .section__imageduo {
+  background-color: #fde1c7; }
+
+.story__section > svg {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 2rem;
+  margin: 0;
+  padding: 0;
+  top: -10px; }
+  .story__section > svg.section__edge--bottom {
+    -webkit-transform: scale(1, -1);
+    transform: scale(1, -1);
+    top: 20px; }
+
 .story__relatedgrid {
   width: 95%;
   float: left;
@@ -3439,12 +3464,12 @@ Pattern 3. Editorial introduction
 .story__editorialintro {
   font-size: 112.5%;
   line-height: 1.4;
-  float: none !important; }
+  float: none !important;
+  margin-bottom: 4rem; }
 
 body.page .story__editorialintro {
   font-style: normal;
-  text-align: center;
-  margin-bottom: 4rem; }
+  text-align: center; }
 
 /******************
 Pattern 4. Tag list
@@ -3555,14 +3580,15 @@ Pattern 7. Subheader
 .sectionheader--taped_header {
   position: relative; }
   .sectionheader--taped_header h4 {
+    position: relative;
     display: block;
-    padding: 0.5rem 2rem; }
+    padding: 0.5rem 2rem;
+    z-index: 1; }
   .sectionheader--taped_header svg {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
-    z-index: -2; }
+    top: 0; }
 
 .sectionheader__text--white {
   color: #fefefe; }
@@ -3664,8 +3690,20 @@ Pattern 9. Image
       float: right; }
     .imageduo__image.image--portrait.image--right:last-child:last-child {
       float: left; }
+  .imageduo__image.image--portrait.image--left {
+    width: 41.66667%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    margin-left: 8.33333%; }
+    @media screen and (min-width: 30em) {
+      .imageduo__image.image--portrait.image--left {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .imageduo__image.image--portrait.image--left:last-child:not(:first-child) {
+      float: right; }
   .imageduo__image.image--landscape.image--left {
-    width: 50%;
+    width: 41.66667%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -3707,8 +3745,8 @@ Pattern 9. Image
 .image--portrait .image__aspect-ratio {
   padding-bottom: 150%; }
 
-.image--portrait {
-  max-width: 24em; }
+.image--portrait .image__placeholder {
+  max-width: 28em; }
 
 img.lazy.loaded {
   opacity: 1; }

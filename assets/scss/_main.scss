@@ -269,6 +269,34 @@ ARTICLE STYLES
 	@include grid-column-position(center);
 }
 
+.section--blue-1-web,
+.section--blue-1-web .section__imageduo {
+	background-color: $blue-1-web;
+}
+.section--yellow-1-web,
+.section--syellow-1-web .section__imageduo {
+	background-color: $yellow-1-web;
+}
+
+.section--salmon-1-web,
+.section--salmon-1-web .section__imageduo {
+	background-color: $salmon-1-web;
+}
+
+.story__section > svg {
+	position: relative;
+	width: 100%;
+	height: 20px;
+	margin-bottom: 2 * $global-margin;
+	margin: 0;
+	padding: 0;
+	top: -10px;
+	&.section__edge--bottom {
+		transform: scale(1,-1);
+		top: 20px;
+	}
+}
+
 .story__relatedgrid {
 	@include grid-column( 95%, 0 );
 	@include grid-column-position(center);
@@ -349,12 +377,12 @@ Pattern 3. Editorial introduction
 	font-size: $lead-font-size;
 	line-height: $lead-lineheight;
 	float: none !important;
+	margin-bottom: 4 * $global-margin;
 }
 
 body.page .story__editorialintro {
 	font-style: normal;
 	text-align: center;
-	margin-bottom: 4 * $global-margin;
 }
 
 /******************
@@ -492,15 +520,16 @@ Pattern 7. Subheader
 .sectionheader--taped_header {
 	position: relative;
 	h4 {
+		position: relative;
 		display: block;
 		padding: 0.5 * $global-padding 2 * $global-padding;
+		z-index: 1;
 	}
 	svg {
 		height: 100%;
 		width: 100%;
 		position: absolute;
 		top: 0;
-		z-index: -2;
 	}
 }
 
@@ -568,8 +597,12 @@ Pattern 9. Image
 		@include grid-column( 5 );
 		@include grid-col-end();
 	}
+	&.image--portrait.image--left {
+		@include grid-column( 5 );
+		@include grid-column-offset( 1 );
+	}
 	&.image--landscape.image--left {
-		@include grid-column( 6 );
+		@include grid-column( 5 );
 		@include grid-column-offset( 1 );
 	}
 }
@@ -607,8 +640,8 @@ Pattern 9. Image
 	padding-bottom: 150%;
 }
 
-.image--portrait {
-	max-width: 24em;
+.image--portrait .image__placeholder {
+	max-width: 28em;
 }
 
 img.lazy.loaded {
