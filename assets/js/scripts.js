@@ -1,5 +1,5 @@
 var getFocusTranslate = function( img_placeholder, img ) {
-	img_data = img_placeholder.parentNode.dataset;
+	img_data = img_placeholder.parentNode.parentNode.dataset;
 	if ( ! img_data ) {
 		return false;
 	}
