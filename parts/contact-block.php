@@ -27,7 +27,7 @@
 				<?php endif;
 				if ( ! empty ( $user_acf['user_organisation'] ) ) :
 					if ( ! empty( $user_acf['user_organisation_link'] ) ) : ?>
-						<a href="<?php echo esc_url( $acf['user_organisation_link'] ); ?>">
+						<a href="<?php echo esc_url( $user_acf['user_organisation_link'] ); ?>">
 							<span class="team-member__organisation"><?php echo $user_acf['user_organisation']; ?></span>
 						</a>
 					<?php else : ?>
@@ -53,4 +53,5 @@
 	<?php endif; ?>
 
 		</ul>
+	</div><!-- contactblock__info -->
 </div><!-- .contactblock__team-member -->

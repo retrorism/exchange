@@ -15,6 +15,7 @@
                 "class": "",
                 "id": ""
             },
+            "return_format": "object",
             "post_type": [
                 "participant"
             ],
@@ -22,10 +23,11 @@
             "filters": [
                 "search"
             ],
-            "elements": "",
-            "min": "",
             "max": 4,
-            "return_format": "id"
+            "min": 0,
+            "elements": [
+                "post_type"
+            ]
         },
         {
             "key": "field_56b9c24472004",
@@ -102,5 +104,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1463073415
+    "modified": 1466436730
 }

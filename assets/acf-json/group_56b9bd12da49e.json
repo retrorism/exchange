@@ -21,7 +21,7 @@
                 "upload_new_image": "Upload new image and use this as header"
             },
             "default_value": [
-                "none"
+                "use_featured_image"
             ],
             "allow_null": 0,
             "multiple": 0,
@@ -106,5 +106,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Create content for the story header.",
-    "modified": 1463492787
+    "modified": 1466436824
 }

@@ -1,6 +1,6 @@
 {
     "key": "group_56b9bd12cc47a",
-    "title": "Participant Details",
+    "title": "ParticipantGroup",
     "fields": [
         {
             "key": "field_56b9b9e354202",
@@ -120,28 +120,6 @@
             "media_upload": 1
         },
         {
-            "key": "field_5703c03b051bf",
-            "label": "Collaboration",
-            "name": "collaboration",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "collaboration"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1
-        },
-        {
             "key": "field_56cf448792001",
             "label": "Collaboration ID",
             "name": "collaboration_id",
@@ -205,5 +183,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1462465862
+    "modified": 1466436753
 }

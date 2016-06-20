@@ -228,12 +228,9 @@ ARTICLE STYLES
 	@include grid-row;
 }
 
-.story__extras,
-.story__section.section--has_contact_details {
+.section-inner {
 	padding-bottom: 2 * $global-padding;
 	padding-top: 2 * $global-padding;
-	margin-bottom: 2 * $global-margin;
-	margin-top: 2 * $global-margin;
 }
 
 .story__header__image.lowres,
@@ -267,34 +264,6 @@ ARTICLE STYLES
 
 .section__slice:last-child:not(:first-child) {
 	@include grid-column-position(center);
-}
-
-.section--blue-1-web,
-.section--blue-1-web .section__imageduo {
-	background-color: $blue-1-web;
-}
-.section--yellow-1-web,
-.section--syellow-1-web .section__imageduo {
-	background-color: $yellow-1-web;
-}
-
-.section--salmon-1-web,
-.section--salmon-1-web .section__imageduo {
-	background-color: $salmon-1-web;
-}
-
-.story__section > svg {
-	position: relative;
-	width: 100%;
-	height: 20px;
-	margin-bottom: 2 * $global-margin;
-	margin: 0;
-	padding: 0;
-	top: -10px;
-	&.section__edge--bottom {
-		transform: scale(1,-1);
-		top: 20px;
-	}
 }
 
 .story__relatedgrid {
@@ -331,6 +300,10 @@ ARTICLE PATTERN STYLES
 	margin-top: 0;
 }
 
+.section__slice:last-of-type {
+	margin-bottom: 0;
+}
+
 .story__section p,
 .story__section li {
 	font-weight: $global-weight-normal;
@@ -338,13 +311,53 @@ ARTICLE PATTERN STYLES
 	hyphens: auto;
 }
 
-.story__extras {
+.section--custom-colour {
+	background-color: $white !important;
+	svg polyline {
+		fill: $white !important;
+	}
+}
+
+.section--blue-1-web,
+.section--blue-1-web .section__imageduo {
+	background-color: $blue-1-web;
+}
+
+.section--blue-2 {
+	background-color: $blue-2;
+}
+
+.section--yellow-1-web,
+.section--syellow-1-web .section__imageduo {
+	background-color: $yellow-1-web;
+}
+
+.section--yellow-2-web {
+	background-color: $yellow-2;
+}
+
+.section--salmon-1-web,
+.story__extras,
+.section--salmon-1-web .section__imageduo {
 	background-color: $salmon-1-web;
 }
 
-.section--has_contact_details {
-	background-color: $yellow-2;
+.story__section > svg {
+	position: relative;
+	width: 100%;
+	height: 20px;
+	margin-bottom: 2 * $global-margin;
+	margin: 0;
+	padding: 0;
+	top: -10px;
+	&.section__edge--bottom {
+		transform: scale(1,-1);
+		top: 20px;
+	}
 }
+
+
+
 
 /***************
 Pattern 1. Title
@@ -511,6 +524,7 @@ Pattern 7. Subheader
 	padding: 0.25em;
 }
 
+.section__sectionheader h4,
 .sectionheader--grid_header h4 {
 	font-size: $lead-font-size;
 	text-align: center;
@@ -825,13 +839,7 @@ Pattern 15. Contact block for TANDEM team member
 ************************************************/
 
 .contactblock__team-member {
-	color: $white;
-	li {
-		font-weight: $global-weight-normal;
-	}
-	a {
-		color: $white;
-	}
+	overflow: hidden;
 	@include grid_column( 8 );
 	@include grid-column-position( center );
 	@include breakpoint( small ) {
@@ -843,10 +851,7 @@ Pattern 15. Contact block for TANDEM team member
 		@include grid-column-position( center );
 		text-align: left;
 	}
-	@include breakpoint( large ) {
-		@include grid_column( 8 );
-		@include grid-column-position( center );
-	}
+
 }
 
 h6.team-member__cta {
@@ -862,6 +867,9 @@ li.team-member__name {
 }
 
 .contactblock__image {
+	.image_placeholder {
+
+	}
 	@include breakpoint( small ) {
 		@include grid_column( 7 );
 		@include grid-column-position( center );
@@ -869,9 +877,7 @@ li.team-member__name {
 	}
 	@include breakpoint( medium ) {
 		@include grid_column( 4 );
-	}
-	@include breakpoint( large ) {
-		@include grid_column( 5 );
+		margin-bottom: 0;
 	}
 	img {
 		border-radius: 50%;
@@ -885,9 +891,7 @@ li.team-member__name {
 	@include breakpoint( medium ) {
 		@include grid_column( 8 );
 	}
-	@include breakpoint( large) {
-		@include grid_column( 7 );
-	}
+
 }
 
 /**************************************************
