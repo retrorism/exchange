@@ -62,6 +62,10 @@ function exchange_custom_admin_footer() {
 	_e('<span id="footer-thankyou">Developed by <a href="http://www.somtijds.nl" target="_blank">Somtijds</a></span>.', 'exchange');
 }
 
+
+// adding it to the admin area
+add_filter('admin_footer_text', 'exchange_custom_admin_footer');
+
 /**
  * Add local JSON for ACF, to make version control on ACF fields possible.
  *
@@ -70,16 +74,29 @@ function exchange_custom_admin_footer() {
  */
 
  function exchange_acf_json_save_point( $path ) {
-
      // update path
      $path = get_stylesheet_directory() . '/assets/acf-json';
 
-
      // return
      return $path;
-
  }
 
-// adding it to the admin area
-add_filter('admin_footer_text', 'exchange_custom_admin_footer');
+ add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+
+function exchange_acf_json_load_point( $paths ) {
+
+    // remove original path (optional)
+    unset($paths[0]);
+
+    // append path
+    $paths[] = get_stylesheet_directory() . '/assets/acf-json';
+
+
+    // return
+    return $paths;
+
+}
+
+
 add_filter('acf/settings/save_json', 'exchange_acf_json_save_point');
+add_filter('acf/settings/load_json', 'exchange_acf_json_load_point');
