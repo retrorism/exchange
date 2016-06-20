@@ -27,7 +27,6 @@
 
 # Composer / Bower / NPM files #
 ################################
-vendor
 node_modules
 bower_modules
 assets/scss/.sass-cache/*
