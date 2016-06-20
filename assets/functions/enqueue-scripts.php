@@ -6,7 +6,7 @@ function site_scripts() {
     wp_enqueue_script( 'what-input', get_template_directory_uri() . '/vendor/what-input/what-input.min.js', array(), '', true );
 
 	// Adding Fontobserver script in the footer
-	wp_enqueue_script( 'fontface-observer', get_template_directory_uri() . '/vendor/fontfaceobserver/fontfaceobserver.js', array(), '', true );
+	wp_enqueue_script( 'fontface-observer', get_template_directory_uri() . '/vendor/fontfaceobserver/fontfaceobserver.js', array(), false, true );
 
     // Adding Foundation scripts file in the footer
     wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/js/foundation.js', array( 'jquery' ), '6.2', true );
