@@ -149,6 +149,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "",
-    "modified": 1466436819
+    "description": "Fields to provide extra information for each Tandem team member",
+    "modified": 1466440947
 }
