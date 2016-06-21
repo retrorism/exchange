@@ -81,7 +81,7 @@ add_filter('admin_footer_text', 'exchange_custom_admin_footer');
      return $path;
  }
 
- add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+ add_filter('acf/settings/load_json', 'exchange_acf_json_load_point');
 
 function exchange_acf_json_load_point( $paths ) {
 
