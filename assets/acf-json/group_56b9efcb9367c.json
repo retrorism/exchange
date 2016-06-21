@@ -47,6 +47,28 @@
             "multiple": 0
         },
         {
+            "key": "field_5769374eecc65",
+            "label": "Tandem Tag",
+            "name": "tandem",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
             "key": "field_56b9f0ec37a04",
             "label": "Language",
             "name": "language",
@@ -135,5 +157,5 @@
     ],
     "active": 1,
     "description": "Sidebar for story editor",
-    "modified": 1466436800
+    "modified": 1466513345
 }
