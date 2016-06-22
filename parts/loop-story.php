@@ -34,24 +34,30 @@ $story = new Story( $post );
 
 			</div>
 
+			<div class="story__meta-wrapper">
+				<aside class="article-meta story__meta">
+					<div class="story__meta-inner">
+						<section class="story__meta__category"><?php echo $story->category; ?></section>
+						<section class="story__meta__date"><?php echo mysql2date('F jS, Y', $story->date ); ?></section>
+						<section class="story__meta__tags"><?php $story->publish_tags('story__meta'); ?></section>
+						<section class="story__meta__sharing-buttons">
+							<?php /* <small class="story_sharing-buttons__header"><?php _e( 'Share or print this story', EXCHANGE_PLUGIN ); ?></small> */ ?>
+							<?php $story->publish_sharing_buttons(); ?>
+						</section>
+					</div>
+				</aside>
+			</div>
+
 			<?php if ( $story->has_editorial_intro ) {
 				$story->publish_intro();
 			} ?>
 
 		</div>
 
+
+
 	</header> <!-- end .story__header -->
-	<div class="asides-wrapper">
-		<div class="story__meta-wrapper" data-sticky-container>
-			<aside class="article-meta story__meta sticky" data-sticky data-sticky-on="xlarge" data-anchor="article-body">
-				<div class="story__meta-inner">
-					<section class="story__meta__category"><?php echo $story->category; ?></section>
-					<section class="story__meta__date"><?php echo mysql2date('F jS, Y', $story->date ); ?></section>
-					<section class="story__meta__tags"><?php $story->publish_tags('story__meta') ?></section>
-				</div>
-			</aside>
-		</div>
-	</div>
+
 
 
 	<div id="article-body" class="entry-content story__content" itemprop="articleBody">

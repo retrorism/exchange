@@ -59,7 +59,7 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "category",
+            "taxonomy": "tandem",
             "field_type": "multi_select",
             "allow_null": 1,
             "add_term": 1,
@@ -157,5 +157,5 @@
     ],
     "active": 1,
     "description": "Sidebar for story editor",
-    "modified": 1466513345
+    "modified": 1466517241
 }
