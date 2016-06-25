@@ -5,6 +5,7 @@
   "dependencies": {
     "foundation-sites": ">=6.1",
     "fontfaceobserver": "^1.7.1",
-    "vanilla-lazyload": "^1.6.0"
+    "picturefill": "^3.0.2",
+    "lazysizes": "^2.0.0"
   }
 }

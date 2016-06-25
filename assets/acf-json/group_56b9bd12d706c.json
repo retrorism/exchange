@@ -1,6 +1,6 @@
 {
     "key": "group_56b9bd12d706c",
-    "title": "CollaborationGroup",
+    "title": "Collaboration Group",
     "fields": [
         {
             "key": "field_56b9b7c755a9f",
@@ -15,7 +15,6 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "object",
             "post_type": [
                 "participant"
             ],
@@ -23,11 +22,10 @@
             "filters": [
                 "search"
             ],
+            "elements": "",
+            "min": "",
             "max": 4,
-            "min": 0,
-            "elements": [
-                "post_type"
-            ]
+            "return_format": "id"
         },
         {
             "key": "field_56b9c24472004",
@@ -104,5 +102,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466436730
+    "modified": 1466773277
 }

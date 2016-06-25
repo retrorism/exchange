@@ -53,7 +53,11 @@
 			}( typeof global !== "undefined" ? global : this ));
 
 			/* Lazy loading */
-			loadJS( "<?php echo get_template_directory_uri(); ?>/bower_components/vanilla-lazyload/dist/vanilla-lazyload.min.js", function() {});
+			//loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/vanilla-lazyload/dist/vanilla-lazyload.js", function() {});
+			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/picturefill/dist/picturefill.min.js", function() {});
+			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/lazysizes/lazysizes.min.js", function() {});
+			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/fontfaceobserver/fontfaceobserver.js", function() {});
+			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/what-input/what-input.min.js", function() {});
 
 		</script>
 

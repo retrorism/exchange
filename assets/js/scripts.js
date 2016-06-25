@@ -1,5 +1,5 @@
 var getFocusTranslate = function( img_placeholder, img ) {
-	img_data = img_placeholder.parentNode.parentNode.dataset;
+	img_data = img_placeholder.parentNode.dataset;
 	if ( ! img_data ) {
 		return false;
 	}
@@ -9,12 +9,12 @@ var getFocusTranslate = function( img_placeholder, img ) {
 	max_translate = ( ( h - container_h ) / h ) * 100,
 	translate = ( px_translate / h ) * 100;
 
-	console.log( 'image height: ' + h );
-	console.log( 'focus point on ' + ( img_data.focus_h * h ) );
-	console.log( 'container center ' + ( container_h / 2 ) );
-	console.log( 'number of pixels to move: ' + px_translate );
-	console.log( 'number of percents to move: ' + translate );
-	console.log( 'max percent to move: ' + max_translate );
+	// console.log( 'image height: ' + h );
+	// console.log( 'focus point on ' + ( img_data.focus_h * h ) );
+	// console.log( 'container center ' + ( container_h / 2 ) );
+	// console.log( 'number of pixels to move: ' + px_translate );
+	// console.log( 'number of percents to move: ' + translate );
+	// console.log( 'max percent to move: ' + max_translate );
 	// If the center of the container is below the focus point, don't move.
 	// Or: if the translation is downwards, don't move (we're working from top).
 	if ( px_translate < 0 || translate < 0 ) {
@@ -47,21 +47,13 @@ and Foundation play nice together.
 */
 
 jQuery(document).ready(function() {
-	var myLazyLoad = new LazyLoad({
-		elements_selector: "img.lazy",
-		show_while_loading: true,
-	    callback_load: function( element ) {
-			doFocusTranslate( element );
-			//
-		}
-	});
 
 	var focus_img_containers = document.querySelectorAll('.focus');
 	for ( var i = 0; i < focus_img_containers.length; i++ ) {
   		var img_container = focus_img_containers[i];
 		img = img_container.getElementsByClassName('image--main')[0];
 		if ( ! img.classList.contains( 'lazy' ) ) {
-			console.log('no lazy image detected');
+			//console.log('no lazy image detected');
 			doFocusTranslate( img );
 		}
 	}
@@ -71,9 +63,9 @@ jQuery(document).ready(function() {
 		var equal_element = floated_elements[ii].nextElementSibling,
 		h = floated_elements[ii].offsetHeight,
 		equal_h = equal_element.offsetHeight;
-		console.log( floated_elements[ii] );
-		console.log( equal_element );
-		console.log( 'neighbour: ' + equal_h + ' px');
+		// console.log( floated_elements[ii] );
+		// console.log( equal_element );
+		// console.log( 'neighbour: ' + equal_h + ' px');
 		if ( h > equal_h ) {
 			equal_element.style.height = h + 'px';
 		}

@@ -1,4 +1,4 @@
-'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};!function($){"use strict";var FOUNDATION_VERSION='6.2.1'; // Global Foundation object
+'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};!function($){"use strict";var FOUNDATION_VERSION='6.2.2'; // Global Foundation object
 // This is attached to the window, or used as a module for AMD/Browserify
 var Foundation={version:FOUNDATION_VERSION, /**
    * Stores initialized plugins.
@@ -18,7 +18,7 @@ this._plugins[attrName]=this[className]=_plugin;}, /**
    * @function
    * Populates the _uuids array with pointers to each individual plugin instance.
    * Adds the `zfPlugin` data-attribute to programmatically created plugins to allow use of $(selector).foundation(method) calls.
-   * Also fires the initialization event for each plugin, consolidating repeditive code.
+   * Also fires the initialization event for each plugin, consolidating repetitive code.
    * @param {Object} plugin - an instance of a plugin, usually `this` in context.
    * @param {String} name - the name of the plugin, passed as a camelCased string.
    * @fires Plugin#init
@@ -29,7 +29,7 @@ this._plugins[attrName]=this[className]=_plugin;}, /**
    * @function
    * Removes the plugins uuid from the _uuids array.
    * Removes the zfPlugin data attribute, as well as the data-plugin-name attribute.
-   * Also fires the destroyed event for the plugin, consolidating repeditive code.
+   * Also fires the destroyed event for the plugin, consolidating repetitive code.
    * @param {Object} plugin - an instance of a plugin, usually `this` in context.
    * @fires Plugin#destroyed
    */unregisterPlugin:function unregisterPlugin(plugin){var pluginName=hyphenate(functionName(plugin.$element.data('zfPlugin').constructor));this._uuids.splice(this._uuids.indexOf(plugin.uuid),1);plugin.$element.removeAttr('data-'+pluginName).removeData('zfPlugin') /**
@@ -98,7 +98,7 @@ function hyphenate(str){return str.replace(/([a-z])([A-Z])/g,'$1-$2').toLowerCas
  * @param {Boolean} tbOnly - set to true to check top and bottom values only.
  * @default if no parent object passed, detects collisions with `window`.
  * @returns {Boolean} - true if collision free, false if a collision in any direction.
- */function ImNotTouchingYou(element,parent,lrOnly,tbOnly){var eleDims=GetDimensions(element),top,bottom,left,right;if(parent){var parDims=GetDimensions(parent);bottom=eleDims.offset.top+eleDims.height<=parDims.height+parDims.offset.top;top=eleDims.offset.top>=parDims.offset.top;left=eleDims.offset.left>=parDims.offset.left;right=eleDims.offset.left+eleDims.width<=parDims.width;}else {bottom=eleDims.offset.top+eleDims.height<=eleDims.windowDims.height+eleDims.windowDims.offset.top;top=eleDims.offset.top>=eleDims.windowDims.offset.top;left=eleDims.offset.left>=eleDims.windowDims.offset.left;right=eleDims.offset.left+eleDims.width<=eleDims.windowDims.width;}var allDirs=[bottom,top,left,right];if(lrOnly){return left===right===true;}if(tbOnly){return top===bottom===true;}return allDirs.indexOf(false)===-1;}; /**
+ */function ImNotTouchingYou(element,parent,lrOnly,tbOnly){var eleDims=GetDimensions(element),top,bottom,left,right;if(parent){var parDims=GetDimensions(parent);bottom=eleDims.offset.top+eleDims.height<=parDims.height+parDims.offset.top;top=eleDims.offset.top>=parDims.offset.top;left=eleDims.offset.left>=parDims.offset.left;right=eleDims.offset.left+eleDims.width<=parDims.width+parDims.offset.left;}else {bottom=eleDims.offset.top+eleDims.height<=eleDims.windowDims.height+eleDims.windowDims.offset.top;top=eleDims.offset.top>=eleDims.windowDims.offset.top;left=eleDims.offset.left>=eleDims.windowDims.offset.left;right=eleDims.offset.left+eleDims.width<=eleDims.windowDims.width;}var allDirs=[bottom,top,left,right];if(lrOnly){return left===right===true;}if(tbOnly){return top===bottom===true;}return allDirs.indexOf(false)===-1;}; /**
  * Uses native methods to return an object of dimension values.
  * @function
  * @param {jQuery || HTML} element - jQuery object or DOM element for which to get the dimensions. Can be any element other that document or window.
@@ -136,9 +136,9 @@ function hyphenate(str){return str.replace(/([a-z])([A-Z])/g,'$1-$2').toLowerCas
 cmds=commandList; // use plain list
 }else { // merge ltr and rtl: if document is rtl, rtl overwrites ltr and vice versa
 if(Foundation.rtl())cmds=$.extend({},commandList.ltr,commandList.rtl);else cmds=$.extend({},commandList.rtl,commandList.ltr);}command=cmds[keyCode];fn=functions[command];if(fn&&typeof fn==='function'){ // execute function  if exists
-fn.apply();if(functions.handled||typeof functions.handled==='function'){ // execute function when event was handled
-functions.handled.apply();}}else {if(functions.unhandled||typeof functions.unhandled==='function'){ // execute function when event was not handled
-functions.unhandled.apply();}}}, /**
+var returnValue=fn.apply();if(functions.handled||typeof functions.handled==='function'){ // execute function when event was handled
+functions.handled(returnValue);}}else {if(functions.unhandled||typeof functions.unhandled==='function'){ // execute function when event was not handled
+functions.unhandled();}}}, /**
    * Finds all focusable elements within the given `$element`
    * @param {jQuery} $element - jQuery object to search within
    * @return {jQuery} $focusable - all focusable elements within `$element`
@@ -156,7 +156,7 @@ var defaultQueries={'default':'only screen',landscape:'only screen and (orientat
    * Initializes the media query helper, by extracting the breakpoint list from the CSS and activating the breakpoint watcher.
    * @function
    * @private
-   */_init:function _init(){var self=this;var extractedStyles=$('.foundation-mq').css('font-family');var namedQueries;namedQueries=parseStyleToObject(extractedStyles);for(var key in namedQueries){self.queries.push({name:key,value:'only screen and (min-width: '+namedQueries[key]+')'});}this.current=this._getCurrentSize();this._watcher();}, /**
+   */_init:function _init(){var self=this;var extractedStyles=$('.foundation-mq').css('font-family');var namedQueries;namedQueries=parseStyleToObject(extractedStyles);for(var key in namedQueries){if(namedQueries.hasOwnProperty(key)){self.queries.push({name:key,value:'only screen and (min-width: '+namedQueries[key]+')'});}}this.current=this._getCurrentSize();this._watcher();}, /**
    * Checks if the screen is at least as wide as a breakpoint.
    * @function
    * @param {String} size - Name of the breakpoint to check.
@@ -166,7 +166,7 @@ var defaultQueries={'default':'only screen',landscape:'only screen and (orientat
    * @function
    * @param {String} size - Name of the breakpoint to get.
    * @returns {String|null} - The media query of the breakpoint, or `null` if the breakpoint doesn't exist.
-   */get:function get(size){for(var i in this.queries){var query=this.queries[i];if(size===query.name)return query.value;}return null;}, /**
+   */get:function get(size){for(var i in this.queries){if(this.queries.hasOwnProperty(i)){var query=this.queries[i];if(size===query.name)return query.value;}}return null;}, /**
    * Gets the current breakpoint name by testing every breakpoint and returning the last one to match (the biggest one).
    * @function
    * @private
@@ -175,9 +175,9 @@ var defaultQueries={'default':'only screen',landscape:'only screen and (orientat
    * Activates the breakpoint watcher, which fires an event on the window whenever the breakpoint changes.
    * @function
    * @private
-   */_watcher:function _watcher(){var _this=this;$(window).on('resize.zf.mediaquery',function(){var newSize=_this._getCurrentSize();if(newSize!==_this.current){ // Broadcast the media query change on the window
-$(window).trigger('changed.zf.mediaquery',[newSize,_this.current]); // Change the current media query
-_this.current=newSize;}});}};Foundation.MediaQuery=MediaQuery; // matchMedia() polyfill - Test a CSS media type/query in JS.
+   */_watcher:function _watcher(){var _this=this;$(window).on('resize.zf.mediaquery',function(){var newSize=_this._getCurrentSize(),currentSize=_this.current;if(newSize!==currentSize){ // Change the current media query
+_this.current=newSize; // Broadcast the media query change on the window
+$(window).trigger('changed.zf.mediaquery',[newSize,currentSize]);}});}};Foundation.MediaQuery=MediaQuery; // matchMedia() polyfill - Test a CSS media type/query in JS.
 // Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license
 window.matchMedia||(window.matchMedia=function(){'use strict'; // For browsers that support matchMedium api such as IE 9 and webkit
 var styleMedia=window.styleMedia||window.media; // For those that don't support matchMedium
@@ -244,7 +244,7 @@ if(dir){e.preventDefault();onTouchEnd.call(this);$(this).trigger('swipe',dir).tr
  * Method for adding psuedo drag events to elements *
  ***************************************************/!function($){$.fn.addTouch=function(){this.each(function(i,el){$(el).bind('touchstart touchmove touchend touchcancel',function(){ //we pass the original event object because the jQuery event
 //object is normalized to w3c specs and does not provide the TouchList
-handleTouch(event);});});var handleTouch=function handleTouch(event){var touches=event.changedTouches,first=touches[0],eventTypes={touchstart:'mousedown',touchmove:'mousemove',touchend:'mouseup'},type=eventTypes[event.type],simulatedEvent;if('MouseEvent' in window&&typeof window.MouseEvent==='function'){simulatedEvent=window.MouseEvent(type,{'bubbles':true,'cancelable':true,'screenX':first.screenX,'screenY':first.screenY,'clientX':first.clientX,'clientY':first.clientY});}else {simulatedEvent=document.createEvent('MouseEvent');simulatedEvent.initMouseEvent(type,true,true,window,1,first.screenX,first.screenY,first.clientX,first.clientY,false,false,false,false,0 /*left*/,null);}first.target.dispatchEvent(simulatedEvent);};};}(jQuery); //**********************************
+handleTouch(event);});});var handleTouch=function handleTouch(event){var touches=event.changedTouches,first=touches[0],eventTypes={touchstart:'mousedown',touchmove:'mousemove',touchend:'mouseup'},type=eventTypes[event.type],simulatedEvent;if('MouseEvent' in window&&typeof window.MouseEvent==='function'){simulatedEvent=new window.MouseEvent(type,{'bubbles':true,'cancelable':true,'screenX':first.screenX,'screenY':first.screenY,'clientX':first.clientX,'clientY':first.clientY});}else {simulatedEvent=document.createEvent('MouseEvent');simulatedEvent.initMouseEvent(type,true,true,window,1,first.screenX,first.screenY,first.clientX,first.clientY,false,false,false,false,0 /*left*/,null);}first.target.dispatchEvent(simulatedEvent);};};}(jQuery); //**********************************
 //**From the jQuery Mobile Library**
 //**need to recreate functionality**
 //**and try to improve if possible**
@@ -713,10 +713,10 @@ Foundation.plugin(Orbit,'Orbit');}(jQuery);
    */function Reveal(element,options){_classCallCheck(this,Reveal);this.$element=element;this.options=$.extend({},Reveal.defaults,this.$element.data(),options);this._init();Foundation.registerPlugin(this,'Reveal');Foundation.Keyboard.register('Reveal',{'ENTER':'open','SPACE':'open','ESCAPE':'close','TAB':'tab_forward','SHIFT_TAB':'tab_backward'});} /**
    * Initializes the modal by adding the overlay and close buttons, (if selected).
    * @private
-   */_createClass(Reveal,[{key:'_init',value:function _init(){this.id=this.$element.attr('id');this.isActive=false;this.cached={mq:Foundation.MediaQuery.current};this.isiOS=iPhoneSniff();if(this.isiOS){this.$element.addClass('is-ios');}this.$anchor=$('[data-open="'+this.id+'"]').length?$('[data-open="'+this.id+'"]'):$('[data-toggle="'+this.id+'"]');if(this.$anchor.length){var anchorId=this.$anchor[0].id||Foundation.GetYoDigits(6,'reveal');this.$anchor.attr({'aria-controls':this.id,'id':anchorId,'aria-haspopup':true,'tabindex':0});this.$element.attr({'aria-labelledby':anchorId});}if(this.options.fullScreen||this.$element.hasClass('full')){this.options.fullScreen=true;this.options.overlay=false;}if(this.options.overlay&&!this.$overlay){this.$overlay=this._makeOverlay(this.id);}this.$element.attr({'role':'dialog','aria-hidden':true,'data-yeti-box':this.id,'data-resize':this.id});if(this.$overlay){this.$element.detach().appendTo(this.$overlay);}else {this.$element.detach().appendTo($('body'));this.$element.addClass('without-overlay');}this._events();if(this.options.deepLink&&window.location.hash==='#'+this.id){$(window).one('load.zf.reveal',this.open.bind(this));}} /**
+   */_createClass(Reveal,[{key:'_init',value:function _init(){this.id=this.$element.attr('id');this.isActive=false;this.cached={mq:Foundation.MediaQuery.current};this.isMobile=mobileSniff();this.$anchor=$('[data-open="'+this.id+'"]').length?$('[data-open="'+this.id+'"]'):$('[data-toggle="'+this.id+'"]');this.$anchor.attr({'aria-controls':this.id,'aria-haspopup':true,'tabindex':0});if(this.options.fullScreen||this.$element.hasClass('full')){this.options.fullScreen=true;this.options.overlay=false;}if(this.options.overlay&&!this.$overlay){this.$overlay=this._makeOverlay(this.id);}this.$element.attr({'role':'dialog','aria-hidden':true,'data-yeti-box':this.id,'data-resize':this.id});if(this.$overlay){this.$element.detach().appendTo(this.$overlay);}else {this.$element.detach().appendTo($('body'));this.$element.addClass('without-overlay');}this._events();if(this.options.deepLink&&window.location.hash==='#'+this.id){$(window).one('load.zf.reveal',this.open.bind(this));}} /**
    * Creates an overlay div to display behind the modal.
    * @private
-   */},{key:'_makeOverlay',value:function _makeOverlay(id){var $overlay=$('<div></div>').addClass('reveal-overlay').attr({'tabindex':-1,'aria-hidden':true}).appendTo('body');return $overlay;} /**
+   */},{key:'_makeOverlay',value:function _makeOverlay(id){var $overlay=$('<div></div>').addClass('reveal-overlay').appendTo('body');return $overlay;} /**
    * Updates position of modal
    * TODO:  Figure out if we actually need to cache these values or if it doesn't matter
    * @private
@@ -725,7 +725,8 @@ Foundation.plugin(Orbit,'Orbit');}(jQuery);
 if(!this.$overlay||this.options.hOffset!=='auto'){this.$element.css({left:left+'px'});this.$element.css({margin:'0px'});}} /**
    * Adds event handlers for the modal.
    * @private
-   */},{key:'_events',value:function _events(){var _this=this;this.$element.on({'open.zf.trigger':this.open.bind(this),'close.zf.trigger':this.close.bind(this),'toggle.zf.trigger':this.toggle.bind(this),'resizeme.zf.trigger':function resizemeZfTrigger(){_this._updatePosition();}});if(this.$anchor.length){this.$anchor.on('keydown.zf.reveal',function(e){if(e.which===13||e.which===32){e.stopPropagation();e.preventDefault();_this.open();}});}if(this.options.closeOnClick&&this.options.overlay){this.$overlay.off('.zf.reveal').on('click.zf.reveal',function(e){if(e.target===_this.$element[0]||$.contains(_this.$element[0],e.target)){return;}_this.close();});}if(this.options.deepLink){$(window).on('popstate.zf.reveal:'+this.id,this._handleState.bind(this));}} /**
+   */},{key:'_events',value:function _events(){var _this2=this;var _this=this;this.$element.on({'open.zf.trigger':this.open.bind(this),'close.zf.trigger':function closeZfTrigger(event,$element){if(event.target===_this.$element[0]||$(event.target).parents('[data-closable]')[0]===$element){ // only close reveal when it's explicitly called
+return _this2.close.apply(_this2);}},'toggle.zf.trigger':this.toggle.bind(this),'resizeme.zf.trigger':function resizemeZfTrigger(){_this._updatePosition();}});if(this.$anchor.length){this.$anchor.on('keydown.zf.reveal',function(e){if(e.which===13||e.which===32){e.stopPropagation();e.preventDefault();_this.open();}});}if(this.options.closeOnClick&&this.options.overlay){this.$overlay.off('.zf.reveal').on('click.zf.reveal',function(e){if(e.target===_this.$element[0]||$.contains(_this.$element[0],e.target)){return;}_this.close();});}if(this.options.deepLink){$(window).on('popstate.zf.reveal:'+this.id,this._handleState.bind(this));}} /**
    * Handles modal methods on back/forward button clicks or any other event that triggers popstate.
    * @private
    */},{key:'_handleState',value:function _handleState(e){if(window.location.hash==='#'+this.id&&!this.isActive){this.open();}else {this.close();}} /**
@@ -733,36 +734,36 @@ if(!this.$overlay||this.options.hOffset!=='auto'){this.$element.css({left:left+'
    * @function
    * @fires Reveal#closeme
    * @fires Reveal#open
-   */},{key:'open',value:function open(){var _this2=this;if(this.options.deepLink){var hash='#'+this.id;if(window.history.pushState){window.history.pushState(null,null,hash);}else {window.location.hash=hash;}}this.isActive=true; // Make elements invisible, but remove display: none so we can get size and positioning
-this.$element.css({'visibility':'hidden'}).show().scrollTop(0);if(this.options.overlay){this.$overlay.css({'visibility':'hidden'}).show();}this._updatePosition();this.$element.hide().css({'visibility':''});if(this.$overlay){this.$overlay.css({'visibility':''}).hide();}if(!this.options.multipleOpened){ /**
+   */},{key:'open',value:function open(){var _this3=this;if(this.options.deepLink){var hash='#'+this.id;if(window.history.pushState){window.history.pushState(null,null,hash);}else {window.location.hash=hash;}}this.isActive=true; // Make elements invisible, but remove display: none so we can get size and positioning
+this.$element.css({'visibility':'hidden'}).show().scrollTop(0);if(this.options.overlay){this.$overlay.css({'visibility':'hidden'}).show();}this._updatePosition();this.$element.hide().css({'visibility':''});if(this.$overlay){this.$overlay.css({'visibility':''}).hide();if(this.$element.hasClass('fast')){this.$overlay.addClass('fast');}else if(this.$element.hasClass('slow')){this.$overlay.addClass('slow');}}if(!this.options.multipleOpened){ /**
        * Fires immediately before the modal opens.
        * Closes any other modals that are currently open
        * @event Reveal#closeme
        */this.$element.trigger('closeme.zf.reveal',this.id);} // Motion UI method of reveal
-if(this.options.animationIn){if(this.options.overlay){Foundation.Motion.animateIn(this.$overlay,'fade-in');}Foundation.Motion.animateIn(this.$element,this.options.animationIn,function(){_this2.focusableElements=Foundation.Keyboard.findFocusable(_this2.$element);});} // jQuery method of reveal
+if(this.options.animationIn){var _this;(function(){var afterAnimationFocus=function afterAnimationFocus(){_this.$element.attr({'aria-hidden':false,'tabindex':-1}).focus();console.log('focus');};_this=_this3;if(_this3.options.overlay){Foundation.Motion.animateIn(_this3.$overlay,'fade-in');}Foundation.Motion.animateIn(_this3.$element,_this3.options.animationIn,function(){_this3.focusableElements=Foundation.Keyboard.findFocusable(_this3.$element);afterAnimationFocus();});})();} // jQuery method of reveal
 else {if(this.options.overlay){this.$overlay.show(0);}this.$element.show(this.options.showDelay);} // handle accessibility
 this.$element.attr({'aria-hidden':false,'tabindex':-1}).focus(); /**
      * Fires when the modal has successfully opened.
      * @event Reveal#open
-     */this.$element.trigger('open.zf.reveal');if(this.isiOS){var scrollPos=window.pageYOffset;$('html, body').addClass('is-reveal-open').scrollTop(scrollPos);}else {$('body').addClass('is-reveal-open');}$('body').addClass('is-reveal-open').attr('aria-hidden',this.options.overlay||this.options.fullScreen?true:false);setTimeout(function(){_this2._extraHandlers();},0);} /**
+     */this.$element.trigger('open.zf.reveal');if(this.isMobile){this.originalScrollPos=window.pageYOffset;$('html, body').addClass('is-reveal-open');}else {$('body').addClass('is-reveal-open');}setTimeout(function(){_this3._extraHandlers();},0);} /**
    * Adds extra event handlers for the body and window if necessary.
    * @private
    */},{key:'_extraHandlers',value:function _extraHandlers(){var _this=this;this.focusableElements=Foundation.Keyboard.findFocusable(this.$element);if(!this.options.overlay&&this.options.closeOnClick&&!this.options.fullScreen){$('body').on('click.zf.reveal',function(e){if(e.target===_this.$element[0]||$.contains(_this.$element[0],e.target)){return;}_this.close();});}if(this.options.closeOnEsc){$(window).on('keydown.zf.reveal',function(e){Foundation.Keyboard.handleKey(e,'Reveal',{close:function close(){if(_this.options.closeOnEsc){_this.close();_this.$anchor.focus();}}});});} // lock focus within modal while tabbing
 this.$element.on('keydown.zf.reveal',function(e){var $target=$(this); // handle keyboard event with keyboard util
 Foundation.Keyboard.handleKey(e,'Reveal',{tab_forward:function tab_forward(){if(_this.$element.find(':focus').is(_this.focusableElements.eq(-1))){ // left modal downwards, setting focus to first element
-_this.focusableElements.eq(0).focus();e.preventDefault();}if(_this.focusableElements.length===0){ // no focusable elements inside the modal at all, prevent tabbing in general
-e.preventDefault();}},tab_backward:function tab_backward(){if(_this.$element.find(':focus').is(_this.focusableElements.eq(0))||_this.$element.is(':focus')){ // left modal upwards, setting focus to last element
-_this.focusableElements.eq(-1).focus();e.preventDefault();}if(_this.focusableElements.length===0){ // no focusable elements inside the modal at all, prevent tabbing in general
-e.preventDefault();}},open:function open(){if(_this.$element.find(':focus').is(_this.$element.find('[data-close]'))){setTimeout(function(){ // set focus back to anchor if close button has been activated
+_this.focusableElements.eq(0).focus();return true;}if(_this.focusableElements.length===0){ // no focusable elements inside the modal at all, prevent tabbing in general
+return true;}},tab_backward:function tab_backward(){if(_this.$element.find(':focus').is(_this.focusableElements.eq(0))||_this.$element.is(':focus')){ // left modal upwards, setting focus to last element
+_this.focusableElements.eq(-1).focus();return true;}if(_this.focusableElements.length===0){ // no focusable elements inside the modal at all, prevent tabbing in general
+return true;}},open:function open(){if(_this.$element.find(':focus').is(_this.$element.find('[data-close]'))){setTimeout(function(){ // set focus back to anchor if close button has been activated
 _this.$anchor.focus();},1);}else if($target.is(_this.focusableElements)){ // dont't trigger if acual element has focus (i.e. inputs, links, ...)
-_this.open();}},close:function close(){if(_this.options.closeOnEsc){_this.close();_this.$anchor.focus();}}});});} /**
+_this.open();}},close:function close(){if(_this.options.closeOnEsc){_this.close();_this.$anchor.focus();}},handled:function handled(preventDefault){if(preventDefault){e.preventDefault();}}});});} /**
    * Closes the modal.
    * @function
    * @fires Reveal#closed
    */},{key:'close',value:function close(){if(!this.isActive||!this.$element.is(':visible')){return false;}var _this=this; // Motion UI method of hiding
 if(this.options.animationOut){if(this.options.overlay){Foundation.Motion.animateOut(this.$overlay,'fade-out',finishUp);}else {finishUp();}Foundation.Motion.animateOut(this.$element,this.options.animationOut);} // jQuery method of hiding
 else {if(this.options.overlay){this.$overlay.hide(0,finishUp);}else {finishUp();}this.$element.hide(this.options.hideDelay);} // Conditionals to remove extra event listeners added on open
-if(this.options.closeOnEsc){$(window).off('keydown.zf.reveal');}if(!this.options.overlay&&this.options.closeOnClick){$('body').off('click.zf.reveal');}this.$element.off('keydown.zf.reveal');function finishUp(){if(_this.isiOS){$('html, body').removeClass('is-reveal-open');}else {$('body').removeClass('is-reveal-open');}$('body').attr({'aria-hidden':false,'tabindex':''});_this.$element.attr('aria-hidden',true); /**
+if(this.options.closeOnEsc){$(window).off('keydown.zf.reveal');}if(!this.options.overlay&&this.options.closeOnClick){$('body').off('click.zf.reveal');}this.$element.off('keydown.zf.reveal');function finishUp(){if(_this.isMobile){$('html, body').removeClass('is-reveal-open');if(_this.originalScrollPos){$('body').scrollTop(_this.originalScrollPos);_this.originalScrollPos=null;}}else {$('body').removeClass('is-reveal-open');}_this.$element.attr('aria-hidden',true); /**
       * Fires when the modal is done closing.
       * @event Reveal#closed
       */_this.$element.trigger('closed.zf.reveal');} /**
@@ -832,7 +833,7 @@ this.$overlay.hide().off().remove();}this.$element.hide().off();this.$anchor.off
    * @option
    * @example false
    */deepLink:false}; // Window exports
-Foundation.plugin(Reveal,'Reveal');function iPhoneSniff(){return (/iP(ad|hone|od).*OS/.test(window.navigator.userAgent));}}(jQuery);
+Foundation.plugin(Reveal,'Reveal');function iPhoneSniff(){return (/iP(ad|hone|od).*OS/.test(window.navigator.userAgent));}function androidSniff(){return (/Android/.test(window.navigator.userAgent));}function mobileSniff(){return iPhoneSniff()||androidSniff();}}(jQuery);
 'use strict';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}!function($){ /**
  * Sticky module.
  * @module foundation.sticky
@@ -851,7 +852,7 @@ Foundation.plugin(Reveal,'Reveal');function iPhoneSniff(){return (/iP(ad|hone|od
    * If using multiple elements as anchors, calculates the top and bottom pixel values the sticky thing should stick and unstick on.
    * @function
    * @private
-   */},{key:'_parsePoints',value:function _parsePoints(){var top=this.options.topAnchor,btm=this.options.btmAnchor,pts=[top,btm],breaks={};if(top&&btm){for(var i=0,len=pts.length;i<len&&pts[i];i++){var pt;if(typeof pts[i]==='number'){pt=pts[i];}else {var place=pts[i].split(':'),anchor=$('#'+place[0]);pt=anchor.offset().top;if(place[1]&&place[1].toLowerCase()==='bottom'){pt+=anchor[0].getBoundingClientRect().height;}}breaks[i]=pt;}}else {breaks={0:1,1:document.documentElement.scrollHeight};}this.points=breaks;return;} /**
+   */},{key:'_parsePoints',value:function _parsePoints(){var top=this.options.topAnchor==""?1:this.options.topAnchor,btm=this.options.btmAnchor==""?document.documentElement.scrollHeight:this.options.btmAnchor,pts=[top,btm],breaks={};for(var i=0,len=pts.length;i<len&&pts[i];i++){var pt;if(typeof pts[i]==='number'){pt=pts[i];}else {var place=pts[i].split(':'),anchor=$('#'+place[0]);pt=anchor.offset().top;if(place[1]&&place[1].toLowerCase()==='bottom'){pt+=anchor[0].getBoundingClientRect().height;}}breaks[i]=pt;}this.points=breaks;return;} /**
    * Adds event handlers for the scrolling element.
    * @private
    * @param {String} id - psuedo-random id for unique scroll event listener.
@@ -874,18 +875,18 @@ Foundation.plugin(Reveal,'Reveal');function iPhoneSniff(){return (/iP(ad|hone|od
    * @fires Sticky#stuckto
    * @function
    * @private
-   */},{key:'_setSticky',value:function _setSticky(){var stickTo=this.options.stickTo,mrgn=stickTo==='top'?'marginTop':'marginBottom',notStuckTo=stickTo==='top'?'bottom':'top',css={};css[mrgn]=this.options[mrgn]+'em';css[stickTo]=0;css[notStuckTo]='auto';css['left']=this.$container.offset().left+parseInt(window.getComputedStyle(this.$container[0])["padding-left"],10);this.isStuck=true;this.$element.removeClass('is-anchored is-at-'+notStuckTo).addClass('is-stuck is-at-'+stickTo).css(css) /**
+   */},{key:'_setSticky',value:function _setSticky(){var _this=this,stickTo=this.options.stickTo,mrgn=stickTo==='top'?'marginTop':'marginBottom',notStuckTo=stickTo==='top'?'bottom':'top',css={};css[mrgn]=this.options[mrgn]+'em';css[stickTo]=0;css[notStuckTo]='auto';css['left']=this.$container.offset().left+parseInt(window.getComputedStyle(this.$container[0])["padding-left"],10);this.isStuck=true;this.$element.removeClass('is-anchored is-at-'+notStuckTo).addClass('is-stuck is-at-'+stickTo).css(css) /**
                   * Fires when the $element has become `position: fixed;`
                   * Namespaced to `top` or `bottom`, e.g. `sticky.zf.stuckto:top`
                   * @event Sticky#stuckto
-                  */.trigger('sticky.zf.stuckto:'+stickTo);} /**
+                  */.trigger('sticky.zf.stuckto:'+stickTo);this.$element.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd",function(){_this._setSizes();});} /**
    * Causes the $element to become unstuck.
    * Removes `position: fixed;`, and helper classes.
    * Adds other helper classes.
    * @param {Boolean} isTop - tells the function if the $element should anchor to the top or bottom of its $anchor element.
    * @fires Sticky#unstuckfrom
    * @private
-   */},{key:'_removeSticky',value:function _removeSticky(isTop){var stickTo=this.options.stickTo,stickToTop=stickTo==='top',css={},anchorPt=(this.points?this.points[1]-this.points[0]:this.anchorHeight)-this.elemHeight,mrgn=stickToTop?'marginTop':'marginBottom',notStuckTo=stickToTop?'bottom':'top',topOrBottom=isTop?'top':'bottom';css[mrgn]=0;if(isTop&&!stickToTop||stickToTop&&!isTop){css[stickTo]=anchorPt;css[notStuckTo]=0;}else {css[stickTo]=0;css[notStuckTo]=anchorPt;}css['left']='';this.isStuck=false;this.$element.removeClass('is-stuck is-at-'+stickTo).addClass('is-anchored is-at-'+topOrBottom).css(css) /**
+   */},{key:'_removeSticky',value:function _removeSticky(isTop){var stickTo=this.options.stickTo,stickToTop=stickTo==='top',css={},anchorPt=(this.points?this.points[1]-this.points[0]:this.anchorHeight)-this.elemHeight,mrgn=stickToTop?'marginTop':'marginBottom',notStuckTo=stickToTop?'bottom':'top',topOrBottom=isTop?'top':'bottom';css[mrgn]=0;css['bottom']='auto';if(isTop){css['top']=0;}else {css['top']=anchorPt;}css['left']='';this.isStuck=false;this.$element.removeClass('is-stuck is-at-'+stickTo).addClass('is-anchored is-at-'+topOrBottom).css(css) /**
                   * Fires when the $element has become anchored.
                   * Namespaced to `top` or `bottom`, e.g. `sticky.zf.unstuckfrom:bottom`
                   * @event Sticky#unstuckfrom
@@ -894,7 +895,7 @@ Foundation.plugin(Reveal,'Reveal');function iPhoneSniff(){return (/iP(ad|hone|od
    * Calls `_setBreakPoints`.
    * @param {Function} cb - optional callback function to fire on completion of `_setBreakPoints`.
    * @private
-   */},{key:'_setSizes',value:function _setSizes(cb){this.canStick=Foundation.MediaQuery.atLeast(this.options.stickyOn);if(!this.canStick){cb();}var _this=this,newElemWidth=this.$container[0].getBoundingClientRect().width,comp=window.getComputedStyle(this.$container[0]),pdng=parseInt(comp['padding-right'],10);if(this.$anchor&&this.$anchor.length){this.anchorHeight=this.$anchor[0].getBoundingClientRect().height;}else {this._parsePoints();}this.$element.css({'max-width':newElemWidth-pdng+'px'});var newContainerHeight=this.$element[0].getBoundingClientRect().height||this.containerHeight;this.containerHeight=newContainerHeight;this.$container.css({height:newContainerHeight});this.elemHeight=newContainerHeight;if(this.isStuck){this.$element.css({"left":this.$container.offset().left+parseInt(comp['padding-left'],10)});}this._setBreakPoints(newContainerHeight,function(){if(cb){cb();}});} /**
+   */},{key:'_setSizes',value:function _setSizes(cb){this.canStick=Foundation.MediaQuery.atLeast(this.options.stickyOn);if(!this.canStick){cb();}var _this=this,newElemWidth=this.$container[0].getBoundingClientRect().width,comp=window.getComputedStyle(this.$container[0]),pdng=parseInt(comp['padding-right'],10);if(this.$anchor&&this.$anchor.length){this.anchorHeight=this.$anchor[0].getBoundingClientRect().height;}else {this._parsePoints();}this.$element.css({'max-width':newElemWidth-pdng+'px'});var newContainerHeight=this.$element[0].getBoundingClientRect().height||this.containerHeight;if(this.$element.css("display")=="none"){newContainerHeight=0;}this.containerHeight=newContainerHeight;this.$container.css({height:newContainerHeight});this.elemHeight=newContainerHeight;if(this.isStuck){this.$element.css({"left":this.$container.offset().left+parseInt(comp['padding-left'],10)});}this._setBreakPoints(newContainerHeight,function(){if(cb){cb();}});} /**
    * Sets the upper and lower breakpoints for the element to become sticky/unsticky.
    * @param {Number} elemHeight - px value for sticky.$element height, calculated by `_setSizes`.
    * @param {Function} cb - optional callback function to be called on completion.
@@ -907,7 +908,7 @@ winHeight=window.innerHeight;if(this.options.stickTo==='top'){topPoint-=mTop;bot
    * Resets the element to the top position first.
    * Removes event listeners, JS-added css properties and classes, and unwraps the $element if the JS added the $container.
    * @function
-   */},{key:'destroy',value:function destroy(){this._removeSticky(true);this.$element.removeClass(this.options.stickyClass+' is-anchored is-at-top').css({height:'',top:'',bottom:'','max-width':''}).off('resizeme.zf.trigger');this.$anchor.off('change.zf.sticky');$(window).off(this.scrollListener);if(this.wasWrapped){this.$element.unwrap();}else {this.$container.removeClass(this.options.containerClass).css({height:''});}Foundation.unregisterPlugin(this);}}]);return Sticky;}();Sticky.defaults={ /**
+   */},{key:'destroy',value:function destroy(){this._removeSticky(true);this.$element.removeClass(this.options.stickyClass+' is-anchored is-at-top').css({height:'',top:'',bottom:'','max-width':''}).off('resizeme.zf.trigger');if(this.$anchor&&this.$anchor.length){this.$anchor.off('change.zf.sticky');}$(window).off(this.scrollListener);if(this.wasWrapped){this.$element.unwrap();}else {this.$container.removeClass(this.options.containerClass).css({height:''});}Foundation.unregisterPlugin(this);}}]);return Sticky;}();Sticky.defaults={ /**
    * Customizable container template. Add your own classes for styling and sizing.
    * @option
    * @example '&lt;div data-sticky-container class="small-6 columns"&gt;&lt;/div&gt;'

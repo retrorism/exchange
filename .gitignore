@@ -28,7 +28,7 @@
 # Composer / Bower / NPM files #
 ################################
 node_modules
-bower_modules
+bower_components
 assets/scss/.sass-cache/*
 npm-debug.log
 

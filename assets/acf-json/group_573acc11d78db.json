@@ -7,7 +7,7 @@
             "label": "Slider Text",
             "name": "page_slider_text",
             "type": "textarea",
-            "instructions": "This field will be used for the 'quotes' slider on the homepage and possibly also somewhere on this page.",
+            "instructions": "This field will be used for the quotes slider on the homepage and possibly also somewhere on this page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -50,5 +50,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1466436738
+    "modified": 1466707067
 }

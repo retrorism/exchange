@@ -297,11 +297,11 @@ ARTICLE PATTERN STYLES
 	margin-top: 4 * $global-margin;
 }
 
-.section__slice:first-of-type {
+.section__slice:first-child {
 	margin-top: 0;
 }
 
-.section__slice:last-of-type {
+.section__slice:last-child {
 	margin-bottom: 0;
 }
 
@@ -314,7 +314,7 @@ ARTICLE PATTERN STYLES
 
 .section--custom-colour {
 	background-color: $white !important;
-	svg polyline {
+	svg polygon {
 		fill: $white !important;
 	}
 }
@@ -350,7 +350,7 @@ ARTICLE PATTERN STYLES
 	margin-bottom: 2 * $global-margin;
 	margin: 0;
 	padding: 0;
-	top: -10px;
+	top: -20px;
 	&.section__edge--bottom {
 		transform: scale(1,-1);
 		top: 20px;
@@ -415,8 +415,18 @@ Pattern 4. Tag list
 
 .story__meta__tags ol li {
 	display: inline-block;
-	margin: 0.125 * $global-margin 0;
+	margin: 0.125 * $global-margin 0.25 * $global-margin 0.125 * $global-margin 0;
+	&:first-of-type {
+		margin-left: 0;
+	}
+	@include breakpoint( xlarge ) {
+		margin: 0.125 * $global-margin 0 0.125 * $global-margin 0.25 * $global-margin;
+		&:first-of-type {
+			margin-right: 0;
+		}
+	}
 }
+
 
 
 .tag, .griditem__tag, .story__meta__tag {
@@ -499,9 +509,6 @@ Pattern 5. Hero / cover image
 				top: 40rem;
 			}
 		}
-	}
-	.image__aspect-ratio {
-		padding-bottom: 50%;
 	}
 }
 
@@ -630,18 +637,16 @@ Pattern 9. Image
   background-color: #f6f6f6;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
   overflow: hidden;
 }
 
-.image__placeholder img.lazy,
-.image__placeholder__thumb {
+.image__placeholder__thumb,
+.image--main {
 	position: absolute;
-	opacity: 0;
 	top: 0;
 	left: 0;
 	width: 100%;
-	transition: opacity 1s linear;
+	transition: opacity .4s linear;
 }
 
 .image__placeholder__thumb {
@@ -651,20 +656,24 @@ Pattern 9. Image
   transform: scale(1);
 }
 
-.image__aspect-ratio {
-	padding-bottom: 66.67%;
+.lazyloaded {
+	-webkit-filter: blur(0);
+	filter: blur(0);
 }
 
-.image--portrait .image__aspect-ratio {
-	padding-bottom: 150%;
+.image--main.lazyload,
+.image--main.lazyloading,
+.image--main.lazyloaded + .image__placeholder__thumb,
+.no-js .image__placeholder__thumb {
+	opacity: 0;
+}
+
+.image--main.responsively-lazy.lazyloaded {
+	opacity: 1;
 }
 
 .image--portrait .image__placeholder {
 	max-width: 28em;
-}
-
-img.lazy.loaded {
-	opacity: 1;
 }
 
 /***********************

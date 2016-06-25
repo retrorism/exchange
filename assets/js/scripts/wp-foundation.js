@@ -4,21 +4,13 @@ and Foundation play nice together.
 */
 
 jQuery(document).ready(function() {
-	var myLazyLoad = new LazyLoad({
-		elements_selector: "img.lazy",
-		show_while_loading: true,
-	    callback_load: function( element ) {
-			doFocusTranslate( element );
-			//
-		}
-	});
 
 	var focus_img_containers = document.querySelectorAll('.focus');
 	for ( var i = 0; i < focus_img_containers.length; i++ ) {
   		var img_container = focus_img_containers[i];
 		img = img_container.getElementsByClassName('image--main')[0];
 		if ( ! img.classList.contains( 'lazy' ) ) {
-			console.log('no lazy image detected');
+			//console.log('no lazy image detected');
 			doFocusTranslate( img );
 		}
 	}
@@ -28,9 +20,9 @@ jQuery(document).ready(function() {
 		var equal_element = floated_elements[ii].nextElementSibling,
 		h = floated_elements[ii].offsetHeight,
 		equal_h = equal_element.offsetHeight;
-		console.log( floated_elements[ii] );
-		console.log( equal_element );
-		console.log( 'neighbour: ' + equal_h + ' px');
+		// console.log( floated_elements[ii] );
+		// console.log( equal_element );
+		// console.log( 'neighbour: ' + equal_h + ' px');
 		if ( h > equal_h ) {
 			equal_element.style.height = h + 'px';
 		}

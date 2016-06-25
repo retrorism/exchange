@@ -157,7 +157,8 @@
                         "has_story_elements": "Story elements",
                         "has_contact_details": "Contact details",
                         "has_gravity_forms": "A form",
-                        "has_grid": "A grid"
+                        "has_grid": "A grid",
+                        "has_map": "A map"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -1526,6 +1527,253 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        {
+                            "key": "5733528ee81c7",
+                            "name": "map",
+                            "label": "Map",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_573352aee81c8",
+                                    "label": "Map Style",
+                                    "name": "map_style",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "plain": "No markers",
+                                        "dots": "Markers without connection (for individual locations)",
+                                        "network": "Connected markers (for Tandems \/ Tridems)",
+                                        "route": "Markers that form a route (N\/A)"
+                                    },
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "No markers",
+                                    "layout": "vertical",
+                                    "allow_null": 0
+                                },
+                                {
+                                    "key": "field_5734909acd3cf",
+                                    "label": "Map Size",
+                                    "name": "map_size",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "wide": "Wide (landscape)",
+                                        "square": "Square",
+                                        "small": "Small (small landscape)"
+                                    },
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "",
+                                    "layout": "vertical",
+                                    "allow_null": 0
+                                },
+                                {
+                                    "key": "field_5733516fe81c4",
+                                    "label": "Map markers",
+                                    "name": "map_markers",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_573352aee81c8",
+                                                "operator": "!=",
+                                                "value": "plain"
+                                            },
+                                            {
+                                                "field": "field_573352aee81c8",
+                                                "operator": "!=",
+                                                "value": "network"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": "",
+                                    "max": "",
+                                    "layout": "block",
+                                    "button_label": "Add Marker",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_573351abe81c5",
+                                            "label": "Marker Location",
+                                            "name": "map_marker_location",
+                                            "type": "google_map",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": 50,
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "center_lat": "",
+                                            "center_lng": "",
+                                            "zoom": "",
+                                            "height": 300
+                                        },
+                                        {
+                                            "key": "field_573360522b9f0",
+                                            "label": "Marker Link",
+                                            "name": "map_marker_link",
+                                            "type": "post_object",
+                                            "instructions": "If you want the marker's label to link to a story or collaboration page, select the relationship here.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": 50,
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "post_type": [
+                                                "story",
+                                                "collaboration"
+                                            ],
+                                            "taxonomy": [],
+                                            "allow_null": 1,
+                                            "multiple": 0,
+                                            "return_format": "object",
+                                            "ui": 1
+                                        },
+                                        {
+                                            "key": "field_5733521de81c6",
+                                            "label": "Marker title",
+                                            "name": "map_marker_title",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": 100,
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": "",
+                                            "readonly": 0,
+                                            "disabled": 0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_5734aaec1041c",
+                                    "label": "Select collaborations",
+                                    "name": "map_collaborations",
+                                    "type": "post_object",
+                                    "instructions": "Select the collaboration(s) you would like to display on the map",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_573352aee81c8",
+                                                "operator": "==",
+                                                "value": "network"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "collaboration"
+                                    ],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "multiple": 1,
+                                    "return_format": "object",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_57335cef0bb87",
+                                    "label": "Map center",
+                                    "name": "map_center",
+                                    "type": "google_map",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "center_lat": "52.516667",
+                                    "center_lng": "13.383333",
+                                    "zoom": "",
+                                    "height": ""
+                                },
+                                {
+                                    "key": "field_57335d9b0bb88",
+                                    "label": "Zoom Level",
+                                    "name": "map_zoom_level",
+                                    "type": "number",
+                                    "instructions": "A higher number means a smaller area on the map.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 7,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "min": 0,
+                                    "max": 19,
+                                    "step": 1,
+                                    "readonly": 0,
+                                    "disabled": 0
+                                },
+                                {
+                                    "key": "field_5733621e0afd7",
+                                    "label": "Caption",
+                                    "name": "map_caption",
+                                    "type": "text",
+                                    "instructions": "If you want to add a caption to your map, add it here.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     ]
                 },
@@ -2332,6 +2580,288 @@
                             "max": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_576d304c9659d",
+                    "label": "Map Style",
+                    "name": "map_style",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_57377dd567504",
+                                "operator": "==",
+                                "value": "has_map"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "plain": "No markers",
+                        "dots": "Markers without connection (for individual locations)",
+                        "network": "Connected markers (for Tandems \/ Tridems)",
+                        "route": "Markers that form a route (N\/A)"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "No markers",
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_576d304c9659e",
+                    "label": "Map Size",
+                    "name": "map_size",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_57377dd567504",
+                                "operator": "==",
+                                "value": "has_map"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "wide": "Wide (landscape)",
+                        "square": "Square",
+                        "small": "Small (small landscape)"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "",
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_576d304c9659f",
+                    "label": "Map markers",
+                    "name": "map_markers",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_57377dd567504",
+                                "operator": "==",
+                                "value": "has_map"
+                            },
+                            {
+                                "field": "field_576d304c9659d",
+                                "operator": "!=",
+                                "value": "plain"
+                            },
+                            {
+                                "field": "field_576d304c9659d",
+                                "operator": "!=",
+                                "value": "network"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": "",
+                    "max": "",
+                    "layout": "block",
+                    "button_label": "Add Marker",
+                    "sub_fields": [
+                        {
+                            "key": "field_576d304c965a0",
+                            "label": "Marker Location",
+                            "name": "map_marker_location",
+                            "type": "google_map",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "center_lat": "",
+                            "center_lng": "",
+                            "zoom": "",
+                            "height": 300
+                        },
+                        {
+                            "key": "field_576d304c965a1",
+                            "label": "Marker Link",
+                            "name": "map_marker_link",
+                            "type": "post_object",
+                            "instructions": "If you want the marker's label to link to a story or collaboration page, select the relationship here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "story",
+                                "collaboration"
+                            ],
+                            "taxonomy": [],
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_576d304c965a2",
+                            "label": "Marker title",
+                            "name": "map_marker_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 100,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_576d304c965a3",
+                    "label": "Select collaborations",
+                    "name": "map_collaborations",
+                    "type": "post_object",
+                    "instructions": "Select the collaboration(s) you would like to display on the map",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_576d304c9659d",
+                                "operator": "==",
+                                "value": "network"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "collaboration"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_576d304c965a5",
+                    "label": "Zoom Level",
+                    "name": "map_zoom_level",
+                    "type": "number",
+                    "instructions": "A higher number means a smaller area on the map.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_57377dd567504",
+                                "operator": "==",
+                                "value": "has_map"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 7,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": 19,
+                    "step": 1,
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_576d304c965a4",
+                    "label": "Map center",
+                    "name": "map_center",
+                    "type": "google_map",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_57377dd567504",
+                                "operator": "==",
+                                "value": "has_map"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "center_lat": "52.516667",
+                    "center_lng": "13.383333",
+                    "zoom": 6,
+                    "height": ""
+                },
+                {
+                    "key": "field_576d304c965a6",
+                    "label": "Caption",
+                    "name": "map_caption",
+                    "type": "text",
+                    "instructions": "If you want to add a caption to your map, add it here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_57377dd567504",
+                                "operator": "==",
+                                "value": "has_map"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
                 }
             ]
         }
@@ -2367,5 +2897,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1466436850
+    "modified": 1466858333
 }
