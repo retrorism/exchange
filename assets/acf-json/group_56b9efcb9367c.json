@@ -61,7 +61,7 @@
             },
             "taxonomy": "tandem",
             "field_type": "multi_select",
-            "allow_null": 1,
+            "allow_null": 0,
             "add_term": 1,
             "save_terms": 1,
             "load_terms": 1,
@@ -85,8 +85,8 @@
             "field_type": "select",
             "allow_null": 0,
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
+            "save_terms": 1,
+            "load_terms": 1,
             "return_format": "object",
             "multiple": 0
         },
@@ -157,5 +157,5 @@
     ],
     "active": 1,
     "description": "Sidebar for story editor",
-    "modified": 1466517241
+    "modified": 1467053363
 }

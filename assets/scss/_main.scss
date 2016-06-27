@@ -78,6 +78,20 @@ a.button--small {
 }
 
 
+.widget_nav_menu li {
+	display: block;
+	a, a:visited {
+		display: inline;
+		padding: 0;
+		color: $white;
+		font-weight: $global-weight-semibold;
+	}
+	a:hover {
+		border-bottom: 2px solid $white;
+	}
+}
+
+
 /*********************
 H1, H2, H3, H4, H5 P STYLES
 *********************/
@@ -225,7 +239,8 @@ ARTICLE STYLES:
 .story__header__lowres-image-wrapper,
 .story__section .section-inner,
 .story__footer,
-.story__relatedgrid {
+.story__relatedgrid,
+.archive__grid {
 	@include grid-row;
 }
 
@@ -268,7 +283,8 @@ ARTICLE STYLES:
 	@include grid-column-position(center);
 }
 
-.story__relatedgrid {
+.story__relatedgrid,
+.archive__grid {
 	@include grid-column( 95%, 0 );
 	@include grid-column-position(center);
 }
@@ -310,7 +326,7 @@ ARTICLE STYLES:
 .collaboration__header__desc {
 	@include grid-column( 12 );
 	text-align: center;
-	background: $yellow-4;
+	background: $salmon-4;
 	color: $white;
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
@@ -406,11 +422,11 @@ ARTICLE PATTERN STYLES
 	background-color: $salmon-1-web;
 }
 
-.story__section > svg {
+.story__section > svg,
+.page__footer__widgets > svg {
 	position: relative;
 	width: 100%;
 	height: 20px;
-	margin-bottom: 2 * $global-margin;
 	margin: 0;
 	padding: 0;
 	top: -20px;
@@ -1326,7 +1342,8 @@ ARTICLE META STYLES
 ARTICLE EXTRAS STYLES
 *********************/
 
-.relatedgrid__griditem {
+.relatedgrid__griditem,
+.archive__grid__griditem {
 	@include grid_column( 12 );
 	@include breakpoint( medium ) {
 		@include grid_column( 6 );
@@ -1340,20 +1357,21 @@ ARTICLE EXTRAS STYLES
 .griditem__content {
 	padding: 0.5 * $global-padding;
 	background-color: $white;
+	text-align: center;
+}
+
+.griditem__image,
+.griditem__meta,
+.griditem__title,
+.griditem__intro-wrapper,
+.griditem__tags {
+	margin-bottom: 0.5 * $global-margin;
 }
 
 .griditem__image {
-	margin: 0;
 	width: 100%;
 	max-height: 10em;
 	overflow: hidden;
-}
-
-.griditem__title {
-	margin-top: 1 * $global-margin;
-}
-
-.griditem__intro, .griditem__editorialintro {
 }
 
 .orbit {
@@ -1569,10 +1587,71 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.footer {
+
+.page__footer {
 	clear: both;
-	margin-top: 1em;
 }
+
+.page__footer__widgets {
+	background-color: $yellow-tandem;
+}
+
+.page__footer__copyright {
+	padding: 1 * $global-padding;
+	@include grid-row();
+	p {
+		margin-bottom: 0;
+		text-align: center;
+	}
+}
+
+.page__footer__widgets-inner {
+	@include grid-row();
+}
+
+.footer__widget-wrapper {
+	color: $white;
+	padding: 0 0 3 * $global-padding;
+	@include breakpoint( medium ) {
+		@include grid-column( 6 );
+	}
+	@include breakpoint( large ) {
+		@include grid-column( 3 );
+	}
+}
+
+.footer__widget__title {
+	font-size: $lead-font-size;
+	text-transform: uppercase;
+	margin-bottom: 0.5em;
+}
+
+
+.widget_search {
+	line-height: 1.5em;
+	label {
+		height: auto;
+		display: block;
+	}
+	.screen-reader-text {
+		display: none;
+	}
+	input.search-field {
+		width: 10em;
+		display: inline;
+	}
+	input.search-submit {
+		@include button;
+		background-color: $yellow-tandem;
+		border: 1px solid $white;
+		display: inline;
+		position: relative;
+		top: 0.45em;
+		color: $white;
+		font-weight: $global-weight-semibold;
+	}
+}
+
 
 /*********************
 FOUNDATION STYLES

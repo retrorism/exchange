@@ -5,7 +5,7 @@
         {
             "key": "field_56bdaddef24ea",
             "label": "Topics",
-            "name": "topics",
+            "name": "topic",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -27,7 +27,7 @@
         {
             "key": "field_570b7d8c359c2",
             "label": "Locations",
-            "name": "locations",
+            "name": "location",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -71,5 +71,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466513434
+    "modified": 1467053396
 }

@@ -1914,13 +1914,138 @@
                         },
                         {
                             "key": "574c17af2480c",
-                            "name": "grid_exchange_link",
-                            "label": "Story, Page or Collaboration",
+                            "name": "grid_exchange_story",
+                            "label": "Story",
                             "display": "block",
                             "sub_fields": [
                                 {
                                     "key": "field_574c19d424811",
-                                    "label": "Select a page, story, or collaboration",
+                                    "label": "Select a story",
+                                    "name": "grid_exchange_object",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": "",
+                                    "conditional_logic": "",
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "story"
+                                    ],
+                                    "taxonomy": [],
+                                    "allow_null": "",
+                                    "multiple": "",
+                                    "return_format": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_574c19012480f",
+                                    "label": "Grid width",
+                                    "name": "grid_width",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "grid_third": "1 \/ 3",
+                                        "grid_half": "1 \/ 2 (half width)",
+                                        "grid_two_third": "2 \/ 3",
+                                        "grid_full": "full width"
+                                    },
+                                    "default_value": [
+                                        "grid_third"
+                                    ],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "disabled": 0,
+                                    "readonly": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        {
+                            "key": "57711aa36ff57",
+                            "name": "grid_exchange_page",
+                            "label": "Page",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_57711aa36ff58",
+                                    "label": "Select a page or programme round",
+                                    "name": "grid_exchange_object",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": "",
+                                    "conditional_logic": "",
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "page",
+                                        "programme_round"
+                                    ],
+                                    "taxonomy": [],
+                                    "allow_null": "",
+                                    "multiple": "",
+                                    "return_format": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_57711aa36ff59",
+                                    "label": "Grid width",
+                                    "name": "grid_width",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": "",
+                                    "conditional_logic": "",
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "grid_third": "1 \/ 3",
+                                        "grid_half": "1 \/ 2 (half width)",
+                                        "grid_two_third": "2 \/ 3",
+                                        "grid_full": "full width"
+                                    },
+                                    "default_value": [
+                                        "grid_third"
+                                    ],
+                                    "allow_null": "",
+                                    "multiple": "",
+                                    "ui": "",
+                                    "ajax": "",
+                                    "placeholder": "",
+                                    "disabled": 0,
+                                    "readonly": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        {
+                            "key": "57711a9e6ff54",
+                            "name": "grid_exchange_collaboration",
+                            "label": "Collaboration",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_57711a9e6ff55",
+                                    "label": "Select a collaboration",
                                     "name": "grid_exchange_object",
                                     "type": "post_object",
                                     "instructions": "",
@@ -1932,10 +2057,7 @@
                                         "id": ""
                                     },
                                     "post_type": [
-                                        "page",
-                                        "story",
-                                        "collaboration",
-                                        "programme_round"
+                                        "collaboration"
                                     ],
                                     "taxonomy": [],
                                     "allow_null": 0,
@@ -1944,7 +2066,7 @@
                                     "ui": 1
                                 },
                                 {
-                                    "key": "field_574c19012480f",
+                                    "key": "field_57711a9e6ff56",
                                     "label": "Grid width",
                                     "name": "grid_width",
                                     "type": "select",
@@ -2897,5 +3019,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1466858333
+    "modified": 1467030303
 }
