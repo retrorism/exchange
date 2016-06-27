@@ -42,7 +42,8 @@ a, a:visited {
 
 .story__header,
 .story__content,
-.story__footer {
+.story__footer,
+.collaboration__participant__details {
 	p > a {
 		border-bottom: 2px solid $yellow-tandem;
 		background-color: transparent;
@@ -217,7 +218,7 @@ ul#menu-main-menu-right {
 }
 
 /*********************
-ARTICLE STYLES
+ARTICLE STYLES:
 *********************/
 
 .story__header__introduction,
@@ -280,13 +281,75 @@ ARTICLE STYLES
 	transition: visibility .2s, opacity 2.4s;
 }
 
-/*********************
-ARTICLE HEADER STYLES
-*********************/
-.article-header {
-	ul.off-canvas-list li {
-		list-style: none;
+.collaboration__header--no--image,
+.collaboration__header--has-image,
+.collaboration__participants
+ {
+	 //@include grid-row( null, null, 2 * $grid-row-width, true )
+	@include grid-row()
+}
+
+.collaboration__header__image-wrapper {
+	@include grid-column( 12, '0 px');
+	@include breakpoint( large ) {
+		@include grid-column( 6, '0 px' );
+		.image__placeholder,
+		.collaboration__header__image,
+		img {
+			height: 100% !important;
+			width: auto;
+			max-width: none;
+		}
 	}
+	.image__caption {
+		text-align: right;
+		padding-right: $global-padding;
+	}
+}
+
+.collaboration__header__desc {
+	@include grid-column( 12 );
+	text-align: center;
+	background: $yellow-4;
+	color: $white;
+	@include breakpoint( large ) {
+		@include grid-column( 6, '0 px' );
+	}
+}
+
+.collaboration__header__desc-inner {
+	padding: 4 * $global-padding 2 * $global-padding;
+}
+
+.collaboration__paragraph {
+	@include breakpoint( xlarge ) {
+		max-width: 80%;
+		margin: auto;
+	}
+}
+
+.collaboration__tags {
+	@include breakpoint( xlarge ) {
+		max-width: 60%;
+		margin: auto;
+	}
+}
+
+.collaboration__participants__item {
+	@include grid-column( 6 );
+	min-height: 37.5em;
+}
+
+.collaboration__participant__details {
+	padding: 2 * $global-padding;
+}
+
+.participant__organisation__city {
+	font-weight: $global-weight-semibold;
+}
+
+.participant__organisation__city {
+	font-weight: $global-weight-light;
 }
 
 /*********************
@@ -409,11 +472,10 @@ Pattern 4. Tag list
 	margin-left: 0;
 }
 
-.griditem__tags ol li {
-	display: inline;
-}
-
-.story__meta__tags ol li {
+.griditem__tags ol li,
+.collaboration__tags ol li,
+.story__meta__tags ol li,
+ {
 	display: inline-block;
 	margin: 0.125 * $global-margin 0.25 * $global-margin 0.125 * $global-margin 0;
 	&:first-of-type {
@@ -429,7 +491,10 @@ Pattern 4. Tag list
 
 
 
-.tag, .griditem__tag, .story__meta__tag {
+.tag,
+.collaboration__tag,
+.griditem__tag,
+.story__meta__tag {
 	@include label;
 	font-size: $small-font-size;
 	border: 1px solid $yellow-tandem;
@@ -449,6 +514,12 @@ Pattern 4. Tag list
 		border-color: $salmon-3;
 	}
 }
+
+.collaboration__header .collaboration__tag {
+	color: $white;
+	border-color: $white;
+}
+
 
 /****************************
 Pattern 5. Hero / cover image
@@ -511,6 +582,8 @@ Pattern 5. Hero / cover image
 		}
 	}
 }
+
+
 
 /*********************
 Pattern 6. Paragraph

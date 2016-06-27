@@ -56,6 +56,7 @@ function exchange_theme_support() {
 	add_image_size( 'medium-portrait', $med_h, $med_w, true );
 	add_image_size( 'medium-large', 1.5 * $med_w, 1.5 * $med_h, true );
 	add_image_size( 'medium-large-portrait', 1.5 * $med_h, 1.5 * $med_w, true );
+	add_image_size( 'medium-large-square', 1.5 * $med_w, 1.5 * $med_w, true );
 	add_image_size( 'header-image', $wide_w, $wide_w * ( 2 / 3 ), true );
 
 	add_filter( 'image_size_names_choose', 'exchange_custom_sizes' );

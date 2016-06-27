@@ -2,47 +2,43 @@
 // SIDEBARS AND WIDGETIZED AREAS
 function exchange_register_sidebars() {
 	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __('Sidebar 1', 'exchange'),
+		'id' => 'footer-1',
+		'name' => __('Footer 1', 'exchange'),
 		'description' => __('The first (primary) sidebar.', 'exchange'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
+		'before_title' => '<h4 class="widget__title">',
 		'after_title' => '</h4>',
 	));
 
 	register_sidebar(array(
-		'id' => 'offcanvas',
-		'name' => __('Offcanvas', 'exchange'),
-		'description' => __('The offcanvas sidebar.', 'exchange'),
+		'id' => 'footer-2',
+		'name' => __('Footer 21', 'exchange'),
+		'description' => __('The first (primary) sidebar.', 'exchange'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
+		'before_title' => '<h4 class="widget__title">',
 		'after_title' => '</h4>',
 	));
-
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
-
-	Just change the name to whatever your new
-	sidebar's id is, for example:
 
 	register_sidebar(array(
-		'id' => 'sidebar2',
-		'name' => __('Sidebar 2', 'exchange'),
-		'description' => __('The second (secondary) sidebar.', 'exchange'),
+		'id' => 'footer-3',
+		'name' => __('Footer 3', 'exchange'),
+		'description' => __('The first (primary) sidebar.', 'exchange'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
+		'before_title' => '<h4 class="widget__title">',
 		'after_title' => '</h4>',
 	));
 
-	To call the sidebar in your template, you can just copy
-	the sidebar.php file and rename it to your sidebar's name.
-	So using the above example, it would be:
-	sidebar-sidebar2.php
+	register_sidebar(array(
+		'id' => 'footer-4',
+		'name' => __('Footer 4', 'exchange'),
+		'description' => __('The first (primary) sidebar.', 'exchange'),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget__title">',
+		'after_title' => '</h4>',
+	));
 
-	*/
 } // don't remove this bracket!

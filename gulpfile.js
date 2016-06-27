@@ -70,7 +70,7 @@ gulp.task('foundation-js', function() {
 		//   './vendor/foundation-sites/js/foundation.drilldown.js',
 		//   './vendor/foundation-sites/js/foundation.dropdown.js',
 		//   './vendor/foundation-sites/js/foundation.dropdownMenu.js',
-		//   './vendor/foundation-sites/js/foundation.equalizer.js',
+		'./vendor/foundation-sites/js/foundation.equalizer.js',
 		//   './vendor/foundation-sites/js/foundation.interchange.js',
 		//   './vendor/foundation-sites/js/foundation.magellan.js',
 		//   './vendor/foundation-sites/js/foundation.offcanvas.js',

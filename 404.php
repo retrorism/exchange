@@ -1,17 +1,19 @@
 <?php get_header(); ?>
-			
+
 	<div id="content">
 
 		<div id="inner-content" class="row">
-	
+
 			<main id="main" class="large-8 medium-8 columns" role="main">
 
 				<article id="content-not-found">
-				
+
 					<header class="article-header">
 						<h1><?php _e( 'Epic 404 - Article Not Found', 'exchange' ); ?></h1>
 					</header> <!-- end article header -->
-			
+					<?php global $wp_rewrite;
+					var_dump( $wp_rewrite ); ?>
+
 					<section class="entry-content">
 						<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'exchange' ); ?></p>
 					</section> <!-- end article section -->
@@ -19,9 +21,9 @@
 					<section class="search">
 					    <p><?php get_search_form(); ?></p>
 					</section> <!-- end search section -->
-			
+
 				</article> <!-- end article -->
-	
+
 			</main> <!-- end #main -->
 
 		</div> <!-- end #inner-content -->

@@ -3045,13 +3045,15 @@ a, a:visited {
 
 .story__header p > a,
 .story__content p > a,
-.story__footer p > a {
+.story__footer p > a,
+.collaboration__participant__details p > a {
   border-bottom: 2px solid #f4c522;
   background-color: transparent;
   transition: background-color 0.5s; }
   .story__header p > a:hover,
   .story__content p > a:hover,
-  .story__footer p > a:hover {
+  .story__footer p > a:hover,
+  .collaboration__participant__details p > a:hover {
     color: #343438;
     background-color: #f4c522; }
 
@@ -3189,7 +3191,7 @@ ul#menu-main-menu-right {
   display: none; }
 
 /*********************
-ARTICLE STYLES
+ARTICLE STYLES:
 *********************/
 .story__header__introduction,
 .story__header__lowres-image-wrapper,
@@ -3415,11 +3417,100 @@ ARTICLE STYLES
 .focus img {
   transition: visibility .2s, opacity 2.4s; }
 
-/*********************
-ARTICLE HEADER STYLES
-*********************/
-.article-header ul.off-canvas-list li {
-  list-style: none; }
+.collaboration__header--no--image,
+.collaboration__header--has-image,
+.collaboration__participants {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .collaboration__header--no--image::before, .collaboration__header--no--image::after,
+  .collaboration__header--has-image::before,
+  .collaboration__header--has-image::after,
+  .collaboration__participants::before,
+  .collaboration__participants::after {
+    content: ' ';
+    display: table; }
+  .collaboration__header--no--image::after,
+  .collaboration__header--has-image::after,
+  .collaboration__participants::after {
+    clear: both; }
+
+.collaboration__header__image-wrapper {
+  width: 100%;
+  float: left; }
+  .collaboration__header__image-wrapper:last-child:not(:first-child) {
+    float: right; }
+  @media screen and (min-width: 60em) {
+    .collaboration__header__image-wrapper {
+      width: 50%;
+      float: left; }
+      .collaboration__header__image-wrapper:last-child:not(:first-child) {
+        float: right; }
+      .collaboration__header__image-wrapper .image__placeholder,
+      .collaboration__header__image-wrapper .collaboration__header__image,
+      .collaboration__header__image-wrapper img {
+        height: 100% !important;
+        width: auto;
+        max-width: none; } }
+  .collaboration__header__image-wrapper .image__caption {
+    text-align: right;
+    padding-right: 1rem; }
+
+.collaboration__header__desc {
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  text-align: center;
+  background: #e27f20;
+  color: #fefefe; }
+  @media screen and (min-width: 30em) {
+    .collaboration__header__desc {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .collaboration__header__desc:last-child:not(:first-child) {
+    float: right; }
+  @media screen and (min-width: 60em) {
+    .collaboration__header__desc {
+      width: 50%;
+      float: left; }
+      .collaboration__header__desc:last-child:not(:first-child) {
+        float: right; } }
+
+.collaboration__header__desc-inner {
+  padding: 4rem 2rem; }
+
+@media screen and (min-width: 75em) {
+  .collaboration__paragraph {
+    max-width: 80%;
+    margin: auto; } }
+
+@media screen and (min-width: 75em) {
+  .collaboration__tags {
+    max-width: 60%;
+    margin: auto; } }
+
+.collaboration__participants__item {
+  width: 50%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  min-height: 37.5em; }
+  @media screen and (min-width: 30em) {
+    .collaboration__participants__item {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .collaboration__participants__item:last-child:not(:first-child) {
+    float: right; }
+
+.collaboration__participant__details {
+  padding: 2rem; }
+
+.participant__organisation__city {
+  font-weight: 600; }
+
+.participant__organisation__city {
+  font-weight: 300; }
 
 /*********************
 ARTICLE PATTERN STYLES
@@ -3516,21 +3607,29 @@ Pattern 4. Tag list
   list-style: none;
   margin-left: 0; }
 
-.griditem__tags ol li {
-  display: inline; }
-
+.griditem__tags ol li,
+.collaboration__tags ol li,
 .story__meta__tags ol li {
   display: inline-block;
   margin: 0.125rem 0.25rem 0.125rem 0; }
+  .griditem__tags ol li:first-of-type,
+  .collaboration__tags ol li:first-of-type,
   .story__meta__tags ol li:first-of-type {
     margin-left: 0; }
   @media screen and (min-width: 75em) {
+    .griditem__tags ol li,
+    .collaboration__tags ol li,
     .story__meta__tags ol li {
       margin: 0.125rem 0 0.125rem 0.25rem; }
+      .griditem__tags ol li:first-of-type,
+      .collaboration__tags ol li:first-of-type,
       .story__meta__tags ol li:first-of-type {
         margin-right: 0; } }
 
-.tag, .griditem__tag, .story__meta__tag {
+.tag,
+.collaboration__tag,
+.griditem__tag,
+.story__meta__tag {
   display: inline-block;
   padding: 0.33333rem 0.5rem;
   font-size: 0.8rem;
@@ -3540,16 +3639,35 @@ Pattern 4. Tag list
   border-radius: 0;
   font-size: 80%;
   border: 1px solid #f4c522; }
-  .tag.post_tag, .griditem__tag.post_tag, .story__meta__tag.post_tag {
+  .tag.post_tag,
+  .collaboration__tag.post_tag,
+  .griditem__tag.post_tag,
+  .story__meta__tag.post_tag {
     border-color: #f4c522; }
-  .tag.topic, .griditem__tag.topic, .story__meta__tag.topic {
+  .tag.topic,
+  .collaboration__tag.topic,
+  .griditem__tag.topic,
+  .story__meta__tag.topic {
     border-color: #0f9fd6; }
-  .tag.tandem, .griditem__tag.tandem, .story__meta__tag.tandem {
+  .tag.tandem,
+  .collaboration__tag.tandem,
+  .griditem__tag.tandem,
+  .story__meta__tag.tandem {
     border-color: #e27f20; }
-  .tag.language, .griditem__tag.language, .story__meta__tag.language {
+  .tag.language,
+  .collaboration__tag.language,
+  .griditem__tag.language,
+  .story__meta__tag.language {
     border-color: #e07856; }
-  .tag.location, .griditem__tag.location, .story__meta__tag.location {
+  .tag.location,
+  .collaboration__tag.location,
+  .griditem__tag.location,
+  .story__meta__tag.location {
     border-color: #eaab73; }
+
+.collaboration__header .collaboration__tag {
+  color: #fefefe;
+  border-color: #fefefe; }
 
 /****************************
 Pattern 5. Hero / cover image
