@@ -27,6 +27,17 @@
 		</div>
 	<?php endif; ?>
 
+	<!-- COLLABORATIONS -->
+	<?php if ( ! empty( $exchange->has_participants ) ) : ?>
+		<div class='griditem__collaboration-info'>
+			<ul class="participants">
+			<?php foreach( $exchange->participants as $p ) {
+				echo '<li class="participant">' . $p->publish_name() . '</li>';
+			} ?>
+			</ul>
+		</div>
+	<?php endif; ?>
+
 	<!-- READMORE -->
 	<div class='griditem__button-wrapper'>
 		<?php echo exchange_create_link( $exchange, true, 'griditem__button button--small' ); ?>

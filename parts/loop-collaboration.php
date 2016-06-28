@@ -12,7 +12,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 };
-
 $collab = new Collaboration( $post );
 
 ?>
@@ -36,9 +35,7 @@ $collab = new Collaboration( $post );
 	<section class="collaboration__participants">
 	<?php if ( $collab->has_participants ) : ?>
 		<?php $participants = $collab->participants;
-			foreach( $participants as $p ) {
-				$p_obj = new Participant( get_post( $p ) );
-				$p_obj->controller->set_organisation_data(); ?>
+			foreach( $participants as $p_obj ) { ?>
 				<div class="collaboration__participants__item">
 					<div class="collaboration__participant__details">
 						<h2 class="participant__name">
