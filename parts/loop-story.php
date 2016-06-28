@@ -70,9 +70,7 @@ $story = new Story( $post );
 
 	<footer class="article-footer story__footer">
 		<?php $story->publish_byline( 'story__footer' ); ?>
-		<?php $story->publish_tags( 'story__footer' ); ?>
-
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'exchange' ) . '</span> ', ', ', ''); ?></p>
+		<?php /* $story->publish_tags( 'story__footer' ); */ ?>
 	</footer> <!-- end article footer -->
 
 </article> <!-- end article -->

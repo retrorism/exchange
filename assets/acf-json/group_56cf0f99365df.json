@@ -2936,7 +2936,7 @@
                     "name": "map_center",
                     "type": "google_map",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": [
                         [
                             {
@@ -2992,22 +2992,15 @@
         [
             {
                 "param": "post_type",
-                "operator": "==",
-                "value": "story"
+                "operator": "!=",
+                "value": "participant"
             }
         ],
         [
             {
                 "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "programme_round"
+                "operator": "!=",
+                "value": "post"
             }
         ]
     ],
@@ -3019,5 +3012,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1467030303
+    "modified": 1467114883
 }

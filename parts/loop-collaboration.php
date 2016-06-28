@@ -70,6 +70,7 @@ $collab = new Collaboration( $post );
 	<div class="entry-content collaboration__content" itemprop="articleBody">
 		<?php
 		// Loop through sections.
+		$collab->publish_sections();
 		?>
 	</div> <!-- end article -->
 

@@ -239,6 +239,7 @@ ARTICLE STYLES:
 .story__header__introduction,
 .story__header__lowres-image-wrapper,
 .story__section .section-inner,
+.collaboration__section .section-inner,
 .story__footer,
 .story__relatedgrid,
 .archive__header__introduction,
@@ -387,8 +388,8 @@ ARTICLE PATTERN STYLES
 	margin-bottom: 0;
 }
 
-.story__section p,
-.story__section li {
+.section__slice p,
+.section__slice li {
 	font-weight: $global-weight-normal;
 	line-height: $paragraph-lineheight;
 	hyphens: auto;
@@ -426,6 +427,7 @@ ARTICLE PATTERN STYLES
 }
 
 .story__section > svg,
+.collaboration__section > svg,
 .page__footer__widgets > svg {
 	position: relative;
 	width: 100%;
@@ -438,7 +440,14 @@ ARTICLE PATTERN STYLES
 		top: 20px;
 	}
 }
+.collaboration__section:last-child,
+.story__section:last-child {
+	padding-bottom: 2 * $global-padding;
+	svg.section__edge--bottom {
+		display: none;
+	}
 
+}
 
 
 
