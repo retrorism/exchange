@@ -11,8 +11,6 @@
 					<header class="article-header">
 						<h1><?php _e( 'Epic 404 - Article Not Found', 'exchange' ); ?></h1>
 					</header> <!-- end article header -->
-					<?php global $wp_rewrite;
-					var_dump( $wp_rewrite ); ?>
 
 					<section class="entry-content">
 						<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'exchange' ); ?></p>

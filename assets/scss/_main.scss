@@ -43,6 +43,7 @@ a, a:visited {
 .story__header,
 .story__content,
 .story__footer,
+.archive__header,
 .collaboration__participant__details {
 	p > a {
 		border-bottom: 2px solid $yellow-tandem;
@@ -240,6 +241,7 @@ ARTICLE STYLES:
 .story__section .section-inner,
 .story__footer,
 .story__relatedgrid,
+.archive__header__introduction,
 .archive__grid {
 	@include grid-row;
 }
@@ -256,7 +258,8 @@ ARTICLE STYLES:
 .section__slice,
 .story__footer__byline,
 .section--has_gravity_forms .section-inner > div,
-.story__meta-wrapper {
+.story__meta-wrapper,
+.archive__title-wrapper {
 	margin-bottom: 2 * $global-margin;
 	margin-top: 2 * $global-margin;
 	clear: both;
@@ -443,11 +446,13 @@ ARTICLE PATTERN STYLES
 Pattern 1. Title
 ****************/
 
-.story__title-wrapper {
+.story__title-wrapper,
+.archive__title-wrapper {
 	margin-top: 4 * $global-margin;
 }
 
-body.page .story__title-wrapper {
+body.page .story__title-wrapper,
+.archive__title-wrapper {
 	text-align: center;
 }
 
