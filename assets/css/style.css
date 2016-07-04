@@ -3750,8 +3750,7 @@ ARTICLE STYLES:
   width: 50%;
   float: left;
   padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  min-height: 37.5em; }
+  padding-right: 0.625rem; }
   @media screen and (min-width: 30em) {
     .collaboration__participants__item {
       padding-left: 0.9375rem;
