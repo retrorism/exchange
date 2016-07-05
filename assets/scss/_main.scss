@@ -30,7 +30,6 @@ a, a:visited {
 		//Highlight links on iOS, Similar to :hover for mobile devices.
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
-
 }
 
 .menu li.active > a {
@@ -61,6 +60,7 @@ a.button--small {
 	@include button;
 	border: 2px solid $black-tandem;
 }
+
 
 a.button--small {
 	padding: 0.2 * $global-padding;
@@ -328,6 +328,7 @@ ARTICLE STYLES:
 }
 
 .collaboration__header__desc {
+	max-height: 40em !important;
 	@include grid-column( 12 );
 	text-align: center;
 	background: $salmon-4;
@@ -1300,6 +1301,8 @@ ARTICLE META STYLES
 .story__meta-inner {
 	background-color: $yellow-1;
 	padding: $global-padding;
+	position: relative;
+	z-index: 2;
 	@include breakpoint( xlarge ) {
 		@include grid-column( 2 );
 		@include grid-column-collapse;
@@ -1368,9 +1371,19 @@ ARTICLE EXTRAS STYLES
 }
 
 .griditem__content {
+	position: relative;
 	padding: 0.5 * $global-padding;
+	padding-bottom: 3 * $global-padding;
 	background-color: $white;
 	text-align: center;
+	.button--small {
+		border-color: $yellow-tandem;
+		transition: all 0.2s;
+		&:hover {
+			background-color: $yellow-tandem;
+			color: $white;
+		}
+	}
 }
 
 .griditem__image,
@@ -1381,11 +1394,57 @@ ARTICLE EXTRAS STYLES
 	margin-bottom: 0.5 * $global-margin;
 }
 
+a:hover .griditem__title {
+	color: $body-font-color;
+}
+
 .griditem__image {
 	width: 100%;
-	max-height: 10em;
+	max-height: 12.5em;
 	overflow: hidden;
 }
+
+.griditem__content--collaboration {
+}
+
+.griditem__collaboration-info {
+	position: relative;
+	text-align: center;
+	min-height: 4em;
+	svg {
+		position: absolute;
+		top: 50%;
+		height: 4em;
+		width: auto;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 1;
+	}
+	.participant {
+		position: relative;
+		vertical-align: middle;
+		display: inline-block;
+		z-index: 2;
+		width: 48%;
+		padding: 1%;
+		margin: 0;
+		height: 4 * $global-font-size;
+	}
+	.participant__organisation-details {
+		display: block;
+		font-weight: $global-weight-light;
+
+	}
+
+}
+
+.griditem__button-wrapper {
+	position: absolute;
+	bottom: 0.5 * $global-padding;
+	width: 100%;
+	text-align: center;
+}
+
+
 
 .orbit {
 	overflow: hidden;
