@@ -33,11 +33,13 @@ $collab = new Collaboration( $post );
 		</div><!-- end description-wrapper -->
 	</header> <!-- end article header -->
 	<div class="entry-content collaboration__content" itemprop="articleBody">
+	<?php if ( $collab->has_participants ) : ?>
 	<section class="collaboration__map">
 		<div class="section-inner">
 		<?php $collab->publish_collab_map(); ?>
 		</div>
 	</section>
+	<?php endif; ?>
 	<section class="collaboration__participants">
 		<div class="section-inner">
 	<?php if ( $collab->has_participants ) : ?>
@@ -48,7 +50,6 @@ $collab = new Collaboration( $post );
 						<h2 class="participant__name">
 							<?php echo $p_obj->name; ?>
 						</h2>
-
 						<?php if ( ! empty( $p_obj->org_name ) ) : ?>
 							<?php if ( ! empty( $p_obj->org_website ) ) : ?>
 								<p class="participant__organisation__name">
