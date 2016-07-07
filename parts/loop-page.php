@@ -50,10 +50,6 @@ $story = new Story( $post );
 		?>
 	</div> <!-- end article -->
 
-	<footer class="article-footer story__footer">
-
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'exchange' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
-
 </article> <!-- end article -->
 
 <div class="article-related-content story__extras">
