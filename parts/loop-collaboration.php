@@ -48,6 +48,7 @@ $collab = new Collaboration( $post );
 						<h2 class="participant__name">
 							<?php echo $p_obj->name; ?>
 						</h2>
+
 						<?php if ( ! empty( $p_obj->org_name ) ) : ?>
 							<?php if ( ! empty( $p_obj->org_website ) ) : ?>
 								<p class="participant__organisation__name">
@@ -67,6 +68,11 @@ $collab = new Collaboration( $post );
 								}
 							?>
 						</p>
+						<?php endif; ?>
+						<?php if ( $p_obj->has_contactme ) : ?>
+							<p class="participant__contactme">
+								<?php $p_obj->publish_contactme(); ?>
+							</p>
 						<?php endif; ?>
 					</div>
 				</div>
