@@ -32,10 +32,17 @@ $collab = new Collaboration( $post );
 			</div><!-- end description -->
 		</div><!-- end description-wrapper -->
 	</header> <!-- end article header -->
+	<div class="entry-content collaboration__content" itemprop="articleBody">
+	<section class="collaboration__map">
+		<div class="section-inner">
+		<?php $collab->publish_collab_map(); ?>
+		</div>
+	</section>
 	<section class="collaboration__participants">
+		<div class="section-inner">
 	<?php if ( $collab->has_participants ) : ?>
 		<?php $participants = $collab->participants;
-			foreach( $participants as $p_obj ) { ?>
+			foreach( $participants as $p_obj ) : ?>
 				<div class="collaboration__participants__item">
 					<div class="collaboration__participant__details">
 						<h2 class="participant__name">
@@ -63,19 +70,33 @@ $collab = new Collaboration( $post );
 						<?php endif; ?>
 					</div>
 				</div>
-		<?php } ?>
+		<?php endforeach; ?>
 	<?php endif; ?>
+		</div><!-- section-inner -->
+	</section>
+	<?php if ( $collab->has_gallery ) : ?>
+	<section class="collaboration__gallery section--salmon-1-web">
+		<div class="section-inner orbit" role="region" aria-label="<?php printf( esc_html__('Gallery for "%s"', 'exchange' ), get_the_title() ); ?>" data-orbit data-auto-play="false">
+		<?php $collab->publish_gallery('collaboration'); ?>
+		</div>
+	</section>
+	<?php endif; ?>
+	<section class="collaboration__stories">
+		<?php $collab->publish_related_stories(); ?>
 	</section>
 
-	<div class="entry-content collaboration__content" itemprop="articleBody">
 		<?php
 		// Loop through sections.
 		$collab->publish_sections();
 		?>
-	</div> <!-- end article -->
+	</div> <!-- end articleBpdy -->
+
 
 	<footer class="article-footer collaboration__footer">
 
 	</footer> <!-- end article footer -->
 
 </article> <!-- end article -->
+<div class="article-related-content collaboration__extras">
+	<?php $collab->publish_related_content('collaboration'); ?>
+</div>

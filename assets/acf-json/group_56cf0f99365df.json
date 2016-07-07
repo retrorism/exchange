@@ -2936,13 +2936,18 @@
                     "name": "map_center",
                     "type": "google_map",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
                                 "field": "field_57377dd567504",
                                 "operator": "==",
                                 "value": "has_map"
+                            },
+                            {
+                                "field": "field_576d304c9659d",
+                                "operator": "!=",
+                                "value": "network"
                             }
                         ]
                     ],
@@ -3012,5 +3017,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1467114883
+    "modified": 1467815137
 }

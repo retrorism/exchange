@@ -1,11 +1,9 @@
 <div class="griditem__content griditem__content--<?php echo $exchange->type; ?>">
 
 	<!-- IMAGE -->
-	<?php if ( $exchange->has_featured_image ) : ?>
-		<?php echo exchange_create_link( $exchange, false ); ?>
-			<?php $exchange->publish_featured_image('griditem'); ?>
-		</a>
-	<?php endif; ?>
+	<?php echo exchange_create_link( $exchange, false ); ?>
+		<?php $exchange->publish_featured_image('griditem'); ?>
+	</a>
 
 	<!-- META -->
 		<div class='griditem__meta'><?php echo mysql2date( get_option('date_format'), $exchange->date ) ?></div>
@@ -23,7 +21,7 @@
 	<!-- INTRO / EXCERPT -->
 	<?php if ( ! empty( $exchange->has_editorial_intro ) ) : ?>
 		<div class='griditem__intro-wrapper'>
-			<?php $exchange->editorial_intro->publish_stripped( 'griditem', 30 ); ?>
+			<?php $exchange->editorial_intro->publish_stripped( 'griditem', 20 ); ?>
 		</div>
 	<?php endif; ?>
 
@@ -35,7 +33,7 @@
 			<?php foreach( $exchange->participants as $p ) : ?>
 				<li class="participant">
 					<?php echo '<span class="participant__name">' . $p->name . '</span>
-					<span class="participant__organisation-details">' . $p->org_city . '</span>'; ?>
+					<span class="participant__organisation-details">' . $p->org_name . '</span>'; ?>
 				</li>
 			<?php endforeach; ?>
 			</ul>

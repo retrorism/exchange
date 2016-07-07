@@ -120,7 +120,7 @@ $grid-column-gutter: (
   small: 20px,
   medium: 30px,
 );
-$grid-column-align-edge: true;
+$grid-column-align-edge: false;
 $block-grid-max: 8;
 
 // 4. Base Typography
@@ -132,20 +132,20 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 21,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
+    'h1': 20,
+    'h2': 19,
+    'h3': 18,
+    'h4': 17,
     'h5': 16,
     'h6': 14,
   ),
   medium: (
-    'h1': 42,
-    'h2': 36,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
-    'h6': 16,
+    'h1': 36,
+    'h2': 28,
+    'h3': 24,
+    'h4': 20,
+    'h5': 18,
+    'h6': 14,
   ),
 );
 $header-color: inherit;
@@ -390,7 +390,7 @@ $input-radius: $global-radius;
 $label-background: $primary-color;
 $label-color: foreground($label-background);
 $label-font-size: 0.8rem;
-$label-padding: 0.33333rem 0.5rem;
+$label-padding: 0.25rem .333rem;
 $label-radius: $global-radius;
 
 // 21. Media Object

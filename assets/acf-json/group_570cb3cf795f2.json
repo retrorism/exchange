@@ -25,7 +25,15 @@
             "type": "relationship",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_570cb4106bd05",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -44,7 +52,7 @@
             "elements": [
                 "featured_image"
             ],
-            "min": 0,
+            "min": "",
             "max": 15,
             "return_format": "object"
         }
@@ -80,5 +88,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466436842
+    "modified": 1467797564
 }
