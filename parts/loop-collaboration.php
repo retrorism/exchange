@@ -27,6 +27,10 @@ $collab = new Collaboration( $post );
 					<?php if ( $collab->has_description ) {
 							$collab->description->publish('collaboration');
 						} ?>
+					<?php if ( ! empty( $collab->website ) ) : ?>
+						<a class="button button--small" href="<?php echo $collab->website; ?>"><?php _e('project website','exchange'); ?></a>
+						<hr>
+					<?php endif; ?>
 					<section class="collaboration__tags"><?php $collab->publish_tags('collaboration'); ?></section>
 				</div>
 			</div><!-- end description -->

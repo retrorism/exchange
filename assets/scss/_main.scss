@@ -59,6 +59,8 @@ a.button--big,
 a.button--small {
 	@include button;
 	border: 2px solid $black-tandem;
+	text-transform: uppercase;
+	font-weight: $global-weight-semibold;
 }
 
 
@@ -72,7 +74,6 @@ a.button--small {
 .emphasisblock--cta a.button--big,
 .emphasisblock--cta a.button--small {
 	border-color: $white;
-	text-transform: uppercase;
 	&:hover {
 		background-color: $white;
 	}
@@ -292,6 +293,7 @@ ARTICLE STYLES:
 }
 
 .page__footer__widgets-inner,
+.section__simplegrid,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
 	@include grid-column( 95%, 0 );
@@ -337,6 +339,19 @@ ARTICLE STYLES:
 	color: $white;
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
+	}
+	.button--small {
+		margin: $global-margin 0;
+		color: $white;
+		border-color: $white;
+		font-weight: $global-weight-semibold;
+		&:hover {
+			background-color: $white;
+		}
+	}
+	hr {
+		border-color: white;
+		border-style: dashed;
 	}
 }
 
@@ -641,6 +656,13 @@ Pattern 5. Hero / cover image
 /*********************
 Pattern 6. Paragraph
 *********************/
+
+.translatedparagraph__paragraph {
+	display: none;
+	&.show {
+		display: block;
+	}
+}
 
 /*******************
 Pattern 7. Subheader
@@ -1046,6 +1068,16 @@ Pattern 17. List/Grid of partner logos
 Pattern 18. Embedded FormAssembly/Formidable form
 *************************************************/
 
+select {
+	border: 2px solid $yellow-tandem;
+	text-transform: uppercase;
+	font-weight: $global-weight-semibold;
+	width: auto;
+	outline: none;
+	background-color: transparent;
+	background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.23728 67.289766"><path d="M99.2 13v1.3c-.4 0-.2 1-.8 1v1c-.8.2-.4 1.6-1.2 1.7v2.5c-1.6.3-1 2.8-2.5 3.3.3 1.2-1 .8-.8 2-.6.3-1 1-1 1.7-.5.2-1 .6-1 1.2-.2.4-.6.3-1 .4 0 .5 0 .5-.4.5.2 1-.7 1-.4 2-.5.2-.8.6-.8 1.3-.4 0-.3.5-.4.8-.4 0-.4.2-.4.4-.2.6-.7.7-.8 1.2-.3.3-.3.6-.5 1v.3s-1.2.4-.8 1.6c-1 .6-1.5 1.4-1.6 2.6-.5 0-.4.5-.5.8-.4 0-.4.2-.4.4-.3 0-.2.5-.3.8-.4 0-.4.2-.4.4-.6.8-.7 2.2-1.7 2.5-.6.8-.6 2-1.6 2.5-.4 1-1 1.6-1.3 2.8-1.2.6-1.7 2-2.4 3-.8 0-.3 1.2-1.2 1-.2.7-.6 1-1.2 1.4 0 1.2-1 1.2-.8 2.4-.8 0-.8 1-1.6 1.2-.2.4-.4.8-1 1 .2.3 0 .6-.3.7.3.5 1.2.3 1.8.4 0-.6.8-.4.8-1 .7.4 0 .8 0 1.3-.4.2-.7.4-.8.8-.6.3-.7.8-1.3 1-1.2.2-.7-1.2-2-1-.2.2-.7 0-.8 0v.5l-.8.4c-.4.2-.3.5-.6.8 0 0-.5 0-.4.4-1 0-1.7.4-2.4.8v.4h-.4v.4h-.4l-1 .4c-1 .3-1.4-.4-2.3-.4 0-.4-.5-.3-.8-.4-.4 0-.4-.4-1-.4-1.7 0-3 .6-5.2.4 0-.4-.5-.3-.8-.4 0-.4-.2-.4-.4-.4-.3-.4-.5-1-.4-1.7-2.3 0-3.8-.7-6.3-.5-1.6 0-2-1.4-3.7-1.2-.2-.6-.6-1-1.2-1.2 0-.7-1.3-.2-1.2-1.2-.2 0-.7.2-.8 0v-.4l-1-.4c0-.2 0-.6-.3-.8 0 0-.5 0-.4-.4h-.7v-.4h-.8c-.2 0-.3-.8-.4-.8h-.7c0-.4-.6-.4-1-.4.2-.4 0-.4-.3-.5-.3-.3-1-.4-1.6-.4-.7-1-1.6-2-3-2.4-.4-1.4-1.2-2.3-2.3-3-.5-1-1-2.3-2.4-2.5 0-1-.6-1.2-.8-2-.8 0-.3-1.4-1.3-1.2 0-.8-1-.6-.8-1.7-.6-.2-1-.6-1.2-1.2-.4-.5-.4-1.5-1.2-1.6 0-1-1.2-.6-1-1.7-1-.2-1-2-2.3-2.3 0-1.2-1-1.3-.8-2.5-.3-1-1.4-1-1.7-2 0-.6-.7-.7-.8-1.3-.2-.4-.4-.8-.8-1 0-.6-.4-1-1-1 0-.7 0-1.3-.3-1.4.2-1.2-1.3-1-1-2.4-.2-.7-1-1.2-1-2-.5-.8-1-1.3-1.7-1.7.2-1.3-1-1-1.3-2C3 18.2 3 17.2 2 17c.3-2-1.3-2.4-2-3.7-.2-1 1-.8 1-1.6 0-1-1-1-.5-2.2 1 0 .5-1.6 1.6-1.6.4-1.3-.6-1.2-.3-2.5.5 0 .7 0 .8-.4 0-.3.2-.4.4-.4.6-.2.6.3 1 .3.3-.8 0-1-.3-1.6-.7-.3 0-.8 0-1.2.8 0 1-.5 1.7-.5 0 .6 1 .4 1.6.5.5 0 .4-.8.4-1.3 0-.3.4-.4.4-.8.7 0 1.6-.2 1.7.4.3-.3 1-.2 1.2-.8.5 0 .7.7 1.2.8.6 0 .6.4 1.2.4 1.4-.2 2.3.2 3.2.4 1.3.3 1.2-.7 2.5-.4 1.5 0 2.4.8 4 .8.3 1 1 1 2 1.3A3.7 3.7 0 0 0 26.8 5a3.7 3.7 0 0 0 1.6 1.6c0 .6.4.7.4 1.2.5 0 .3.8 1 .8.3.6.2 1.5 1 1.6.3 1 1 1.4 1.3 2 .6.5 1.3.7 1.2 1.7 1.3 0 1.6.8 2.5 1.2l1.2 2.4c1 .3.8 1.6 1.2 2.5 1 .2.7 1.8 1.6 2 .4.5.2 1.3.8 1.4.2.3.5.6.4 1.2.2 1 1.5.8 1.3 2 .8.2.8 1 1.6 1.3-.2.3 0 .6.3.7.3 1 .4 2 .8 3 0 .8 1.3.3 1.4 1 .4 0 .3.6.4 1 .3-.2.4 0 .4.3 1 .3 1 1.7 2.4 1.7H51c1 0 1.5-.6 1.5-1.7 1 0 1-1 .8-2 1 0 .4-1.6 1.7-1.3.4-.5.4-1.5 1.2-1.6-.2-1 .8-.8.4-2 .6-.2 1-.6 1.2-1.2.2-.5.8-.6 1-1.2 0-.2 0-.6.3-.8.2-.2.8-.3 1-.4 0-.2-.2-.8 0-1 0 0 .3.2.3 0v-.7c.6-.2 1-.6 1.2-1.2.5-.2 1-.5.8-1.2 1-.5 1.5-1.3 1.7-2.5.6-.2 1-.6 1.2-1.2.4-.4.3-1 .8-1.3.5-1 1-2 2-2.4-.2-1.2 1-1 1-1.8 0-.5.6-.6.7-1.2.4-.3.3-1 .8-1.2.2-.6.8-.7 1-1.2h2c.3 0 .2-.5.3-1 .5.2.8 0 .8-.3.5 0 .8 0 1-.4-.2-.4 0-.5.3-.5.2-1 1.7-1 2-2 2 .3 2.5-1 3.6-1.7 1 .2 1.7.5 2.5.8h5c0 .4 0 .4.4.4 1-.2.8 1 1.2 1.3.6.2 1 .6 1.3 1.2.4 0 1 0 1-.4.4.3.8.5 1.3.5 0 1 1.5.7 2 1.2 0 2.4-.3 5 2.5 4.5.4 1.7-1.2 1.3-.8 3h1.2z" class="caret" fill="#f4c522" fill-rule="evenodd"/></svg>');
+}
+
 /******************
 Pattern 19. Gallery
 *******************/
@@ -1120,9 +1152,10 @@ Pattern 20. Emphasis blocks
 			@include grid-column-position( center );
 		}
 	}
-	.emphasisblock-inner {
-		padding: $global-padding;
-	}
+}
+
+.emphasisblock-inner {
+	padding: $global-padding;
 }
 
 
@@ -1192,6 +1225,16 @@ Pattern 20. Emphasis blocks
 	}
 }
 
+.emphasisblock--rose-1-web .emphasisblock-inner {
+	background-color: $rose-1-web;
+	a.button--big,
+	a.button--small {
+		&:hover {
+			color: $rose-1-web;
+		}
+	}
+}
+
 .emphasisblock__subheader {
 	margin-top: $global-margin;
 	text-align: center;
@@ -1203,9 +1246,16 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock__paragraph {
 	padding: $global-padding / 2 $global-padding;
+	margin-bottom: $global-margin;
 	p:last-child,
 	ul:last-child {
 		margin-bottom: 0.25 * $global-margin;
+	}
+}
+
+.emphasisblock--cta {
+	.emphasisblock__paragraph {
+		text-align: center;
 	}
 }
 
@@ -1240,6 +1290,8 @@ Pattern 20. Emphasis blocks
 		height: auto;
 	}
 }
+
+
 
 .emphasisblock--full .emphasisblock-inner {
 	@include flex;
@@ -1333,14 +1385,6 @@ Pattern 22. Related story list
 Pattern 23. Map interface
 *************************/
 
-
-
-
-
-
-
-
-
 /*********************
 ARTICLE META STYLES
 *********************/
@@ -1421,16 +1465,25 @@ ARTICLE EXTRAS STYLES
 *********************/
 
 .relatedgrid__griditem,
-.archive__grid__griditem {
-	@include grid_column( 12 );
+.archive__grid__griditem,
+.simplegrid__griditem {
+	@include grid_column();
 	@include breakpoint( medium ) {
-		@include grid_column( 6 );
+		&:not(.griditem--grid_full) {
+			@include grid_column( 6 );
+		}
 	}
 	@include breakpoint( large ) {
-		@include grid_column( 4 );
+		&:not(.griditem--grid_half):not(.griditem--grid_full) {
+			@include grid_column( 4 );
+		}
 	}
 	margin-bottom: $global-margin;
+	&.griditem--cta {
+		margin-top: 0;
+	}
 }
+
 
 .griditem__content {
 	position: relative;
@@ -1446,6 +1499,10 @@ ARTICLE EXTRAS STYLES
 			color: $white;
 		}
 	}
+}
+
+.griditem--programme_round .griditem__content {
+	padding: 0;
 }
 
 .griditem__image,
@@ -1468,14 +1525,12 @@ a:hover .griditem__title {
 
 .griditem__image {
 	width: 100%;
-	max-height: 15em;
+	max-height: 12.5em;
 	overflow: hidden;
 }
 
 .griditem__content--collaboration {
 }
-
-
 
 .griditem__collaboration-info {
 	position: relative;

@@ -8,13 +8,13 @@ var getFocusTranslate = function( img_placeholder, img ) {
 	px_translate = ( img_data.focus_h * h ) - ( container_h / 2 ),
 	max_translate = ( ( h - container_h ) / h ) * 100,
 	translate = ( px_translate / h ) * 100;
-	console.log( 'image height: ' + h );
-	console.log( 'container height: ' + container_h )
-	console.log( 'focus point on ' + ( img_data.focus_h * h ) );
-	console.log( 'container center ' + ( container_h / 2 ) );
-	console.log( 'number of pixels to move: ' + px_translate );
-	console.log( 'number of percents to move: ' + translate );
-	console.log( 'max percent to move: ' + max_translate );
+
+	// console.log( 'image height: ' + h );
+	// console.log( 'focus point on ' + ( img_data.focus_h * h ) );
+	// console.log( 'container center ' + ( container_h / 2 ) );
+	// console.log( 'number of pixels to move: ' + px_translate );
+	// console.log( 'number of percents to move: ' + translate );
+	// console.log( 'max percent to move: ' + max_translate );
 	// If the center of the container is below the focus point, don't move.
 	// Or: if the translation is downwards, don't move (we're working from top).
 	if ( px_translate < 0 || translate < 0 ) {
@@ -70,6 +70,24 @@ jQuery(document).ready(function() {
 			equal_element.style.height = h + 'px';
 		}
 	}
+
+	jQuery('.translatedparagraph--has_translations').each( function() {
+		var select = jQuery( this ).find('.translation-select');
+		select.on('change', function() {
+			var lang = 'paragraph--' + this.value;
+			function doLanguageSwitch( lang ) {
+				return function( index, element) {
+					jQuery( this ).removeClass('show');
+					if ( jQuery( this ).hasClass( lang ) ) {
+						jQuery( this ).addClass('show');
+					}
+				}
+			};
+			var wrapper = jQuery( this ).parent('.translation-wrapper');
+			paragraphs = wrapper.children('.translatedparagraph__paragraph');
+			paragraphs.each( doLanguageSwitch( lang ) );
+		});
+	});
 
 	jQuery('.image--main').each( function() {
 		console.log( jQuery(this).height() );

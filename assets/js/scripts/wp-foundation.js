@@ -28,6 +28,24 @@ jQuery(document).ready(function() {
 		}
 	}
 
+	jQuery('.translatedparagraph--has_translations').each( function() {
+		var select = jQuery( this ).find('.translation-select');
+		select.on('change', function() {
+			var lang = 'paragraph--' + this.value;
+			function doLanguageSwitch( lang ) {
+				return function( index, element) {
+					jQuery( this ).removeClass('show');
+					if ( jQuery( this ).hasClass( lang ) ) {
+						jQuery( this ).addClass('show');
+					}
+				}
+			};
+			var wrapper = jQuery( this ).parent('.translation-wrapper');
+			paragraphs = wrapper.children('.translatedparagraph__paragraph');
+			paragraphs.each( doLanguageSwitch( lang ) );
+		});
+	});
+
 	jQuery('.image--main').each( function() {
 		console.log( jQuery(this).height() );
 	});

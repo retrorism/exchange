@@ -214,43 +214,39 @@
                                     "tabs": "text",
                                     "toolbar": "basic",
                                     "media_upload": 0
-                                }
-                            ],
-                            "min": "",
-                            "max": ""
-                        },
-                        {
-                            "key": "5718bf04808af",
-                            "name": "paragraph_with_translations",
-                            "label": "Paragraph with translations",
-                            "display": "block",
-                            "sub_fields": [
+                                },
                                 {
-                                    "key": "field_5718bf04808b0",
-                                    "label": "Paragraph text",
-                                    "name": "text",
-                                    "type": "wysiwyg",
+                                    "key": "field_577fc0ce1d163",
+                                    "label": "Add translation?",
+                                    "name": "add_translation",
+                                    "type": "true_false",
                                     "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
+                                    "required": "",
+                                    "conditional_logic": "",
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "tabs": "text",
-                                    "toolbar": "basic",
-                                    "media_upload": 1
+                                    "message": "",
+                                    "default_value": 0
                                 },
                                 {
                                     "key": "field_5718bfc0808b4",
-                                    "label": "Translated Paragraphs",
-                                    "name": "translated_paragraphs",
+                                    "label": "Translations",
+                                    "name": "translations",
                                     "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_577fc0ce1d163",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -265,7 +261,7 @@
                                         {
                                             "key": "field_5718bf52808b2",
                                             "label": "Language",
-                                            "name": "paragraph_translation_language",
+                                            "name": "translation_language",
                                             "type": "radio",
                                             "instructions": "",
                                             "required": 1,
@@ -282,16 +278,16 @@
                                                 "turkish": "Turkish",
                                                 "ukrainian": "Ukrainian"
                                             },
+                                            "allow_null": 0,
                                             "other_choice": 1,
                                             "save_other_choice": 0,
                                             "default_value": "",
-                                            "layout": "horizontal",
-                                            "allow_null": 0
+                                            "layout": "horizontal"
                                         },
                                         {
                                             "key": "field_5718bf99808b3",
                                             "label": "Translation",
-                                            "name": "paragraph_translation_text",
+                                            "name": "translation_text",
                                             "type": "wysiwyg",
                                             "instructions": "",
                                             "required": 1,
@@ -1527,253 +1523,6 @@
                             ],
                             "min": "",
                             "max": ""
-                        },
-                        {
-                            "key": "5733528ee81c7",
-                            "name": "map",
-                            "label": "Map",
-                            "display": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_573352aee81c8",
-                                    "label": "Map Style",
-                                    "name": "map_style",
-                                    "type": "radio",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "plain": "No markers",
-                                        "dots": "Markers without connection (for individual locations)",
-                                        "network": "Connected markers (for Tandems \/ Tridems)",
-                                        "route": "Markers that form a route (N\/A)"
-                                    },
-                                    "other_choice": 0,
-                                    "save_other_choice": 0,
-                                    "default_value": "No markers",
-                                    "layout": "vertical",
-                                    "allow_null": 0
-                                },
-                                {
-                                    "key": "field_5734909acd3cf",
-                                    "label": "Map Size",
-                                    "name": "map_size",
-                                    "type": "radio",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "wide": "Wide (landscape)",
-                                        "square": "Square",
-                                        "small": "Small (small landscape)"
-                                    },
-                                    "other_choice": 0,
-                                    "save_other_choice": 0,
-                                    "default_value": "",
-                                    "layout": "vertical",
-                                    "allow_null": 0
-                                },
-                                {
-                                    "key": "field_5733516fe81c4",
-                                    "label": "Map markers",
-                                    "name": "map_markers",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_573352aee81c8",
-                                                "operator": "!=",
-                                                "value": "plain"
-                                            },
-                                            {
-                                                "field": "field_573352aee81c8",
-                                                "operator": "!=",
-                                                "value": "network"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "collapsed": "",
-                                    "min": "",
-                                    "max": "",
-                                    "layout": "block",
-                                    "button_label": "Add Marker",
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_573351abe81c5",
-                                            "label": "Marker Location",
-                                            "name": "map_marker_location",
-                                            "type": "google_map",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": 50,
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "center_lat": "",
-                                            "center_lng": "",
-                                            "zoom": "",
-                                            "height": 300
-                                        },
-                                        {
-                                            "key": "field_573360522b9f0",
-                                            "label": "Marker Link",
-                                            "name": "map_marker_link",
-                                            "type": "post_object",
-                                            "instructions": "If you want the marker's label to link to a story or collaboration page, select the relationship here.",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": 50,
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "post_type": [
-                                                "story",
-                                                "collaboration"
-                                            ],
-                                            "taxonomy": [],
-                                            "allow_null": 1,
-                                            "multiple": 0,
-                                            "return_format": "object",
-                                            "ui": 1
-                                        },
-                                        {
-                                            "key": "field_5733521de81c6",
-                                            "label": "Marker title",
-                                            "name": "map_marker_title",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": 100,
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": "",
-                                            "readonly": 0,
-                                            "disabled": 0
-                                        }
-                                    ]
-                                },
-                                {
-                                    "key": "field_5734aaec1041c",
-                                    "label": "Select collaborations",
-                                    "name": "map_collaborations",
-                                    "type": "post_object",
-                                    "instructions": "Select the collaboration(s) you would like to display on the map",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_573352aee81c8",
-                                                "operator": "==",
-                                                "value": "network"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": [
-                                        "collaboration"
-                                    ],
-                                    "taxonomy": [],
-                                    "allow_null": 0,
-                                    "multiple": 1,
-                                    "return_format": "object",
-                                    "ui": 1
-                                },
-                                {
-                                    "key": "field_57335cef0bb87",
-                                    "label": "Map center",
-                                    "name": "map_center",
-                                    "type": "google_map",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "center_lat": "52.516667",
-                                    "center_lng": "13.383333",
-                                    "zoom": "",
-                                    "height": ""
-                                },
-                                {
-                                    "key": "field_57335d9b0bb88",
-                                    "label": "Zoom Level",
-                                    "name": "map_zoom_level",
-                                    "type": "number",
-                                    "instructions": "A higher number means a smaller area on the map.",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": 7,
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "min": 0,
-                                    "max": 19,
-                                    "step": 1,
-                                    "readonly": 0,
-                                    "disabled": 0
-                                },
-                                {
-                                    "key": "field_5733621e0afd7",
-                                    "label": "Caption",
-                                    "name": "map_caption",
-                                    "type": "text",
-                                    "instructions": "If you want to add a caption to your map, add it here.",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": "",
-                                    "readonly": 0,
-                                    "disabled": 0
-                                }
-                            ],
-                            "min": "",
-                            "max": ""
                         }
                     ]
                 },
@@ -1969,6 +1718,22 @@
                                     "placeholder": "",
                                     "disabled": 0,
                                     "readonly": 0
+                                },
+                                {
+                                    "key": "field_5783c326e0b2b",
+                                    "label": "Display as CTA?",
+                                    "name": "display_as_cta",
+                                    "type": "true_false",
+                                    "instructions": "Remember to style the CTA for this story before publishing the grid!",
+                                    "required": "",
+                                    "conditional_logic": "",
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0
                                 }
                             ],
                             "min": "",
@@ -2032,6 +1797,22 @@
                                     "placeholder": "",
                                     "disabled": 0,
                                     "readonly": 0
+                                },
+                                {
+                                    "key": "field_5783c3b303cc0",
+                                    "label": "Display as CTA?",
+                                    "name": "display_as_cta",
+                                    "type": "true_false",
+                                    "instructions": "Remember to style the CTA for this page before publishing the grid!",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0
                                 }
                             ],
                             "min": "",
@@ -2062,7 +1843,7 @@
                                     "taxonomy": [],
                                     "allow_null": 0,
                                     "multiple": 0,
-                                    "return_format": "object",
+                                    "return_format": "id",
                                     "ui": 1
                                 },
                                 {
@@ -2209,493 +1990,6 @@
                                     "placeholder": "",
                                     "disabled": 0,
                                     "readonly": 0
-                                }
-                            ],
-                            "min": "",
-                            "max": ""
-                        },
-                        {
-                            "key": "574c1b1424812",
-                            "name": "grid_emphasis_block",
-                            "label": "Emphasis Block",
-                            "display": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_574c1c69ffcd6",
-                                    "label": "Block Type",
-                                    "name": "block_type",
-                                    "type": "radio",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "cta": "Call To Action (Tandem-style)",
-                                        "post-it": "Post-It"
-                                    },
-                                    "allow_null": 0,
-                                    "other_choice": 0,
-                                    "save_other_choice": 0,
-                                    "default_value": "",
-                                    "layout": "vertical"
-                                },
-                                {
-                                    "key": "field_574c1d44ffcd9",
-                                    "label": "Call To Action elements",
-                                    "name": "cta_block_elements",
-                                    "type": "flexible_content",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_574c1c69ffcd6",
-                                                "operator": "==",
-                                                "value": "cta"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "button_label": "Add block element",
-                                    "min": "",
-                                    "max": "",
-                                    "layouts": [
-                                        {
-                                            "key": "574c1d636dd7f",
-                                            "name": "block_header",
-                                            "label": "Header",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c1d7bffcda",
-                                                    "label": "Header text",
-                                                    "name": "block_header_text",
-                                                    "type": "text",
-                                                    "instructions": "",
-                                                    "required": 1,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "prepend": "",
-                                                    "append": "",
-                                                    "maxlength": "",
-                                                    "readonly": 0,
-                                                    "disabled": 0
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        },
-                                        {
-                                            "key": "574c2054ffcef",
-                                            "name": "block_paragraph",
-                                            "label": "Paragraph (Keep it short!)",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c2054ffcf0",
-                                                    "label": "Paragraph Text",
-                                                    "name": "block_paragraph_text",
-                                                    "type": "textarea",
-                                                    "instructions": "",
-                                                    "required": "",
-                                                    "conditional_logic": "",
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "maxlength": "",
-                                                    "rows": "",
-                                                    "new_lines": "wpautop",
-                                                    "readonly": 0,
-                                                    "disabled": 0
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        },
-                                        {
-                                            "key": "574c1e14ffce2",
-                                            "name": "block_graphic",
-                                            "label": "Block Graphic",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c1e14ffce5",
-                                                    "label": "Select Block Graphic",
-                                                    "name": "block_graphic_select",
-                                                    "type": "image",
-                                                    "instructions": "Select an SVG image from the library",
-                                                    "required": "",
-                                                    "conditional_logic": "",
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "return_format": "",
-                                                    "preview_size": "thumbnail",
-                                                    "library": "",
-                                                    "min_width": "",
-                                                    "min_height": "",
-                                                    "min_size": "",
-                                                    "max_width": "",
-                                                    "max_height": "",
-                                                    "max_size": "",
-                                                    "mime_types": ""
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        },
-                                        {
-                                            "key": "574c1ea3ffce6",
-                                            "name": "block_logo",
-                                            "label": "Programme Logo",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c1ea3ffce7",
-                                                    "label": "Select Programme Round",
-                                                    "name": "block_programme_select",
-                                                    "type": "select",
-                                                    "instructions": "",
-                                                    "required": 1,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "choices": {
-                                                        "C_P": "Tandem Community & Participation",
-                                                        "Europe": "Tandem Europe",
-                                                        "Shaml": "Tandem Shaml",
-                                                        "Turkey": "Tandem Turkey",
-                                                        "Ukraine": "Tandem Ukraine"
-                                                    },
-                                                    "default_value": [],
-                                                    "allow_null": 1,
-                                                    "multiple": 0,
-                                                    "ui": 0,
-                                                    "ajax": 0,
-                                                    "placeholder": "",
-                                                    "disabled": 0,
-                                                    "readonly": 0
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        },
-                                        {
-                                            "key": "574c1ef3ffce8",
-                                            "name": "block_button",
-                                            "label": "Button",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c1ef3ffce9",
-                                                    "label": "Button Text",
-                                                    "name": "button_text",
-                                                    "type": "post_object",
-                                                    "instructions": "Select an SVG image from the library",
-                                                    "required": 1,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "post_type": [
-                                                        "programme_round"
-                                                    ],
-                                                    "taxonomy": [],
-                                                    "allow_null": 1,
-                                                    "multiple": 1,
-                                                    "return_format": "object",
-                                                    "ui": 1
-                                                },
-                                                {
-                                                    "key": "field_574c1f32ffcea",
-                                                    "label": "Button Help Text",
-                                                    "name": "button_help_text",
-                                                    "type": "text",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "prepend": "",
-                                                    "append": "",
-                                                    "maxlength": "",
-                                                    "readonly": 0,
-                                                    "disabled": 0
-                                                },
-                                                {
-                                                    "key": "field_574c1f45ffceb",
-                                                    "label": "Button Size",
-                                                    "name": "button_size",
-                                                    "type": "select",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "choices": {
-                                                        "big: Big                                                      big_one_of_two": "Big (1 \/ 2)",
-                                                        "small: Small": "small: Small"
-                                                    },
-                                                    "default_value": [],
-                                                    "allow_null": 1,
-                                                    "multiple": 1,
-                                                    "ui": 1,
-                                                    "ajax": 1,
-                                                    "placeholder": "",
-                                                    "disabled": 0,
-                                                    "readonly": 0
-                                                },
-                                                {
-                                                    "key": "field_574c1fc6ffcec",
-                                                    "label": "Button Link",
-                                                    "name": "button_link",
-                                                    "type": "text",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "prepend": "",
-                                                    "append": "",
-                                                    "maxlength": "",
-                                                    "readonly": 0,
-                                                    "disabled": 0
-                                                },
-                                                {
-                                                    "key": "field_574c1fddffced",
-                                                    "label": "Open link in new window?",
-                                                    "name": "button_target",
-                                                    "type": "radio",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "choices": {
-                                                        "_self": "No (default)",
-                                                        "_new": "Yes"
-                                                    },
-                                                    "allow_null": 1,
-                                                    "other_choice": 0,
-                                                    "save_other_choice": 0,
-                                                    "default_value": "_self",
-                                                    "layout": "vertical"
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        }
-                                    ]
-                                },
-                                {
-                                    "key": "field_574c2074ffcf1",
-                                    "label": "Post-it Elements",
-                                    "name": "post-it_block_elements",
-                                    "type": "flexible_content",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_574c1c69ffcd6",
-                                                "operator": "==",
-                                                "value": "post-it"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "button_label": "Add block element",
-                                    "min": 1,
-                                    "max": "",
-                                    "layouts": [
-                                        {
-                                            "key": "574c1d636dd7f",
-                                            "name": "block_header",
-                                            "label": "Header",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c2075ffcf2",
-                                                    "label": "Header Text",
-                                                    "name": "block_header_text",
-                                                    "type": "text",
-                                                    "instructions": "",
-                                                    "required": 1,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "prepend": "",
-                                                    "append": "",
-                                                    "maxlength": "",
-                                                    "readonly": 0,
-                                                    "disabled": 0
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        },
-                                        {
-                                            "key": "574c1dffffcde",
-                                            "name": "block_paragraph",
-                                            "label": "Paragraph (also for lists)",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c2075ffcf3",
-                                                    "label": "Post-it Paragraph Text",
-                                                    "name": "block_paragraph_text",
-                                                    "type": "textarea",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "maxlength": "",
-                                                    "rows": "",
-                                                    "new_lines": "",
-                                                    "readonly": 0,
-                                                    "disabled": 0
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        },
-                                        {
-                                            "key": "574c1e14ffce2",
-                                            "name": "block_graphic",
-                                            "label": "Block Graphic",
-                                            "display": "block",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_574c2075ffcf5",
-                                                    "label": "Select an image or illustration",
-                                                    "name": "block_graphic_select",
-                                                    "type": "image",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "return_format": "array",
-                                                    "preview_size": "thumbnail",
-                                                    "library": "all",
-                                                    "min_width": "",
-                                                    "min_height": "",
-                                                    "min_size": "",
-                                                    "max_width": "",
-                                                    "max_height": "",
-                                                    "max_size": "",
-                                                    "mime_types": ""
-                                                }
-                                            ],
-                                            "min": "",
-                                            "max": ""
-                                        }
-                                    ]
-                                },
-                                {
-                                    "key": "field_574c1cc6ffcd7",
-                                    "label": "CTA Colour",
-                                    "name": "cta_colour",
-                                    "type": "color_picker",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_574c1c69ffcd6",
-                                                "operator": "==",
-                                                "value": "cta"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": ""
-                                },
-                                {
-                                    "key": "field_574c1cfcffcd8",
-                                    "label": "Post-it Colour",
-                                    "name": "post-it_colour",
-                                    "type": "color_picker",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_574c1c69ffcd6",
-                                                "operator": "==",
-                                                "value": "post-it"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": ""
                                 }
                             ],
                             "min": "",
@@ -2999,9 +2293,7 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "participant"
-            }
-        ],
-        [
+            },
             {
                 "param": "post_type",
                 "operator": "!=",
@@ -3017,5 +2309,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1467815137
+    "modified": 1468254368
 }

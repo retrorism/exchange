@@ -971,7 +971,7 @@ th {
   padding: 0; }
 
 .foundation-mq {
-  font-family: "small=0em&medium=30em&large=60em&xlarge=75em&xxlarge=90em"; }
+  font-family: "small=0em&medium=40em&large=60em&xlarge=75em&xxlarge=90em"; }
 
 html {
   font-size: 100%;
@@ -1053,7 +1053,7 @@ button {
     max-width: none;
     margin-left: -0.625rem;
     margin-right: -0.625rem; }
-    @media screen and (min-width: 30em) {
+    @media screen and (min-width: 40em) {
       .row .row {
         margin-left: -0.9375rem;
         margin-right: -0.9375rem; } }
@@ -1071,7 +1071,7 @@ button {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .column, .columns {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -1350,7 +1350,7 @@ button {
   margin-right: 0;
   float: left; }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
   .medium-1 {
     width: 8.33333%; }
   .medium-push-1 {
@@ -2269,7 +2269,7 @@ h5 {
 h6 {
   font-size: 0.875rem; }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
   h1 {
     font-size: 2.25rem; }
   h2 {
@@ -2398,7 +2398,7 @@ kbd {
 .text-justify {
   text-align: justify; }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
   .medium-text-left {
     text-align: left; }
   .medium-text-right {
@@ -2718,27 +2718,27 @@ select {
 .invisible {
   visibility: hidden; }
 
-@media screen and (max-width: 29.9375em) {
+@media screen and (max-width: 39.9375em) {
   .hide-for-small-only {
     display: none !important; } }
 
-@media screen and (max-width: 0em), screen and (min-width: 30em) {
+@media screen and (max-width: 0em), screen and (min-width: 40em) {
   .show-for-small-only {
     display: none !important; } }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
   .hide-for-medium {
     display: none !important; } }
 
-@media screen and (max-width: 29.9375em) {
+@media screen and (max-width: 39.9375em) {
   .show-for-medium {
     display: none !important; } }
 
-@media screen and (min-width: 30em) and (max-width: 59.9375em) {
+@media screen and (min-width: 40em) and (max-width: 59.9375em) {
   .hide-for-medium-only {
     display: none !important; } }
 
-@media screen and (max-width: 29.9375em), screen and (min-width: 60em) {
+@media screen and (max-width: 39.9375em), screen and (min-width: 60em) {
   .show-for-medium-only {
     display: none !important; } }
 
@@ -2885,7 +2885,7 @@ select {
     display: table-cell; }
   .menu.vertical > li {
     display: block; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .menu.medium-horizontal > li {
       display: table-cell; }
     .menu.medium-vertical > li {
@@ -3127,7 +3127,7 @@ html.is-reveal-open body {
   overflow-y: auto; }
   [data-whatinput='mouse'] .reveal {
     outline: 0; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .reveal {
       min-height: 0; } }
   .reveal .column, .reveal .columns,
@@ -3135,26 +3135,26 @@ html.is-reveal-open body {
     min-width: 0; }
   .reveal > :last-child {
     margin-bottom: 0; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .reveal {
       width: 600px;
       max-width: 75rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .reveal .reveal {
       left: auto;
       right: auto;
       margin: 0 auto; } }
   .reveal.collapse {
     padding: 0; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .reveal.tiny {
       width: 30%;
       max-width: 75rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .reveal.small {
       width: 50%;
       max-width: 75rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .reveal.large {
       width: 90%;
       max-width: 75rem; } }
@@ -3169,7 +3169,7 @@ html.is-reveal-open body {
     margin-left: 0;
     border: 0;
     border-radius: 0; }
-  @media screen and (max-width: 29.9375em) {
+  @media screen and (max-width: 39.9375em) {
     .reveal {
       top: 0;
       left: 0;
@@ -3205,7 +3205,7 @@ html.is-reveal-open body {
   .top-bar .top-bar-left,
   .top-bar .top-bar-right {
     width: 100%; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .top-bar .top-bar-left,
     .top-bar .top-bar-right {
       width: auto; } }
@@ -3287,7 +3287,9 @@ a.button--small {
   font-size: 0.9rem;
   background-color: transparent;
   color: #4c4d53;
-  border: 2px solid #4c4d53; }
+  border: 2px solid #4c4d53;
+  text-transform: uppercase;
+  font-weight: 600; }
   [data-whatinput='mouse'] a.button--big, [data-whatinput='mouse']
   a.button--small {
     outline: 0; }
@@ -3305,8 +3307,7 @@ a.button--small {
 
 .emphasisblock--cta a.button--big,
 .emphasisblock--cta a.button--small {
-  border-color: #fefefe;
-  text-transform: uppercase; }
+  border-color: #fefefe; }
   .emphasisblock--cta a.button--big:hover,
   .emphasisblock--cta a.button--small:hover {
     background-color: #fefefe; }
@@ -3492,7 +3493,7 @@ ARTICLE STYLES:
   float: none;
   margin-left: auto;
   margin-right: auto; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
@@ -3504,7 +3505,7 @@ ARTICLE STYLES:
     .archive__title-wrapper {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
@@ -3516,7 +3517,7 @@ ARTICLE STYLES:
     .archive__title-wrapper {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
@@ -3533,7 +3534,7 @@ ARTICLE STYLES:
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
@@ -3562,7 +3563,7 @@ ARTICLE STYLES:
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 60em) and (min-width: 30em) {
+  @media screen and (min-width: 60em) and (min-width: 40em) {
     .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
@@ -3591,7 +3592,7 @@ ARTICLE STYLES:
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 75em) and (min-width: 30em) {
+  @media screen and (min-width: 75em) and (min-width: 40em) {
     .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
@@ -3610,6 +3611,7 @@ ARTICLE STYLES:
   margin-right: auto; }
 
 .page__footer__widgets-inner,
+.section__simplegrid,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
   width: 95%;
@@ -3670,7 +3672,7 @@ ARTICLE STYLES:
   text-align: center;
   background: #e07856;
   color: #fefefe; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .collaboration__header__desc {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -3678,6 +3680,16 @@ ARTICLE STYLES:
     .collaboration__header__desc {
       width: 50%;
       float: left; } }
+  .collaboration__header__desc .button--small {
+    margin: 1rem 0;
+    color: #fefefe;
+    border-color: #fefefe;
+    font-weight: 600; }
+    .collaboration__header__desc .button--small:hover {
+      background-color: #fefefe; }
+  .collaboration__header__desc hr {
+    border-color: white;
+    border-style: dashed; }
 
 @media screen and (min-width: 60em) {
   .collaboration__header--no-image .collaboration__header__desc {
@@ -3689,7 +3701,7 @@ ARTICLE STYLES:
     margin-left: auto;
     margin-right: auto;
     max-height: inherit !important; } }
-  @media screen and (min-width: 60em) and (min-width: 30em) {
+  @media screen and (min-width: 60em) and (min-width: 40em) {
     .collaboration__header--no-image .collaboration__header__desc {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -3715,7 +3727,7 @@ ARTICLE STYLES:
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .collaboration__participants__item {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -3935,7 +3947,7 @@ Pattern 5. Hero / cover image
       top: 20rem;
       text-align: right;
       padding-right: 1rem; }
-    @media screen and (min-width: 30em) {
+    @media screen and (min-width: 40em) {
       .story__header__image-wrapper .story__header__image.highres {
         height: 25rem; }
         .story__header__image-wrapper .story__header__image.highres .image__caption {
@@ -3961,6 +3973,11 @@ Pattern 5. Hero / cover image
 /*********************
 Pattern 6. Paragraph
 *********************/
+.translatedparagraph__paragraph {
+  display: none; }
+  .translatedparagraph__paragraph.show {
+    display: block; }
+
 /*******************
 Pattern 7. Subheader
 ********************/
@@ -4041,12 +4058,12 @@ Pattern 9. Image
     display: table; }
   .imageduo__wrapper::after {
     clear: both; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .imageduo__wrapper {
       max-width: none;
       margin-left: -0.625rem;
       margin-right: -0.625rem; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .imageduo__wrapper {
       margin-left: -0.9375rem;
       margin-right: -0.9375rem; } }
@@ -4059,17 +4076,17 @@ Pattern 9. Image
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 2rem; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .imageduo__image {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .imageduo__image {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .imageduo__image {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -4078,7 +4095,7 @@ Pattern 9. Image
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 30em) {
+    @media screen and (min-width: 40em) {
       .imageduo__image.image--portrait.image--right {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -4090,7 +4107,7 @@ Pattern 9. Image
     padding-left: 0.625rem;
     padding-right: 0.625rem;
     margin-left: 8.33333%; }
-    @media screen and (min-width: 30em) {
+    @media screen and (min-width: 40em) {
       .imageduo__image.image--portrait.image--left {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -4100,7 +4117,7 @@ Pattern 9. Image
     padding-left: 0.625rem;
     padding-right: 0.625rem;
     margin-left: 8.33333%; }
-    @media screen and (min-width: 30em) {
+    @media screen and (min-width: 40em) {
       .imageduo__image.image--landscape.image--left {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
@@ -4286,15 +4303,15 @@ Pattern 15. Contact block for TANDEM team member
   padding-left: 0.625rem;
   padding-right: 0.625rem;
   text-align: center; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .contactblock__team-member {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .contactblock__team-member {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .contactblock__team-member {
       width: 83.33333%;
       float: left;
@@ -4304,7 +4321,7 @@ Pattern 15. Contact block for TANDEM team member
       margin-left: auto;
       margin-right: auto;
       text-align: left; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .contactblock__team-member {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -4327,18 +4344,18 @@ li.team-member__name {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .contactblock__image {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .contactblock__image {
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem;
       margin-bottom: 0; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .contactblock__image {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -4350,17 +4367,17 @@ li.team-member__name {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .contactblock__info {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .contactblock__info {
       width: 66.66667%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .contactblock__info {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -4374,6 +4391,15 @@ Pattern 17. List/Grid of partner logos
 /************************************************
 Pattern 18. Embedded FormAssembly/Formidable form
 *************************************************/
+select {
+  border: 2px solid #f4c522;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: auto;
+  outline: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 99.23728 67.289766'%3E%3Cpath d='M99.2 13v1.3c-.4 0-.2 1-.8 1v1c-.8.2-.4 1.6-1.2 1.7v2.5c-1.6.3-1 2.8-2.5 3.3.3 1.2-1 .8-.8 2-.6.3-1 1-1 1.7-.5.2-1 .6-1 1.2-.2.4-.6.3-1 .4 0 .5 0 .5-.4.5.2 1-.7 1-.4 2-.5.2-.8.6-.8 1.3-.4 0-.3.5-.4.8-.4 0-.4.2-.4.4-.2.6-.7.7-.8 1.2-.3.3-.3.6-.5 1v.3s-1.2.4-.8 1.6c-1 .6-1.5 1.4-1.6 2.6-.5 0-.4.5-.5.8-.4 0-.4.2-.4.4-.3 0-.2.5-.3.8-.4 0-.4.2-.4.4-.6.8-.7 2.2-1.7 2.5-.6.8-.6 2-1.6 2.5-.4 1-1 1.6-1.3 2.8-1.2.6-1.7 2-2.4 3-.8 0-.3 1.2-1.2 1-.2.7-.6 1-1.2 1.4 0 1.2-1 1.2-.8 2.4-.8 0-.8 1-1.6 1.2-.2.4-.4.8-1 1 .2.3 0 .6-.3.7.3.5 1.2.3 1.8.4 0-.6.8-.4.8-1 .7.4 0 .8 0 1.3-.4.2-.7.4-.8.8-.6.3-.7.8-1.3 1-1.2.2-.7-1.2-2-1-.2.2-.7 0-.8 0v.5l-.8.4c-.4.2-.3.5-.6.8 0 0-.5 0-.4.4-1 0-1.7.4-2.4.8v.4h-.4v.4h-.4l-1 .4c-1 .3-1.4-.4-2.3-.4 0-.4-.5-.3-.8-.4-.4 0-.4-.4-1-.4-1.7 0-3 .6-5.2.4 0-.4-.5-.3-.8-.4 0-.4-.2-.4-.4-.4-.3-.4-.5-1-.4-1.7-2.3 0-3.8-.7-6.3-.5-1.6 0-2-1.4-3.7-1.2-.2-.6-.6-1-1.2-1.2 0-.7-1.3-.2-1.2-1.2-.2 0-.7.2-.8 0v-.4l-1-.4c0-.2 0-.6-.3-.8 0 0-.5 0-.4-.4h-.7v-.4h-.8c-.2 0-.3-.8-.4-.8h-.7c0-.4-.6-.4-1-.4.2-.4 0-.4-.3-.5-.3-.3-1-.4-1.6-.4-.7-1-1.6-2-3-2.4-.4-1.4-1.2-2.3-2.3-3-.5-1-1-2.3-2.4-2.5 0-1-.6-1.2-.8-2-.8 0-.3-1.4-1.3-1.2 0-.8-1-.6-.8-1.7-.6-.2-1-.6-1.2-1.2-.4-.5-.4-1.5-1.2-1.6 0-1-1.2-.6-1-1.7-1-.2-1-2-2.3-2.3 0-1.2-1-1.3-.8-2.5-.3-1-1.4-1-1.7-2 0-.6-.7-.7-.8-1.3-.2-.4-.4-.8-.8-1 0-.6-.4-1-1-1 0-.7 0-1.3-.3-1.4.2-1.2-1.3-1-1-2.4-.2-.7-1-1.2-1-2-.5-.8-1-1.3-1.7-1.7.2-1.3-1-1-1.3-2C3 18.2 3 17.2 2 17c.3-2-1.3-2.4-2-3.7-.2-1 1-.8 1-1.6 0-1-1-1-.5-2.2 1 0 .5-1.6 1.6-1.6.4-1.3-.6-1.2-.3-2.5.5 0 .7 0 .8-.4 0-.3.2-.4.4-.4.6-.2.6.3 1 .3.3-.8 0-1-.3-1.6-.7-.3 0-.8 0-1.2.8 0 1-.5 1.7-.5 0 .6 1 .4 1.6.5.5 0 .4-.8.4-1.3 0-.3.4-.4.4-.8.7 0 1.6-.2 1.7.4.3-.3 1-.2 1.2-.8.5 0 .7.7 1.2.8.6 0 .6.4 1.2.4 1.4-.2 2.3.2 3.2.4 1.3.3 1.2-.7 2.5-.4 1.5 0 2.4.8 4 .8.3 1 1 1 2 1.3A3.7 3.7 0 0 0 26.8 5a3.7 3.7 0 0 0 1.6 1.6c0 .6.4.7.4 1.2.5 0 .3.8 1 .8.3.6.2 1.5 1 1.6.3 1 1 1.4 1.3 2 .6.5 1.3.7 1.2 1.7 1.3 0 1.6.8 2.5 1.2l1.2 2.4c1 .3.8 1.6 1.2 2.5 1 .2.7 1.8 1.6 2 .4.5.2 1.3.8 1.4.2.3.5.6.4 1.2.2 1 1.5.8 1.3 2 .8.2.8 1 1.6 1.3-.2.3 0 .6.3.7.3 1 .4 2 .8 3 0 .8 1.3.3 1.4 1 .4 0 .3.6.4 1 .3-.2.4 0 .4.3 1 .3 1 1.7 2.4 1.7H51c1 0 1.5-.6 1.5-1.7 1 0 1-1 .8-2 1 0 .4-1.6 1.7-1.3.4-.5.4-1.5 1.2-1.6-.2-1 .8-.8.4-2 .6-.2 1-.6 1.2-1.2.2-.5.8-.6 1-1.2 0-.2 0-.6.3-.8.2-.2.8-.3 1-.4 0-.2-.2-.8 0-1 0 0 .3.2.3 0v-.7c.6-.2 1-.6 1.2-1.2.5-.2 1-.5.8-1.2 1-.5 1.5-1.3 1.7-2.5.6-.2 1-.6 1.2-1.2.4-.4.3-1 .8-1.3.5-1 1-2 2-2.4-.2-1.2 1-1 1-1.8 0-.5.6-.6.7-1.2.4-.3.3-1 .8-1.2.2-.6.8-.7 1-1.2h2c.3 0 .2-.5.3-1 .5.2.8 0 .8-.3.5 0 .8 0 1-.4-.2-.4 0-.5.3-.5.2-1 1.7-1 2-2 2 .3 2.5-1 3.6-1.7 1 .2 1.7.5 2.5.8h5c0 .4 0 .4.4.4 1-.2.8 1 1.2 1.3.6.2 1 .6 1.3 1.2.4 0 1 0 1-.4.4.3.8.5 1.3.5 0 1 1.5.7 2 1.2 0 2.4-.3 5 2.5 4.5.4 1.7-1.2 1.3-.8 3h1.2z' class='caret' fill='%23f4c522' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+
 /******************
 Pattern 19. Gallery
 *******************/
@@ -4429,11 +4455,11 @@ Pattern 20. Emphasis blocks
     float: none;
     margin-left: auto;
     margin-right: auto; }
-    @media screen and (min-width: 30em) {
+    @media screen and (min-width: 40em) {
       .section__emphasisblock:not(.emphasisblock--full) {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    @media screen and (min-width: 30em) {
+    @media screen and (min-width: 40em) {
       .section__emphasisblock:not(.emphasisblock--full) {
         width: 60%;
         float: left;
@@ -4442,7 +4468,7 @@ Pattern 20. Emphasis blocks
         float: none;
         margin-left: auto;
         margin-right: auto; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .section__emphasisblock:not(.emphasisblock--full) {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -4455,12 +4481,13 @@ Pattern 20. Emphasis blocks
         float: none;
         margin-left: auto;
         margin-right: auto; } }
-  @media screen and (min-width: 60em) and (min-width: 30em) {
+  @media screen and (min-width: 60em) and (min-width: 40em) {
     .section__emphasisblock:not(.emphasisblock--full) {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  .section__emphasisblock .emphasisblock-inner {
-    padding: 1rem; }
+
+.emphasisblock-inner {
+  padding: 1rem; }
 
 .emphasisblock--default .emphasisblock-inner,
 .emphasisblock--yellow-1-web .emphasisblock-inner {
@@ -4507,6 +4534,12 @@ Pattern 20. Emphasis blocks
   .emphasisblock--black-tandem .emphasisblock-inner a.button--small:hover {
     color: #4c4d53; }
 
+.emphasisblock--rose-1-web .emphasisblock-inner {
+  background-color: #ff8e78; }
+  .emphasisblock--rose-1-web .emphasisblock-inner a.button--big:hover,
+  .emphasisblock--rose-1-web .emphasisblock-inner a.button--small:hover {
+    color: #ff8e78; }
+
 .emphasisblock__subheader {
   margin-top: 1rem;
   text-align: center; }
@@ -4515,10 +4548,14 @@ Pattern 20. Emphasis blocks
   text-transform: uppercase; }
 
 .emphasisblock__paragraph {
-  padding: 0.5rem 1rem; }
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem; }
   .emphasisblock__paragraph p:last-child,
   .emphasisblock__paragraph ul:last-child {
     margin-bottom: 0.25rem; }
+
+.emphasisblock--cta .emphasisblock__paragraph {
+  text-align: center; }
 
 .section__emphasisblock li {
   list-style: none;
@@ -4621,7 +4658,7 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left > .section__slice:last-child,
     .section__emphasisblock.emphasisblock--right + .section__slice > .section__slice:last-child {
       float: left; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
     .section__emphasisblock.emphasisblock--left + .section__slice,
@@ -4630,7 +4667,7 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--right + .section__slice {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
     .section__emphasisblock.emphasisblock--left + .section__slice,
@@ -4644,7 +4681,7 @@ Pattern 20. Emphasis blocks
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
     .section__emphasisblock.emphasisblock--left + .section__slice,
@@ -4664,7 +4701,7 @@ Pattern 20. Emphasis blocks
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 60em) and (min-width: 30em) {
+  @media screen and (min-width: 60em) and (min-width: 40em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
     .section__emphasisblock.emphasisblock--left + .section__slice,
@@ -4748,7 +4785,7 @@ ARTICLE META STYLES
       padding-right: 0;
       min-width: 15em;
       text-align: right; } }
-  @media screen and (min-width: 75em) and (min-width: 30em) {
+  @media screen and (min-width: 75em) and (min-width: 40em) {
     .story__meta-inner {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -4789,41 +4826,51 @@ ARTICLE META STYLES
 ARTICLE EXTRAS STYLES
 *********************/
 .relatedgrid__griditem,
-.archive__grid__griditem {
+.archive__grid__griditem,
+.simplegrid__griditem {
   width: 100%;
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
   margin-bottom: 1rem; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .relatedgrid__griditem,
-    .archive__grid__griditem {
+    .archive__grid__griditem,
+    .simplegrid__griditem {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 30em) {
-    .relatedgrid__griditem,
-    .archive__grid__griditem {
+  @media screen and (min-width: 40em) {
+    .relatedgrid__griditem:not(.griditem--grid_full),
+    .archive__grid__griditem:not(.griditem--grid_full),
+    .simplegrid__griditem:not(.griditem--grid_full) {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
-    .relatedgrid__griditem,
-    .archive__grid__griditem {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
+    .relatedgrid__griditem:not(.griditem--grid_full),
+    .archive__grid__griditem:not(.griditem--grid_full),
+    .simplegrid__griditem:not(.griditem--grid_full) {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
   @media screen and (min-width: 60em) {
-    .relatedgrid__griditem,
-    .archive__grid__griditem {
+    .relatedgrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
+    .archive__grid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
+    .simplegrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full) {
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 60em) and (min-width: 30em) {
-    .relatedgrid__griditem,
-    .archive__grid__griditem {
+  @media screen and (min-width: 60em) and (min-width: 40em) {
+    .relatedgrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
+    .archive__grid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
+    .simplegrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full) {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
+  .relatedgrid__griditem.griditem--cta,
+  .archive__grid__griditem.griditem--cta,
+  .simplegrid__griditem.griditem--cta {
+    margin-top: 0; }
 
 .griditem__content {
   position: relative;
@@ -4837,6 +4884,9 @@ ARTICLE EXTRAS STYLES
     .griditem__content .button--small:hover {
       background-color: #f4c522;
       color: #fefefe; }
+
+.griditem--programme_round .griditem__content {
+  padding: 0; }
 
 .griditem__image,
 .griditem__meta,
@@ -4855,7 +4905,7 @@ a:hover .griditem__title {
 
 .griditem__image {
   width: 100%;
-  max-height: 15em;
+  max-height: 12.5em;
   overflow: hidden; }
 
 .griditem__collaboration-info {
@@ -5032,13 +5082,13 @@ FOOTER STYLES
 .footer__widget-wrapper {
   color: #fefefe;
   padding: 0 0 3rem; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 40em) {
     .footer__widget-wrapper {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 30em) and (min-width: 30em) {
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .footer__widget-wrapper {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
@@ -5048,7 +5098,7 @@ FOOTER STYLES
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 60em) and (min-width: 30em) {
+  @media screen and (min-width: 60em) and (min-width: 40em) {
     .footer__widget-wrapper {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }

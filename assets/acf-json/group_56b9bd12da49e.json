@@ -69,7 +69,7 @@
             "name": "editorial_intro",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -106,5 +106,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Create content for the story header.",
-    "modified": 1466436824
+    "modified": 1468263837
 }
