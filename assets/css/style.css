@@ -60,7 +60,6 @@ via: http://codepen.io/jakob-e/pen/doMoML
 /* Section bg webguide */
 /* Box bg webguide */
 /* Box bg webguide */
-/* Sticky Notes styleguide */
 /* Accents on yellow */
 /* Accents on orange */
 /* Accents on blue */
@@ -3838,8 +3837,8 @@ ARTICLE PATTERN STYLES
 .section--blue-1-web .section__imageduo {
   background-color: #dceff0; }
 
-.section--blue-2 {
-  background-color: #93c9e4; }
+.section--blue-2-web {
+  background-color: #9fd3d6; }
 
 .section--yellow-1-web,
 .section--syellow-1-web .section__imageduo {
@@ -4267,7 +4266,7 @@ aside.section__pullquote {
   aside.section__pullquote.pullquote--salmon-1-web {
     background-color: #fde1c7; }
   aside.section__pullquote.pullquote--yellow-1-web {
-    background-color: #fffac0; }
+    background-color: #fffbdb; }
   aside.section__pullquote > p {
     padding: 0 1rem;
     margin-top: 1.5rem;
@@ -4557,7 +4556,7 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock--default .emphasisblock-inner,
 .emphasisblock--yellow-1-web .emphasisblock-inner {
-  background-color: #fffac0; }
+  background-color: #fffbdb; }
 
 .emphasisblock--rose-1 .emphasisblock-inner,
 .emphasisblock--default.emphasisblock--cta .emphasisblock-inner {
@@ -4566,15 +4565,15 @@ Pattern 20. Emphasis blocks
 .emphasisblock--blue-1-web .emphasisblock-inner {
   background-color: #dceff0; }
 
-.emphasisblock--blue-4 .emphasisblock-inner {
-  background-color: #1f588e; }
-  .emphasisblock--blue-4 .emphasisblock-inner .emphasisblock__button,
-  .emphasisblock--blue-4 .emphasisblock-inner .emphasisblock__subheader,
-  .emphasisblock--blue-4 .emphasisblock-inner .emphasisblock__paragraph {
+.emphasisblock--blue-2-web .emphasisblock-inner {
+  background-color: #9fd3d6; }
+  .emphasisblock--blue-2-web .emphasisblock-inner .emphasisblock__button,
+  .emphasisblock--blue-2-web .emphasisblock-inner .emphasisblock__subheader,
+  .emphasisblock--blue-2-web .emphasisblock-inner .emphasisblock__paragraph {
     color: #fefefe; }
-  .emphasisblock--blue-4 .emphasisblock-inner a.button--big:hover,
-  .emphasisblock--blue-4 .emphasisblock-inner a.button--small:hover {
-    color: #1f588e; }
+  .emphasisblock--blue-2-web .emphasisblock-inner a.button--big:hover,
+  .emphasisblock--blue-2-web .emphasisblock-inner a.button--small:hover {
+    color: #9fd3d6; }
 
 .emphasisblock--salmon-1-web .emphasisblock-inner {
   background-color: #fde1c7; }
@@ -4837,7 +4836,7 @@ ARTICLE META STYLES
       clear: both; } }
 
 .story__meta-inner {
-  background-color: #fffac0;
+  background-color: #fffbdb;
   padding: 1rem;
   position: relative;
   z-index: 2; }

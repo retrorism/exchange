@@ -470,8 +470,8 @@ ARTICLE PATTERN STYLES
 	background-color: $blue-1-web;
 }
 
-.section--blue-2 {
-	background-color: $blue-2;
+.section--blue-2-web {
+	background-color: $blue-2-web;
 }
 
 .section--yellow-1-web,
@@ -906,7 +906,7 @@ aside.section__pullquote {
 		background-color: $salmon-1-web;
 	}
 	&.pullquote--yellow-1-web {
-		background-color: $yellow-1;
+		background-color: $yellow-1-web;
 	}
 	@include breakpoint( small ) {
 		& > p {
@@ -1194,7 +1194,7 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock--default .emphasisblock-inner,
 .emphasisblock--yellow-1-web .emphasisblock-inner {
-	background-color: $yellow-1;
+	background-color: $yellow-1-web;
 }
 
 .emphasisblock--rose-1 .emphasisblock-inner,
@@ -1205,8 +1205,9 @@ Pattern 20. Emphasis blocks
 .emphasisblock--blue-1-web .emphasisblock-inner {
 	background-color: $blue-1-web;
 }
-.emphasisblock--blue-4 .emphasisblock-inner {
-	background-color: $blue-4;
+
+.emphasisblock--blue-2-web .emphasisblock-inner {
+	background-color: $blue-2-web;
 	.emphasisblock__button,
 	.emphasisblock__subheader,
 	.emphasisblock__paragraph {
@@ -1215,7 +1216,7 @@ Pattern 20. Emphasis blocks
 	a.button--big,
 	a.button--small {
 		&:hover {
-			color: $blue-4;
+			color: $blue-2-web;
 		}
 	}
 }
@@ -1438,7 +1439,7 @@ ARTICLE META STYLES
 }
 
 .story__meta-inner {
-	background-color: $yellow-1;
+	background-color: $yellow-1-web;
 	padding: $global-padding;
 	position: relative;
 	z-index: 2;
