@@ -343,6 +343,11 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "collaboration"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "2"
             }
         ]
     ],
@@ -354,5 +359,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1468258810
+    "modified": 1468311846
 }
