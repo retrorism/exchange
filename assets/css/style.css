@@ -3618,18 +3618,15 @@ ARTICLE STYLES:
 .section__simplegrid,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
-  width: 95%;
-  float: left;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
   width: 100%;
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
   @media screen and (min-width: 40em) {
     .page__footer__widgets-inner,
     .section__simplegrid,
@@ -3642,9 +3639,18 @@ ARTICLE STYLES:
   .section__imageduo .simplegrid__griditem,
   .section__simplemap.simplemap--wide .simplegrid__griditem {
     padding: 0; }
+  @media screen and (min-width: 40em) {
+    .page__footer__widgets-inner,
+    .section__simplegrid,
+    .section__imageduo,
+    .section__simplemap.simplemap--wide {
+      width: 95%;
+      float: left;
+      float: none;
+      margin-left: auto;
+      margin-right: auto; } }
 
-.section__featuredgrid,
-.section__simplegrid {
+.section__featuredgrid {
   width: 100%;
   float: left;
   padding-left: 0.625rem;
@@ -3660,18 +3666,22 @@ ARTICLE STYLES:
   margin-right: auto;
   overflow: hidden; }
   @media screen and (min-width: 40em) {
-    .section__featuredgrid,
-    .section__simplegrid {
+    .section__featuredgrid {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
   @media screen and (min-width: 40em) {
-    .section__featuredgrid,
-    .section__simplegrid {
+    .section__featuredgrid {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  .section__featuredgrid .featuredgrid__griditem,
-  .section__simplegrid .featuredgrid__griditem {
+  .section__featuredgrid .featuredgrid__griditem {
     padding: 0; }
+  @media screen and (min-width: 40em) {
+    .section__featuredgrid {
+      width: 95%;
+      float: left;
+      float: none;
+      margin-left: auto;
+      margin-right: auto; } }
 
 .story__section.section--has_contact_details {
   max-width: inherit; }

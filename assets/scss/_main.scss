@@ -297,29 +297,35 @@ ARTICLE STYLES:
 .section__simplegrid,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
-	@include grid-column( 95%, 0 );
-	@include grid-column-position(center);
-	overflow: hidden;
+	@include grid-column(12);
 	@include breakpoint( small ) {
-		@include grid-column( 12 );
 		@include grid-column-collapse();
+		@include grid-column-position(center);
 		.simplegrid__griditem {
 			padding: 0;
 		}
 	}
+	@include breakpoint( medium ) {
+		@include grid-column( 95%, 0 );
+		@include grid-column-position(center);
+	}
+
 }
 
-.section__featuredgrid,
-.section__simplegrid {
+.section__featuredgrid {
 	@include grid-column();
+	@include grid-column( 12 );
 	@include breakpoint( small ) {
-		@include grid-column( 12 );
 		@include grid-column-collapse();
+		@include grid-column-position(center);
 		.featuredgrid__griditem {
 			padding: 0;
 		}
 	}
-	@include grid-column-position(center);
+	@include breakpoint( medium ) {
+		@include grid-column( 95%, 0 );
+		@include grid-column-position(center);
+	}
 	overflow: hidden;
 }
 
