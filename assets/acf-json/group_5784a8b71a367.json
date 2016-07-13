@@ -1,13 +1,13 @@
 {
     "key": "group_5784a8b71a367",
-    "title": "Featured Story",
+    "title": "Featured Stories",
     "fields": [
         {
             "key": "field_5784a8d4f78f8",
             "label": "Featured Story \/ Stories",
             "name": "featured_stories",
             "type": "post_object",
-            "instructions": "",
+            "instructions": "Add 1, 3 or 4 stories here to be featured on this page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -19,7 +19,7 @@
                 "story"
             ],
             "taxonomy": [],
-            "allow_null": 1,
+            "allow_null": 0,
             "multiple": 1,
             "return_format": "id",
             "ui": 1
@@ -51,5 +51,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468312768
+    "modified": 1468415965
 }

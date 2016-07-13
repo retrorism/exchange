@@ -1804,7 +1804,7 @@
                                     "name": "display_as_cta",
                                     "type": "true_false",
                                     "instructions": "Remember to style the CTA for this page before publishing the grid!",
-                                    "required": 1,
+                                    "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
@@ -2309,5 +2309,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1468254368
+    "modified": 1468415899
 }
