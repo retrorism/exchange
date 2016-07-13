@@ -3295,9 +3295,13 @@ a.button--small {
   padding: 0.2rem;
   font-size: 80%; }
 
-.emphasisblock--cta button {
+.emphasisblock--cta button,
+.emphasisblock--cta a.button--small,
+.emphasisblock--cta a.button--large {
   border-color: #fefefe; }
-  .emphasisblock--cta button:hover {
+  .emphasisblock--cta button:hover,
+  .emphasisblock--cta a.button--small:hover,
+  .emphasisblock--cta a.button--large:hover {
     background-color: #fefefe; }
 
 .widget_nav_menu li {

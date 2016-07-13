@@ -70,7 +70,9 @@ a.button--small {
 	font-size: $small-font-size;
 }
 
-.emphasisblock--cta button {
+.emphasisblock--cta button,
+.emphasisblock--cta a.button--small,
+.emphasisblock--cta a.button--large {
 	border-color: $white;
 	&:hover {
 		background-color: $white;
