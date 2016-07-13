@@ -1052,10 +1052,6 @@ button {
     max-width: none;
     margin-left: -0.625rem;
     margin-right: -0.625rem; }
-    @media screen and (min-width: 40em) {
-      .row .row {
-        margin-left: -0.9375rem;
-        margin-right: -0.9375rem; } }
     .row .row.collapse {
       margin-left: 0;
       margin-right: 0; }
@@ -1070,10 +1066,6 @@ button {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
-  @media screen and (min-width: 40em) {
-    .column, .columns {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .column.row.row, .row.row.columns {
   float: none; }
@@ -1544,8 +1536,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .medium-uncollapse > .column, .medium-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
   .medium-centered {
     float: none;
     margin-left: auto;
@@ -1753,8 +1745,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .large-uncollapse > .column, .large-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
   .large-centered {
     float: none;
     margin-left: auto;
@@ -1962,8 +1954,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .xlarge-uncollapse > .column, .xlarge-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
   .xlarge-centered {
     float: none;
     margin-left: auto;
@@ -2171,8 +2163,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .xxlarge-uncollapse > .column, .xxlarge-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; }
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
   .xxlarge-centered {
     float: none;
     margin-left: auto;
@@ -3506,30 +3498,6 @@ ARTICLE STYLES:
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .story__header__image.lowres,
-    .story__editorialintro,
-    .story__title-wrapper,
-    .story__intro,
-    .section__slice,
-    .story__footer__byline,
-    .section--has_gravity_forms .section-inner > div,
-    .story__meta-wrapper,
-    .archive__title-wrapper {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .story__header__image.lowres,
-    .story__editorialintro,
-    .story__title-wrapper,
-    .story__intro,
-    .section__slice,
-    .story__footer__byline,
-    .section--has_gravity_forms .section-inner > div,
-    .story__meta-wrapper,
-    .archive__title-wrapper {
       width: 85%;
       float: left;
       padding-left: 0.625rem;
@@ -3537,18 +3505,6 @@ ARTICLE STYLES:
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .story__header__image.lowres,
-    .story__editorialintro,
-    .story__title-wrapper,
-    .story__intro,
-    .section__slice,
-    .story__footer__byline,
-    .section--has_gravity_forms .section-inner > div,
-    .story__meta-wrapper,
-    .archive__title-wrapper {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   @media screen and (min-width: 60em) {
     .story__header__image.lowres,
     .story__editorialintro,
@@ -3566,18 +3522,6 @@ ARTICLE STYLES:
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .story__header__image.lowres,
-    .story__editorialintro,
-    .story__title-wrapper,
-    .story__intro,
-    .section__slice,
-    .story__footer__byline,
-    .section--has_gravity_forms .section-inner > div,
-    .story__meta-wrapper,
-    .archive__title-wrapper {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   @media screen and (min-width: 75em) {
     .story__header__image.lowres,
     .story__editorialintro,
@@ -3595,18 +3539,6 @@ ARTICLE STYLES:
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 75em) and (min-width: 40em) {
-    .story__header__image.lowres,
-    .story__editorialintro,
-    .story__title-wrapper,
-    .story__intro,
-    .section__slice,
-    .story__footer__byline,
-    .section--has_gravity_forms .section-inner > div,
-    .story__meta-wrapper,
-    .archive__title-wrapper {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .section__slice:last-child:not(:first-child) {
   float: none;
@@ -3631,20 +3563,10 @@ ARTICLE STYLES:
     .section__simplegrid,
     .section__imageduo,
     .section__simplemap.simplemap--wide {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  .page__footer__widgets-inner .simplegrid__griditem,
-  .section__simplegrid .simplegrid__griditem,
-  .section__imageduo .simplegrid__griditem,
-  .section__simplemap.simplemap--wide .simplegrid__griditem {
-    padding: 0; }
-  @media screen and (min-width: 40em) {
-    .page__footer__widgets-inner,
-    .section__simplegrid,
-    .section__imageduo,
-    .section__simplemap.simplemap--wide {
       width: 95%;
       float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
@@ -3666,18 +3588,10 @@ ARTICLE STYLES:
   overflow: hidden; }
   @media screen and (min-width: 40em) {
     .section__featuredgrid {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .section__featuredgrid {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  .section__featuredgrid .featuredgrid__griditem {
-    padding: 0; }
-  @media screen and (min-width: 40em) {
-    .section__featuredgrid {
       width: 95%;
       float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
@@ -3734,10 +3648,6 @@ ARTICLE STYLES:
   text-align: center;
   background: #e07856;
   color: #fefefe; }
-  @media screen and (min-width: 40em) {
-    .collaboration__header__desc {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   @media screen and (min-width: 60em) {
     .collaboration__header__desc {
       width: 50%;
@@ -3763,10 +3673,6 @@ ARTICLE STYLES:
     margin-left: auto;
     margin-right: auto;
     max-height: inherit !important; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .collaboration__header--no-image .collaboration__header__desc {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .collaboration__header__desc-inner {
   padding: 2rem; }
@@ -3789,10 +3695,6 @@ ARTICLE STYLES:
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
-  @media screen and (min-width: 40em) {
-    .collaboration__participants__item {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .collaboration__participant__details {
   padding: 2rem; }
@@ -4128,10 +4030,6 @@ Pattern 9. Image
       max-width: none;
       margin-left: -0.625rem;
       margin-right: -0.625rem; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .imageduo__wrapper {
-      margin-left: -0.9375rem;
-      margin-right: -0.9375rem; } }
 
 .imageduo__image {
   width: 100%;
@@ -4143,27 +4041,15 @@ Pattern 9. Image
   margin-bottom: 2rem; }
   @media screen and (min-width: 40em) {
     .imageduo__image {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .imageduo__image {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .imageduo__image {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   .imageduo__image.image--portrait.image--right {
     width: 41.66667%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
-    @media screen and (min-width: 40em) {
-      .imageduo__image.image--portrait.image--right {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
     .imageduo__image.image--portrait.image--right:last-child:last-child {
       float: left; }
   .imageduo__image.image--portrait.image--left {
@@ -4172,20 +4058,12 @@ Pattern 9. Image
     padding-left: 0.625rem;
     padding-right: 0.625rem;
     margin-left: 8.33333%; }
-    @media screen and (min-width: 40em) {
-      .imageduo__image.image--portrait.image--left {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
   .imageduo__image.image--landscape.image--left {
     width: 41.66667%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
     margin-left: 8.33333%; }
-    @media screen and (min-width: 40em) {
-      .imageduo__image.image--landscape.image--left {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
 
 .image__placeholder {
   background-color: #f6f6f6;
@@ -4370,14 +4248,6 @@ Pattern 15. Contact block for TANDEM team member
   text-align: center; }
   @media screen and (min-width: 40em) {
     .contactblock__team-member {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .contactblock__team-member {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .contactblock__team-member {
       width: 83.33333%;
       float: left;
       padding-left: 0.625rem;
@@ -4386,10 +4256,6 @@ Pattern 15. Contact block for TANDEM team member
       margin-left: auto;
       margin-right: auto;
       text-align: left; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .contactblock__team-member {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 h6.team-member__cta {
   margin-bottom: 2rem; }
@@ -4411,19 +4277,11 @@ li.team-member__name {
   margin-bottom: 1rem; }
   @media screen and (min-width: 40em) {
     .contactblock__image {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .contactblock__image {
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem;
       margin-bottom: 0; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .contactblock__image {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   .contactblock__image img {
     border-radius: 50%; }
 
@@ -4434,18 +4292,10 @@ li.team-member__name {
   padding-right: 0.625rem; }
   @media screen and (min-width: 40em) {
     .contactblock__info {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .contactblock__info {
       width: 66.66667%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .contactblock__info {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 /**************************************************
 Pattern 16 becomes Content block for TANDEM partner
@@ -4522,10 +4372,6 @@ Pattern 20. Emphasis blocks
     margin-right: auto; }
     @media screen and (min-width: 40em) {
       .section__emphasisblock:not(.emphasisblock--full) {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
-    @media screen and (min-width: 40em) {
-      .section__emphasisblock:not(.emphasisblock--full) {
         width: 60%;
         float: left;
         padding-left: 0.625rem;
@@ -4533,10 +4379,6 @@ Pattern 20. Emphasis blocks
         float: none;
         margin-left: auto;
         margin-right: auto; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .section__emphasisblock:not(.emphasisblock--full) {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
     @media screen and (min-width: 60em) {
       .section__emphasisblock:not(.emphasisblock--full) {
         width: 40%;
@@ -4546,10 +4388,6 @@ Pattern 20. Emphasis blocks
         float: none;
         margin-left: auto;
         margin-right: auto; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .section__emphasisblock:not(.emphasisblock--full) {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .emphasisblock-inner {
   padding: 1rem; }
@@ -4730,15 +4568,6 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--left + .section__slice.emphasisblock--right,
     .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right + .section__slice {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-    .section__emphasisblock.emphasisblock--left,
-    .section__emphasisblock.emphasisblock--right,
-    .section__emphasisblock.emphasisblock--left + .section__slice,
-    .section__emphasisblock.emphasisblock--left + .section__slice.emphasisblock--right,
-    .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left,
-    .section__emphasisblock.emphasisblock--right + .section__slice {
       width: 85%;
       float: left;
       padding-left: 0.625rem;
@@ -4746,15 +4575,6 @@ Pattern 20. Emphasis blocks
       float: none;
       margin-left: auto;
       margin-right: auto; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .section__emphasisblock.emphasisblock--left,
-    .section__emphasisblock.emphasisblock--right,
-    .section__emphasisblock.emphasisblock--left + .section__slice,
-    .section__emphasisblock.emphasisblock--left + .section__slice.emphasisblock--right,
-    .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left,
-    .section__emphasisblock.emphasisblock--right + .section__slice {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   @media screen and (min-width: 60em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
@@ -4766,15 +4586,6 @@ Pattern 20. Emphasis blocks
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .section__emphasisblock.emphasisblock--left,
-    .section__emphasisblock.emphasisblock--right,
-    .section__emphasisblock.emphasisblock--left + .section__slice,
-    .section__emphasisblock.emphasisblock--left + .section__slice.emphasisblock--right,
-    .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left,
-    .section__emphasisblock.emphasisblock--right + .section__slice {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .emphasisblock--left + .section__slice {
   float: none !important; }
@@ -4850,10 +4661,6 @@ ARTICLE META STYLES
       padding-right: 0;
       min-width: 15em;
       text-align: right; } }
-  @media screen and (min-width: 75em) and (min-width: 40em) {
-    .story__meta-inner {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .story__meta__category,
 .story__meta__date {
@@ -4900,13 +4707,6 @@ ARTICLE EXTRAS STYLES
   padding-right: 0.625rem;
   margin-bottom: 1rem; }
   @media screen and (min-width: 40em) {
-    .featuredgrid__griditem,
-    .relatedgrid__griditem,
-    .archive__grid__griditem,
-    .simplegrid__griditem {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
     .featuredgrid__griditem:not(.griditem--grid_full),
     .relatedgrid__griditem:not(.griditem--grid_full),
     .archive__grid__griditem:not(.griditem--grid_full),
@@ -4915,13 +4715,6 @@ ARTICLE EXTRAS STYLES
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .featuredgrid__griditem:not(.griditem--grid_full),
-    .relatedgrid__griditem:not(.griditem--grid_full),
-    .archive__grid__griditem:not(.griditem--grid_full),
-    .simplegrid__griditem:not(.griditem--grid_full) {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
     .relatedgrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
@@ -4930,15 +4723,7 @@ ARTICLE EXTRAS STYLES
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .featuredgrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
-    .relatedgrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
-    .archive__grid__griditem:not(.griditem--grid_half):not(.griditem--grid_full),
-    .simplegrid__griditem:not(.griditem--grid_half):not(.griditem--grid_full) {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  @media screen and (min-width: 60em) {
+      padding-right: 0.625rem; }
     .featuredgrid__griditem.griditem--grid_two_third:not(.griditem--grid_half),
     .relatedgrid__griditem.griditem--grid_two_third:not(.griditem--grid_half),
     .archive__grid__griditem.griditem--grid_two_third:not(.griditem--grid_half),
@@ -4947,13 +4732,6 @@ ARTICLE EXTRAS STYLES
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .featuredgrid__griditem.griditem--grid_two_third:not(.griditem--grid_half),
-    .relatedgrid__griditem.griditem--grid_two_third:not(.griditem--grid_half),
-    .archive__grid__griditem.griditem--grid_two_third:not(.griditem--grid_half),
-    .simplegrid__griditem.griditem--grid_two_third:not(.griditem--grid_half) {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   .featuredgrid__griditem.griditem--cta,
   .relatedgrid__griditem.griditem--cta,
   .archive__grid__griditem.griditem--cta,
@@ -5047,9 +4825,9 @@ a:hover .griditem__title {
 
 @media screen and (min-width: 60em) {
   .home__featured-stories + .section--has_grid {
-    margin-top: -28em; }
+    margin-top: -25.5em; }
     .home__featured-stories + .section--has_grid .section-inner {
-      padding-top: 26em; } }
+      padding-top: 22em; } }
 
 /*********************
 CONTENT STYLES
@@ -5200,20 +4978,12 @@ FOOTER STYLES
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .footer__widget-wrapper {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
   @media screen and (min-width: 60em) {
     .footer__widget-wrapper {
       width: 25%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .footer__widget-wrapper {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
 
 .footer__widget__title {
   font-size: 112.5%;

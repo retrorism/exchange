@@ -1,4 +1,4 @@
-<div class="griditem__content griditem__content--<?php echo $exchange->type; ?>">
+<div data-equalizer-watch class="griditem__content griditem__content--<?php echo $exchange->type; ?>">
 
 	<!-- IMAGE -->
 	<?php echo exchange_create_link( $exchange, false ); ?>
