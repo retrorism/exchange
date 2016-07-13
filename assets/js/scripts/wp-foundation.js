@@ -40,7 +40,7 @@ jQuery(document).ready(function() {
 					}
 				}
 			};
-			var wrapper = jQuery( this ).parent('.translation-wrapper');
+			var wrapper = jQuery( this ).parent('.translatedparagraph--has_translations');
 			paragraphs = wrapper.children('.translatedparagraph__paragraph');
 			paragraphs.each( doLanguageSwitch( lang ) );
 		});

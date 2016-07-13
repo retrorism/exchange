@@ -28,22 +28,15 @@ $collab = new Collaboration( $post );
 							$collab->description->publish('collaboration');
 						} ?>
 					<?php if ( ! empty( $collab->website ) ) : ?>
-						<a class="button button--small" href="<?php echo $collab->website; ?>"><?php _e('project website','exchange'); ?></a>
-						<hr>
-					<?php endif; ?>
+							<a class="button button--large" href="<?php echo $collab->website; ?>"><?php _e('project website','exchange'); ?></a>
+							<hr>
+						<?php endif; ?>
 					<section class="collaboration__tags"><?php $collab->publish_tags('collaboration'); ?></section>
 				</div>
 			</div><!-- end description -->
 		</div><!-- end description-wrapper -->
 	</header> <!-- end article header -->
 	<div class="entry-content collaboration__content" itemprop="articleBody">
-	<?php if ( $collab->has_participants ) : ?>
-	<section class="collaboration__map">
-		<div class="section-inner">
-		<?php $collab->publish_collab_map(); ?>
-		</div>
-	</section>
-	<?php endif; ?>
 	<section class="collaboration__participants">
 		<div class="section-inner">
 	<?php if ( $collab->has_participants ) : ?>
@@ -83,8 +76,16 @@ $collab = new Collaboration( $post );
 				</div>
 		<?php endforeach; ?>
 	<?php endif; ?>
+
 		</div><!-- section-inner -->
 	</section>
+	<?php if ( $collab->has_participants && count ( $collab->participants ) > 1 ) : ?>
+	<section class="collaboration__map">
+		<div class="section-inner">
+		<?php $collab->publish_collab_map(); ?>
+		</div>
+	</section>
+	<?php endif; ?>
 	<?php if ( $collab->has_gallery ) : ?>
 	<section class="collaboration__gallery section--salmon-1-web">
 		<div class="section-inner orbit" role="region" aria-label="<?php printf( esc_html__('Gallery for "%s"', 'exchange' ), get_the_title() ); ?>" data-orbit data-auto-play="false">
