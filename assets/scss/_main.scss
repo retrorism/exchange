@@ -1460,6 +1460,7 @@ ARTICLE META STYLES
 *********************/
 
 .story__meta-wrapper {
+	pointer-events: none;
 	@include breakpoint( xlarge ) {
 		position: absolute;
 		width: 100%;
@@ -1475,6 +1476,7 @@ ARTICLE META STYLES
 }
 
 .story__meta-inner {
+	pointer-events: visible;
 	background-color: $yellow-1-web;
 	padding: $global-padding;
 	position: relative;
@@ -1482,6 +1484,7 @@ ARTICLE META STYLES
 	@include breakpoint( xlarge ) {
 		@include grid-column( 2 );
 		@include grid-column-collapse;
+		padding: $global-padding;
 		min-width: 15em;
 		text-align: right;
 	}

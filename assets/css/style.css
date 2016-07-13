@@ -4666,12 +4666,14 @@ Pattern 23. Map interface
 /*********************
 ARTICLE META STYLES
 *********************/
-@media screen and (min-width: 75em) {
-  .story__meta-wrapper {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    margin-top: 0; } }
+.story__meta-wrapper {
+  pointer-events: none; }
+  @media screen and (min-width: 75em) {
+    .story__meta-wrapper {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      margin-top: 0; } }
 
 @media screen and (min-width: 75em) {
   .story__meta {
@@ -4685,6 +4687,7 @@ ARTICLE META STYLES
       clear: both; } }
 
 .story__meta-inner {
+  pointer-events: visible;
   background-color: #fffbdb;
   padding: 1rem;
   position: relative;
@@ -4697,6 +4700,7 @@ ARTICLE META STYLES
       padding-right: 0.625rem;
       padding-left: 0;
       padding-right: 0;
+      padding: 1rem;
       min-width: 15em;
       text-align: right; } }
 
