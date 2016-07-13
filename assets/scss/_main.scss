@@ -339,7 +339,7 @@ ARTICLE STYLES:
 	@include grid-row()
 }
 
-.collaboration__header__image-wrapper {
+.collaboration__header__image-wrapper:not(.tridem_or_more) {
 	@include grid-column( 12, '0 px');
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
@@ -353,6 +353,10 @@ ARTICLE STYLES:
 	}
 }
 
+.collaboration__header__image-wrapper.tridem_or_more {
+	height: inherit !important;
+}
+
 .collaboration__header__desc {
 	max-height: 40em !important;
 	overflow: hidden;
@@ -362,6 +366,7 @@ ARTICLE STYLES:
 	color: $white;
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
+		position: relative;
 	}
 	.button--small {
 		margin: $global-margin 0;
@@ -378,21 +383,38 @@ ARTICLE STYLES:
 	}
 }
 
-.collaboration__header--no-image .collaboration__header__desc {
+.collaboration__header__desc-inner {
+	padding: 2 * $global-padding;
+	@include breakpoint( large ) {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.collaboration__header--no-image .collaboration__header__desc,
+.collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc {
+	margin-top: 2 * $global-margin;
 	@include breakpoint( large ) {
 		@include grid-column();
 		@include grid-column-position( center );
 		max-height: inherit !important;
+		height: inherit !important;
+		position: inherit;
+		.collaboration__header__desc-inner {
+			position: inherit;
+			top: 0;
+			transform: none;
+			max-width: 0.6 * $global-width;
+			margin: auto;
+		}
 	}
 }
 
-.collaboration__header__desc-inner {
-	padding: 2 * $global-padding;
-}
+
 
 .collaboration__paragraph {
 	@include breakpoint( xlarge ) {
-		max-width: 80%;
 		margin: auto;
 	}
 }
@@ -400,7 +422,10 @@ ARTICLE STYLES:
 .collaboration__tags {
 	@include breakpoint( xlarge ) {
 		max-width: 60%;
-		margin: auto;
+		margin: $global-margin auto;
+	}
+	ol {
+		margin-left: 0;
 	}
 }
 

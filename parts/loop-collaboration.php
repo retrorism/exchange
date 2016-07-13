@@ -24,7 +24,7 @@ $collab = new Collaboration( $post );
 			<div class="collaboration__header__desc" data-equalizer-watch>
 				<div class="collaboration__header__desc-inner">
 					<h1 class="entry-title collaboration__title" itemprop="headline"><?php the_title(); ?></h1>
-					<?php if ( $collab->has_description ) {
+					<?php if ( $collab->description_length > 0 ) {
 							$collab->description->publish('collaboration');
 						} ?>
 					<?php if ( ! empty( $collab->website ) ) : ?>
