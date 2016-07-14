@@ -3,11 +3,7 @@
 		<h2 class="participant__name">
 			<?php echo esc_html( $p_obj->name ); ?>
 		</h2>
-		<?php if ( $p_obj->has_contactme ) : ?>
-			<p class="participant__contactme">
-				<?php $p_obj->publish_contactme(); ?>
-			</p>
-		<?php endif; ?>
+
 		<?php if ( ! empty( $p_obj->org_name ) ) : ?>
 			<?php if ( ! empty( $p_obj->org_website ) ) : ?>
 				<p class="participant__organisation__name">
@@ -32,6 +28,11 @@
 
 		<?php if ( ! empty( $p_obj->org_description ) ) : ?>
 			<?php $p_obj->publish_org_description(); ?>
+		<?php endif; ?>
+		<?php if ( $p_obj->has_contactme ) : ?>
+			<p class="participant__contactme">
+				<?php $p_obj->publish_contactme(); ?>
+			</p>
 		<?php endif; ?>
 	</div>
 </div>

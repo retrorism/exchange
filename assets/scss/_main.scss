@@ -265,6 +265,7 @@ ARTICLE STYLES:
 .section__slice,
 .story__footer__byline,
 .section--has_gravity_forms .section-inner > div,
+
 .story__meta-wrapper,
 .archive__title-wrapper {
 	margin-bottom: 2 * $global-margin;
@@ -294,6 +295,7 @@ ARTICLE STYLES:
 }
 
 .page__footer__widgets-inner,
+.collaboration__gallery .section-inner,
 .section__simplegrid,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
@@ -515,6 +517,8 @@ ARTICLE PATTERN STYLES
 .page__footer__widgets > svg,
 .story__extras > svg,
 .collaboration__extras > svg,
+.collaboration__video > svg,
+.collaboration__gallery > svg,
 .collaboration__stories > svg {
 	position: relative;
 	width: 100%;
@@ -1132,19 +1136,24 @@ Pattern 19. Gallery
 
 .gallery--collaboration.orbit-container {
 	.orbit-slide {
-		height: 40em;
+		@include breakpoint( small ) {
+			min-height: 30em;
+		}
+		@include breakpoint( large ) {
+			min-height: 40em;
+		}
+		@include breakpoint( xlarge ) {
+			height: 100vh;
+		}
 	}
 }
 
-
-
 .gallery__item figure {
 	position: absolute;
-	top: 50vh;
-	width: 100%;
-	max-height: 80vh;
-	transform: translateY(-50%);
+	height: auto;
+	margin-right: auto;
 	overflow: hidden;
+	width: 100%;
 }
 
 .gallery__navigation {
