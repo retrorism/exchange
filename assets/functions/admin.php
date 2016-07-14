@@ -93,3 +93,28 @@ function exchange_acf_json_load_point( $paths ) {
 	return $paths;
 }
 add_filter( 'acf/settings/load_json', 'exchange_acf_json_load_point' );
+
+/**
+ * Redirect user after successful login.
+ *
+ * @param string $redirect_to URL to redirect to.
+ * @param string $request URL the user is coming from.
+ * @param object $user Logged user's data.
+ * @return string
+ */
+function exchange_login_redirect( $redirect_to, $request, $user ) {
+	//is there a user to check?
+	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+		//check for admins
+		if ( in_array( 'administrator', $user->roles ) || in_array( 'editor' ) ) {
+			// redirect them to the default place
+			return $redirect_to;
+		} else {
+			return home_url();
+		}
+	} else {
+		return $redirect_to;
+	}
+}
+
+add_filter( 'login_redirect', 'exchange_login_redirect', 10, 3 );
