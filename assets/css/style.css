@@ -4466,6 +4466,9 @@ Pattern 20. Emphasis blocks
   margin-top: 1rem;
   text-align: center; }
 
+.emphasisblock--cta {
+  position: relative; }
+
 .emphasisblock--cta .emphasisblock__subheader {
   text-transform: uppercase; }
 
@@ -4774,6 +4777,12 @@ ARTICLE EXTRAS STYLES
       background-color: #f4c522;
       color: #fefefe; }
 
+.griditem--cta .griditem__emphasisblock p,
+.griditem__content p {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
+
 .griditem--programme_round .griditem__content {
   padding: 0; }
 
@@ -4802,7 +4811,8 @@ a:hover .griditem__title {
 
 .featuredgrid__griditem.griditem--grid_full .griditem__intro-wrapper {
   max-width: 45rem;
-  margin: auto; }
+  margin-left: auto;
+  margin-right: auto; }
 
 .featuredgrid__griditem.griditem--grid_full .griditem__image {
   max-height: 30em; }
@@ -4836,7 +4846,8 @@ a:hover .griditem__title {
     display: block;
     font-weight: 300; }
 
-.griditem__button-wrapper {
+.griditem__button-wrapper,
+.griditem--cta div:last-child.emphasisblock__button-wrapper {
   position: absolute;
   bottom: 1.5rem;
   width: 100%;
