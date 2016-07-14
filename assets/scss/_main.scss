@@ -1198,6 +1198,9 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock-inner {
 	padding: $global-padding;
+	.emphasisblock__paragraph {
+		color: $white;
+	}
 }
 
 
@@ -1206,9 +1209,16 @@ Pattern 20. Emphasis blocks
 	background-color: $yellow-1-web;
 }
 
-.emphasisblock--rose-1 .emphasisblock-inner,
+.emphasisblock--rose-1-web .emphasisblock-inner,
 .emphasisblock--default.emphasisblock--cta .emphasisblock-inner {
 	background-color: $rose-1-web;
+
+	a.button--large,
+	a.button--small {
+		&:hover {
+			color: $black;
+		}
+	}
 }
 
 .emphasisblock--blue-1-web .emphasisblock-inner {
@@ -1217,15 +1227,10 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock--blue-2-web .emphasisblock-inner {
 	background-color: $blue-2-web;
-	.emphasisblock__button,
-	.emphasisblock__subheader,
-	.emphasisblock__paragraph {
-		color: $white;
-	}
 	a.button--large,
 	a.button--small {
 		&:hover {
-			color: $blue-2-web;
+			color: $black;
 		}
 	}
 }
@@ -1264,16 +1269,6 @@ Pattern 20. Emphasis blocks
 	a.button--small {
 		&:hover {
 			color: $black-tandem;
-		}
-	}
-}
-
-.emphasisblock--rose-1-web .emphasisblock-inner {
-	background-color: $rose-1-web;
-	a.button--big,
-	a.button--small {
-		&:hover {
-			color: $rose-1-web;
 		}
 	}
 }
@@ -1605,9 +1600,6 @@ a:hover .griditem__title {
 	max-height: 15em;
 }
 
-.griditem__content--collaboration {
-}
-
 .griditem__collaboration-info {
 	position: relative;
 	text-align: center;
@@ -1638,11 +1630,21 @@ a:hover .griditem__title {
 }
 
 .griditem__button-wrapper,
-.griditem--cta div:last-child.emphasisblock__button-wrapper {
+.griditem__emphasisblock div:last-child.emphasisblock__button-wrapper,
+.griditem--programme_round div:nth-last-child(2).emphasisblock__button-wrapper {
 	position: absolute;
 	bottom: 1.5 * $global-padding;
+	left: 0;
 	width: 100%;
 	text-align: center;
+}
+
+.griditem--programme_round div:nth-last-child(2).emphasisblock__button-wrapper {
+	bottom: 3.25 * $global-padding;
+}
+
+.griditem--programme_round div:nth-last-child(3).emphasisblock__button-wrapper {
+	bottom: 5 * $global-padding;
 }
 
 .home__featured-stories {

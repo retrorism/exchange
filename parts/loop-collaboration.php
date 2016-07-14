@@ -66,11 +66,15 @@ $collab = new Collaboration( $post );
 								}
 							?>
 						</p>
+
 						<?php endif; ?>
 						<?php if ( $p_obj->has_contactme ) : ?>
 							<p class="participant__contactme">
 								<?php $p_obj->publish_contactme(); ?>
 							</p>
+						<?php endif; ?>
+						<?php if ( ! empty( $p_obj->org_description ) ) : ?>
+							<?php $p_obj->publish_org_description(); ?>
 						<?php endif; ?>
 					</div>
 				</div>

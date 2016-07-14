@@ -4410,27 +4410,30 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock-inner {
   padding: 1rem; }
+  .emphasisblock-inner .emphasisblock__paragraph {
+    color: #fefefe; }
 
 .emphasisblock--default .emphasisblock-inner,
 .emphasisblock--yellow-1-web .emphasisblock-inner {
   background-color: #fffbdb; }
 
-.emphasisblock--rose-1 .emphasisblock-inner,
+.emphasisblock--rose-1-web .emphasisblock-inner,
 .emphasisblock--default.emphasisblock--cta .emphasisblock-inner {
   background-color: #ff8e78; }
+  .emphasisblock--rose-1-web .emphasisblock-inner a.button--large:hover,
+  .emphasisblock--rose-1-web .emphasisblock-inner a.button--small:hover,
+  .emphasisblock--default.emphasisblock--cta .emphasisblock-inner a.button--large:hover,
+  .emphasisblock--default.emphasisblock--cta .emphasisblock-inner a.button--small:hover {
+    color: #343438; }
 
 .emphasisblock--blue-1-web .emphasisblock-inner {
   background-color: #dceff0; }
 
 .emphasisblock--blue-2-web .emphasisblock-inner {
   background-color: #9fd3d6; }
-  .emphasisblock--blue-2-web .emphasisblock-inner .emphasisblock__button,
-  .emphasisblock--blue-2-web .emphasisblock-inner .emphasisblock__subheader,
-  .emphasisblock--blue-2-web .emphasisblock-inner .emphasisblock__paragraph {
-    color: #fefefe; }
   .emphasisblock--blue-2-web .emphasisblock-inner a.button--large:hover,
   .emphasisblock--blue-2-web .emphasisblock-inner a.button--small:hover {
-    color: #9fd3d6; }
+    color: #343438; }
 
 .emphasisblock--salmon-1-web .emphasisblock-inner {
   background-color: #fde1c7; }
@@ -4455,12 +4458,6 @@ Pattern 20. Emphasis blocks
   .emphasisblock--black-tandem .emphasisblock-inner a.button--large:hover,
   .emphasisblock--black-tandem .emphasisblock-inner a.button--small:hover {
     color: #4c4d53; }
-
-.emphasisblock--rose-1-web .emphasisblock-inner {
-  background-color: #ff8e78; }
-  .emphasisblock--rose-1-web .emphasisblock-inner a.button--big:hover,
-  .emphasisblock--rose-1-web .emphasisblock-inner a.button--small:hover {
-    color: #ff8e78; }
 
 .emphasisblock__subheader {
   margin-top: 1rem;
@@ -4847,11 +4844,19 @@ a:hover .griditem__title {
     font-weight: 300; }
 
 .griditem__button-wrapper,
-.griditem--cta div:last-child.emphasisblock__button-wrapper {
+.griditem__emphasisblock div:last-child.emphasisblock__button-wrapper,
+.griditem--programme_round div:nth-last-child(2).emphasisblock__button-wrapper {
   position: absolute;
   bottom: 1.5rem;
+  left: 0;
   width: 100%;
   text-align: center; }
+
+.griditem--programme_round div:nth-last-child(2).emphasisblock__button-wrapper {
+  bottom: 3.25rem; }
+
+.griditem--programme_round div:nth-last-child(3).emphasisblock__button-wrapper {
+  bottom: 5rem; }
 
 .home__featured-stories {
   position: relative;
