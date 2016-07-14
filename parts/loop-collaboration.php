@@ -37,52 +37,22 @@ $collab = new Collaboration( $post );
 		</div><!-- end description-wrapper -->
 	</header> <!-- end article header -->
 	<div class="entry-content collaboration__content" itemprop="articleBody">
-	<section class="collaboration__participants">
-		<div class="section-inner">
-	<?php if ( $collab->has_participants ) : ?>
-		<?php $participants = $collab->participants;
-			foreach( $participants as $p_obj ) : ?>
-				<div class="collaboration__participants__item">
-					<div class="collaboration__participant__details">
-						<h2 class="participant__name">
-							<?php echo $p_obj->name; ?>
-						</h2>
-						<?php if ( ! empty( $p_obj->org_name ) ) : ?>
-							<?php if ( ! empty( $p_obj->org_website ) ) : ?>
-								<p class="participant__organisation__name">
-									<a href="<?php echo esc_url( $p_obj->org_website ); ?>" target="_blank">
-										<?php echo esc_html( $p_obj->org_name ); ?>
-									</a>
-								</p>
-							<?php else : ?>
-								<p class="participant__organisation__name">
-									<?php echo esc_html( $p_obj->org_name ); ?>
-								</p>
-							<?php endif; ?>
-						<p class="participant__organisation__city">
-							<?php echo esc_html( $p_obj->org_city );
-								if ( ! empty( $p_obj->org_country ) ) {
-									echo ', ' . esc_html( $p_obj->org_country );
-								}
-							?>
-						</p>
 
-						<?php endif; ?>
-						<?php if ( $p_obj->has_contactme ) : ?>
-							<p class="participant__contactme">
-								<?php $p_obj->publish_contactme(); ?>
-							</p>
-						<?php endif; ?>
-						<?php if ( ! empty( $p_obj->org_description ) ) : ?>
-							<?php $p_obj->publish_org_description(); ?>
-						<?php endif; ?>
-					</div>
-				</div>
-		<?php endforeach; ?>
+	<?php if ( $collab->has_participants ) : ?>
+
+		<section class="collaboration__participants">
+			<div class="section-inner">
+
+			<?php $participants = $collab->participants; ?>
+			<?php foreach( $participants as $p_obj ) : ?>
+				<?php include( locate_template( 'parts/content-participant.php' ) ); ?>
+		 	<?php endforeach; ?>
+
+			</div><!-- section-inner -->
+		</section><!-- collaboration__participants -->
+
 	<?php endif; ?>
 
-		</div><!-- section-inner -->
-	</section>
 	<?php if ( $collab->has_participants && count ( $collab->participants ) > 1 ) : ?>
 	<section class="collaboration__map">
 		<div class="section-inner">
