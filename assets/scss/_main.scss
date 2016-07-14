@@ -1931,3 +1931,20 @@ PLUGIN STYLES
     list-style: none outside none;
     margin: 0;
 }
+
+// Fixing long checkbox list styling
+.gform_wrapper ul.gfield_checkbox li {
+	display: inline-block;
+	height: 1.5em;
+	label {
+		white-space: nowrap;
+	}
+	input[type=checkbox] {
+		vertical-align: inherit;
+		margin-top: 0;
+		margin-left: $global-margin;
+	}
+	&:first-child {
+		padding-left: 0;
+	}
+}

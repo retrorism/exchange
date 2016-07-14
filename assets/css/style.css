@@ -5087,6 +5087,18 @@ PLUGIN STYLES
   list-style: none outside none;
   margin: 0; }
 
+.gform_wrapper ul.gfield_checkbox li {
+  display: inline-block;
+  height: 1.5em; }
+  .gform_wrapper ul.gfield_checkbox li label {
+    white-space: nowrap; }
+  .gform_wrapper ul.gfield_checkbox li input[type=checkbox] {
+    vertical-align: inherit;
+    margin-top: 0;
+    margin-left: 1rem; }
+  .gform_wrapper ul.gfield_checkbox li:first-child {
+    padding-left: 0; }
+
 /******************************************************************
 
 Stylesheet: Retina Screens & Devices Stylesheet
