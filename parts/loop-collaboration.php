@@ -28,7 +28,7 @@ $collab = new Collaboration( $post );
 							$collab->description->publish('collaboration');
 						} ?>
 					<?php if ( ! empty( $collab->website ) ) : ?>
-							<a class="button button--large" href="<?php echo $collab->website; ?>"><?php _e('project website','exchange'); ?></a>
+							<a class="button button--large" href="<?php echo esc_url( $collab->website ); ?>"><?php _e('project website','exchange'); ?></a>
 							<hr>
 						<?php endif; ?>
 					<section class="collaboration__tags"><?php $collab->publish_tags('collaboration'); ?></section>
@@ -50,19 +50,19 @@ $collab = new Collaboration( $post );
 						<?php if ( ! empty( $p_obj->org_name ) ) : ?>
 							<?php if ( ! empty( $p_obj->org_website ) ) : ?>
 								<p class="participant__organisation__name">
-									<a href="<?php echo $p_obj->org_website; ?>" target="_blank">
-										<?php echo $p_obj->org_name; ?>
+									<a href="<?php echo esc_url( $p_obj->org_website ); ?>" target="_blank">
+										<?php echo esc_html( $p_obj->org_name ); ?>
 									</a>
 								</p>
 							<?php else : ?>
 								<p class="participant__organisation__name">
-									<?php echo $p_obj->org_name; ?>
+									<?php echo esc_html( $p_obj->org_name ); ?>
 								</p>
 							<?php endif; ?>
 						<p class="participant__organisation__city">
-							<?php echo $p_obj->org_city;
+							<?php echo esc_html( $p_obj->org_city );
 								if ( ! empty( $p_obj->org_country ) ) {
-									echo ', ' .  $p_obj->org_country;
+									echo ', ' . esc_html( $p_obj->org_country );
 								}
 							?>
 						</p>
