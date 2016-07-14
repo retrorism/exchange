@@ -1136,15 +1136,7 @@ Pattern 19. Gallery
 
 .gallery--collaboration.orbit-container {
 	.orbit-slide {
-		@include breakpoint( small ) {
-			min-height: 30em;
-		}
-		@include breakpoint( large ) {
-			min-height: 40em;
-		}
-		@include breakpoint( xlarge ) {
-			height: 100vh;
-		}
+		height: 100vh;
 	}
 }
 
