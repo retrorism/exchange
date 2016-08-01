@@ -27,7 +27,7 @@
         {
             "key": "field_5799fdb4b5e8c",
             "label": "Abbreviated Organisation Name",
-            "name": "organisation_name_abbrev",
+            "name": "organisation_short_name",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -222,5 +222,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1470056690
+    "modified": 1470065447
 }

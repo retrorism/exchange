@@ -22,8 +22,9 @@
 			<ul class="participants">
 			<?php foreach( $exchange->participants as $p ) : ?>
 				<li class="participant">
+					<?php $org_name = isset( $p->org_short_name ) ? $p->org_short_name : $p->org_name; ?>
 					<?php echo '<span class="participant__name">' . $p->name . '</span>
-					<span class="participant__organisation-details">' . $p->org_name . '</span>'; ?>
+					<span class="participant__organisation-details">' . $org_name . '</span>'; ?>
 				</li>
 			<?php endforeach; ?>
 			</ul>

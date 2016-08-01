@@ -366,15 +366,15 @@ ARTICLE STYLES:
 	overflow: hidden;
 	@include grid-column( 12 );
 	text-align: center;
-	background: $blue-2-web;
-	color: $white;
+	background: $rose-1-web;
+	color: $black;
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
 		position: relative;
 	}
 	.button--small,
 	.button--large {
-		color: $white;
+		color: $black;
 		border-color: $white;
 		font-weight: $global-weight-semibold;
 		&:hover {
@@ -398,7 +398,6 @@ ARTICLE STYLES:
 
 .collaboration__header--no-image .collaboration__header__desc,
 .collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc {
-	margin-top: 2 * $global-margin;
 	@include breakpoint( large ) {
 		@include grid-column();
 		@include grid-column-position( center );
@@ -415,12 +414,12 @@ ARTICLE STYLES:
 	}
 }
 
-
+.collaboration__title {
+	color: $white;
+}
 
 .collaboration__paragraph {
-	@include breakpoint( xlarge ) {
-		margin: auto;
-	}
+	margin: 0 auto $global-margin;
 }
 
 .collaboration__tags {
@@ -627,7 +626,7 @@ Pattern 4. Tag list
 		cursor: pointer;
 	}
 	&[href]:hover {
-		color: white;
+		color: $white;
 	}
 	&.post_tag {
 		border-color: $yellow-tandem;
@@ -663,7 +662,7 @@ Pattern 4. Tag list
 }
 
 .collaboration__header .collaboration__tag {
-	color: $white;
+	color: $black;
 	border-color: $white;
 	&[href]:hover {
 		background-color: $white;
@@ -1667,6 +1666,17 @@ a:hover .griditem__title {
 		padding: 1%;
 		margin: 0;
 		height: 4 * $global-font-size;
+		// &:nth-child(1) {
+		// 	text-align: right;
+		// 	padding-right: 1.5 * $global-padding;
+		// }
+		// &:nth-child(2) {
+		// 	text-align: left;
+		// 	padding-left: 1.5 * $global-padding;
+		// }
+		// &:nth-child(odd) + &:last-child {
+		// 	text-align: center;
+		// }
 	}
 	.participant__organisation-details {
 		display: block;

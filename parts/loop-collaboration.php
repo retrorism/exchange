@@ -41,9 +41,9 @@ $collab = new Collaboration( $post );
 		<!-- MAP -->
 		<?php if ( $collab->has_participants && count ( $collab->participants ) > 1 ) : ?>
 			<section class="collaboration__map">
-				<div class="section-inner">
+				<!-- <div class="section-inner"> -->
 				<?php $collab->publish_collab_map(); ?>
-				</div>
+				<!-- </div> -->
 			</section>
 		<?php endif; ?>
 
