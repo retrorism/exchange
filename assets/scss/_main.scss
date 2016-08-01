@@ -366,7 +366,7 @@ ARTICLE STYLES:
 	overflow: hidden;
 	@include grid-column( 12 );
 	text-align: center;
-	background: darken( $rose-1-web, 2);
+	background: $blue-2-web;
 	color: $white;
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
