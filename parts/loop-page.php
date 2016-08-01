@@ -34,6 +34,10 @@ $story = new Story( $post );
 
 			</div>
 
+			<?php if ( 'Programmes' === $story->title ) {
+				get_template_part( 'parts/content', 'page-programmes' );
+			} ?>
+
 			<?php if ( $story->has_editorial_intro ) {
 				$story->publish_intro();
 			} ?>

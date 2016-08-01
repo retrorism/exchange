@@ -1,6 +1,6 @@
 {
     "key": "group_56b9bd12d706c",
-    "title": "Collaboration Group",
+    "title": "Collaboration",
     "fields": [
         {
             "key": "field_56b9b7c755a9f",
@@ -259,5 +259,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468505456
+    "modified": 1470056663
 }

@@ -1,6 +1,6 @@
 {
     "key": "group_56cf0f99365df",
-    "title": "Story Sections",
+    "title": "Story \/ Page Sections",
     "fields": [
         {
             "key": "field_56cf1e8d69ac5",
@@ -2309,5 +2309,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1468415899
+    "modified": 1470056762
 }

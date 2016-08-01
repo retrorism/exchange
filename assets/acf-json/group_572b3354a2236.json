@@ -1,6 +1,6 @@
 {
     "key": "group_572b3354a2236",
-    "title": "Story \/ Collaboration Tags",
+    "title": "Tags",
     "fields": [
         {
             "key": "field_56bdaddef24ea",
@@ -71,5 +71,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1467053396
+    "modified": 1470056728
 }

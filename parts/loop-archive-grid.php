@@ -12,8 +12,7 @@ $grid_columns = 3; ?>
 
 		<!--Item: -->
 		<?php
-			$exchange = BaseController::exchange_factory( $post, 'griditem' );
-			$grid_item = new GridItem( $exchange, 'archive__grid' );
+			$grid_item = BaseGrid::create_grid_item_from_post( $post, 'archive__grid' );
 			$grid_item->publish();
 		?>
 

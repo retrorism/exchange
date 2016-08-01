@@ -38,6 +38,15 @@ $collab = new Collaboration( $post );
 	</header> <!-- end article header -->
 	<div class="entry-content collaboration__content" itemprop="articleBody">
 
+		<!-- MAP -->
+		<?php if ( $collab->has_participants && count ( $collab->participants ) > 1 ) : ?>
+			<section class="collaboration__map">
+				<div class="section-inner">
+				<?php $collab->publish_collab_map(); ?>
+				</div>
+			</section>
+		<?php endif; ?>
+
 		<!-- PARTICIPANTS -->
 		<?php if ( $collab->has_participants ) : ?>
 			<section class="collaboration__participants">
@@ -52,14 +61,7 @@ $collab = new Collaboration( $post );
 			</section><!-- collaboration__participants -->
 		<?php endif; ?>
 
-		<!-- MAP -->
-		<?php if ( $collab->has_participants && count ( $collab->participants ) > 1 ) : ?>
-			<section class="collaboration__map">
-				<div class="section-inner">
-				<?php $collab->publish_collab_map(); ?>
-				</div>
-			</section>
-		<?php endif; ?>
+
 
 		<!-- STORY SECTIONS -->
 		<?php $collab->publish_sections(); ?>

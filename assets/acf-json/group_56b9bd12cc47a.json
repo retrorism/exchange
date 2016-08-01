@@ -1,6 +1,6 @@
 {
     "key": "group_56b9bd12cc47a",
-    "title": "Participant Group",
+    "title": "Participant",
     "fields": [
         {
             "key": "field_56b9b9e354202",
@@ -20,6 +20,27 @@
             "prepend": "",
             "append": "",
             "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5799fdb4b5e8c",
+            "label": "Abbreviated Organisation Name",
+            "name": "organisation_name_abbrev",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -201,5 +222,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1467907760
+    "modified": 1470056690
 }

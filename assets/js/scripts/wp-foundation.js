@@ -28,6 +28,11 @@ jQuery(document).ready(function() {
 		}
 	}
 
+/* 	jQuery('#gform_6 #input_6_7').change(function(){
+    var attendees = jQuery(this).val();
+    gfRepeater_setRepeater(6, 1, attendees);
+}); */
+
 	jQuery('.translatedparagraph--has_translations').each( function() {
 		var select = jQuery( this ).find('.translation-select');
 		select.on('change', function() {

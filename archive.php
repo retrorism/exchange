@@ -1,36 +1,25 @@
 <?php get_header(); ?>
 
-	<div id="content">
 
-		    <main id="main" role="main">
+<main id="main" class="archive__wrapper section--blue-1-web" role="main">
+	<div class="main-inner">
+		<?php get_template_part( 'parts/content', 'archive-header'); ?>
 
-				<div id="inner-content" class="row">
+	    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+			<!-- To see additional archive styles, visit the /parts directory -->
+			<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 
-		    	<header>
-		    		<h1 class="page-title"><?php the_archive_title();?></h1>
-					<?php the_archive_description('<div class="taxonomy-description">', '</div>');?>
-		    	</header>
+		<?php endwhile; ?>
 
-		    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php exchange_page_navi(); ?>
 
-					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+		<?php else : ?>
 
-				<?php endwhile; ?>
+			<?php get_template_part( 'parts/content', 'missing' ); ?>
 
-					<?php exchange_page_navi(); ?>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'parts/content', 'missing' ); ?>
-
-				<?php endif; ?>
-
-			</main> <!-- end #main -->
-
-	    </div> <!-- end #inner-content -->
-
-	</div> <!-- end #content -->
+		<?php endif; ?>
+	</div> <!-- end .main-inner -->
+</main> <!-- end #main -->
 
 <?php get_footer(); ?>

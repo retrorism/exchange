@@ -178,7 +178,7 @@ nav.top-bar {
 }
 
 nav.top-bar {
-	border-bottom: 1px solid $light-gray;
+	border-bottom: 1px solid transparentize( $light-gray, 0.6 );
 	line-height: 0;
 }
 
@@ -223,8 +223,10 @@ ul#menu-main-menu-right {
 		margin-left: -5.25em;
 		width: 10.5em;
 		line-height:0;
+		box-sizing: border-box;
 		svg {
-			width: 100%;
+			width: 80%;
+			margin: 0.4 * $global-margin 10% 0.6 * $global-margin;
 		}
 	}
 }
@@ -533,7 +535,6 @@ ARTICLE PATTERN STYLES
 }
 .collaboration__section:last-child,
 .story__section:last-child {
-	padding-bottom: 2 * $global-padding;
 	svg.section__edge--bottom {
 		display: none;
 	}
@@ -568,6 +569,7 @@ Pattern 2. Bylines
 	font-size: $lead-font-size;
 	line-height: $lead-lineheight;
 	font-style: italic;
+	padding-bottom: 2 * $global-padding;
 }
 
 /********************************
@@ -578,7 +580,7 @@ Pattern 3. Editorial introduction
 	font-size: $lead-font-size;
 	line-height: $lead-lineheight;
 	float: none !important;
-	margin-bottom: 4 * $global-margin;
+	margin-bottom: 2 * $global-margin;
 }
 
 body.page .story__editorialintro {
@@ -594,12 +596,13 @@ Pattern 4. Tag list
 .griditem__tags ol {
 	list-style: none;
 	margin-left: 0;
+	margin-bottom: 0;
 }
+
 
 .griditem__tags ol li,
 .collaboration__tags ol li,
-.story__meta__tags ol li,
- {
+.story__meta__tags ol li {
 	display: inline-block;
 	margin: 0.125 * $global-margin 0.25 * $global-margin 0.125 * $global-margin 0;
 	&:first-of-type {
@@ -613,8 +616,6 @@ Pattern 4. Tag list
 	}
 }
 
-
-
 .tag,
 .collaboration__tag,
 .griditem__tag,
@@ -622,26 +623,52 @@ Pattern 4. Tag list
 	@include label;
 	font-size: $small-font-size;
 	border: 1px solid $yellow-tandem;
+	&[href] {
+		cursor: pointer;
+	}
+	&[href]:hover {
+		color: white;
+	}
 	&.post_tag {
 		border-color: $yellow-tandem;
+		&[href]:hover {
+			background-color: $yellow-tandem;
+		}
 	}
 	&.topic {
 		border-color: $blue-3;
+		&[href]:hover {
+			background-color: $blue-3;
+		}
 	}
 	&.tandem {
 		border-color: $yellow-4;
+		&[href]:hover {
+			background-color: $yellow-4;
+		}
 	}
 	&.language {
 		border-color: $salmon-4;
+		&[href]:hover {
+			background-color: $salmon-4;
+		}
 	}
 	&.location {
 		border-color: $salmon-3;
+		&[href]:hover {
+			background-color: $salmon-3;
+		}
 	}
+
 }
 
 .collaboration__header .collaboration__tag {
 	color: $white;
 	border-color: $white;
+	&[href]:hover {
+		background-color: $white;
+		color: $black;
+	}
 }
 
 
@@ -718,6 +745,10 @@ Pattern 6. Paragraph
 	&.show {
 		display: block;
 	}
+}
+
+.story__section:last-child p:last-of-type {
+	margin-bottom: 0;
 }
 
 /*******************
@@ -1427,7 +1458,21 @@ Pattern 22. Related story list
 /************************
 Pattern 23. Map interface
 *************************/
+.map__marker__image {
+	height:14px;
+	width:14px;
+	position: relative;
+	top: -3px;
+}
 
+.map__marker__label {
+	@include label;
+	border: 2px solid $yellow-tandem;
+	background-color: #fff;
+	position: relative;
+	left: 14px;
+	top: -2px;
+}
 /*********************
 ARTICLE META STYLES
 *********************/
@@ -1472,8 +1517,9 @@ ARTICLE META STYLES
 	font-weight: $global-weight-semibold;
 }
 
-.story__meta__tags {
-	margin-top: $global-margin;
+.story__meta__tags,
+.story__meta__date {
+	margin-bottom: 0.5 * $global-margin;
 }
 
 .social-icons-list {
@@ -1537,7 +1583,7 @@ ARTICLE EXTRAS STYLES
 .griditem__content {
 	position: relative;
 	padding: 0.5 * $global-padding;
-	padding-bottom: 4 * $global-padding;
+	padding-bottom: 5 * $global-padding;
 	background-color: $white;
 	text-align: center;
 	.button--small {
@@ -1562,7 +1608,6 @@ ARTICLE EXTRAS STYLES
 .griditem__image,
 .griditem__meta,
 .griditem__title,
-.griditem__intro-wrapper,
 .griditem__tags {
 	margin-bottom: 0.5 * $global-margin;
 }
@@ -1660,6 +1705,50 @@ a:hover .griditem__title {
 		}
 	}
 }
+
+#programmes {
+	background-image: url('../images/png/T_Build_together_WEB-SCALED-ALPHA.png');
+	background-size: 66.667%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 5em auto 7.5em;
+	a {
+		display: block;
+		&:hover svg g path {
+			fill: $yellow-4;
+		}
+	}
+	@include breakpoint( small ) {
+		@include on-circle( $item-count: 5, $circle-size: 13em, $item-size: 10%);
+		a {
+			width: 5em;
+			margin-left: -2.5em;
+			margin-top: -1em;
+		}
+		svg {
+			width: 5em;
+		}
+	}
+	@include breakpoint( medium ) {
+		@include on-circle( $item-count: 5, $circle-size: 30em, $item-size: 10%);
+		a {
+			width: 10em;
+			max-height: 4em;
+			margin-left: -5em;
+			margin-top: -2em;
+		}
+		svg {
+			width: 10em;
+			max-height: 4em;
+
+		}
+	}
+
+}
+
+
+
+
 
 /*********************
 CONTENT STYLES
@@ -1839,7 +1928,7 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-.page__footer {
+.story__footer {
 	clear: both;
 }
 
@@ -2033,4 +2122,12 @@ select {
 	&:hover {
 		background-color: darken($blue-4,5);
 	}
+}
+
+/*********************
+ADMIN FORM STYLES
+*********************/
+
+#wpbody-content textarea {
+	width: 100%;
 }

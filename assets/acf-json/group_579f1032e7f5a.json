@@ -1,12 +1,12 @@
 {
-    "key": "group_57837a121c389",
-    "title": "Call to Action",
+    "key": "group_579f1032e7f5a",
+    "title": "Programme Round",
     "fields": [
         {
-            "key": "field_57837a21a74e8",
-            "label": "Display as CTA in grids?",
-            "name": "has_cta",
-            "type": "select",
+            "key": "field_579f10eb6cdd0",
+            "label": "Currently active?",
+            "name": "is_active",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,10 +15,34 @@
                 "class": "",
                 "id": ""
             },
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_579f1032ed585",
+            "label": "Display as CTA in grids?",
+            "name": "has_cta",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_579f10eb6cdd0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "no": "No",
                 "related_only": "Only in (curated) 'Related stories'-sections",
-                "everywhere": "Everywhere"
+                "everywhere": "Everywhere (this will include programme overview pages)"
             },
             "default_value": [
                 "no"
@@ -32,7 +56,7 @@
             "readonly": 0
         },
         {
-            "key": "field_57837b57cbfb3",
+            "key": "field_579f1032ed594",
             "label": "Call To Action elements",
             "name": "cta_block_elements",
             "type": "flexible_content",
@@ -41,7 +65,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_57837a21a74e8",
+                        "field": "field_579f1032ed585",
                         "operator": "!=",
                         "value": "no"
                     }
@@ -63,7 +87,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_57837b57cbfb4",
+                            "key": "field_579f1032f141d",
                             "label": "Block Header",
                             "name": "block_header_text",
                             "type": "text",
@@ -94,7 +118,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_57837b57cbfb5",
+                            "key": "field_579f1032f142f",
                             "label": "Paragraph Text",
                             "name": "block_paragraph_text",
                             "type": "textarea",
@@ -125,7 +149,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_57837b57cbfb6",
+                            "key": "field_579f1032f143c",
                             "label": "Select Block Graphic",
                             "name": "block_graphic_select",
                             "type": "image",
@@ -134,7 +158,7 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_57837a21a74e8",
+                                        "field": "field_579f1032ed585",
                                         "operator": "!=",
                                         "value": "no"
                                     }
@@ -167,7 +191,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_57837b57cbfb7",
+                            "key": "field_579f1032f1447",
                             "label": "Select Programme",
                             "name": "block_programme",
                             "type": "select",
@@ -206,7 +230,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_57837b57cbfb8",
+                            "key": "field_579f1032f1454",
                             "label": "Button Text",
                             "name": "button_text",
                             "type": "text",
@@ -227,7 +251,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_57837b57cbfb9",
+                            "key": "field_579f1032f1460",
                             "label": "Button Help Text",
                             "name": "button_help_text",
                             "type": "text",
@@ -248,7 +272,7 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_57837b57cbfbb",
+                            "key": "field_579f1032f146d",
                             "label": "Button Size",
                             "name": "button_size",
                             "type": "select",
@@ -275,7 +299,7 @@
                             "readonly": 0
                         },
                         {
-                            "key": "field_57837b57cbfbc",
+                            "key": "field_579f1032f147c",
                             "label": "Open link in new window?",
                             "name": "button_target",
                             "type": "radio",
@@ -304,7 +328,7 @@
             ]
         },
         {
-            "key": "field_57837be029943",
+            "key": "field_579f1032ed5a1",
             "label": "CTA Colour",
             "name": "cta_colour",
             "type": "color_picker",
@@ -313,7 +337,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_57837a21a74e8",
+                        "field": "field_579f1032ed585",
                         "operator": "!=",
                         "value": "no"
                     }
@@ -325,6 +349,27 @@
                 "id": ""
             },
             "default_value": ""
+        },
+        {
+            "key": "field_579f123511673",
+            "label": "Project update token",
+            "name": "project_update_token",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -332,12 +377,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "story"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
+                "value": "programme_round"
             }
         ]
     ],
@@ -349,5 +389,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1470042142
+    "modified": 1470056791
 }
