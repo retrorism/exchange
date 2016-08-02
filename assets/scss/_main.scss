@@ -874,6 +874,10 @@ Pattern 9. Image
   overflow: hidden;
 }
 
+.griditem__pattern__image .image__placeholder {
+	background: none;
+}
+
 .image__placeholder__thumb,
 .image--main {
 	position: absolute;
@@ -1229,9 +1233,10 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock-inner {
 	padding: $global-padding;
-	.emphasisblock__paragraph {
-		color: $white;
-	}
+}
+
+.emphasis_block--cta .emphasisblock__paragraph {
+	color: $white;
 }
 
 
@@ -1595,13 +1600,32 @@ ARTICLE EXTRAS STYLES
 	}
 }
 
+.griditem--collaboration .griditem__content {
+	display: flex;
+	flex-direction: column;
+	.griditem__collaboration-info {
+		flex-grow: 1;
+		ul.participants {
+			height: 100%;
+		}
+	}
+}
+
 .griditem--cta .griditem__emphasisblock p,
 .griditem__content p {
 	hyphens: none;
 }
 
-.griditem--programme_round .griditem__content {
+.griditem--programme_round .griditem__content,
+.griditem__content--pattern {
 	padding: 0;
+}
+
+.griditem__content--pattern .griditem__pattern {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	overflow:hidden;
 }
 
 .griditem__image,

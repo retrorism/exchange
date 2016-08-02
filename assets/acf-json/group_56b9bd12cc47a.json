@@ -141,6 +141,24 @@
             "media_upload": 1
         },
         {
+            "key": "field_577e7e8b67b9a",
+            "label": "E-mail Address",
+            "name": "participant_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_56cf448792001",
             "label": "Collaboration ID",
             "name": "collaboration_id",
@@ -187,10 +205,10 @@
             "disabled": 0
         },
         {
-            "key": "field_577e7e8b67b9a",
-            "label": "E-mail Address",
-            "name": "participant_email",
-            "type": "email",
+            "key": "field_57a0a3eff2d3c",
+            "label": "Update Form Link (with tokens)",
+            "name": "participant_update_form_link",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -202,7 +220,10 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -222,5 +243,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1470065447
+    "modified": 1470145593
 }

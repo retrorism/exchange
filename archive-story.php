@@ -4,11 +4,12 @@
 	<div class="main-inner">
 		<?php get_template_part( 'parts/content', 'archive-header'); ?>
 
-	    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php if (have_posts()) : ?>
+			<div class="archive__grid" data-equalizer>
+			<?php while (have_posts()) : the_post(); ?>
 
 			<!-- To see additional archive styles, visit the /parts directory -->
 			<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
-
 		<?php endwhile; ?>
 
 			<?php exchange_page_navi(); ?>
@@ -16,6 +17,7 @@
 		<?php else : ?>
 
 			<?php get_template_part( 'parts/content', 'missing' ); ?>
+			</div>
 
 		<?php endif; ?>
 	</div> <!-- end .main-inner -->

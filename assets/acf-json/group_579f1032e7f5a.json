@@ -352,8 +352,8 @@
         },
         {
             "key": "field_579f123511673",
-            "label": "Project update token",
-            "name": "project_update_token",
+            "label": "Update token",
+            "name": "update_token",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -386,8 +386,17 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "author",
+        "format",
+        "categories",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1470056791
+    "modified": 1470134776
 }

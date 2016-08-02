@@ -1612,7 +1612,7 @@
                                 {
                                     "key": "field_574c14aa88c68",
                                     "label": "Paragraph Text",
-                                    "name": "paragraph_text",
+                                    "name": "text",
                                     "type": "wysiwyg",
                                     "instructions": "",
                                     "required": 0,
@@ -1628,6 +1628,95 @@
                                     "media_upload": 1
                                 },
                                 {
+                                    "key": "field_579f86a2deacf",
+                                    "label": "Add translation?",
+                                    "name": "add_translation",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0
+                                },
+                                {
+                                    "key": "field_579f86ffdead0",
+                                    "label": "Translations",
+                                    "name": "translations",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": "",
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_579f86a2deacf",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": "",
+                                    "max": "",
+                                    "layout": "",
+                                    "button_label": "Add translation",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_579f86ffdead1",
+                                            "label": "Language",
+                                            "name": "translation_language",
+                                            "type": "radio",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "arabic": "Arabic",
+                                                "english": "English",
+                                                "russian": "Russian",
+                                                "turkish": "Turkish",
+                                                "ukrainian": "Ukrainian"
+                                            },
+                                            "allow_null": 0,
+                                            "other_choice": 1,
+                                            "save_other_choice": 0,
+                                            "default_value": "",
+                                            "layout": "horizontal"
+                                        },
+                                        {
+                                            "key": "field_579f86ffdead2",
+                                            "label": "Translation",
+                                            "name": "translation_text",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "visual",
+                                            "toolbar": "basic",
+                                            "media_upload": 0
+                                        }
+                                    ]
+                                },
+                                {
                                     "key": "field_574c17f72480e",
                                     "label": "Grid width",
                                     "name": "grid_width",
@@ -1635,6 +1724,93 @@
                                     "instructions": "",
                                     "required": "",
                                     "conditional_logic": "",
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "grid_third": "1 \/ 3",
+                                        "grid_half": "1 \/ 2 (half width)",
+                                        "grid_two_third": "2 \/ 3",
+                                        "grid_full": "full width"
+                                    },
+                                    "default_value": [
+                                        "grid_third"
+                                    ],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "disabled": 0,
+                                    "readonly": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        {
+                            "key": "579f95db55223",
+                            "name": "grid_image",
+                            "label": "Image",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_579f95f75522a",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "png"
+                                },
+                                {
+                                    "key": "field_579f961a5522b",
+                                    "label": "Image Orientation",
+                                    "name": "image_orientation",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": "",
+                                    "conditional_logic": "",
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "landscape": "Landscape",
+                                        "portrait": "Portrait"
+                                    },
+                                    "allow_null": "",
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "landscape",
+                                    "layout": ""
+                                },
+                                {
+                                    "key": "field_579f95dc55226",
+                                    "label": "Grid width",
+                                    "name": "grid_width",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -2309,5 +2485,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1470056762
+    "modified": 1470076565
 }
