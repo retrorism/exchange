@@ -58,6 +58,8 @@
 			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/lazysizes/lazysizes.min.js", function() {});
 			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/fontfaceobserver/fontfaceobserver.js", function() {});
 			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/what-input/what-input.min.js", function() {});
+			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/masonry/dist/masonry.pkgd.min.js", function() {});
+
 
 		</script>
 

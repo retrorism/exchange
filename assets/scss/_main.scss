@@ -1559,11 +1559,25 @@ ARTICLE META STYLES
 /*********************
 ARTICLE EXTRAS STYLES
 *********************/
-.featuredgrid__griditem,
+
 .relatedgrid__griditem,
-.archive__grid__griditem,
-.simplegrid__griditem {
+.archive__grid__griditem {
 	@include grid_column();
+	@include breakpoint( medium ) {
+		@include grid_column( 6 );
+	}
+	@include breakpoint( large ) {
+		@include grid_column( 4 );
+	}
+	margin-bottom: $global-margin;
+	&.griditem--cta {
+		margin-top: 0;
+	}
+}
+
+.featuredgrid__griditem,
+.simplegrid__griditem {
+	@include grid_column( );
 	@include breakpoint( medium ) {
 		&:not(.griditem--grid_full) {
 			@include grid_column( 6 );
@@ -1582,7 +1596,6 @@ ARTICLE EXTRAS STYLES
 		margin-top: 0;
 	}
 }
-
 
 .griditem__content {
 	position: relative;
@@ -1603,12 +1616,6 @@ ARTICLE EXTRAS STYLES
 .griditem--collaboration .griditem__content {
 	display: flex;
 	flex-direction: column;
-	.griditem__collaboration-info {
-		flex-grow: 1;
-		ul.participants {
-			height: 100%;
-		}
-	}
 }
 
 .griditem--cta .griditem__emphasisblock p,
@@ -1670,16 +1677,23 @@ a:hover .griditem__title {
 }
 
 .griditem__collaboration-info {
+	// flex-grow: 1;
+	// display: flex;
+	// align-items: center;
+	justify-content: center;
 	position: relative;
 	text-align: center;
-	min-height: 4em;
 	svg {
 		position: absolute;
+		align-self: center;
 		top: 50%;
 		height: 4em;
 		width: auto;
 		transform: translateX(-50%) translateY(-50%);
 		z-index: 1;
+	}
+	ul.participants {
+		height: 100%;
 	}
 	.participant {
 		position: relative;
@@ -1910,9 +1924,6 @@ PAGE NAVI STYLES
 *********************/
 .page-navigation {
 	text-align: center;
-	ul {
-
-	}
 	margin-top: 1rem;
 	li {
 		padding: 0.5 * $global-padding;

@@ -6,13 +6,14 @@
 		<?php get_template_part( 'parts/content', 'archive-header'); ?>
 
 	    <?php if (have_posts()) : ?>
-			<div class="archive__grid" data-equalizer>
+			<div class="archive__grid" data-masonry='{ "itemSelector": ".archive__grid__griditem" }'>
 			<?php while (have_posts()) : the_post(); ?>
 
-			<!-- To see additional archive styles, visit the /parts directory -->
-			<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+				<!-- To see additional archive styles, visit the /parts directory -->
+				<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+
+			<?php endwhile; ?>
 			</div>
-		<?php endwhile; ?>
 
 			<?php exchange_page_navi(); ?>
 

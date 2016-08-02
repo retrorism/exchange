@@ -59,7 +59,7 @@ jQuery(document).ready(function() {
     jQuery('.accordion p:empty, .orbit p:empty').remove();
 
 	 // Makes sure last grid item floats left
-	jQuery('.archive-grid .columns').last().addClass( 'end' );
+	jQuery('.archive__grid .columns', 'relatedgrid .columns').last().addClass( 'end' );
 
 	// Adds Flex Video to YouTube and Vimeo Embeds
   jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {

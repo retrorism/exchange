@@ -6,6 +6,8 @@
     "foundation-sites": ">=6.1",
     "fontfaceobserver": "^1.7.1",
     "picturefill": "^3.0.2",
-    "lazysizes": "^2.0.0"
+    "lazysizes": "^2.0.0",
+    "masonry": "^4.1.0",
+    "packery": "^2.1.1"
   }
 }
