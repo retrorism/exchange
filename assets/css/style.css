@@ -4387,23 +4387,112 @@ Pattern 18. Embedded FormAssembly/Formidable form
 /******************
 Pattern 19. Gallery
 *******************/
-.gallery--collaboration,
-.gallery--section
-.gallery--lightbox {
-  position: relative; }
+.story__modal--gallery {
+  padding: 2rem; }
 
-.gallery--collaboration.orbit-container .orbit-slide {
-  height: 100vh; }
-
-.gallery__item figure {
-  position: absolute;
-  height: auto;
-  margin-right: auto;
-  overflow: hidden;
+.story__modal--gallery .orbit,
+.collaboration__gallery .orbit {
+  height: 100% !important;
   width: 100%; }
+
+.gallery--collaboration.orbit-container,
+.gallery--gallery.orbit-container {
+  height: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  overflow: visible; }
+  .gallery--collaboration.orbit-container:focus, .gallery--collaboration.orbit-container:active,
+  .gallery--gallery.orbit-container:focus,
+  .gallery--gallery.orbit-container:active {
+    outline: none;
+    outline-color: transparent; }
+  .gallery--collaboration.orbit-container .gallery__item.orbit-slide,
+  .gallery--gallery.orbit-container .gallery__item.orbit-slide {
+    position: static !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow: visible; }
+    .gallery--collaboration.orbit-container .gallery__item.orbit-slide:focus, .gallery--collaboration.orbit-container .gallery__item.orbit-slide:active,
+    .gallery--gallery.orbit-container .gallery__item.orbit-slide:focus,
+    .gallery--gallery.orbit-container .gallery__item.orbit-slide:active {
+      outline: none;
+      outline-color: transparent; }
+    .gallery--collaboration.orbit-container .gallery__item.orbit-slide .image__placeholder__thumb,
+    .gallery--gallery.orbit-container .gallery__item.orbit-slide .image__placeholder__thumb {
+      display: none; }
+
+.gallery--gallery.orbit-container {
+  position: absolute !important;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  .gallery--gallery.orbit-container .gallery__item.orbit-slide {
+    overflow-y: visible; }
+  .gallery--gallery.orbit-container figure {
+    max-height: 100%;
+    height: 100%; }
+    .gallery--gallery.orbit-container figure .image__placeholder {
+      position: static !important;
+      max-width: 100%;
+      height: auto !important;
+      padding: 0 !important;
+      overflow: hidden; }
+    .gallery--gallery.orbit-container figure .image--main {
+      position: static;
+      max-height: 80vh;
+      margin: auto; }
+
+.collaboration__gallery {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em; }
+  .collaboration__gallery::before, .collaboration__gallery::after {
+    content: ' ';
+    display: table; }
+  .collaboration__gallery::after {
+    clear: both; }
+  .collaboration__gallery .gallery--collaboration {
+    width: 100%; }
+  .collaboration__gallery figure {
+    position: relative;
+    max-width: 60vw;
+    height: 100%;
+    margin: auto; }
+    .collaboration__gallery figure .image__placeholder {
+      position: static !important;
+      padding: inherit !important;
+      max-height: 32em !important;
+      width: auto;
+      height: 100% !important;
+      margin: auto; }
+      .collaboration__gallery figure .image__placeholder .image--main {
+        position: static; }
+      .collaboration__gallery figure .image__placeholder .image__placeholder__thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: auto; }
+  .collaboration__gallery .gallery__video {
+    max-height: 100%;
+    max-width: 80vw;
+    margin: auto; }
+  @media screen and (min-width: 60em) {
+    .collaboration__gallery {
+      height: 32em; }
+      .collaboration__gallery figure,
+      .collaboration__gallery .gallery__video {
+        max-width: 60vw; } }
 
 .gallery__navigation {
   height: 5em; }
+  .gallery__navigation:hover {
+    background-color: transparent; }
+    .gallery__navigation:hover svg path {
+      fill: #eba847; }
+  .gallery__navigation:focus {
+    background-color: transparent; }
   .gallery__navigation svg {
     height: 100%; }
 
@@ -4412,7 +4501,9 @@ Pattern 19. Gallery
   transform: rotate(180deg); }
 
 .modal__button--close {
-  float: right;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
   height: 2em;
   width: 2em; }
 
@@ -4980,17 +5071,19 @@ a:hover .griditem__title {
   background-size: 66.667%;
   background-position: center center;
   background-repeat: no-repeat;
-  margin: 5em auto 7.5em;
   position: relative;
   width: 13em;
   height: 13em;
   padding: 0;
   border-radius: 50%;
-  list-style: none; }
+  list-style: none;
+  margin: 0 auto 4em; }
   #programmes a {
     display: block; }
     #programmes a:hover svg g path {
-      fill: #e27f20; }
+      fill: #eba847; }
+  #programmes + figcaption p {
+    text-align: center; }
   #programmes > * {
     display: block;
     position: absolute;
@@ -5027,7 +5120,8 @@ a:hover .griditem__title {
       height: 30em;
       padding: 0;
       border-radius: 50%;
-      list-style: none; }
+      list-style: none;
+      margin: 0 auto 5em; }
       #programmes > * {
         display: block;
         position: absolute;

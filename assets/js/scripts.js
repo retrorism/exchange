@@ -46,7 +46,12 @@ These functions make sure WordPress
 and Foundation play nice together.
 */
 
+
 jQuery(document).ready(function() {
+
+	// jQuery(document).on('open.zf.reveal', function() {
+	// 	jQuery(document).foundation('orbit', 'reflow');
+	// });
 
 	var focus_img_containers = document.querySelectorAll('.focus');
 	for ( var i = 0; i < focus_img_containers.length; i++ ) {

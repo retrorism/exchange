@@ -69,9 +69,9 @@ $collab = new Collaboration( $post );
 		<!-- GALLERY -->
 		<?php if ( $collab->has_gallery ) : ?>
 			<section class="section collaboration__gallery">
-					<div class="orbit" role="region" aria-label="<?php printf( esc_html__('Gallery for "%s"', 'exchange' ), get_the_title() ); ?>" data-orbit data-auto-play="false">
-						<?php $collab->publish_gallery('collaboration'); ?>
-					</div>
+				<div class="orbit" data-use-m-u-i="false"  role="region" aria-label="<?php printf( esc_html__('Gallery for "%s"', 'exchange' ), get_the_title() ); ?>" data-orbit data-auto-play="false">
+					<?php $collab->publish_gallery('collaboration'); ?>
+				</div>
 			</section>
 		<?php endif; ?>
 
