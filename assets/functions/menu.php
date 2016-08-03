@@ -4,7 +4,9 @@ register_nav_menus(
 	array(
 		'main-nav-left' => __( 'Main Menu Left', 'exchange' ),   // Main nav in header
 		'main-nav-right' => __( 'Main Menu Right', 'exchange' ),   // Main nav in header
-		'footer-links' => __( 'Footer Links', 'exchange' ) // Secondary nav in footer
+		'footer-links' => __( 'Footer Links', 'exchange' ), // Secondary nav in footer
+		'mobile-nav' => __( 'Mobile Nav', 'exchange' ) // mobile nav in footer
+
 	)
 );
 
@@ -65,6 +67,20 @@ function exchange_footer_links() {
     	'fallback_cb' => ''  							// Fallback function
 	));
 } /* End Footer Menu */
+
+// The Footer Menu
+function exchange_mobile_nav() {
+    wp_nav_menu(array(
+    	'container' => 'false',                         // Remove nav container
+    	'menu' => __( 'Mobile Menu', 'exchange' ),   	// Nav name
+    	'menu_class' => 'mobile-nav',      			    // Adding custom nav class
+    	'theme_location' => 'mobile-nav',             // Where it's located in the theme
+        'depth' => 0,                                   // Limit the depth of the nav
+    	'fallback_cb' => ''  							// Fallback function
+	));
+} /* End Footer Menu */
+
+
 
 // Header Fallback Menu
 function exchange_main_nav_fallback() {

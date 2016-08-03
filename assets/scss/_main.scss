@@ -157,16 +157,17 @@ BANNER STYLES
 #header {
 	position: relative;
 	width: 100%;
+	z-index: 9999;
+	background-color: $white;
 }
 
 .inner-header {
 	position: fixed;
 	width: 100%;
-	z-index: 20;
 }
 
 #main {
-	padding-top: 3.875em;
+	padding-top: 2.9em;
 }
 
 /*********************
@@ -174,59 +175,145 @@ NAVIGATION STYLES
 *********************/
 
 nav.top-bar {
-	background-color: $white;
+	height: auto;
+	padding: 0;
 }
 
-nav.top-bar {
+#responsive-menu {
+	width: 100%;
+	background-color: $white;
 	border-bottom: 1px solid transparentize( $light-gray, 0.6 );
-	line-height: 0;
-}
-
-ul#menu-main-menu-left,
-ul#menu-main-menu-right {
-	display: inline-block;
-	box-sizing: border-box;
-	background-color: $white;
-	li {
-		text-align: center;
-		a {
-			font-size: $global-font-size;
+	@include breakpoint( small ) {
+		position: absolute;
+		left: 0;
+		top: 2.9em;
+		height: 100vh;
+		ul#menu-main-menu-left,
+		ul#menu-main-menu-right {
+			display: none;
+		}
+		ul#menu-mobile-menu {
 			display: block;
-			line-height: 1.5em;
+			height: 100%;
+			width: 100%;
+			padding: 0;
+			float: none;
+			background-color: $white;
+			li {
+				display: block;
+				background-color: $white;
+				width: 100%;
+				float: none;
+				a {
+					display: block;
+					height: 100%;
+					width: 100%;
+					text-align: center;
+					padding: $global-padding;
+				}
+				&:hover,
+				&:active {
+					background: $yellow-tandem;
+					a {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+	@include breakpoint( large ) {
+		height: auto;
+		top: 0;
+		ul#menu-mobile-menu {
+			display: none;
+		}
+		ul#menu-main-menu-left,
+		ul#menu-main-menu-right {
+			width: 50%;
+			display: block;
+			float: left;
+			box-sizing: border-box;
+			background-color: $white;
+			li {
+				display: inline-block;
+				padding: 0;
+				text-align: center;
+				width: auto;
+				a {
+					direction: ltr;
+					text-align: center;
+					font-size: $global-font-size;
+					display: block;
+					padding: $global-padding;
+				}
+				&:hover {
+					background-color: $white;
+					a {
+						color: $black;
+					}
+				}
+			}
+
+		}
+		ul#menu-main-menu-right {
+			padding-left: 6em;
+			li {
+			}
+		}
+		ul#menu-main-menu-left {
+			padding-right: 6em;
+			text-align: right;
+			li {
+				direction: rtl;
+			}
 		}
 	}
 }
 
-ul#menu-main-menu-left {
-	padding-right: 6em;
-	width: 50%;
-	li {
-		float: right;
-	}
-}
-
-ul#menu-main-menu-right {
-	padding-left: 6em;
-	width: 40%;
-	li {
-		float: left;
-	}
-}
-
 .top-bar__center {
-	position: relative;
-	a {
+	background-color: $white;
+	@include breakpoint( small ) {
 		position: absolute;
-		display: block;
-		left: 50%;
-		right: 50%;
-		margin-left: -5.25em;
+		width: 100%;
+		height: auto;
+		top: 0;
+		left: 0;
+		margin: auto;
+		border-bottom: 1px solid transparentize( $light-gray, 0.6 );
+		a {
+			display: table-cell;
+			width: 10em;
+			height: 100%;
+			line-height:0;
+			vertical-align: middle;
+			text-align: center;
+			box-sizing: border-box;
+			float: left;
+			padding: 0.5 * $global-padding;
+			svg {
+				width: 80%;
+				//margin: 0.4 * $global-margin 10% 0.6 * $global-margin;
+			}
+		}
+		.menu-toggle {
+			display: block;
+			float: right;
+			padding: 0.667 * $global-padding;
+		}
+	}
+	@include breakpoint( large ) {
+		border-bottom: 0;
 		width: 10.5em;
-		line-height:0;
-		box-sizing: border-box;
-		svg {
-			width: 80%;
-			margin: 0.4 * $global-margin 10% 0.6 * $global-margin;
+		left: 50%;
+		margin-left: -5.25em;
+		z-index: 2;
+		a {
+			float: none;
+			width: 100%;
+			line-height: 0;
+		}
+		.menu-toggle {
+			display: none;
 		}
 	}
 }
@@ -694,40 +781,39 @@ Pattern 5. Hero / cover image
 			padding-right: $global-padding;
 		}
 		@include breakpoint( small ) {
-			height: 20rem;
 			.image__caption {
-				top: 20rem;
+				//top: 20rem;
 				text-align: right;
 				padding-right: $global-padding;
 			}
 
 		}
 		@include breakpoint( medium ) {
-			height: 25rem;
+			//height: 25rem;
 			.image__caption {
-				top: 25rem;
+				//top: 25rem;
 				text-align: right;
 				padding-right: $global-padding;
 			}
 
 		}
 		@include breakpoint( large ) {
-			height: 30rem;
+			//height: 30rem;
 			.image__caption {
-				top: 30rem;
+				//top: 30rem;
 			}
 
 		}
 		@include breakpoint( xlarge ) {
-			height: 35rem;
+			//height: 35rem;
 			.image__caption {
-				top: 35rem;
+				//top: 35rem;
 			}
 		}
 		@include breakpoint( xxlarge ) {
-			height: 40rem;
+			//height: 40rem;
 			.image__caption {
-				top: 40rem;
+				//top: 40rem;
 			}
 		}
 	}
