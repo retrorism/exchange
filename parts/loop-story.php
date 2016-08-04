@@ -37,6 +37,7 @@ $story = new Story( $post );
 			<div class="story__meta-wrapper">
 				<aside class="article-meta story__meta">
 					<div class="story__meta-inner">
+						<div class="story__meta-bg"></div>
 						<section class="story__meta__category"><?php echo $story->category; ?></section>
 						<section class="story__meta__date"><?php echo mysql2date('F jS, Y', $story->date ); ?></section>
 						<section class="story__meta__tags"><?php $story->publish_tags('story__meta'); ?></section>

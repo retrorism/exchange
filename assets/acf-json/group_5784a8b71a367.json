@@ -35,9 +35,9 @@
         ],
         [
             {
-                "param": "page",
+                "param": "options_page",
                 "operator": "==",
-                "value": "1381"
+                "value": "acf-options-stories-settings"
             }
         ]
     ],
@@ -51,5 +51,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468415965
+    "modified": 1470263851
 }
