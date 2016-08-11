@@ -1615,7 +1615,7 @@
                                     "name": "text",
                                     "type": "wysiwyg",
                                     "instructions": "",
-                                    "required": 0,
+                                    "required": 1,
                                     "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
@@ -2485,5 +2485,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add (coloured) sections to pages or stories",
-    "modified": 1470076565
+    "modified": 1470651226
 }

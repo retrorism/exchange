@@ -1,0 +1,44 @@
+{
+    "key": "group_57ab528b9168e",
+    "title": "Other Pages",
+    "fields": [
+        {
+            "key": "field_57ab529ce8d7c",
+            "label": "Imprint page link",
+            "name": "imprint_page_link",
+            "type": "page_link",
+            "instructions": "This link will be displayed in the footer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-pages"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1470845665
+}

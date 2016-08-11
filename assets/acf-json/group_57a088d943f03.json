@@ -1,6 +1,6 @@
 {
     "key": "group_57a088d943f03",
-    "title": "Exchange Form Settings",
+    "title": "Form Settings",
     "fields": [
         {
             "key": "field_57a088e516f72",
@@ -84,7 +84,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-forms"
+                "value": "acf-options-pages"
             }
         ]
     ],
@@ -96,5 +96,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1470145374
+    "modified": 1470845561
 }

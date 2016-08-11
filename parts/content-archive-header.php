@@ -5,7 +5,4 @@
 			<?php the_archive_description('<div class="taxonomy-description">', '</div>');?>
 		</div>
 	</div>
-	<?php if ( is_archive('collaboration' ) ) : ?>
-		<?php get_template_part( 'parts/content', 'archive-map'); ?>
-	<?php endif; ?>
 </header>

@@ -3499,6 +3499,7 @@ ARTICLE STYLES:
 .collaboration__relatedgrid,
 .archive__header__introduction,
 .archive__filter,
+.archive__map,
 .collaboration__header,
 .archive__grid {
   max-width: 75rem;
@@ -3523,6 +3524,8 @@ ARTICLE STYLES:
   .archive__header__introduction::after,
   .archive__filter::before,
   .archive__filter::after,
+  .archive__map::before,
+  .archive__map::after,
   .collaboration__header::before,
   .collaboration__header::after,
   .archive__grid::before,
@@ -3539,6 +3542,7 @@ ARTICLE STYLES:
   .collaboration__relatedgrid::after,
   .archive__header__introduction::after,
   .archive__filter::after,
+  .archive__map::after,
   .collaboration__header::after,
   .archive__grid::after {
     clear: both; }
@@ -3632,6 +3636,7 @@ ARTICLE STYLES:
   margin-right: auto; }
 
 .archive__filter .section-inner,
+.archive__map .section-inner,
 .page__footer__widgets-inner,
 .collaboration__gallery .section-inner,
 .section__simplegrid,
@@ -3648,6 +3653,7 @@ ARTICLE STYLES:
   margin-right: auto; }
   @media screen and (min-width: 40em) {
     .archive__filter .section-inner,
+    .archive__map .section-inner,
     .page__footer__widgets-inner,
     .collaboration__gallery .section-inner,
     .section__simplegrid,
@@ -5016,6 +5022,11 @@ ARTICLE EXTRAS STYLES
   .simplegrid__griditem.griditem--cta {
     margin-top: 0; }
 
+.simplegrid__griditem:first-child:last-child {
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
+
 .griditem__content {
   position: relative;
   padding: 0.5rem;
@@ -5028,6 +5039,9 @@ ARTICLE EXTRAS STYLES
     .griditem__content .button--small:hover {
       background-color: #f4c522;
       color: #fefefe; }
+
+.griditem--pattern .griditem__content {
+  background: transparent; }
 
 .griditem--collaboration .griditem__content {
   display: -webkit-flex;
@@ -5044,10 +5058,10 @@ ARTICLE EXTRAS STYLES
   hyphens: none; }
 
 .griditem--programme_round .griditem__content,
-.griditem__content--pattern {
+.griditem--pattern .griditem__content {
   padding: 0; }
 
-.griditem__content--pattern .griditem__pattern {
+.griditem--pattern .griditem__pattern {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -5250,6 +5264,9 @@ ARCHIVE STYLES
 .archive__filter__toggle {
   width: 100%;
   text-align: right; }
+
+.archive__map {
+  margin-bottom: 2rem; }
 
 /*********************
 CONTENT STYLES

@@ -346,6 +346,7 @@ ARTICLE STYLES:
 .collaboration__relatedgrid,
 .archive__header__introduction,
 .archive__filter,
+.archive__map,
 .collaboration__header,
 .archive__grid {
 	@include grid-row;
@@ -397,6 +398,7 @@ ARTICLE STYLES:
 }
 
 .archive__filter .section-inner,
+.archive__map .section-inner,
 .page__footer__widgets-inner,
 .collaboration__gallery .section-inner,
 .section__simplegrid,
@@ -1774,6 +1776,8 @@ ARTICLE META STYLES
 ARTICLE EXTRAS STYLES
 *********************/
 
+
+
 .relatedgrid__griditem,
 .archive__grid__griditem {
 	@include grid_column();
@@ -1811,6 +1815,10 @@ ARTICLE EXTRAS STYLES
 	}
 }
 
+.simplegrid__griditem:first-child:last-child {
+	@include grid-column-position(center);
+}
+
 .griditem__content {
 	position: relative;
 	padding: 0.5 * $global-padding;
@@ -1827,6 +1835,10 @@ ARTICLE EXTRAS STYLES
 	}
 }
 
+.griditem--pattern .griditem__content {
+	background: transparent;
+}
+
 .griditem--collaboration .griditem__content {
 	display: flex;
 	flex-direction: column;
@@ -1838,11 +1850,11 @@ ARTICLE EXTRAS STYLES
 }
 
 .griditem--programme_round .griditem__content,
-.griditem__content--pattern {
+.griditem--pattern .griditem__content {
 	padding: 0;
 }
 
-.griditem__content--pattern .griditem__pattern {
+.griditem--pattern .griditem__pattern {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
@@ -2033,6 +2045,11 @@ ARCHIVE STYLES
 .archive__filter__toggle {
 	width: 100%;
 	text-align: right;
+}
+
+.archive__map {
+	margin-bottom:
+	2 * $global-margin;
 }
 
 
