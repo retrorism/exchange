@@ -74,99 +74,67 @@ via: http://codepen.io/jakob-e/pen/doMoML
   transition-timing-function: linear; }
 
 .slide-in-down.mui-enter {
-  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-in-down.mui-enter.mui-enter-active {
-  -webkit-transform: translateY(0);
   transform: translateY(0); }
 
 .slide-in-left.mui-enter {
-  -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-in-left.mui-enter.mui-enter-active {
-  -webkit-transform: translateX(0);
   transform: translateX(0); }
 
 .slide-in-up.mui-enter {
-  -webkit-transform: translateY(100%);
   transform: translateY(100%);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-in-up.mui-enter.mui-enter-active {
-  -webkit-transform: translateY(0);
   transform: translateY(0); }
 
 .slide-in-right.mui-enter {
-  -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-in-right.mui-enter.mui-enter-active {
-  -webkit-transform: translateX(0);
   transform: translateX(0); }
 
 .slide-out-down.mui-leave {
-  -webkit-transform: translateY(0);
   transform: translateY(0);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-out-down.mui-leave.mui-leave-active {
-  -webkit-transform: translateY(100%);
   transform: translateY(100%); }
 
 .slide-out-right.mui-leave {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-out-right.mui-leave.mui-leave-active {
-  -webkit-transform: translateX(100%);
   transform: translateX(100%); }
 
 .slide-out-up.mui-leave {
-  -webkit-transform: translateY(0);
   transform: translateY(0);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-out-up.mui-leave.mui-leave-active {
-  -webkit-transform: translateY(-100%);
   transform: translateY(-100%); }
 
 .slide-out-left.mui-leave {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 .slide-out-left.mui-leave.mui-leave-active {
-  -webkit-transform: translateX(-100%);
   transform: translateX(-100%); }
 
 .fade-in.mui-enter {
@@ -184,266 +152,194 @@ via: http://codepen.io/jakob-e/pen/doMoML
   opacity: 0; }
 
 .hinge-in-from-top.mui-enter {
-  -webkit-transform: perspective(2000px) rotateX(-90deg);
   transform: perspective(2000px) rotateX(-90deg);
-  -webkit-transform-origin: top;
   transform-origin: top;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .hinge-in-from-top.mui-enter.mui-enter-active {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
   opacity: 1; }
 
 .hinge-in-from-right.mui-enter {
-  -webkit-transform: perspective(2000px) rotateY(-90deg);
   transform: perspective(2000px) rotateY(-90deg);
-  -webkit-transform-origin: right;
   transform-origin: right;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .hinge-in-from-right.mui-enter.mui-enter-active {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
   opacity: 1; }
 
 .hinge-in-from-bottom.mui-enter {
-  -webkit-transform: perspective(2000px) rotateX(90deg);
   transform: perspective(2000px) rotateX(90deg);
-  -webkit-transform-origin: bottom;
   transform-origin: bottom;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .hinge-in-from-bottom.mui-enter.mui-enter-active {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
   opacity: 1; }
 
 .hinge-in-from-left.mui-enter {
-  -webkit-transform: perspective(2000px) rotateY(90deg);
   transform: perspective(2000px) rotateY(90deg);
-  -webkit-transform-origin: left;
   transform-origin: left;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .hinge-in-from-left.mui-enter.mui-enter-active {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
   opacity: 1; }
 
 .hinge-in-from-middle-x.mui-enter {
-  -webkit-transform: perspective(2000px) rotateX(-90deg);
   transform: perspective(2000px) rotateX(-90deg);
-  -webkit-transform-origin: center;
   transform-origin: center;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .hinge-in-from-middle-x.mui-enter.mui-enter-active {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
   opacity: 1; }
 
 .hinge-in-from-middle-y.mui-enter {
-  -webkit-transform: perspective(2000px) rotateY(-90deg);
   transform: perspective(2000px) rotateY(-90deg);
-  -webkit-transform-origin: center;
   transform-origin: center;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .hinge-in-from-middle-y.mui-enter.mui-enter-active {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
   opacity: 1; }
 
 .hinge-out-from-top.mui-leave {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
-  -webkit-transform-origin: top;
   transform-origin: top;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .hinge-out-from-top.mui-leave.mui-leave-active {
-  -webkit-transform: perspective(2000px) rotateX(-90deg);
   transform: perspective(2000px) rotateX(-90deg);
   opacity: 0; }
 
 .hinge-out-from-right.mui-leave {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
-  -webkit-transform-origin: right;
   transform-origin: right;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .hinge-out-from-right.mui-leave.mui-leave-active {
-  -webkit-transform: perspective(2000px) rotateY(-90deg);
   transform: perspective(2000px) rotateY(-90deg);
   opacity: 0; }
 
 .hinge-out-from-bottom.mui-leave {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
-  -webkit-transform-origin: bottom;
   transform-origin: bottom;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .hinge-out-from-bottom.mui-leave.mui-leave-active {
-  -webkit-transform: perspective(2000px) rotateX(90deg);
   transform: perspective(2000px) rotateX(90deg);
   opacity: 0; }
 
 .hinge-out-from-left.mui-leave {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
-  -webkit-transform-origin: left;
   transform-origin: left;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .hinge-out-from-left.mui-leave.mui-leave-active {
-  -webkit-transform: perspective(2000px) rotateY(90deg);
   transform: perspective(2000px) rotateY(90deg);
   opacity: 0; }
 
 .hinge-out-from-middle-x.mui-leave {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
-  -webkit-transform-origin: center;
   transform-origin: center;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .hinge-out-from-middle-x.mui-leave.mui-leave-active {
-  -webkit-transform: perspective(2000px) rotateX(-90deg);
   transform: perspective(2000px) rotateX(-90deg);
   opacity: 0; }
 
 .hinge-out-from-middle-y.mui-leave {
-  -webkit-transform: perspective(2000px) rotate(0deg);
   transform: perspective(2000px) rotate(0deg);
-  -webkit-transform-origin: center;
   transform-origin: center;
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .hinge-out-from-middle-y.mui-leave.mui-leave-active {
-  -webkit-transform: perspective(2000px) rotateY(-90deg);
   transform: perspective(2000px) rotateY(-90deg);
   opacity: 0; }
 
 .scale-in-up.mui-enter {
-  -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .scale-in-up.mui-enter.mui-enter-active {
-  -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1; }
 
 .scale-in-down.mui-enter {
-  -webkit-transform: scale(1.5);
   transform: scale(1.5);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .scale-in-down.mui-enter.mui-enter-active {
-  -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1; }
 
 .scale-out-up.mui-leave {
-  -webkit-transform: scale(1);
   transform: scale(1);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .scale-out-up.mui-leave.mui-leave-active {
-  -webkit-transform: scale(1.5);
   transform: scale(1.5);
   opacity: 0; }
 
 .scale-out-down.mui-leave {
-  -webkit-transform: scale(1);
   transform: scale(1);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .scale-out-down.mui-leave.mui-leave-active {
-  -webkit-transform: scale(0.5);
   transform: scale(0.5);
   opacity: 0; }
 
 .spin-in.mui-enter {
-  -webkit-transform: rotate(-0.75turn);
   transform: rotate(-0.75turn);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .spin-in.mui-enter.mui-enter-active {
-  -webkit-transform: rotate(0);
   transform: rotate(0);
   opacity: 1; }
 
 .spin-out.mui-leave {
-  -webkit-transform: rotate(0);
   transform: rotate(0);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .spin-out.mui-leave.mui-leave-active {
-  -webkit-transform: rotate(0.75turn);
   transform: rotate(0.75turn);
   opacity: 0; }
 
 .spin-in-ccw.mui-enter {
-  -webkit-transform: rotate(0.75turn);
   transform: rotate(0.75turn);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
 
 .spin-in-ccw.mui-enter.mui-enter-active {
-  -webkit-transform: rotate(0);
   transform: rotate(0);
   opacity: 1; }
 
 .spin-out-ccw.mui-leave {
-  -webkit-transform: rotate(0);
   transform: rotate(0);
-  transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 1; }
 
 .spin-out-ccw.mui-leave.mui-leave-active {
-  -webkit-transform: rotate(-0.75turn);
   transform: rotate(-0.75turn);
   opacity: 0; }
 
@@ -484,133 +380,80 @@ via: http://codepen.io/jakob-e/pen/doMoML
   transition-delay: 700ms !important; }
 
 .shake {
-  -webkit-animation-name: shake-7;
   animation-name: shake-7; }
-
-@-webkit-keyframes shake-7 {
-  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
-    -webkit-transform: translateX(7%);
-    transform: translateX(7%); }
-  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
-    -webkit-transform: translateX(-7%);
-    transform: translateX(-7%); } }
 
 @keyframes shake-7 {
   0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
-    -webkit-transform: translateX(7%);
     transform: translateX(7%); }
   5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
-    -webkit-transform: translateX(-7%);
     transform: translateX(-7%); } }
 
 .spin-cw {
-  -webkit-animation-name: spin-cw-1turn;
   animation-name: spin-cw-1turn; }
-
-@-webkit-keyframes spin-cw-1turn {
-  0% {
-    -webkit-transform: rotate(-1turn);
-    transform: rotate(-1turn); }
-  100% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0); } }
 
 @keyframes spin-cw-1turn {
   0% {
-    -webkit-transform: rotate(-1turn);
     transform: rotate(-1turn); }
   100% {
-    -webkit-transform: rotate(0);
     transform: rotate(0); } }
 
 .spin-ccw {
-  -webkit-animation-name: spin-cw-1turn;
   animation-name: spin-cw-1turn; }
 
 @keyframes spin-cw-1turn {
   0% {
-    -webkit-transform: rotate(0);
     transform: rotate(0); }
   100% {
-    -webkit-transform: rotate(1turn);
     transform: rotate(1turn); } }
 
 .wiggle {
-  -webkit-animation-name: wiggle-7deg;
   animation-name: wiggle-7deg; }
-
-@-webkit-keyframes wiggle-7deg {
-  40%, 50%, 60% {
-    -webkit-transform: rotate(7deg);
-    transform: rotate(7deg); }
-  35%, 45%, 55%, 65% {
-    -webkit-transform: rotate(-7deg);
-    transform: rotate(-7deg); }
-  0%, 30%, 70%, 100% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0); } }
 
 @keyframes wiggle-7deg {
   40%, 50%, 60% {
-    -webkit-transform: rotate(7deg);
     transform: rotate(7deg); }
   35%, 45%, 55%, 65% {
-    -webkit-transform: rotate(-7deg);
     transform: rotate(-7deg); }
   0%, 30%, 70%, 100% {
-    -webkit-transform: rotate(0);
     transform: rotate(0); } }
 
 .infinite {
-  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
 
 .slow {
-  -webkit-animation-duration: 750ms !important;
   animation-duration: 750ms !important; }
 
 .fast {
-  -webkit-animation-duration: 250ms !important;
   animation-duration: 250ms !important; }
 
 .linear {
-  -webkit-animation-timing-function: linear !important;
   animation-timing-function: linear !important; }
 
 .ease {
-  -webkit-animation-timing-function: ease !important;
   animation-timing-function: ease !important; }
 
 .ease-in {
-  -webkit-animation-timing-function: ease-in !important;
   animation-timing-function: ease-in !important; }
 
 .ease-out {
-  -webkit-animation-timing-function: ease-out !important;
   animation-timing-function: ease-out !important; }
 
 .ease-in-out {
-  -webkit-animation-timing-function: ease-in-out !important;
   animation-timing-function: ease-in-out !important; }
 
 .bounce-in {
-  -webkit-animation-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important;
   animation-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important; }
 
 .bounce-out {
-  -webkit-animation-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important;
   animation-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important; }
 
 .bounce-in-out {
-  -webkit-animation-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important;
   animation-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important; }
 
 .short-delay {
-  -webkit-animation-delay: 300ms !important;
   animation-delay: 300ms !important; }
 
 .long-delay {
-  -webkit-animation-delay: 700ms !important;
   animation-delay: 700ms !important; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -3022,7 +2865,6 @@ select {
 .orbit-previous, .orbit-next {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 10;
   padding: 1rem;
@@ -3063,7 +2905,6 @@ select {
 .sticky {
   position: absolute;
   z-index: 0;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .sticky.is-stuck {
@@ -3700,8 +3541,7 @@ ARTICLE STYLES:
 
 .collaboration__header--no--image,
 .collaboration__header--has-image,
-.collaboration__participants,
-.collaboration__map {
+.collaboration__participants {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto; }
@@ -3709,15 +3549,12 @@ ARTICLE STYLES:
   .collaboration__header--has-image::before,
   .collaboration__header--has-image::after,
   .collaboration__participants::before,
-  .collaboration__participants::after,
-  .collaboration__map::before,
-  .collaboration__map::after {
+  .collaboration__participants::after {
     content: ' ';
     display: table; }
   .collaboration__header--no--image::after,
   .collaboration__header--has-image::after,
-  .collaboration__participants::after,
-  .collaboration__map::after {
+  .collaboration__participants::after {
     clear: both; }
 
 .collaboration__header__image-wrapper:not(.tridem_or_more) {
@@ -3738,8 +3575,6 @@ ARTICLE STYLES:
   height: inherit !important; }
 
 .collaboration__header__desc {
-  max-height: 40em !important;
-  overflow: hidden;
   width: 100%;
   float: left;
   padding-left: 0.625rem;
@@ -3770,7 +3605,6 @@ ARTICLE STYLES:
     .collaboration__header__desc-inner {
       position: absolute;
       top: 50%;
-      -webkit-transform: translateY(-50%);
       transform: translateY(-50%); } }
 
 @media screen and (min-width: 60em) {
@@ -3790,7 +3624,6 @@ ARTICLE STYLES:
     .collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc .collaboration__header__desc-inner {
       position: inherit;
       top: 0;
-      -webkit-transform: none;
       transform: none;
       max-width: 45rem;
       margin: auto; } }
@@ -3886,7 +3719,8 @@ ARTICLE PATTERN STYLES
 .collaboration__video > svg,
 .collaboration__gallery > svg,
 .collaboration__stories > svg,
-.section--story-grid > svg {
+.section--story-grid > svg,
+.section--has-edge > svg {
   position: relative;
   width: 100%;
   height: 20px;
@@ -3901,8 +3735,8 @@ ARTICLE PATTERN STYLES
   .collaboration__video > svg.section__edge--bottom,
   .collaboration__gallery > svg.section__edge--bottom,
   .collaboration__stories > svg.section__edge--bottom,
-  .section--story-grid > svg.section__edge--bottom {
-    -webkit-transform: scale(1, -1);
+  .section--story-grid > svg.section__edge--bottom,
+  .section--has-edge > svg.section__edge--bottom {
     transform: scale(1, -1);
     top: 20px; }
 
@@ -4157,7 +3991,9 @@ Pattern 8. Embedded Video
 Pattern 9. Image
 ****************/
 .section__imageduo,
-.section__simplemap.simplemap--wide {
+.section__simplemap.simplemap--wide,
+.collaboration__simplemap,
+.collaobration__gallery {
   background-color: #fefefe;
   z-index: 10;
   position: relative;
@@ -4235,7 +4071,6 @@ Pattern 9. Image
   -webkit-filter: blur(50px);
   filter: blur(50px);
   /* this is needed so Safari keeps sharp edges */
-  -webkit-transform: scale(1);
   transform: scale(1); }
 
 .lazyloaded {
@@ -4498,7 +4333,6 @@ Pattern 19. Gallery
 .gallery--gallery.orbit-container {
   position: absolute !important;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
   .gallery--gallery.orbit-container .gallery__item.orbit-slide {
     overflow-y: visible; }
@@ -4517,15 +4351,7 @@ Pattern 19. Gallery
       margin: auto; }
 
 .collaboration__gallery {
-  max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 2em; }
-  .collaboration__gallery::before, .collaboration__gallery::after {
-    content: ' ';
-    display: table; }
-  .collaboration__gallery::after {
-    clear: both; }
   .collaboration__gallery .gallery--collaboration {
     width: 100%; }
   .collaboration__gallery figure {
@@ -4570,7 +4396,6 @@ Pattern 19. Gallery
     height: 100%; }
 
 .gallery__navigation--prev svg {
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .modal__button--close {
@@ -4719,16 +4544,12 @@ Pattern 20. Emphasis blocks
     height: auto; }
 
 .emphasisblock--full .emphasisblock-inner {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .emphasisblock--full .emphasisblock-inner .emphasisblock__paragraph,
@@ -4736,10 +4557,8 @@ Pattern 20. Emphasis blocks
   .emphasisblock--full .emphasisblock-inner .emphasisblock__subheader,
   .emphasisblock--full .emphasisblock-inner .emphasisblock__button-wrapper {
     min-width: 10em;
-    -webkit-align-self: center middle;
     -ms-flex-item-align: center middle;
     align-self: center middle;
-    -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1; }
   .emphasisblock--full .emphasisblock-inner .emphasisblock__imagesvg {
@@ -4908,7 +4727,6 @@ ARTICLE META STYLES
   bottom: 0;
   left: 0;
   z-index: -1;
-  -webkit-transform: rotate(1deg);
   transform: rotate(1deg);
   border: 1px solid rgba(255, 240, 117, 0.3); }
 
@@ -4999,9 +4817,15 @@ ARTICLE EXTRAS STYLES
   padding-right: 0.625rem;
   margin-bottom: 1rem; }
   @media screen and (min-width: 40em) {
-    .featuredgrid__griditem:not(.griditem--grid_full),
-    .simplegrid__griditem:not(.griditem--grid_full) {
+    .featuredgrid__griditem:not(.griditem--grid_full):not(.griditem--grid_sixth),
+    .simplegrid__griditem:not(.griditem--grid_full):not(.griditem--grid_sixth) {
       width: 50%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; }
+    .featuredgrid__griditem.griditem--grid_sixth,
+    .simplegrid__griditem.griditem--grid_sixth {
+      width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
@@ -5017,7 +4841,15 @@ ARTICLE EXTRAS STYLES
       width: 66.66667%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-right: 0.625rem; }
+    .featuredgrid__griditem.griditem--grid_sixth:not(.griditem--grid_half),
+    .simplegrid__griditem.griditem--grid_sixth:not(.griditem--grid_half) {
+      width: 16.66667%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+      padding: 1rem;
+      background-color: #fefefe; } }
   .featuredgrid__griditem.griditem--cta,
   .simplegrid__griditem.griditem--cta {
     margin-top: 0; }
@@ -5044,10 +4876,8 @@ ARTICLE EXTRAS STYLES
   background: transparent; }
 
 .griditem--collaboration .griditem__content {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column; }
 
@@ -5064,7 +4894,6 @@ ARTICLE EXTRAS STYLES
 .griditem--pattern .griditem__pattern {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   overflow: hidden; }
 
@@ -5103,20 +4932,17 @@ a:hover .griditem__title {
   max-height: 15em; }
 
 .griditem__collaboration-info {
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
   text-align: center; }
   .griditem__collaboration-info svg {
     position: absolute;
-    -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
     top: 50%;
     height: 4em;
     width: auto;
-    -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     z-index: 1; }
   .griditem__collaboration-info ul.participants {
@@ -5129,7 +4955,7 @@ a:hover .griditem__title {
     width: 48%;
     padding: 1%;
     margin: 0;
-    height: 400%; }
+    min-height: 4em; }
   .griditem__collaboration-info .participant__organisation-details {
     display: block;
     font-weight: 300; }
@@ -5190,19 +5016,14 @@ a:hover .griditem__title {
     height: 10%;
     margin: -5%; }
     #programmes > *:nth-of-type(1) {
-      -webkit-transform: rotate(15deg) translate(6.5em) rotate(-15deg);
       transform: rotate(15deg) translate(6.5em) rotate(-15deg); }
     #programmes > *:nth-of-type(2) {
-      -webkit-transform: rotate(87deg) translate(6.5em) rotate(-87deg);
       transform: rotate(87deg) translate(6.5em) rotate(-87deg); }
     #programmes > *:nth-of-type(3) {
-      -webkit-transform: rotate(159deg) translate(6.5em) rotate(-159deg);
       transform: rotate(159deg) translate(6.5em) rotate(-159deg); }
     #programmes > *:nth-of-type(4) {
-      -webkit-transform: rotate(231deg) translate(6.5em) rotate(-231deg);
       transform: rotate(231deg) translate(6.5em) rotate(-231deg); }
     #programmes > *:nth-of-type(5) {
-      -webkit-transform: rotate(303deg) translate(6.5em) rotate(-303deg);
       transform: rotate(303deg) translate(6.5em) rotate(-303deg); }
   #programmes a {
     width: 5em;
@@ -5228,19 +5049,14 @@ a:hover .griditem__title {
         height: 10%;
         margin: -5%; }
         #programmes > *:nth-of-type(1) {
-          -webkit-transform: rotate(15deg) translate(15em) rotate(-15deg);
           transform: rotate(15deg) translate(15em) rotate(-15deg); }
         #programmes > *:nth-of-type(2) {
-          -webkit-transform: rotate(87deg) translate(15em) rotate(-87deg);
           transform: rotate(87deg) translate(15em) rotate(-87deg); }
         #programmes > *:nth-of-type(3) {
-          -webkit-transform: rotate(159deg) translate(15em) rotate(-159deg);
           transform: rotate(159deg) translate(15em) rotate(-159deg); }
         #programmes > *:nth-of-type(4) {
-          -webkit-transform: rotate(231deg) translate(15em) rotate(-231deg);
           transform: rotate(231deg) translate(15em) rotate(-231deg); }
         #programmes > *:nth-of-type(5) {
-          -webkit-transform: rotate(303deg) translate(15em) rotate(-303deg);
           transform: rotate(303deg) translate(15em) rotate(-303deg); }
       #programmes a {
         width: 10em;
@@ -5255,7 +5071,6 @@ a:hover .griditem__title {
 ARCHIVE STYLES
 *********************/
 .archive__filter nav {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
@@ -5539,7 +5354,6 @@ select {
   outline: inherit; }
 
 .archive__filter select {
-  -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-right: 2em;
@@ -5615,6 +5429,37 @@ if you're not using font icons. Here you can add them in one neat
 place.
 
 ******************************************************************/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* 
+
+EXAMPLE 
+Let's say you have an image and you need to make sure it looks ok
+on retina screens. Let's say we have an icon which dimension are
+24px x 24px. In your regular stylesheets, it would look something
+like this:
+
+.icon {
+	width: 24px;
+	height: 24px;
+	background: url(img/test.png) no-repeat;
+}
+
+For retina screens, we have to make some adjustments, so that image
+doesn't look blurry. So, taking into account the image above and the
+dimensions, this is what we would put in our retina stylesheet:
+
+.icon {
+	background: url(img/test@2x.png) no-repeat;
+	background-size: 24px 24px;
+}
+
+So, you would create the same icon, but at double the resolution, meaning 
+it would be 48px x 48px. You'd name it the same, but with a @2x at the end
+(this is pretty standard practice). Set the background image so it matches
+the original dimensions and you are good to go. 
+
+*/ }
+
 /******************************************************************
 
 Stylesheet: Print Stylesheet

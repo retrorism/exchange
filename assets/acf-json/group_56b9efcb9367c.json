@@ -91,10 +91,61 @@
             "multiple": 0
         },
         {
+            "key": "field_572a1b2452fb9",
+            "label": "Add Programme Round (tag)?",
+            "name": "add_programme_round_tag",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Add Programme Round (tag)"
+            },
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_572a1ab523749",
+            "label": "Programme Round Tag",
+            "name": "post_tag",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_572a1b2452fb9",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
             "key": "field_5743042dcf0df",
             "label": "Add custom byline",
             "name": "has_custom_byline",
-            "type": "true_false",
+            "type": "checkbox",
             "instructions": "Use this field when you want to add an author \/ contributor who is not a Tandem participant or alumnus. Or when you want to add more specific information about the person who shared this story.",
             "required": 0,
             "conditional_logic": 0,
@@ -103,8 +154,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0
+            "choices": {
+                "1": "Add custom byline"
+            },
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
         },
         {
             "key": "field_5743054dcf0e0",
@@ -157,5 +213,5 @@
     ],
     "active": 1,
     "description": "Sidebar for story editor",
-    "modified": 1467799759
+    "modified": 1471005911
 }

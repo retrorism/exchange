@@ -56,11 +56,14 @@ $collab = new Collaboration( $post );
 
 		<!-- MAP -->
 		<?php if ( $collab->has_participants && count ( $collab->participants ) > 1 ) : ?>
-			<section class="collaboration__map">
+			<section class="collaboration__map collaboration__section section--blue-1-web section--has-edge">
+				<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 				<div class="section-inner">
 				<?php $collab->publish_collab_map(); ?>
 				</div>
+				<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 			</section>
+
 		<?php endif; ?>
 
 		<!-- STORY SECTIONS -->
@@ -68,16 +71,18 @@ $collab = new Collaboration( $post );
 
 		<!-- GALLERY -->
 		<?php if ( $collab->has_gallery ) : ?>
-			<section class="section collaboration__gallery">
-				<div class="orbit" data-use-m-u-i="false"  role="region" aria-label="<?php printf( esc_html__('Gallery for "%s"', 'exchange' ), get_the_title() ); ?>" data-orbit data-auto-play="false">
-					<?php $collab->publish_gallery('collaboration'); ?>
-				</div>
+			<section class="collaboration__section collaboration__gallery section--blue-1-web section--has-edge">
+				<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+				<div class="section-inner">
+					<?php $collab->publish_collab_media_gallery('collaboration'); ?>
+				</div><!-- section-inner-->
+				<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 			</section>
 		<?php endif; ?>
 
 		<!-- SHARED STORIES -->
 		<?php if ( $collab->has_stories ) : ?>
-			<section class="collaboration__stories">
+			<section class="collaboration__section collaboration__stories">
 				<?php $collab->publish_related_stories(); ?>
 			</section>
 		<?php endif; ?>

@@ -440,8 +440,7 @@ ARTICLE STYLES:
 
 .collaboration__header--no--image,
 .collaboration__header--has-image,
-.collaboration__participants,
-.collaboration__map {
+.collaboration__participants {
 	 //@include grid-row( null, null, 2 * $grid-row-width, true )
 	@include grid-row()
 }
@@ -465,8 +464,6 @@ ARTICLE STYLES:
 }
 
 .collaboration__header__desc {
-	max-height: 40em !important;
-	overflow: hidden;
 	@include grid-column( 12 );
 	text-align: center;
 	background: $rose-1-web;
@@ -624,7 +621,8 @@ ARTICLE PATTERN STYLES
 .collaboration__video > svg,
 .collaboration__gallery > svg,
 .collaboration__stories > svg,
-.section--story-grid > svg {
+.section--story-grid > svg,
+.section--has-edge > svg {
 	position: relative;
 	width: 100%;
 	height: 20px;
@@ -932,7 +930,9 @@ Pattern 9. Image
 ****************/
 
 .section__imageduo,
-.section__simplemap.simplemap--wide {
+.section__simplemap.simplemap--wide,
+.collaboration__simplemap,
+.collaobration__gallery {
 	background-color: $white;
 	z-index: 10;
 	position: relative;
@@ -1332,7 +1332,6 @@ Pattern 19. Gallery
 }
 
 .collaboration__gallery {
-	@include grid-row();
 	margin-bottom: 2em;
 	.gallery--collaboration {
 		width: 100%;
@@ -1797,8 +1796,11 @@ ARTICLE EXTRAS STYLES
 .simplegrid__griditem {
 	@include grid_column( );
 	@include breakpoint( medium ) {
-		&:not(.griditem--grid_full) {
+		&:not(.griditem--grid_full):not(.griditem--grid_sixth) {
 			@include grid_column( 6 );
+		}
+		&.griditem--grid_sixth {
+			@include grid_column( 4 );
 		}
 	}
 	@include breakpoint( large ) {
@@ -1807,6 +1809,11 @@ ARTICLE EXTRAS STYLES
 		}
 		&.griditem--grid_two_third:not(.griditem--grid_half) {
 			@include grid_column( 8 );
+		}
+		&.griditem--grid_sixth:not(.griditem--grid_half) {
+			@include grid_column( 2 );
+			padding: $global-padding;
+			background-color: $white;
 		}
 	}
 	margin-bottom: $global-margin;
@@ -1929,7 +1936,7 @@ a:hover .griditem__title {
 		width: 48%;
 		padding: 1%;
 		margin: 0;
-		height: 4 * $global-font-size;
+		min-height: 4em;
 		// &:nth-child(1) {
 		// 	text-align: right;
 		// 	padding-right: 1.5 * $global-padding;
