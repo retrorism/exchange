@@ -16,7 +16,7 @@
 		</div>
 	<?php endif; ?>
 	<?php if ( is_active_sidebar('footer-2' ) ) : ?>
-		<div class="footer__widget-wrapper col">
+		<div class="footer__widget-wrapper">
 			<?php dynamic_sidebar( 'footer-2' ); ?>
 		</div>
 	<?php endif; ?>

@@ -109,11 +109,11 @@
                         "grid_header": "Grid header",
                         "taped_header": "Taped header"
                     },
+                    "allow_null": 0,
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "taped_header",
+                    "default_value": "grid_header",
                     "layout": "vertical",
-                    "allow_null": 0,
                     "return_format": "value"
                 },
                 {
@@ -2109,7 +2109,15 @@
             "type": "relationship",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_570cb4106bd05",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -2157,5 +2165,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471014433
+    "modified": 1471039042
 }
