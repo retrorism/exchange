@@ -24,7 +24,3 @@ $story = new Story( $post );
 	</div> <!-- end article -->
 
 </article> <!-- end article -->
-
-<div class="article-related-content story__extras">
-	<?php $story->publish_related_content('story'); ?>
-</div>
