@@ -3733,10 +3733,12 @@ ARTICLE PATTERN STYLES
 
 .story__extras,
 .collaboration__extras,
+.story__section:last-of-type,
 .home .story__section:last-child {
   padding-bottom: 2rem; }
   .story__extras svg.section__edge--bottom,
   .collaboration__extras svg.section__edge--bottom,
+  .story__section:last-of-type svg.section__edge--bottom,
   .home .story__section:last-child svg.section__edge--bottom {
     display: none; }
 

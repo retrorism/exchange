@@ -2278,10 +2278,10 @@
         },
         {
             "key": "field_570cb4106bd05",
-            "label": "Curate related content?",
+            "label": "Override automatic selection for related stories?",
             "name": "related_content_auto_select",
-            "type": "checkbox",
-            "instructions": "",
+            "type": "true_false",
+            "instructions": "Checking this box without selecting stories will cause the Related Stories section to be hidden from the page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -2289,13 +2289,8 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "1": "Yes, I want to override automatic selection."
-            },
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "value"
+            "message": "",
+            "default_value": 0
         },
         {
             "key": "field_56b9eaf620ee9",
@@ -2331,7 +2326,7 @@
             "elements": [
                 "featured_image"
             ],
-            "min": "",
+            "min": 0,
             "max": 15,
             "return_format": "object"
         }
@@ -2360,5 +2355,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471256522
+    "modified": 1471258602
 }

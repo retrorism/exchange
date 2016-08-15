@@ -95,11 +95,11 @@ $exchange = new Story( $post );
 
 </article> <!-- end article -->
 <?php if ( $exchange->has_related_content ) : ?>
-	<div class="article-related-content story__section story__extras section--salmon-1-web section--coloured">
+	<section class="article-related-content story__section story__extras section--salmon-1-web section--coloured">
 		<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
 			<?php $exchange->publish_related_content('story'); ?>
 		<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
-	</div>
+	</section>
 <?php endif; ?>
 
 <?php if ( $exchange->has_gallery ) : ?>
