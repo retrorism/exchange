@@ -6,7 +6,7 @@
 	</a>
 
 	<!-- META -->
-	<!--<div class='griditem__meta'><?php echo mysql2date( get_option('date_format'), $exchange->date ) ?></div>-->
+	<?php /* <div class='griditem__meta'><?php echo mysql2date( get_option('date_format'), $exchange->date ) ?></div> */ ?>
 
 	<!-- TAGS -->
 	<?php if ( $exchange->has_tags ) : ?>

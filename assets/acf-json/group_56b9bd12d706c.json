@@ -63,9 +63,9 @@
         },
         {
             "key": "field_577fb0cbc9566",
-            "label": "Add translation?",
+            "label": "Have the participants provided a translation?",
             "name": "add_translation",
-            "type": "true_false",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -74,8 +74,34 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0
+            "choices": {
+                "1": "Yes"
+            },
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_57b103a3f2245",
+            "label": "Have the participants provided a translation? (copy)",
+            "name": "add_translation_copy",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Yes"
+            },
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
         },
         {
             "key": "field_577fb100c9567",
@@ -108,7 +134,7 @@
                     "key": "field_577fb154c9568",
                     "label": "Translation language",
                     "name": "translation_language",
-                    "type": "radio",
+                    "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -117,18 +143,14 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "arabic": "Arabic",
-                        "english": "English",
-                        "russian": "Russian",
-                        "turkish": "Turkish",
-                        "ukrainian": "Ukrainian"
-                    },
+                    "taxonomy": "language",
+                    "field_type": "select",
                     "allow_null": 0,
-                    "other_choice": 1,
-                    "save_other_choice": 1,
-                    "default_value": "",
-                    "layout": "vertical"
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "multiple": 0
                 },
                 {
                     "key": "field_577fb226c9569",
@@ -150,6 +172,76 @@
                     "new_lines": "wpautop",
                     "readonly": 0,
                     "disabled": 0
+                }
+            ]
+        },
+        {
+            "key": "field_57b10396f2242",
+            "label": "Translations (copy)",
+            "name": "translations_copy",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_577fb0cbc9566",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add translation",
+            "sub_fields": [
+                {
+                    "key": "field_57b10396f2243",
+                    "label": "Translation language",
+                    "name": "translation_language",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "language",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_57b10396f2244",
+                    "label": "Translation text",
+                    "name": "translation_text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "wpautop"
                 }
             ]
         },
@@ -301,5 +393,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1470145483
+    "modified": 1471218598
 }

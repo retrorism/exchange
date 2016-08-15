@@ -4,13 +4,7 @@
 			<div id="programmes">
 			<?php
 				$img_root = get_template_directory() . '/assets/images/';
-				$programmes = array(
-					'C_P' => 'Tandem C & P',
-					'Turkey' => 'Tandem Turkey',
-					'Ukraine' => 'Tandem Ukraine',
-					'Europe' => 'Tandem Europe',
-					'Shaml' => 'Tandem Shaml',
-				);
+				$programmes = $GLOBALS['EXCHANGE_PLUGIN_CONFIG']['TAXONOMIES']['programmes'];
 				foreach ( $programmes as $slug => $title ) {
 					$page_id = get_page_by_title( $title );
 					$anchor = '<a href="#">';

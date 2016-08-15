@@ -19,7 +19,7 @@
 				<?php
 					$length = count( $featured_stories );
 					for ( $i = 0; $i < $length ; $i++ ) {
-						$exchange = BaseController::exchange_factory( $featured_stories[$i] );
+						$exchange = BaseController::exchange_factory( $featured_stories[$i], 'griditem' );
 						if ( $i === 0 ) {
 							$modifiers = array(
 								'grid_width' => 'grid_full',

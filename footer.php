@@ -4,7 +4,7 @@
 					<?php exchange_footer_links(); ?>
 				</nav>
 			</section>
-			<section class="page__footer__widgets section--has-edge">
+			<section class="page__footer__widgets section--coloured">
 				<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'yellow-tandem' ) ); ?>
 				<?php get_template_part( 'parts/content', 'footer' ); ?>
 				<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'yellow-tandem' ) ); ?>

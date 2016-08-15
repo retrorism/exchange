@@ -23,14 +23,20 @@ $story = new Story( $post );
 	<header class="article-header story__header">
 
 		<?php if ( $story->has_header_image ) {
-			$story->publish_header_image();
+			$story->publish_header_image('story__header');
 		 } ?>
 
 		<div class="story__header__introduction">
 
 			<div class="story__title-wrapper">
-
-				<h1 class="entry-title story__title" itemprop="headline"><?php the_title(); ?></h1>
+				<?php
+					$programmes = get_page_by_title( 'Programmes' );
+					$hide_title_class = '';
+					if ( $post->post_parent === $programmes->ID ) {
+						get_template_part( 'parts/content', 'page-programme' );
+						$hide_title_class = ' show-for-sr';
+					}; ?>
+				<h1 class="entry-title story__title<?php echo $hide_title_class; ?>" itemprop="headline"><?php the_title(); ?></h1>
 
 			</div>
 
@@ -38,9 +44,10 @@ $story = new Story( $post );
 				$story->publish_intro();
 			} ?>
 
-			<?php if ( 'Programmes' === $story->title ) {
-				get_template_part( 'parts/content', 'page-programmes' );
-			} ?>
+			<?php
+				if ( $story->title === 'Programmes' ) {
+					get_template_part( 'parts/content', 'page-programmes' );
+				} ?>
 
 		</div>
 

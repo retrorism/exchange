@@ -3132,6 +3132,14 @@ a.button--small {
     background-color: transparent;
     color: #4c4d53; }
 
+a.button--share-cta {
+  border: 2px solid #f4c522;
+  background-color: transparent;
+  transition: background-color 0.5s; }
+  a.button--share-cta:hover {
+    color: #343438;
+    background-color: #f4c522; }
+
 a.button--small {
   padding: 0.2rem;
   font-size: 80%; }
@@ -3188,6 +3196,10 @@ caption {
   margin-top: 0.75rem;
   font-size: 80%;
   color: #A0A0A0; }
+
+.section--coloured figcaption,
+.section--coloured caption {
+  color: #343438; }
 
 /*********************
 BANNER STYLES
@@ -3270,7 +3282,7 @@ nav.top-bar {
             text-align: center;
             font-size: 100%;
             display: block;
-            padding: 1.25rem 0.75rem; }
+            padding: 1.25rem 0.5rem; }
           #responsive-menu ul#menu-main-menu-left li:hover,
           #responsive-menu ul#menu-main-menu-right li:hover {
             background-color: #fefefe; }
@@ -3278,9 +3290,9 @@ nav.top-bar {
             #responsive-menu ul#menu-main-menu-right li:hover a {
               color: #343438; }
       #responsive-menu ul#menu-main-menu-right {
-        padding-left: 5.5em; }
+        padding-left: 5em; }
       #responsive-menu ul#menu-main-menu-left {
-        padding-right: 5.5em;
+        padding-right: 5em;
         text-align: right; }
         #responsive-menu ul#menu-main-menu-left li {
           direction: rtl; } }
@@ -3668,12 +3680,6 @@ ARTICLE STYLES:
 /*********************
 ARTICLE PATTERN STYLES
 *********************/
-.section__slice.section__sectionheader {
-  margin-top: 2rem; }
-
-.section__slice:first-child:not(.section__sectionheader) {
-  margin-top: 0; }
-
 .section__slice:last-child {
   margin-bottom: 0; }
 
@@ -3698,54 +3704,56 @@ ARTICLE PATTERN STYLES
   background-color: #9fd3d6; }
 
 .section--yellow-1-web,
-.section--syellow-1-web .section__imageduo {
+.section--yellow-1-web .section__imageduo {
   background-color: #fffbdb; }
 
 .section--yellow-2-web {
   background-color: #f0c063; }
 
 .section--salmon-1-web,
-.story__extras,
-.collaboration__extras,
-.collaboration__stories,
 .section--salmon-1-web .section__imageduo {
   background-color: #fde1c7; }
 
-.story__section > svg,
-.collaboration__section > svg,
 .page__footer__widgets > svg,
 .story__extras > svg,
-.collaboration__extras > svg,
-.collaboration__video > svg,
-.collaboration__gallery > svg,
-.collaboration__stories > svg,
 .section--story-grid > svg,
-.section--has-edge > svg {
+.section--coloured > svg {
   position: relative;
   width: 100%;
   height: 20px;
   margin: 0;
   padding: 0;
   top: -20px; }
-  .story__section > svg.section__edge--bottom,
-  .collaboration__section > svg.section__edge--bottom,
   .page__footer__widgets > svg.section__edge--bottom,
   .story__extras > svg.section__edge--bottom,
-  .collaboration__extras > svg.section__edge--bottom,
-  .collaboration__video > svg.section__edge--bottom,
-  .collaboration__gallery > svg.section__edge--bottom,
-  .collaboration__stories > svg.section__edge--bottom,
   .section--story-grid > svg.section__edge--bottom,
-  .section--has-edge > svg.section__edge--bottom {
+  .section--coloured > svg.section__edge--bottom {
     transform: scale(1, -1);
     top: 20px; }
 
-.collaboration__section:last-child svg.section__edge--bottom,
-.story__section:last-child svg.section__edge--bottom {
-  display: none; }
+.story__extras,
+.collaboration__extras,
+.home .story__section:last-child {
+  padding-bottom: 2rem; }
+  .story__extras svg.section__edge--bottom,
+  .collaboration__extras svg.section__edge--bottom,
+  .home .story__section:last-child svg.section__edge--bottom {
+    display: none; }
 
 .section--featured-stories .section-inner {
   padding-top: 0; }
+
+.post-it-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotate(0.75deg);
+  border-width: 1px;
+  border-top-width: 0;
+  border-style: solid; }
 
 /***************
 Pattern 1. Title
@@ -3765,7 +3773,7 @@ Pattern 2. Bylines
   font-size: 112.5%;
   line-height: 1.4;
   font-style: italic;
-  padding-bottom: 2rem; }
+  margin-bottom: 4rem; }
 
 /********************************
 Pattern 3. Editorial introduction
@@ -3774,7 +3782,7 @@ Pattern 3. Editorial introduction
   font-size: 112.5%;
   line-height: 1.4;
   float: none !important;
-  margin-bottom: 2rem; }
+  margin-bottom: 4rem; }
 
 body.page .story__editorialintro {
   font-style: normal;
@@ -3783,7 +3791,7 @@ body.page .story__editorialintro {
 /******************
 Pattern 4. Tag list
 ******************/
-.story__meta__tags ol,
+.story__meta__item--tags ol,
 .griditem__tags ol {
   list-style: none;
   margin-left: 0;
@@ -3791,21 +3799,21 @@ Pattern 4. Tag list
 
 .griditem__tags ol li,
 .collaboration__tags ol li,
-.story__meta__tags ol li {
+.story__meta__item--tags ol li {
   display: inline-block;
   margin: 0.125rem 0.25rem 0.125rem 0; }
   .griditem__tags ol li:first-of-type,
   .collaboration__tags ol li:first-of-type,
-  .story__meta__tags ol li:first-of-type {
+  .story__meta__item--tags ol li:first-of-type {
     margin-left: 0; }
   @media screen and (min-width: 75em) {
     .griditem__tags ol li,
     .collaboration__tags ol li,
-    .story__meta__tags ol li {
+    .story__meta__item--tags ol li {
       margin: 0.125rem 0 0.125rem 0.25rem; }
       .griditem__tags ol li:first-of-type,
       .collaboration__tags ol li:first-of-type,
-      .story__meta__tags ol li:first-of-type {
+      .story__meta__item--tags ol li:first-of-type {
         margin-right: 0; } }
 
 .tag,
@@ -3841,25 +3849,37 @@ Pattern 4. Tag list
     .griditem__tag.post_tag[href]:hover,
     .story__meta__tag.post_tag[href]:hover {
       background-color: #f4c522; }
-  .tag.topic,
+  .tag.topic, .tag.output,
   .collaboration__tag.topic,
+  .collaboration__tag.output,
   .griditem__tag.topic,
-  .story__meta__tag.topic {
+  .griditem__tag.output,
+  .story__meta__tag.topic,
+  .story__meta__tag.output {
     border-color: #0f9fd6; }
-    .tag.topic[href]:hover,
+    .tag.topic[href]:hover, .tag.output[href]:hover,
     .collaboration__tag.topic[href]:hover,
+    .collaboration__tag.output[href]:hover,
     .griditem__tag.topic[href]:hover,
-    .story__meta__tag.topic[href]:hover {
+    .griditem__tag.output[href]:hover,
+    .story__meta__tag.topic[href]:hover,
+    .story__meta__tag.output[href]:hover {
       background-color: #0f9fd6; }
-  .tag.tandem,
+  .tag.tandem, .tag.discipline,
   .collaboration__tag.tandem,
+  .collaboration__tag.discipline,
   .griditem__tag.tandem,
-  .story__meta__tag.tandem {
+  .griditem__tag.discipline,
+  .story__meta__tag.tandem,
+  .story__meta__tag.discipline {
     border-color: #e27f20; }
-    .tag.tandem[href]:hover,
+    .tag.tandem[href]:hover, .tag.discipline[href]:hover,
     .collaboration__tag.tandem[href]:hover,
+    .collaboration__tag.discipline[href]:hover,
     .griditem__tag.tandem[href]:hover,
-    .story__meta__tag.tandem[href]:hover {
+    .griditem__tag.discipline[href]:hover,
+    .story__meta__tag.tandem[href]:hover,
+    .story__meta__tag.discipline[href]:hover {
       background-color: #e27f20; }
   .tag.language,
   .collaboration__tag.language,
@@ -3871,15 +3891,21 @@ Pattern 4. Tag list
     .griditem__tag.language[href]:hover,
     .story__meta__tag.language[href]:hover {
       background-color: #e07856; }
-  .tag.location,
+  .tag.location, .tag.methodology,
   .collaboration__tag.location,
+  .collaboration__tag.methodology,
   .griditem__tag.location,
-  .story__meta__tag.location {
+  .griditem__tag.methodology,
+  .story__meta__tag.location,
+  .story__meta__tag.methodology {
     border-color: #eaab73; }
-    .tag.location[href]:hover,
+    .tag.location[href]:hover, .tag.methodology[href]:hover,
     .collaboration__tag.location[href]:hover,
+    .collaboration__tag.methodology[href]:hover,
     .griditem__tag.location[href]:hover,
-    .story__meta__tag.location[href]:hover {
+    .griditem__tag.methodology[href]:hover,
+    .story__meta__tag.location[href]:hover,
+    .story__meta__tag.methodology[href]:hover {
       background-color: #eaab73; }
 
 .collaboration__header .collaboration__tag {
@@ -3924,8 +3950,11 @@ Pattern 6. Paragraph
   .translatedparagraph__paragraph.show {
     display: block; }
 
-.story__section:last-child p:last-of-type {
-  margin-bottom: 0; }
+.translatedparagraph__translation-select-wrapper {
+  text-align: center; }
+
+.translatedparagraph--has_translations select {
+  margin: 1rem auto; }
 
 /*******************
 Pattern 7. Subheader
@@ -3943,26 +3972,37 @@ Pattern 7. Subheader
   text-align: center;
   padding: 0.25em; }
 
+h4.share-cta-header,
 .section__sectionheader h4,
 .sectionheader--grid_header h4,
 .relatedgrid__sectionheader {
+  font-weight: normal;
   font-size: 112.5%;
   text-align: center;
   text-transform: uppercase;
   margin: 0 auto 2rem; }
 
+.section__slice:first-child.section__sectionheader {
+  margin-top: 0; }
+
 .sectionheader--taped_header {
-  position: relative; }
+  text-align: center; }
+  .sectionheader--taped_header .sectionheader-inner {
+    display: inline-block;
+    height: auto;
+    position: relative; }
   .sectionheader--taped_header h4 {
     position: relative;
     display: block;
     padding: 0.5rem 2rem;
+    margin: 0;
     z-index: 1; }
   .sectionheader--taped_header svg {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0; }
+    top: 0;
+    left: 0; }
 
 .sectionheader__text--white {
   color: #fefefe; }
@@ -3990,6 +4030,11 @@ Pattern 8. Embedded Video
 /****************
 Pattern 9. Image
 ****************/
+.section__image--programme-logo {
+  width: 50%;
+  max-width: 15em;
+  margin: auto; }
+
 .section__imageduo,
 .section__simplemap.simplemap--wide,
 .collaboration__simplemap,
@@ -4448,12 +4493,16 @@ Pattern 20. Emphasis blocks
 .emphasisblock-inner {
   padding: 1rem; }
 
+.emphasisblock--post-it .emphasisblock-inner {
+  position: relative; }
+
 .emphasis_block--cta .emphasisblock__paragraph {
   color: #fefefe; }
 
 .emphasisblock--default .emphasisblock-inner,
-.emphasisblock--yellow-1-web .emphasisblock-inner {
-  background-color: #fffbdb; }
+.emphasisblock--yellow-1-web .post-it-bg {
+  background-color: #fffbdb;
+  border-color: rgba(255, 240, 117, 0.3); }
 
 .emphasisblock--rose-1-web .emphasisblock-inner,
 .emphasisblock--default.emphasisblock--cta .emphasisblock-inner {
@@ -4464,17 +4513,19 @@ Pattern 20. Emphasis blocks
   .emphasisblock--default.emphasisblock--cta .emphasisblock-inner a.button--small:hover {
     color: #343438; }
 
-.emphasisblock--blue-1-web .emphasisblock-inner {
-  background-color: #dceff0; }
+.emphasisblock--blue-1-web .post-it-bg {
+  background-color: #dceff0;
+  border-color: rgba(149, 206, 209, 0.3); }
+
+.emphasisblock--salmon-1-web .post-it-bg {
+  background-color: #fde1c7;
+  border-color: rgba(249, 172, 101, 0.3); }
 
 .emphasisblock--blue-2-web .emphasisblock-inner {
   background-color: #9fd3d6; }
   .emphasisblock--blue-2-web .emphasisblock-inner a.button--large:hover,
   .emphasisblock--blue-2-web .emphasisblock-inner a.button--small:hover {
     color: #343438; }
-
-.emphasisblock--salmon-1-web .emphasisblock-inner {
-  background-color: #fde1c7; }
 
 .emphasisblock--yellow-tandem .emphasisblock-inner {
   background-color: #f4c522; }
@@ -4720,14 +4771,7 @@ ARTICLE META STYLES
       clear: both; } }
 
 .story__meta-bg {
-  position: absolute;
   background-color: #fffbdb;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  transform: rotate(1deg);
   border: 1px solid rgba(255, 240, 117, 0.3); }
 
 .story__meta-inner {
@@ -4748,15 +4792,16 @@ ARTICLE META STYLES
       min-height: 13em;
       text-align: right; } }
 
-.story__meta__category,
-.story__meta__date {
+.story__meta__item--category,
+.story__meta__item--storyteller,
+.story__meta__item--date {
   font-size: 80%; }
 
-.story__meta__category {
+.story__meta__item--category {
   font-weight: 600; }
 
-.story__meta__tags,
-.story__meta__date {
+.story__meta__item--tags,
+.story__meta__item--date {
   margin-bottom: 0.5rem; }
 
 .social-icons-list {
@@ -4777,9 +4822,26 @@ ARTICLE META STYLES
   .social-icons-list__link path.icon {
     transition: fill 1s; }
 
-.social-icons-list__link:hover g.icon path,
-.social-icons-list__link:hover path.icon {
+.story__meta .social-icons-list__link:hover g.icon path,
+.story__meta .social-icons-list__link:hover path.icon {
   fill: #eba847; }
+
+footer .social-icons-list {
+  text-align: center;
+  margin-bottom: 2rem; }
+
+footer .social-icons-list__link path.circle {
+  transition: fill 1s; }
+
+footer .social-icons-list__link {
+  width: 3em;
+  margin-right: 1em; }
+  footer .social-icons-list__link:hover path.circle {
+    fill: #eba847;
+    transition: fill 1s; }
+
+footer .social-icons-list__item:last-child .social-icons-list__link {
+  margin-right: 0; }
 
 /*********************
 ARTICLE EXTRAS STYLES
@@ -5067,6 +5129,9 @@ a:hover .griditem__title {
         width: 10em;
         max-height: 4em; } }
 
+.button-wrapper {
+  text-align: center; }
+
 /*********************
 ARCHIVE STYLES
 *********************/
@@ -5196,8 +5261,16 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.story__footer {
-  clear: both; }
+.story__footer,
+.collaboration__footer {
+  clear: both;
+  margin: 4rem auto; }
+
+.share-cta-wrapper h4 {
+  font-size: 80%; }
+
+.collaboration__footer .social-icons-list {
+  margin-bottom: 0; }
 
 .page__footer__widgets {
   background-color: #f4c522; }
@@ -5219,7 +5292,8 @@ FOOTER STYLES
 .page__footer__widgets-inner {
   max-width: 75rem;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding: 1rem 0; }
   .page__footer__widgets-inner::before, .page__footer__widgets-inner::after {
     content: ' ';
     display: table; }
@@ -5228,13 +5302,20 @@ FOOTER STYLES
 
 .footer__widget-wrapper {
   color: #fefefe;
-  padding: 0 0 3rem; }
+  margin-bottom: 2rem;
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
+  .footer__widget-wrapper:last-child {
+    margin-bottom: 0; }
   @media screen and (min-width: 40em) {
     .footer__widget-wrapper {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-right: 0.625rem;
+      margin-bottom: 0; } }
   @media screen and (min-width: 60em) {
     .footer__widget-wrapper {
       width: 25%;

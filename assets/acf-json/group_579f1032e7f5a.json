@@ -20,9 +20,9 @@
         },
         {
             "key": "field_579f1032ed585",
-            "label": "Display as CTA in grids?",
-            "name": "has_cta",
-            "type": "select",
+            "label": "Display a CTA on the related Programme \/ Collaborations page?",
+            "name": "has_cta_story",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -40,315 +40,34 @@
                 "id": ""
             },
             "choices": {
-                "no": "No",
-                "related_only": "Only in (curated) 'Related stories'-sections",
-                "everywhere": "Everywhere (this will include programme overview pages)"
+                "1": "Show a Call-to-action block on relevant pages"
             },
-            "default_value": [
-                "no"
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_57af50e40e05d",
+            "label": "CTA story",
+            "name": "cta_story",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "story",
+                "page"
             ],
+            "taxonomy": [],
             "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "disabled": 0,
-            "readonly": 0
-        },
-        {
-            "key": "field_579f1032ed594",
-            "label": "Call To Action elements",
-            "name": "cta_block_elements",
-            "type": "flexible_content",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_579f1032ed585",
-                        "operator": "!=",
-                        "value": "no"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "button_label": "Add block element",
-            "min": "",
-            "max": 5,
-            "layouts": [
-                {
-                    "key": "5709ff9541203",
-                    "name": "block_header",
-                    "label": "Header",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_579f1032f141d",
-                            "label": "Block Header",
-                            "name": "block_header_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
-                    "key": "570a00138b93e",
-                    "name": "block_paragraph",
-                    "label": "Paragraph (Keep it short!)",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_579f1032f142f",
-                            "label": "Paragraph Text",
-                            "name": "block_paragraph_text",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": "wpautop",
-                            "readonly": 0,
-                            "disabled": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
-                    "key": "570a00108b93d",
-                    "name": "block_graphic",
-                    "label": "Block Graphic",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_579f1032f143c",
-                            "label": "Select Block Graphic",
-                            "name": "block_graphic_select",
-                            "type": "image",
-                            "instructions": "Select an SVG image from the library",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_579f1032ed585",
-                                        "operator": "!=",
-                                        "value": "no"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
-                    "key": "5749f9124903e",
-                    "name": "block_logo",
-                    "label": "Programme Logo",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_579f1032f1447",
-                            "label": "Select Programme",
-                            "name": "block_programme",
-                            "type": "select",
-                            "instructions": "Select a programme round",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "C_P": "Tandem Community & Participation",
-                                "Europe": "Tandem Europe",
-                                "Shaml": "Tandem Shaml",
-                                "Turkey": "Tandem Turkey",
-                                "Ukraine": "Tandem Ukraine"
-                            },
-                            "default_value": [],
-                            "allow_null": 1,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
-                    "key": "570a00fd8b941",
-                    "name": "block_button",
-                    "label": "Button",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_579f1032f1454",
-                            "label": "Button Text",
-                            "name": "button_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "Find out more",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_579f1032f1460",
-                            "label": "Button Help Text",
-                            "name": "button_help_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_579f1032f146d",
-                            "label": "Button Size",
-                            "name": "button_size",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "big": "Big",
-                                "big_one_of_two": "Big ( 1 \/ 2 )",
-                                "small": "Small"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0
-                        },
-                        {
-                            "key": "field_579f1032f147c",
-                            "label": "Open link in new window?",
-                            "name": "button_target",
-                            "type": "radio",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "_self": "No (default)",
-                                "_new": "Yes"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "_self",
-                            "layout": "vertical"
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                }
-            ]
-        },
-        {
-            "key": "field_579f1032ed5a1",
-            "label": "CTA Colour",
-            "name": "cta_colour",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_579f1032ed585",
-                        "operator": "!=",
-                        "value": "no"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
+            "allow_archives": 1,
+            "multiple": 0
         },
         {
             "key": "field_579f123511673",
@@ -370,6 +89,27 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_57af513719b83",
+            "label": "Programme Round recap story",
+            "name": "programme_round_recap_story",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "story"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         }
     ],
     "location": [
@@ -398,5 +138,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1470134776
+    "modified": 1471107483
 }

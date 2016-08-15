@@ -64,6 +64,16 @@ a.button--small {
 	min-width: 5em;
 }
 
+a.button--share-cta {
+	border: 2px solid $yellow-tandem;
+	background-color: transparent;
+	transition: background-color 0.5s;
+	&:hover {
+		color: $body-font-color;
+		background-color: $yellow-tandem;
+	}
+}
+
 
 a.button--small {
 	padding: 0.2 * $global-padding;
@@ -161,6 +171,11 @@ caption {
 	color: $gray;
 }
 
+.section--coloured figcaption,
+.section--coloured caption {
+	color: $black;
+}
+
 /*********************
 BANNER STYLES
 *********************/
@@ -255,7 +270,7 @@ nav.top-bar {
 					text-align: center;
 					font-size: $global-font-size;
 					display: block;
-					padding: 1.25 * $global-padding 0.75 * $global-padding;
+					padding: 1.25 * $global-padding 0.5 * $global-padding;
 				}
 				&:hover {
 					background-color: $white;
@@ -267,12 +282,12 @@ nav.top-bar {
 
 		}
 		ul#menu-main-menu-right {
-			padding-left: 5.5em;
+			padding-left: 5em;
 			li {
 			}
 		}
 		ul#menu-main-menu-left {
-			padding-right: 5.5em;
+			padding-right: 5em;
 			text-align: right;
 			li {
 				direction: rtl;
@@ -561,14 +576,6 @@ ARTICLE STYLES:
 ARTICLE PATTERN STYLES
 *********************/
 
-.section__slice.section__sectionheader {
-	margin-top: 2 * $global-margin;
-}
-
-.section__slice:first-child:not(.section__sectionheader) {
-	margin-top: 0;
-}
-
 .section__slice:last-child {
 	margin-bottom: 0;
 }
@@ -597,7 +604,7 @@ ARTICLE PATTERN STYLES
 }
 
 .section--yellow-1-web,
-.section--syellow-1-web .section__imageduo {
+.section--yellow-1-web .section__imageduo {
 	background-color: $yellow-1-web;
 }
 
@@ -606,23 +613,14 @@ ARTICLE PATTERN STYLES
 }
 
 .section--salmon-1-web,
-.story__extras,
-.collaboration__extras,
-.collaboration__stories,
 .section--salmon-1-web .section__imageduo {
 	background-color: $salmon-1-web;
 }
 
-.story__section > svg,
-.collaboration__section > svg,
 .page__footer__widgets > svg,
 .story__extras > svg,
-.collaboration__extras > svg,
-.collaboration__video > svg,
-.collaboration__gallery > svg,
-.collaboration__stories > svg,
 .section--story-grid > svg,
-.section--has-edge > svg {
+.section--coloured > svg {
 	position: relative;
 	width: 100%;
 	height: 20px;
@@ -634,8 +632,10 @@ ARTICLE PATTERN STYLES
 		top: 20px;
 	}
 }
-.collaboration__section:last-child,
-.story__section:last-child {
+.story__extras,
+.collaboration__extras,
+.home .story__section:last-child {
+	padding-bottom: 2 * $global-padding;
 	svg.section__edge--bottom {
 		display: none;
 	}
@@ -645,7 +645,18 @@ ARTICLE PATTERN STYLES
 	padding-top: 0;
 }
 
-
+.post-it-bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	transform: rotate(0.75deg);
+	border-width: 1px;
+	border-top-width: 0;
+	border-style: solid;
+}
 
 /***************
 Pattern 1. Title
@@ -670,7 +681,7 @@ Pattern 2. Bylines
 	font-size: $lead-font-size;
 	line-height: $lead-lineheight;
 	font-style: italic;
-	padding-bottom: 2 * $global-padding;
+	margin-bottom: 4 * $global-margin;
 }
 
 /********************************
@@ -681,7 +692,7 @@ Pattern 3. Editorial introduction
 	font-size: $lead-font-size;
 	line-height: $lead-lineheight;
 	float: none !important;
-	margin-bottom: 2 * $global-margin;
+	margin-bottom: 4 * $global-margin;
 }
 
 body.page .story__editorialintro {
@@ -693,7 +704,7 @@ body.page .story__editorialintro {
 Pattern 4. Tag list
 ******************/
 
-.story__meta__tags ol,
+.story__meta__item--tags ol,
 .griditem__tags ol {
 	list-style: none;
 	margin-left: 0;
@@ -703,7 +714,7 @@ Pattern 4. Tag list
 
 .griditem__tags ol li,
 .collaboration__tags ol li,
-.story__meta__tags ol li {
+.story__meta__item--tags ol li {
 	display: inline-block;
 	margin: 0.125 * $global-margin 0.25 * $global-margin 0.125 * $global-margin 0;
 	&:first-of-type {
@@ -736,13 +747,15 @@ Pattern 4. Tag list
 			background-color: $yellow-tandem;
 		}
 	}
-	&.topic {
+	&.topic,
+	&.output {
 		border-color: $blue-3;
 		&[href]:hover {
 			background-color: $blue-3;
 		}
 	}
-	&.tandem {
+	&.tandem,
+	&.discipline {
 		border-color: $yellow-4;
 		&[href]:hover {
 			background-color: $yellow-4;
@@ -754,7 +767,8 @@ Pattern 4. Tag list
 			background-color: $salmon-4;
 		}
 	}
-	&.location {
+	&.location,
+	&.methodology {
 		border-color: $salmon-3;
 		&[href]:hover {
 			background-color: $salmon-3;
@@ -835,7 +849,6 @@ Pattern 5. Hero / cover image
 }
 
 
-
 /*********************
 Pattern 6. Paragraph
 *********************/
@@ -847,9 +860,19 @@ Pattern 6. Paragraph
 	}
 }
 
-.story__section:last-child p:last-of-type {
-	margin-bottom: 0;
+.translatedparagraph__translation-select-wrapper {
+	text-align: center;
 }
+
+.translatedparagraph--has_translations select {
+	margin: $global-margin auto;
+}
+
+// .story__section:last-child p:last-of-type {
+// 	margin-bottom: 0;
+// }
+
+
 
 /*******************
 Pattern 7. Subheader
@@ -871,21 +894,33 @@ Pattern 7. Subheader
 	padding: 0.25em;
 }
 
+h4.share-cta-header,
 .section__sectionheader h4,
 .sectionheader--grid_header h4,
 .relatedgrid__sectionheader {
+	font-weight: normal;
 	font-size: $lead-font-size;
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0 auto 2 * $global-margin;
 }
 
+.section__slice:first-child.section__sectionheader {
+	margin-top: 0
+}
+
 .sectionheader--taped_header {
-	position: relative;
+	text-align: center;
+	.sectionheader-inner {
+		display: inline-block;
+		height: auto;
+		position: relative;
+	}
 	h4 {
 		position: relative;
 		display: block;
 		padding: 0.5 * $global-padding 2 * $global-padding;
+		margin: 0;
 		z-index: 1;
 	}
 	svg {
@@ -893,6 +928,7 @@ Pattern 7. Subheader
 		width: 100%;
 		position: absolute;
 		top: 0;
+		left: 0;
 	}
 }
 
@@ -928,6 +964,12 @@ Pattern 8. Embedded Video
 /****************
 Pattern 9. Image
 ****************/
+
+.section__image--programme-logo {
+	width: 50%;
+	max-width: 15em;
+	margin: auto;
+}
 
 .section__imageduo,
 .section__simplemap.simplemap--wide,
@@ -1438,14 +1480,19 @@ Pattern 20. Emphasis blocks
 	padding: $global-padding;
 }
 
+.emphasisblock--post-it .emphasisblock-inner {
+	position: relative;
+}
+
 .emphasis_block--cta .emphasisblock__paragraph {
 	color: $white;
 }
 
 
 .emphasisblock--default .emphasisblock-inner,
-.emphasisblock--yellow-1-web .emphasisblock-inner {
+.emphasisblock--yellow-1-web .post-it-bg {
 	background-color: $yellow-1-web;
+	border-color: transparentize( darken( $yellow-1-web, 20 ), 0.7 );
 }
 
 .emphasisblock--rose-1-web .emphasisblock-inner,
@@ -1460,8 +1507,14 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-.emphasisblock--blue-1-web .emphasisblock-inner {
+.emphasisblock--blue-1-web .post-it-bg {
 	background-color: $blue-1-web;
+	border-color: transparentize( darken( $blue-1-web, 20 ), 0.7 );
+}
+
+.emphasisblock--salmon-1-web .post-it-bg {
+	background-color: $salmon-1-web;
+	border-color: transparentize( darken( $salmon-1-web, 20 ), 0.7 );
 }
 
 .emphasisblock--blue-2-web .emphasisblock-inner {
@@ -1474,9 +1527,6 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-.emphasisblock--salmon-1-web .emphasisblock-inner {
-	background-color: $salmon-1-web;
-}
 
 .emphasisblock--yellow-tandem .emphasisblock-inner {
 	background-color: $yellow-tandem;
@@ -1653,7 +1703,6 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-
 /*****************************
 Pattern 21. Curated story list
 *******************************
@@ -1700,15 +1749,10 @@ ARTICLE META STYLES
 	}
 }
 
+
+
 .story__meta-bg {
-	position: absolute;
 	background-color: $yellow-1-web;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1;
-	transform: rotate(1deg);
 	border: 1px solid transparentize( darken( $yellow-1-web, 20 ), 0.7 );
 }
 
@@ -1726,18 +1770,18 @@ ARTICLE META STYLES
 		text-align: right;
 	}
 }
-
-.story__meta__category,
-.story__meta__date {
+.story__meta__item--category,
+.story__meta__item--storyteller,
+.story__meta__item--date {
 	font-size: $small-font-size;
 }
 
-.story__meta__category {
+.story__meta__item--category {
 	font-weight: $global-weight-semibold;
 }
 
-.story__meta__tags,
-.story__meta__date {
+.story__meta__item--tags,
+.story__meta__item--date {
 	margin-bottom: 0.5 * $global-margin;
 }
 
@@ -1764,18 +1808,41 @@ ARTICLE META STYLES
 	}
 }
 
-.social-icons-list__link:hover {
+.story__meta .social-icons-list__link:hover {
 	g.icon path,
 	path.icon {
 		fill: $yellow-3;
 	}
 }
 
+footer .social-icons-list {
+	text-align: center;
+	margin-bottom: 2 * $global-margin;
+}
+
+footer .social-icons-list__link path.circle {
+	transition: fill 1s;
+}
+
+footer .social-icons-list__link {
+	width: 3em;
+	margin-right: 1em;
+	&:hover {
+		path.circle {
+			fill: $yellow-3;
+			transition: fill 1s;
+
+		}
+	}
+}
+
+footer .social-icons-list__item:last-child .social-icons-list__link {
+	margin-right: 0;
+}
+
 /*********************
 ARTICLE EXTRAS STYLES
 *********************/
-
-
 
 .relatedgrid__griditem,
 .archive__grid__griditem {
@@ -2038,6 +2105,10 @@ a:hover .griditem__title {
 
 }
 
+.button-wrapper {
+	text-align: center;
+}
+
 /*********************
 ARCHIVE STYLES
 *********************/
@@ -2237,8 +2308,22 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-.story__footer {
+.story__footer,
+.collaboration__footer {
 	clear: both;
+	margin: 4 * $global-margin auto;
+}
+
+.share-cta-wrapper {
+	h4 {
+		font-size: $small-font-size;
+	}
+}
+
+.collaboration__footer {
+	.social-icons-list {
+		margin-bottom: 0;
+	}
 }
 
 .page__footer__widgets {
@@ -2256,13 +2341,19 @@ FOOTER STYLES
 
 .page__footer__widgets-inner {
 	@include grid-row();
+	padding: $global-padding 0;
 }
 
 .footer__widget-wrapper {
 	color: $white;
-	padding: 0 0 3 * $global-padding;
+	margin-bottom: 2 * $global-margin;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	@include grid-column();
 	@include breakpoint( medium ) {
 		@include grid-column( 6 );
+		margin-bottom: 0;
 	}
 	@include breakpoint( large ) {
 		@include grid-column( 3 );
@@ -2378,9 +2469,6 @@ select {
 	border-color: $blue-4;
 	background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.23728 67.289766"><path d="M99.2 13v1.3c-.4 0-.2 1-.8 1v1c-.8.2-.4 1.6-1.2 1.7v2.5c-1.6.3-1 2.8-2.5 3.3.3 1.2-1 .8-.8 2-.6.3-1 1-1 1.7-.5.2-1 .6-1 1.2-.2.4-.6.3-1 .4 0 .5 0 .5-.4.5.2 1-.7 1-.4 2-.5.2-.8.6-.8 1.3-.4 0-.3.5-.4.8-.4 0-.4.2-.4.4-.2.6-.7.7-.8 1.2-.3.3-.3.6-.5 1v.3s-1.2.4-.8 1.6c-1 .6-1.5 1.4-1.6 2.6-.5 0-.4.5-.5.8-.4 0-.4.2-.4.4-.3 0-.2.5-.3.8-.4 0-.4.2-.4.4-.6.8-.7 2.2-1.7 2.5-.6.8-.6 2-1.6 2.5-.4 1-1 1.6-1.3 2.8-1.2.6-1.7 2-2.4 3-.8 0-.3 1.2-1.2 1-.2.7-.6 1-1.2 1.4 0 1.2-1 1.2-.8 2.4-.8 0-.8 1-1.6 1.2-.2.4-.4.8-1 1 .2.3 0 .6-.3.7.3.5 1.2.3 1.8.4 0-.6.8-.4.8-1 .7.4 0 .8 0 1.3-.4.2-.7.4-.8.8-.6.3-.7.8-1.3 1-1.2.2-.7-1.2-2-1-.2.2-.7 0-.8 0v.5l-.8.4c-.4.2-.3.5-.6.8 0 0-.5 0-.4.4-1 0-1.7.4-2.4.8v.4h-.4v.4h-.4l-1 .4c-1 .3-1.4-.4-2.3-.4 0-.4-.5-.3-.8-.4-.4 0-.4-.4-1-.4-1.7 0-3 .6-5.2.4 0-.4-.5-.3-.8-.4 0-.4-.2-.4-.4-.4-.3-.4-.5-1-.4-1.7-2.3 0-3.8-.7-6.3-.5-1.6 0-2-1.4-3.7-1.2-.2-.6-.6-1-1.2-1.2 0-.7-1.3-.2-1.2-1.2-.2 0-.7.2-.8 0v-.4l-1-.4c0-.2 0-.6-.3-.8 0 0-.5 0-.4-.4h-.7v-.4h-.8c-.2 0-.3-.8-.4-.8h-.7c0-.4-.6-.4-1-.4.2-.4 0-.4-.3-.5-.3-.3-1-.4-1.6-.4-.7-1-1.6-2-3-2.4-.4-1.4-1.2-2.3-2.3-3-.5-1-1-2.3-2.4-2.5 0-1-.6-1.2-.8-2-.8 0-.3-1.4-1.3-1.2 0-.8-1-.6-.8-1.7-.6-.2-1-.6-1.2-1.2-.4-.5-.4-1.5-1.2-1.6 0-1-1.2-.6-1-1.7-1-.2-1-2-2.3-2.3 0-1.2-1-1.3-.8-2.5-.3-1-1.4-1-1.7-2 0-.6-.7-.7-.8-1.3-.2-.4-.4-.8-.8-1 0-.6-.4-1-1-1 0-.7 0-1.3-.3-1.4.2-1.2-1.3-1-1-2.4-.2-.7-1-1.2-1-2-.5-.8-1-1.3-1.7-1.7.2-1.3-1-1-1.3-2C3 18.2 3 17.2 2 17c.3-2-1.3-2.4-2-3.7-.2-1 1-.8 1-1.6 0-1-1-1-.5-2.2 1 0 .5-1.6 1.6-1.6.4-1.3-.6-1.2-.3-2.5.5 0 .7 0 .8-.4 0-.3.2-.4.4-.4.6-.2.6.3 1 .3.3-.8 0-1-.3-1.6-.7-.3 0-.8 0-1.2.8 0 1-.5 1.7-.5 0 .6 1 .4 1.6.5.5 0 .4-.8.4-1.3 0-.3.4-.4.4-.8.7 0 1.6-.2 1.7.4.3-.3 1-.2 1.2-.8.5 0 .7.7 1.2.8.6 0 .6.4 1.2.4 1.4-.2 2.3.2 3.2.4 1.3.3 1.2-.7 2.5-.4 1.5 0 2.4.8 4 .8.3 1 1 1 2 1.3A3.7 3.7 0 0 0 26.8 5a3.7 3.7 0 0 0 1.6 1.6c0 .6.4.7.4 1.2.5 0 .3.8 1 .8.3.6.2 1.5 1 1.6.3 1 1 1.4 1.3 2 .6.5 1.3.7 1.2 1.7 1.3 0 1.6.8 2.5 1.2l1.2 2.4c1 .3.8 1.6 1.2 2.5 1 .2.7 1.8 1.6 2 .4.5.2 1.3.8 1.4.2.3.5.6.4 1.2.2 1 1.5.8 1.3 2 .8.2.8 1 1.6 1.3-.2.3 0 .6.3.7.3 1 .4 2 .8 3 0 .8 1.3.3 1.4 1 .4 0 .3.6.4 1 .3-.2.4 0 .4.3 1 .3 1 1.7 2.4 1.7H51c1 0 1.5-.6 1.5-1.7 1 0 1-1 .8-2 1 0 .4-1.6 1.7-1.3.4-.5.4-1.5 1.2-1.6-.2-1 .8-.8.4-2 .6-.2 1-.6 1.2-1.2.2-.5.8-.6 1-1.2 0-.2 0-.6.3-.8.2-.2.8-.3 1-.4 0-.2-.2-.8 0-1 0 0 .3.2.3 0v-.7c.6-.2 1-.6 1.2-1.2.5-.2 1-.5.8-1.2 1-.5 1.5-1.3 1.7-2.5.6-.2 1-.6 1.2-1.2.4-.4.3-1 .8-1.3.5-1 1-2 2-2.4-.2-1.2 1-1 1-1.8 0-.5.6-.6.7-1.2.4-.3.3-1 .8-1.2.2-.6.8-.7 1-1.2h2c.3 0 .2-.5.3-1 .5.2.8 0 .8-.3.5 0 .8 0 1-.4-.2-.4 0-.5.3-.5.2-1 1.7-1 2-2 2 .3 2.5-1 3.6-1.7 1 .2 1.7.5 2.5.8h5c0 .4 0 .4.4.4 1-.2.8 1 1.2 1.3.6.2 1 .6 1.3 1.2.4 0 1 0 1-.4.4.3.8.5 1.3.5 0 1 1.5.7 2 1.2 0 2.4-.3 5 2.5 4.5.4 1.7-1.2 1.3-.8 3h1.2z" class="caret" fill="#1f588e" fill-rule="evenodd"/></svg>');
 }
-
-
-
 
 .collaboration__translatedparagraph select {
 	color: $white;

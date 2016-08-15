@@ -13,8 +13,9 @@
 				<div class="archive__grid" data-masonry='{ "itemSelector": ".archive__grid__griditem" }'>
 				<?php while (have_posts()) : the_post(); ?>
 
-				<!-- To see additional archive styles, visit the /parts directory -->
-				<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+					<!-- To see additional archive styles, visit the /parts directory -->
+					<?php $featured_posts = get_option('options_featured_stories'); ?>
+					<?php include( get_stylesheet_directory() . '/parts/loop-archive-grid.php' ); ?>
 
 				<?php endwhile; ?>
 				</div>
