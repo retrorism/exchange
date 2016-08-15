@@ -2,6 +2,19 @@
 
 <main id="main" class="archive__wrapper" role="main">
 	<div class="main-inner">
+		<?php
+		$args = array(
+  			'name'        => 'stories',
+  			'post_type'   => 'page',
+			'post_status' => 'publish',
+  			'numberposts' => 1
+		);
+		$stories_page = get_posts( $args );
+		if ( $stories_page ) :
+			$exchange = BaseController::exchange_factory( $stories_page[0] );
+			include_once( get_stylesheet_directory() . '/parts/content-page-header.php' );
+		endif; ?>
+
 		<?php get_template_part('parts/loop','featured-stories'); ?>
 
 		<?php if (have_posts()) : ?>

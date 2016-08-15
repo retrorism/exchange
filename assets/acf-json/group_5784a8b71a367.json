@@ -37,12 +37,19 @@
             {
                 "param": "page",
                 "operator": "==",
+                "value": "1384"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
                 "value": "1381"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -51,5 +58,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1470845392
+    "modified": 1471270520
 }

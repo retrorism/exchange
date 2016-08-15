@@ -668,8 +668,9 @@ Pattern 1. Title
 	margin-top: 4 * $global-margin;
 }
 
-body.page .story__title-wrapper,
-.archive__title-wrapper {
+.page .story__title-wrapper,
+.archive .story__title-wrapper,
+.archive__title-wrapper, {
 	text-align: center;
 }
 
@@ -694,9 +695,11 @@ Pattern 3. Editorial introduction
 	line-height: $lead-lineheight;
 	float: none !important;
 	margin-bottom: 4 * $global-margin;
+	font-weight: $global-weight-semibold;
 }
 
-body.page .story__editorialintro {
+.page .story__editorialintro,
+.archive .story__editorialintro {
 	font-style: normal;
 	text-align: center;
 }
