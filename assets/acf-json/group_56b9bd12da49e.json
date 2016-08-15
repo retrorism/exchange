@@ -86,7 +86,7 @@
             "key": "field_57b103a3f2245",
             "label": "Add a translation?",
             "name": "add_intro_translation",
-            "type": "checkbox",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -95,13 +95,8 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "1": "Yes"
-            },
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "value"
+            "message": "",
+            "default_value": 0
         },
         {
             "key": "field_57b10396f2242",
@@ -210,5 +205,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Create content for the story header.",
-    "modified": 1471253546
+    "modified": 1471256273
 }
