@@ -642,6 +642,13 @@ ARTICLE PATTERN STYLES
 	}
 }
 
+.section--coloured + .section--coloured {
+	svg.section__edge--top {
+		display: none;
+	}
+}
+
+
 .section--featured-stories .section-inner {
 	padding-top: 0;
 }
@@ -971,7 +978,7 @@ Pattern 9. Image
 
 .section__image--programme-logo {
 	width: 50%;
-	max-width: 15em;
+	max-width: 17.5em;
 	margin: auto;
 }
 
@@ -1098,14 +1105,20 @@ blockquote {
 	font-weight: $global-weight-semibold;
 }
 
+p.pullquote__source-info,
+p.blockquote__source-name, {
+	font-size: $small-font-size;
+}
+
 /**********************************************
 Pattern 11. Pull quote (options for alignment)
 **********************************************/
 
+.griditem__pattern__pullquote,
 aside.section__pullquote {
 	padding: $global-padding 2 * $global-padding;
 	box-sizing: padding-box;
-	box-shadow: inset 0 0 0 $global-margin $white;
+	box-shadow: inset 0 0 0 $global-margin transparent;
 	&.pullquote--blue-1-web {
 		background-color: $blue-1-web;
 	}
@@ -1145,7 +1158,7 @@ aside.section__pullquote {
 	}
 	@include breakpoint( large ) {
 		padding: 3 * $global-padding 4 * $global-padding;
-		box-shadow: inset 0 0 0 3 * $global-margin $white;
+		box-shadow: inset 0 0 0 3 * $global-margin transparent;
 		.pullquote__caption cite {
 			margin-right: 3 * $global-margin;
 		}
@@ -1166,18 +1179,28 @@ aside.section__pullquote {
 	}
 }
 
-.pullquote--blue-1-web {
+.pullquote--blue-1-web,
+.section--blue-1-web .griditem__pattern__pullquote,
+.section--blue-1-web aside.section__pullquote {
 	.pullquote__quote--close svg path,
 	.pullquote__quote--open svg path {
 		fill: $blue-3;
 	}
 }
-.pullquote--salmon-1-web {
+.pullquote--salmon-1-web,
+.section--salmon-1-web .griditem__pattern__pullquote,
+.section--salmon-1-web aside.section__pullquote  {
 	.pullquote__quote--close svg path,
 	.pullquote__quote--open svg path {
 		fill: $salmon-4;
 	}
 }
+
+.griditem__pattern__pullquote {
+	padding: 2 * $global-padding 4 * $global-padding;
+}
+
+
 
 
 
@@ -1915,6 +1938,11 @@ ARTICLE EXTRAS STYLES
 
 .griditem--pattern .griditem__content {
 	background: transparent;
+}
+
+.griditem--paragraph .griditem__content,
+.griditem--pull_quote .griditem__content {
+	text-align: inherit;
 }
 
 .griditem--collaboration .griditem__content {

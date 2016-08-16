@@ -3742,6 +3742,9 @@ ARTICLE PATTERN STYLES
   .home .story__section:last-child svg.section__edge--bottom {
     display: none; }
 
+.section--coloured + .section--coloured svg.section__edge--top {
+  display: none; }
+
 .section--featured-stories .section-inner {
   padding-top: 0; }
 
@@ -4037,7 +4040,7 @@ Pattern 9. Image
 ****************/
 .section__image--programme-logo {
   width: 50%;
-  max-width: 15em;
+  max-width: 17.5em;
   margin: auto; }
 
 .section__imageduo,
@@ -4168,63 +4171,93 @@ blockquote {
 .blockquote__source-name {
   font-weight: 600; }
 
+p.pullquote__source-info,
+p.blockquote__source-name {
+  font-size: 80%; }
+
 /**********************************************
 Pattern 11. Pull quote (options for alignment)
 **********************************************/
+.griditem__pattern__pullquote,
 aside.section__pullquote {
   padding: 1rem 2rem;
   box-sizing: padding-box;
-  box-shadow: inset 0 0 0 1rem #fefefe; }
+  box-shadow: inset 0 0 0 1rem transparent; }
+  .griditem__pattern__pullquote.pullquote--blue-1-web,
   aside.section__pullquote.pullquote--blue-1-web {
     background-color: #dceff0; }
+  .griditem__pattern__pullquote.pullquote--salmon-1-web,
   aside.section__pullquote.pullquote--salmon-1-web {
     background-color: #fde1c7; }
+  .griditem__pattern__pullquote.pullquote--yellow-1-web,
   aside.section__pullquote.pullquote--yellow-1-web {
     background-color: #fffbdb; }
+  .griditem__pattern__pullquote > p,
   aside.section__pullquote > p {
     padding: 0 1rem;
     margin-top: 1.5rem;
     font-size: 140.625%;
     font-style: italic; }
+  .griditem__pattern__pullquote div.pullquote__quote--open,
   aside.section__pullquote div.pullquote__quote--open {
     float: left; }
+  .griditem__pattern__pullquote div.pullquote__quote--close,
   aside.section__pullquote div.pullquote__quote--close {
     float: right; }
+  .griditem__pattern__pullquote div.pullquote__quote--open,
   aside.section__pullquote div.pullquote__quote--open {
     width: 4em;
     margin-left: -1rem;
     margin-top: -2rem; }
+  .griditem__pattern__pullquote div.pullquote__quote--close,
   aside.section__pullquote div.pullquote__quote--close {
     width: 4em;
     margin-top: -1rem;
     margin-right: -1rem; }
+  .griditem__pattern__pullquote .pullquote__caption cite,
   aside.section__pullquote .pullquote__caption cite {
     margin-right: 2rem; }
   @media screen and (min-width: 60em) {
+    .griditem__pattern__pullquote,
     aside.section__pullquote {
       padding: 3rem 4rem;
-      box-shadow: inset 0 0 0 3rem #fefefe; }
+      box-shadow: inset 0 0 0 3rem transparent; }
+      .griditem__pattern__pullquote .pullquote__caption cite,
       aside.section__pullquote .pullquote__caption cite {
         margin-right: 3rem; }
+      .griditem__pattern__pullquote > p,
       aside.section__pullquote > p {
         padding: 1rem 3rem 0;
         margin-top: 0; }
+      .griditem__pattern__pullquote div.pullquote__quote--open,
       aside.section__pullquote div.pullquote__quote--open {
         width: 6em;
         margin-left: -3rem;
         margin-top: -2rem; }
+      .griditem__pattern__pullquote div.pullquote__quote--close,
       aside.section__pullquote div.pullquote__quote--close {
         width: 6em;
         margin-top: -1rem;
         margin-right: -3rem; } }
 
 .pullquote--blue-1-web .pullquote__quote--close svg path,
-.pullquote--blue-1-web .pullquote__quote--open svg path {
+.pullquote--blue-1-web .pullquote__quote--open svg path,
+.section--blue-1-web .griditem__pattern__pullquote .pullquote__quote--close svg path,
+.section--blue-1-web .griditem__pattern__pullquote .pullquote__quote--open svg path,
+.section--blue-1-web aside.section__pullquote .pullquote__quote--close svg path,
+.section--blue-1-web aside.section__pullquote .pullquote__quote--open svg path {
   fill: #0f9fd6; }
 
 .pullquote--salmon-1-web .pullquote__quote--close svg path,
-.pullquote--salmon-1-web .pullquote__quote--open svg path {
+.pullquote--salmon-1-web .pullquote__quote--open svg path,
+.section--salmon-1-web .griditem__pattern__pullquote .pullquote__quote--close svg path,
+.section--salmon-1-web .griditem__pattern__pullquote .pullquote__quote--open svg path,
+.section--salmon-1-web aside.section__pullquote .pullquote__quote--close svg path,
+.section--salmon-1-web aside.section__pullquote .pullquote__quote--open svg path {
   fill: #e07856; }
+
+.griditem__pattern__pullquote {
+  padding: 2rem 4rem; }
 
 /*************************
 Pattern 12. Embedded Tweet
@@ -4941,6 +4974,10 @@ ARTICLE EXTRAS STYLES
 
 .griditem--pattern .griditem__content {
   background: transparent; }
+
+.griditem--paragraph .griditem__content,
+.griditem--pull_quote .griditem__content {
+  text-align: inherit; }
 
 .griditem--collaboration .griditem__content {
   display: -ms-flexbox;
