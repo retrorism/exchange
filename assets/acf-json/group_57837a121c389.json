@@ -200,16 +200,17 @@
                                 "Europe": "Tandem Europe",
                                 "Shaml": "Tandem Shaml",
                                 "Turkey": "Tandem Turkey",
-                                "Ukraine": "Tandem Ukraine",
-                                "Solo": "Tandem (Solo)"
+                                "Ukraine": "Tandem Ukraine"
                             },
                             "default_value": [],
                             "allow_null": 1,
                             "multiple": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "return_format": "value",
-                            "placeholder": ""
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0,
+                            "return_format": "value"
                         }
                     ],
                     "min": "",
@@ -262,34 +263,6 @@
                             "maxlength": "",
                             "readonly": 0,
                             "disabled": 0
-                        },
-                        {
-                            "key": "field_57837b57cbfbb",
-                            "label": "Button Size",
-                            "name": "button_size",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "big": "Big",
-                                "big_one_of_two": "Big ( 1 \/ 2 )",
-                                "small": "Small"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0,
-                            "return_format": "value"
                         },
                         {
                             "key": "field_57837b57cbfbc",
@@ -390,5 +363,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471427011
+    "modified": 1471439879
 }

@@ -4554,43 +4554,86 @@ Pattern 20. Emphasis blocks
   background-color: #fffbdb;
   border-color: rgba(255, 240, 117, 0.3); }
 
+.emphasisblock--blue-1-web .post-it-bg {
+  background-color: #dceff0;
+  border-color: rgba(149, 206, 209, 0.3); }
+
+.griditem__emphasisblock.emphasisblock--yellow-1-web {
+  background-color: #fffbdb; }
+  .griditem__emphasisblock.emphasisblock--yellow-1-web a.button--large,
+  .griditem__emphasisblock.emphasisblock--yellow-1-web a.button--small {
+    border-color: #f4c522; }
+    .griditem__emphasisblock.emphasisblock--yellow-1-web a.button--large:hover,
+    .griditem__emphasisblock.emphasisblock--yellow-1-web a.button--small:hover {
+      color: #fefefe;
+      background-color: #f4c522; }
+  .griditem__emphasisblock.emphasisblock--yellow-1-web svg g.logo path,
+  .griditem__emphasisblock.emphasisblock--yellow-1-web path.logo {
+    fill: #f4c522; }
+
+.emphasisblock--yellow-tandem .emphasisblock-inner {
+  background-color: #f4c522; }
+
+.section--yellow-1-web .griditem__emphasisblock.emphasisblock--yellow-1-web,
+.emphasisblock--yellow-3 .emphasisblock-inner {
+  background-color: #eba847; }
+  .section--yellow-1-web .griditem__emphasisblock.emphasisblock--yellow-1-web a.button--large:hover,
+  .section--yellow-1-web .griditem__emphasisblock.emphasisblock--yellow-1-web a.button--small:hover,
+  .emphasisblock--yellow-3 .emphasisblock-inner a.button--large:hover,
+  .emphasisblock--yellow-3 .emphasisblock-inner a.button--small:hover {
+    color: #eba847; }
+
+.griditem__emphasisblock.emphasisblock--blue-1-web {
+  background-color: #dceff0;
+  border-color: rgba(149, 206, 209, 0.3); }
+  .griditem__emphasisblock.emphasisblock--blue-1-web a.button--large:hover,
+  .griditem__emphasisblock.emphasisblock--blue-1-web a.button--small:hover {
+    color: #343438; }
+
+.section--blue-1-web .griditem__emphasisblock.emphasisblock--blue-1-web,
+.emphasisblock--blue-2-web .emphasisblock-inner {
+  background-color: #9fd3d6; }
+  .section--blue-1-web .griditem__emphasisblock.emphasisblock--blue-1-web a.button--large:hover,
+  .section--blue-1-web .griditem__emphasisblock.emphasisblock--blue-1-web a.button--small:hover,
+  .emphasisblock--blue-2-web .emphasisblock-inner a.button--large:hover,
+  .emphasisblock--blue-2-web .emphasisblock-inner a.button--small:hover {
+    color: #343438; }
+
+.griditem__emphasisblock.emphasisblock--salmon-1-web {
+  background-color: #fde1c7;
+  border-color: rgba(249, 172, 101, 0.3); }
+  .griditem__emphasisblock.emphasisblock--salmon-1-web a.button--large:hover,
+  .griditem__emphasisblock.emphasisblock--salmon-1-web a.button--small:hover {
+    color: #343438; }
+
+.emphasisblock--salmon-1-web .post-it-bg {
+  background-color: #fde1c7;
+  border-color: rgba(249, 172, 101, 0.3); }
+
+.section--salmon-1-web .griditem__emphasisblock.emphasisblock--salmon-1-web,
 .emphasisblock--rose-1-web .emphasisblock-inner,
 .emphasisblock--default.emphasisblock--cta .emphasisblock-inner {
   background-color: #ff8e78; }
+  .section--salmon-1-web .griditem__emphasisblock.emphasisblock--salmon-1-web a.button--large:hover,
+  .section--salmon-1-web .griditem__emphasisblock.emphasisblock--salmon-1-web a.button--small:hover,
   .emphasisblock--rose-1-web .emphasisblock-inner a.button--large:hover,
   .emphasisblock--rose-1-web .emphasisblock-inner a.button--small:hover,
   .emphasisblock--default.emphasisblock--cta .emphasisblock-inner a.button--large:hover,
   .emphasisblock--default.emphasisblock--cta .emphasisblock-inner a.button--small:hover {
     color: #343438; }
 
-.emphasisblock--blue-1-web .post-it-bg {
-  background-color: #dceff0;
-  border-color: rgba(149, 206, 209, 0.3); }
-
-.emphasisblock--salmon-1-web .post-it-bg {
+.griditem__emphasisblock.emphasisblock--salmon-1-web {
   background-color: #fde1c7;
   border-color: rgba(249, 172, 101, 0.3); }
-
-.emphasisblock--blue-2-web .emphasisblock-inner {
-  background-color: #9fd3d6; }
-  .emphasisblock--blue-2-web .emphasisblock-inner a.button--large:hover,
-  .emphasisblock--blue-2-web .emphasisblock-inner a.button--small:hover {
+  .griditem__emphasisblock.emphasisblock--salmon-1-web a.button--large:hover,
+  .griditem__emphasisblock.emphasisblock--salmon-1-web a.button--small:hover {
     color: #343438; }
-
-.emphasisblock--yellow-tandem .emphasisblock-inner {
-  background-color: #f4c522; }
 
 .emphasisblock--salmon-4 .emphasisblock-inner {
   background-color: #e07856; }
   .emphasisblock--salmon-4 .emphasisblock-inner a.button--big:hover,
   .emphasisblock--salmon-4 .emphasisblock-inner a.button--small:hover {
     color: #e07856; }
-
-.emphasisblock--yellow-3 .emphasisblock-inner {
-  background-color: #eba847; }
-  .emphasisblock--yellow-3 .emphasisblock-inner a.button--large:hover,
-  .emphasisblock--yellow-3 .emphasisblock-inner a.button--small:hover {
-    color: #eba847; }
 
 .emphasisblock--black-tandem .emphasisblock-inner {
   background-color: #4c4d53; }

@@ -1532,6 +1532,82 @@ Pattern 20. Emphasis blocks
 	border-color: transparentize( darken( $yellow-1-web, 20 ), 0.7 );
 }
 
+
+.emphasisblock--blue-1-web .post-it-bg {
+	background-color: $blue-1-web;
+	border-color: transparentize( darken( $blue-1-web, 20 ), 0.7 );
+}
+
+.griditem__emphasisblock.emphasisblock--yellow-1-web {
+	background-color: $yellow-1-web;
+	a.button--large,
+	a.button--small {
+		border-color: $yellow-tandem;
+		&:hover {
+			color: $white;
+			background-color: $yellow-tandem;
+		}
+	}
+	svg g.logo path,
+	path.logo {
+		fill: $yellow-tandem;
+	}
+}
+
+.emphasisblock--yellow-tandem .emphasisblock-inner {
+	background-color: $yellow-tandem;
+}
+
+.section--yellow-1-web .griditem__emphasisblock.emphasisblock--yellow-1-web,
+.emphasisblock--yellow-3 .emphasisblock-inner {
+	background-color: $yellow-3;
+	a.button--large,
+	a.button--small {
+		&:hover {
+			color: $yellow-3;
+		}
+	}
+}
+
+.griditem__emphasisblock.emphasisblock--blue-1-web {
+	background-color: $blue-1-web;
+	border-color: transparentize( darken( $blue-1-web, 20 ), 0.7 );
+	a.button--large,
+	a.button--small {
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+.section--blue-1-web .griditem__emphasisblock.emphasisblock--blue-1-web,
+.emphasisblock--blue-2-web .emphasisblock-inner {
+	background-color: $blue-2-web;
+	a.button--large,
+	a.button--small {
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+.griditem__emphasisblock.emphasisblock--salmon-1-web {
+	background-color: $salmon-1-web;
+	border-color: transparentize( darken( $salmon-1-web, 20 ), 0.7 );
+	a.button--large,
+	a.button--small {
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+.emphasisblock--salmon-1-web .post-it-bg {
+	background-color: $salmon-1-web;
+	border-color: transparentize( darken( $salmon-1-web, 20 ), 0.7 );
+}
+
+.section--salmon-1-web .griditem__emphasisblock.emphasisblock--salmon-1-web,
 .emphasisblock--rose-1-web .emphasisblock-inner,
 .emphasisblock--default.emphasisblock--cta .emphasisblock-inner {
 	background-color: $rose-1-web;
@@ -1544,18 +1620,9 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-.emphasisblock--blue-1-web .post-it-bg {
-	background-color: $blue-1-web;
-	border-color: transparentize( darken( $blue-1-web, 20 ), 0.7 );
-}
-
-.emphasisblock--salmon-1-web .post-it-bg {
+.griditem__emphasisblock.emphasisblock--salmon-1-web {
 	background-color: $salmon-1-web;
 	border-color: transparentize( darken( $salmon-1-web, 20 ), 0.7 );
-}
-
-.emphasisblock--blue-2-web .emphasisblock-inner {
-	background-color: $blue-2-web;
 	a.button--large,
 	a.button--small {
 		&:hover {
@@ -1565,9 +1632,6 @@ Pattern 20. Emphasis blocks
 }
 
 
-.emphasisblock--yellow-tandem .emphasisblock-inner {
-	background-color: $yellow-tandem;
-}
 
 .emphasisblock--salmon-4 .emphasisblock-inner {
 	background-color: $salmon-4;
@@ -1579,15 +1643,7 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-.emphasisblock--yellow-3 .emphasisblock-inner {
-	background-color: $yellow-3;
-	a.button--large,
-	a.button--small {
-		&:hover {
-			color: $yellow-3;
-		}
-	}
-}
+
 
 .emphasisblock--black-tandem .emphasisblock-inner {
 	background-color: $black-tandem;

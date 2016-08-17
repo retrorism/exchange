@@ -2288,7 +2288,8 @@
             "post_type": [
                 "story",
                 "collaboration",
-                "page"
+                "page",
+                "programme_round"
             ],
             "taxonomy": [],
             "filters": [
@@ -2298,7 +2299,7 @@
             "elements": [
                 "featured_image"
             ],
-            "min": 0,
+            "min": "",
             "max": 15,
             "return_format": "object"
         }
@@ -2337,5 +2338,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471427030
+    "modified": 1471439588
 }

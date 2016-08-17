@@ -188,13 +188,6 @@
                 "operator": "!=",
                 "value": "2"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "programme_round"
-            }
         ]
     ],
     "menu_order": 1,
@@ -205,5 +198,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Create content for the story header.",
-    "modified": 1471256273
+    "modified": 1471439800
 }
