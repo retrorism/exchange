@@ -3790,8 +3790,7 @@ Pattern 3. Editorial introduction
 .story__editorialintro {
   font-size: 125%;
   line-height: 1.4;
-  float: none !important;
-  margin-bottom: 4rem; }
+  float: none !important; }
 
 .page .story__editorialintro,
 .archive .story__editorialintro {
