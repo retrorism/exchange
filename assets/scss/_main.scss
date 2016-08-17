@@ -54,6 +54,14 @@ a, a:visited {
 	}
 }
 
+.page__footer__widgets p a {
+	color: $white;
+	background-color: transparent;
+	&:hover {
+		border-bottom: 2px solid $white;
+	}
+}
+
 a.button--large,
 a.button--small {
 	@include button;
@@ -1918,6 +1926,10 @@ ARTICLE EXTRAS STYLES
 	}
 }
 
+.section__slice.sectionheader + .section__slice.section__simplegrid {
+	margin-top: 4 * $global-margin;
+}
+
 .simplegrid__griditem:first-child:last-child {
 	@include grid-column-position(center);
 }
@@ -2376,6 +2388,9 @@ FOOTER STYLES
 .page__footer__widgets-inner {
 	@include grid-row();
 	padding: $global-padding 0;
+	p {
+		font-weight: $global-weight-semibold;
+	}
 }
 
 .footer__widget-wrapper {
@@ -2387,10 +2402,15 @@ FOOTER STYLES
 	@include grid-column();
 	@include breakpoint( medium ) {
 		@include grid-column( 6 );
-		margin-bottom: 0;
+		min-height: 8em;
+		&:last-child {
+			margin-bottom: 2 * $global-margin;
+		}
 	}
 	@include breakpoint( large ) {
 		@include grid-column( 3 );
+		min-height: 6em;
+		margin-bottom: 0;
 	}
 }
 

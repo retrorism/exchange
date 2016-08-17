@@ -3105,6 +3105,12 @@ a, a:visited {
     color: #343438;
     background-color: #f4c522; }
 
+.page__footer__widgets p a {
+  color: #fefefe;
+  background-color: transparent; }
+  .page__footer__widgets p a:hover {
+    border-bottom: 2px solid #fefefe; }
+
 a.button--large,
 a.button--small {
   display: inline-block;
@@ -4960,6 +4966,9 @@ ARTICLE EXTRAS STYLES
   .simplegrid__griditem.griditem--cta {
     margin-top: 0; }
 
+.section__slice.sectionheader + .section__slice.section__simplegrid {
+  margin-top: 4rem; }
+
 .simplegrid__griditem:first-child:last-child {
   float: none;
   margin-left: auto;
@@ -5347,6 +5356,8 @@ FOOTER STYLES
     display: table; }
   .page__footer__widgets-inner::after {
     clear: both; }
+  .page__footer__widgets-inner p {
+    font-weight: 600; }
 
 .footer__widget-wrapper {
   color: #fefefe;
@@ -5363,13 +5374,17 @@ FOOTER STYLES
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem;
-      margin-bottom: 0; } }
+      min-height: 8em; }
+      .footer__widget-wrapper:last-child {
+        margin-bottom: 2rem; } }
   @media screen and (min-width: 60em) {
     .footer__widget-wrapper {
       width: 25%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-right: 0.625rem;
+      min-height: 6em;
+      margin-bottom: 0; } }
 
 .footer__widget__title {
   font-size: 120%;
