@@ -3680,9 +3680,6 @@ ARTICLE STYLES:
 /*********************
 ARTICLE PATTERN STYLES
 *********************/
-.section__slice:last-child {
-  margin-bottom: 0; }
-
 .section__slice p,
 .section__slice li {
   font-weight: 400;
@@ -3731,14 +3728,20 @@ ARTICLE PATTERN STYLES
     transform: scale(1, -1);
     top: 20px; }
 
+.section--coloured > .section-inner:first-of-type {
+  padding: 0; }
+
+.story__section:last-child.section--coloured > .section-inner:first-of-type {
+  padding-bottom: 2rem; }
+
 .story__extras,
 .collaboration__extras,
-.page .story__section:last-of-type,
+.page .story__section:last-child,
 .home .story__section:last-child {
   padding-bottom: 2rem; }
   .story__extras svg.section__edge--bottom,
   .collaboration__extras svg.section__edge--bottom,
-  .page .story__section:last-of-type svg.section__edge--bottom,
+  .page .story__section:last-child svg.section__edge--bottom,
   .home .story__section:last-child svg.section__edge--bottom {
     display: none; }
 
@@ -3963,6 +3966,9 @@ Pattern 6. Paragraph
 .translatedparagraph--has_translations select {
   margin: 1rem auto; }
 
+.section__slice:last-child.section__paragraph p:last-of-type {
+  margin-bottom: 0; }
+
 /*******************
 Pattern 7. Subheader
 ********************/
@@ -3979,6 +3985,9 @@ Pattern 7. Subheader
   text-align: center;
   padding: 0.25em; }
 
+.relatedgrid__sectionheader {
+  margin: 2rem 0; }
+
 h4.share-cta-header,
 .section__sectionheader h4,
 .sectionheader--grid_header h4,
@@ -3988,9 +3997,6 @@ h4.share-cta-header,
   text-transform: uppercase;
   margin: 0 auto 2rem;
   font-weight: 600; }
-
-.section__slice:first-child.section__sectionheader {
-  margin-top: 0; }
 
 .sectionheader--taped_header {
   text-align: center; }
