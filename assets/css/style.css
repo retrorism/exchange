@@ -2207,7 +2207,7 @@ kbd {
   color: #6d6d6d; }
 
 .lead {
-  font-size: 125%;
+  font-size: 120%;
   line-height: 1.4; }
 
 .stat {
@@ -3736,12 +3736,12 @@ ARTICLE PATTERN STYLES
 
 .story__extras,
 .collaboration__extras,
-.page .story__section:last-child,
+.page .story__section:last-of-type,
 .home .story__section:last-child {
   padding-bottom: 2rem; }
   .story__extras svg.section__edge--bottom,
   .collaboration__extras svg.section__edge--bottom,
-  .page .story__section:last-child svg.section__edge--bottom,
+  .page .story__section:last-of-type svg.section__edge--bottom,
   .home .story__section:last-child svg.section__edge--bottom {
     display: none; }
 
@@ -3779,7 +3779,7 @@ Pattern 1. Title
 Pattern 2. Bylines
 ******************/
 .story__footer__byline {
-  font-size: 125%;
+  font-size: 120%;
   line-height: 1.4;
   font-style: italic;
   margin-bottom: 4rem; }
@@ -3788,7 +3788,7 @@ Pattern 2. Bylines
 Pattern 3. Editorial introduction
 *********************************/
 .story__editorialintro {
-  font-size: 125%;
+  font-size: 120%;
   line-height: 1.4;
   float: none !important; }
 
@@ -3978,7 +3978,7 @@ Pattern 7. Subheader
   margin-top: 0; }
 
 .sectionheader--taped_header h4 {
-  font-size: 125%;
+  font-size: 120%;
   background-repeat: no-repeat;
   background-size: 100% auto;
   text-align: center;
@@ -3991,7 +3991,7 @@ h4.share-cta-header,
 .section__sectionheader h4,
 .sectionheader--grid_header h4,
 .relatedgrid__sectionheader h4 {
-  font-size: 125%;
+  font-size: 120%;
   text-align: center;
   text-transform: uppercase;
   margin: 0 auto 2rem;
@@ -5370,7 +5370,7 @@ FOOTER STYLES
       padding-right: 0.625rem; } }
 
 .footer__widget__title {
-  font-size: 125%;
+  font-size: 120%;
   text-transform: uppercase;
   margin-bottom: 0.5em; }
 

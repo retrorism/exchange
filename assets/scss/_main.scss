@@ -637,7 +637,7 @@ ARTICLE PATTERN STYLES
 
 .story__extras,
 .collaboration__extras,
-.page .story__section:last-child,
+.page .story__section:last-of-type,
 .home .story__section:last-child {
 	padding-bottom: 2 * $global-padding;
 	svg.section__edge--bottom {

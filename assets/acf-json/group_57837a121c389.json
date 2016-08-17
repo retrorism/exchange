@@ -200,17 +200,16 @@
                                 "Europe": "Tandem Europe",
                                 "Shaml": "Tandem Shaml",
                                 "Turkey": "Tandem Turkey",
-                                "Ukraine": "Tandem Ukraine"
+                                "Ukraine": "Tandem Ukraine",
+                                "Solo": "Tandem (Solo)"
                             },
                             "default_value": [],
                             "allow_null": 1,
                             "multiple": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0,
-                            "return_format": "value"
+                            "return_format": "value",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -391,5 +390,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471363131
+    "modified": 1471427011
 }
