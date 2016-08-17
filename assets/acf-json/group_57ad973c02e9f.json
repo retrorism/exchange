@@ -1557,7 +1557,7 @@
                                                     "max_width": "",
                                                     "max_height": "",
                                                     "max_size": "",
-                                                    "mime_types": "png"
+                                                    "mime_types": "png,jpg"
                                                 },
                                                 {
                                                     "key": "field_579f961a5522b",
@@ -1646,22 +1646,6 @@
                                                     "ui": 1
                                                 },
                                                 {
-                                                    "key": "field_5783c326e0b2b",
-                                                    "label": "Display as CTA?",
-                                                    "name": "display_as_cta",
-                                                    "type": "true_false",
-                                                    "instructions": "Remember to style the CTA for this story before publishing the grid!",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "message": "",
-                                                    "default_value": 0
-                                                },
-                                                {
                                                     "key": "field_574c19012480f",
                                                     "label": "Grid width",
                                                     "name": "grid_width",
@@ -1725,22 +1709,6 @@
                                                     "ui": 1
                                                 },
                                                 {
-                                                    "key": "field_5783c3b303cc0",
-                                                    "label": "Display as CTA?",
-                                                    "name": "display_as_cta",
-                                                    "type": "true_false",
-                                                    "instructions": "Remember to style the CTA for this page before publishing the grid!",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "message": "",
-                                                    "default_value": 0
-                                                },
-                                                {
                                                     "key": "field_57711aa36ff59",
                                                     "label": "Grid width",
                                                     "name": "grid_width",
@@ -1763,9 +1731,9 @@
                                                     "default_value": [
                                                         "grid_third"
                                                     ],
-                                                    "allow_null": 1,
-                                                    "multiple": 1,
-                                                    "ui": 1,
+                                                    "allow_null": 0,
+                                                    "multiple": 0,
+                                                    "ui": 0,
                                                     "ajax": 1,
                                                     "return_format": "value",
                                                     "placeholder": ""
@@ -1808,7 +1776,7 @@
                                                     "name": "grid_width",
                                                     "type": "select",
                                                     "instructions": "",
-                                                    "required": 0,
+                                                    "required": 1,
                                                     "conditional_logic": 0,
                                                     "wrapper": {
                                                         "width": "",
@@ -2359,5 +2327,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471349913
+    "modified": 1471422471
 }

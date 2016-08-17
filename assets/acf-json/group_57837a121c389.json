@@ -6,7 +6,7 @@
             "key": "field_57837a21a74e8",
             "label": "Display as CTA in grids?",
             "name": "has_cta",
-            "type": "select",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,20 +16,15 @@
                 "id": ""
             },
             "choices": {
-                "no": "No",
-                "related_only": "Only in (curated) 'Related stories'-sections",
-                "everywhere": "Everywhere"
+                "featuredgrid": "'Featured' stories on the homepage \/ Stories page.",
+                "archive_grid": "Story overview page",
+                "simplegrid": "Curated grids inside story pages",
+                "relatedgrid": "Related content grids"
             },
-            "default_value": [
-                "no"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "disabled": 0,
-            "readonly": 0
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 1,
+            "return_format": "value"
         },
         {
             "key": "field_57837b57cbfb3",
@@ -42,8 +37,29 @@
                 [
                     {
                         "field": "field_57837a21a74e8",
-                        "operator": "!=",
-                        "value": "no"
+                        "operator": "==",
+                        "value": "featuredgrid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57837a21a74e8",
+                        "operator": "==",
+                        "value": "archive_grid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57837a21a74e8",
+                        "operator": "==",
+                        "value": "simplegrid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57837a21a74e8",
+                        "operator": "==",
+                        "value": "relatedgrid"
                     }
                 ]
             ],
@@ -193,7 +209,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         }
                     ],
                     "min": "",
@@ -272,7 +289,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_57837b57cbfbc",
@@ -295,7 +313,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "_self",
-                            "layout": "vertical"
+                            "layout": "vertical",
+                            "return_format": "value"
                         }
                     ],
                     "min": "",
@@ -314,8 +333,29 @@
                 [
                     {
                         "field": "field_57837a21a74e8",
-                        "operator": "!=",
-                        "value": "no"
+                        "operator": "==",
+                        "value": "featuredgrid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57837a21a74e8",
+                        "operator": "==",
+                        "value": "archive_grid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57837a21a74e8",
+                        "operator": "==",
+                        "value": "simplegrid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57837a21a74e8",
+                        "operator": "==",
+                        "value": "relatedgrid"
                     }
                 ]
             ],
@@ -333,7 +373,9 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "story"
-            },
+            }
+        ],
+        [
             {
                 "param": "post_type",
                 "operator": "==",
@@ -349,5 +391,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1470042142
+    "modified": 1471363131
 }
