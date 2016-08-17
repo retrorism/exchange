@@ -10,12 +10,16 @@
 				<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'yellow-tandem' ) ); ?>
 			</section>
 			<section class="page__footer__copyright">
-				<p class="source-org copyright">&copy; <?php echo date('Y'); ?>
-					<?php bloginfo('name');
-						$page = get_option('options_imprint_page_link' );
-						if ( ! empty( $page ) ) {
-							echo '| ' . exchange_create_link( $page );
-						} ?>
+				<p class="source-org copyright">
+					<?php echo bloginfo('name') . ' ' . date('Y') . ' | '; ?>
+					<a href="https://creativecommons.org/licenses/by-nc/3.0/"
+					title="<?php _e('Find out more about this license','exchange'); ?>"
+					target="_blank">
+					<?php echo __( 'CC BY-NC 3.0','exchange'); ?></a>
+				<?php $page = get_option('options_imprint_page_link' );
+					if ( ! empty( $page ) ) {
+						echo ' | ' . exchange_create_link( $page );
+					} ?>
 				</p>
 			</section>
 		</footer> <!-- end .footer -->

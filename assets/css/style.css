@@ -3090,6 +3090,7 @@ a, a:visited {
 .story__header p > a,
 .story__content p > a,
 .story__footer p > a,
+.page__footer__copyright p > a,
 .archive__header p > a,
 .collaboration__participant__details p > a {
   border-bottom: 2px solid #f4c522;
@@ -3098,6 +3099,7 @@ a, a:visited {
   .story__header p > a:hover,
   .story__content p > a:hover,
   .story__footer p > a:hover,
+  .page__footer__copyright p > a:hover,
   .archive__header p > a:hover,
   .collaboration__participant__details p > a:hover {
     color: #343438;
