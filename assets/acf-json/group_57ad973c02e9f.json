@@ -1630,7 +1630,7 @@
                                         {
                                             "key": "574c17af2480c",
                                             "name": "grid_exchange_story",
-                                            "label": "Story",
+                                            "label": "Story \/ Page",
                                             "display": "block",
                                             "sub_fields": [
                                                 {
@@ -1639,20 +1639,21 @@
                                                     "name": "grid_exchange_object",
                                                     "type": "post_object",
                                                     "instructions": "",
-                                                    "required": "",
-                                                    "conditional_logic": "",
+                                                    "required": 1,
+                                                    "conditional_logic": 0,
                                                     "wrapper": {
                                                         "width": "",
                                                         "class": "",
                                                         "id": ""
                                                     },
                                                     "post_type": [
-                                                        "story"
+                                                        "story",
+                                                        "page"
                                                     ],
                                                     "taxonomy": [],
-                                                    "allow_null": "",
-                                                    "multiple": "",
-                                                    "return_format": "",
+                                                    "allow_null": 1,
+                                                    "multiple": 1,
+                                                    "return_format": "object",
                                                     "ui": 1
                                                 },
                                                 {
@@ -1691,31 +1692,30 @@
                                         },
                                         {
                                             "key": "57711aa36ff57",
-                                            "name": "grid_exchange_page",
-                                            "label": "Page",
+                                            "name": "grid_exchange_programme_round",
+                                            "label": "Programme_round",
                                             "display": "block",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_57711aa36ff58",
-                                                    "label": "Select a page or programme round",
+                                                    "label": "Select a programme round",
                                                     "name": "grid_exchange_object",
                                                     "type": "post_object",
                                                     "instructions": "",
-                                                    "required": "",
-                                                    "conditional_logic": "",
+                                                    "required": 1,
+                                                    "conditional_logic": 0,
                                                     "wrapper": {
                                                         "width": "",
                                                         "class": "",
                                                         "id": ""
                                                     },
                                                     "post_type": [
-                                                        "page",
                                                         "programme_round"
                                                     ],
                                                     "taxonomy": [],
-                                                    "allow_null": "",
-                                                    "multiple": "",
-                                                    "return_format": "",
+                                                    "allow_null": 1,
+                                                    "multiple": 1,
+                                                    "return_format": "object",
                                                     "ui": 1
                                                 },
                                                 {
@@ -2338,5 +2338,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471439588
+    "modified": 1471457254
 }
