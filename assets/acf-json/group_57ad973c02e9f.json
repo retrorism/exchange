@@ -1653,7 +1653,7 @@
                                                     "taxonomy": [],
                                                     "allow_null": 1,
                                                     "multiple": 1,
-                                                    "return_format": "object",
+                                                    "return_format": "id",
                                                     "ui": 1
                                                 },
                                                 {
@@ -1715,7 +1715,7 @@
                                                     "taxonomy": [],
                                                     "allow_null": 1,
                                                     "multiple": 1,
-                                                    "return_format": "object",
+                                                    "return_format": "id",
                                                     "ui": 1
                                                 },
                                                 {
@@ -2338,5 +2338,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471457254
+    "modified": 1471519190
 }
