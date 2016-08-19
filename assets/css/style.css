@@ -3711,6 +3711,9 @@ ARTICLE STYLES:
   text-align: right;
   padding-right: 1rem; }
 
+.story__header__introduction {
+  margin-bottom: 2rem; }
+
 /*********************
 ARTICLE PATTERN STYLES
 *********************/
@@ -3766,11 +3769,14 @@ ARTICLE PATTERN STYLES
 .section--coloured > .section-inner:first-of-type {
   padding-top: 0; }
 
-.story__content .story__section:first-child .section-inner .section__slice {
+.story__content .story__section:first-child .section-inner .section__slice.section__paragraph {
   margin-top: 0; }
 
 .story__section:last-child.section--coloured > .section-inner:first-of-type {
   padding-bottom: 2rem; }
+
+.story__section.section--coloured .section-inner .section__slice:last-of-type {
+  margin-bottom: 0; }
 
 .story__extras,
 .collaboration__extras,

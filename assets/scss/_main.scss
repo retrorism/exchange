@@ -608,6 +608,10 @@ ARTICLE STYLES:
 	padding-right: $global-padding;
 }
 
+.story__header__introduction {
+	margin-bottom: 2 * $global-margin;
+}
+
 /*********************
 ARTICLE PATTERN STYLES
 *********************/
@@ -671,14 +675,16 @@ ARTICLE PATTERN STYLES
 	padding-top: 0;
 }
 
-.story__content .story__section:first-child .section-inner .section__slice {
+.story__content .story__section:first-child .section-inner .section__slice.section__paragraph {
 	margin-top: 0;
 }
 
-
-
 .story__section:last-child.section--coloured > .section-inner:first-of-type {
 	padding-bottom: 2 * $global-padding;
+}
+
+.story__section.section--coloured .section-inner .section__slice:last-of-type {
+	margin-bottom: 0;
 }
 
 .story__extras,
