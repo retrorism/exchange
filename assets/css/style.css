@@ -3718,9 +3718,9 @@ ARTICLE PATTERN STYLES
 .section__slice li {
   font-weight: 400;
   line-height: 1.7;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto; }
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
 
 .section--custom-colour {
   background-color: #fefefe !important; }
@@ -3765,6 +3765,9 @@ ARTICLE PATTERN STYLES
 .story__content .story__section:first-child .section-inner,
 .section--coloured > .section-inner:first-of-type {
   padding-top: 0; }
+
+.story__content .story__section:first-child .section-inner .section__slice {
+  margin-top: 0; }
 
 .story__section:last-child.section--coloured > .section-inner:first-of-type {
   padding-bottom: 2rem; }

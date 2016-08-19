@@ -616,7 +616,7 @@ ARTICLE PATTERN STYLES
 .section__slice li {
 	font-weight: $global-weight-normal;
 	line-height: $paragraph-lineheight;
-	hyphens: auto;
+	hyphens: none;
 }
 
 .section--custom-colour {
@@ -669,6 +669,10 @@ ARTICLE PATTERN STYLES
 .story__content .story__section:first-child .section-inner,
 .section--coloured > .section-inner:first-of-type {
 	padding-top: 0;
+}
+
+.story__content .story__section:first-child .section-inner .section__slice {
+	margin-top: 0;
 }
 
 
