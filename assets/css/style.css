@@ -3736,8 +3736,9 @@ ARTICLE PATTERN STYLES
     transform: scale(1, -1);
     top: 20px; }
 
+.story__content .story__section:first-child .section-inner,
 .section--coloured > .section-inner:first-of-type {
-  padding: 0; }
+  padding-top: 0; }
 
 .story__section:last-child.section--coloured > .section-inner:first-of-type {
   padding-bottom: 2rem; }

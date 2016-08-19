@@ -1416,96 +1416,6 @@
                                                     "media_upload": 1
                                                 },
                                                 {
-                                                    "key": "field_579f86a2deacf",
-                                                    "label": "Add translation?",
-                                                    "name": "add_translation",
-                                                    "type": "true_false",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "message": "",
-                                                    "default_value": 0
-                                                },
-                                                {
-                                                    "key": "field_579f86ffdead0",
-                                                    "label": "Translations",
-                                                    "name": "translations",
-                                                    "type": "repeater",
-                                                    "instructions": "",
-                                                    "required": "",
-                                                    "conditional_logic": [
-                                                        [
-                                                            {
-                                                                "field": "field_579f86a2deacf",
-                                                                "operator": "==",
-                                                                "value": "1"
-                                                            }
-                                                        ]
-                                                    ],
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "collapsed": "",
-                                                    "min": "",
-                                                    "max": "",
-                                                    "layout": "",
-                                                    "button_label": "Add translation",
-                                                    "sub_fields": [
-                                                        {
-                                                            "key": "field_579f86ffdead1",
-                                                            "label": "Language",
-                                                            "name": "translation_language",
-                                                            "type": "radio",
-                                                            "instructions": "",
-                                                            "required": 1,
-                                                            "conditional_logic": 0,
-                                                            "wrapper": {
-                                                                "width": "",
-                                                                "class": "",
-                                                                "id": ""
-                                                            },
-                                                            "choices": {
-                                                                "arabic": "Arabic",
-                                                                "english": "English",
-                                                                "russian": "Russian",
-                                                                "turkish": "Turkish",
-                                                                "ukrainian": "Ukrainian"
-                                                            },
-                                                            "allow_null": 0,
-                                                            "other_choice": 1,
-                                                            "save_other_choice": 0,
-                                                            "default_value": "",
-                                                            "layout": "horizontal",
-                                                            "return_format": "value"
-                                                        },
-                                                        {
-                                                            "key": "field_579f86ffdead2",
-                                                            "label": "Translation",
-                                                            "name": "translation_text",
-                                                            "type": "wysiwyg",
-                                                            "instructions": "",
-                                                            "required": 1,
-                                                            "conditional_logic": 0,
-                                                            "wrapper": {
-                                                                "width": "",
-                                                                "class": "",
-                                                                "id": ""
-                                                            },
-                                                            "default_value": "",
-                                                            "tabs": "visual",
-                                                            "toolbar": "basic",
-                                                            "media_upload": 0
-                                                        }
-                                                    ]
-                                                },
-                                                {
                                                     "key": "field_574c17f72480e",
                                                     "label": "Grid width",
                                                     "name": "grid_width",
@@ -1568,30 +1478,6 @@
                                                     "max_height": "",
                                                     "max_size": "",
                                                     "mime_types": "png,jpg"
-                                                },
-                                                {
-                                                    "key": "field_579f961a5522b",
-                                                    "label": "Image Orientation",
-                                                    "name": "image_orientation",
-                                                    "type": "radio",
-                                                    "instructions": "",
-                                                    "required": "",
-                                                    "conditional_logic": "",
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "choices": {
-                                                        "landscape": "Landscape",
-                                                        "portrait": "Portrait"
-                                                    },
-                                                    "allow_null": "",
-                                                    "other_choice": 0,
-                                                    "save_other_choice": 0,
-                                                    "default_value": "landscape",
-                                                    "layout": "",
-                                                    "return_format": "value"
                                                 },
                                                 {
                                                     "key": "field_579f95dc55226",
@@ -2338,5 +2224,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471524908
+    "modified": 1471601817
 }

@@ -11,11 +11,11 @@
 			</section>
 			<section class="page__footer__copyright">
 				<p class="source-org copyright">
-					<?php echo bloginfo('name') . ' ' . date('Y') . ' | '; ?>
-					<a href="https://creativecommons.org/licenses/by-nc/3.0/"
+					<?php echo bloginfo('name') . __(' is an initiative of European Cultural Foundation and MitOst e.V.','exchange'); ?>
+					<!-- <a href="https://creativecommons.org/licenses/by-nc/3.0/"
 					title="<?php _e('Find out more about this license','exchange'); ?>"
 					target="_blank">
-					<?php echo __( 'CC BY-NC 3.0','exchange'); ?></a>
+					<?php echo __( 'CC BY-NC 3.0','exchange'); ?></a> -->
 				<?php $page = get_option('options_imprint_page_link' );
 					if ( ! empty( $page ) ) {
 						echo ' | ' . exchange_create_link( $page );
