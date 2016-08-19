@@ -1150,7 +1150,8 @@
                                                                         "Shaml": "Tandem Shaml",
                                                                         "Turkey": "Tandem Turkey",
                                                                         "Ukraine": "Tandem Ukraine",
-                                                                        "Solo": "Tandem (Solo)"
+                                                                        "Solo": "Tandem (Solo)",
+                                                                        "Strapline": "Tandem (with strapline)"
                                                                     },
                                                                     "default_value": [],
                                                                     "allow_null": 0,
@@ -2224,5 +2225,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471601817
+    "modified": 1471605517
 }

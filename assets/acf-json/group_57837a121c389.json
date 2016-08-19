@@ -184,10 +184,10 @@
                     "sub_fields": [
                         {
                             "key": "field_57837b57cbfb7",
-                            "label": "Select Programme",
+                            "label": "Select (Programme) Logo",
                             "name": "block_programme",
                             "type": "select",
-                            "instructions": "Select a programme round",
+                            "instructions": "Select a Tandem (programme) logo",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -200,17 +200,17 @@
                                 "Europe": "Tandem Europe",
                                 "Shaml": "Tandem Shaml",
                                 "Turkey": "Tandem Turkey",
-                                "Ukraine": "Tandem Ukraine"
+                                "Ukraine": "Tandem Ukraine",
+                                "Solo": "Tandem (solo)",
+                                "Strapline": "Tandem (with strapline)"
                             },
                             "default_value": [],
                             "allow_null": 1,
                             "multiple": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0,
-                            "return_format": "value"
+                            "return_format": "value",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -363,5 +363,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471439879
+    "modified": 1471605184
 }
