@@ -3087,21 +3087,23 @@ a, a:visited {
   background: none;
   color: #343438; }
 
-.story__header p > a,
-.story__content p > a,
-.story__footer p > a,
-.page__footer__copyright p > a,
-.archive__header p > a,
-.collaboration__participant__details p > a {
+.story__header p a,
+.story__content p a,
+.story__footer p a,
+.page__footer__copyright p a,
+.archive__header p a,
+.collaboration__participant__details p a,
+.section__contactblock a {
   border-bottom: 2px solid #f4c522;
   background-color: transparent;
   transition: background-color 0.5s; }
-  .story__header p > a:hover,
-  .story__content p > a:hover,
-  .story__footer p > a:hover,
-  .page__footer__copyright p > a:hover,
-  .archive__header p > a:hover,
-  .collaboration__participant__details p > a:hover {
+  .story__header p a:hover,
+  .story__content p a:hover,
+  .story__footer p a:hover,
+  .page__footer__copyright p a:hover,
+  .archive__header p a:hover,
+  .collaboration__participant__details p a:hover,
+  .section__contactblock a:hover {
     color: #343438;
     background-color: #f4c522; }
 
@@ -3154,10 +3156,12 @@ a.button--small {
 
 .emphasisblock--cta button,
 .emphasisblock--cta a.button--small,
+.section__contactblock a.button--small,
 .emphasisblock--cta a.button--large {
   border-color: #fefefe; }
   .emphasisblock--cta button:hover,
   .emphasisblock--cta a.button--small:hover,
+  .section__contactblock a.button--small:hover,
   .emphasisblock--cta a.button--large:hover {
     background-color: #fefefe; }
 
@@ -3170,6 +3174,25 @@ a.button--small {
     font-weight: 600; }
   .widget_nav_menu li a:hover {
     border-bottom: 2px solid #fefefe; }
+
+.footer__contactme,
+.team-member__contactme,
+.participant__contactme {
+  position: relative; }
+  .footer__contactme svg,
+  .team-member__contactme svg,
+  .participant__contactme svg {
+    height: 2em;
+    max-height: 2em;
+    position: absolute;
+    margin-top: -0.125rem; }
+  .footer__contactme a,
+  .team-member__contactme a,
+  .participant__contactme a {
+    margin-left: 2.25em; }
+
+.footer__contactme svg path {
+  fill: #fefefe; }
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES
@@ -3680,6 +3703,9 @@ ARTICLE STYLES:
 .participant__organisation__city {
   font-weight: 300; }
 
+.participant__contactme {
+  margin-top: 1rem; }
+
 .collaboration__header__image-wrapper .image__caption,
 .collaboration__map .simplemap__caption {
   text-align: right;
@@ -4116,7 +4142,6 @@ Pattern 9. Image
     margin-left: 8.33333%; }
 
 .image__placeholder {
-  background-color: #f6f6f6;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden; }
@@ -4125,7 +4150,7 @@ Pattern 9. Image
   background: none; }
 
 .image__placeholder__thumb,
-.image--main {
+.image--main.lazyloaded {
   position: absolute;
   top: 0;
   left: 0;
@@ -4314,7 +4339,8 @@ Pattern 14. Interview (two styles: QA and name-based)
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
-.contactblock__team-member {
+.contactblock__team-member,
+.contactblock__cta {
   overflow: hidden;
   width: 66.66667%;
   float: left;
@@ -4329,7 +4355,8 @@ Pattern 15. Contact block for TANDEM team member
   padding-right: 0.625rem;
   text-align: center; }
   @media screen and (min-width: 40em) {
-    .contactblock__team-member {
+    .contactblock__team-member,
+    .contactblock__cta {
       width: 83.33333%;
       float: left;
       padding-left: 0.625rem;
@@ -4339,14 +4366,28 @@ Pattern 15. Contact block for TANDEM team member
       margin-right: auto;
       text-align: left; } }
 
-h6.team-member__cta {
+.contactblock__team-member:not(first-child) {
+  margin-top: 2rem; }
+
+.contactblock__cta {
+  padding: 1.5rem 0.75rem;
+  font-size: 80%;
   margin-bottom: 2rem; }
 
-li.team-member__position {
+.contactblock__cta:last-of-type {
+  margin-bottom: 0; }
+
+.team-member__info__contact-details:first-child {
   margin-bottom: 1rem; }
+
+.team-member__info__contact-details:last-child {
+  margin-bottom: 0; }
 
 li.team-member__name {
   font-weight: 600; }
+
+li.team-member__story-link {
+  margin-top: 0.25rem; }
 
 .contactblock__image {
   width: 58.33333%;
@@ -4378,6 +4419,9 @@ li.team-member__name {
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
+
+.section__contactblock:last-child {
+  margin-bottom: 0; }
 
 /**************************************************
 Pattern 16 becomes Content block for TANDEM partner

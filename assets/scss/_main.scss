@@ -37,13 +37,14 @@ a, a:visited {
 }
 
 
-.story__header,
-.story__content,
-.story__footer,
-.page__footer__copyright,
-.archive__header,
-.collaboration__participant__details {
-	p > a {
+.story__header p,
+.story__content p,
+.story__footer p,
+.page__footer__copyright p,
+.archive__header p,
+.collaboration__participant__details p,
+.section__contactblock {
+	a {
 		border-bottom: 2px solid $yellow-tandem;
 		background-color: transparent;
 		transition: background-color 0.5s;
@@ -87,8 +88,11 @@ a.button--small {
 	font-size: $small-font-size;
 }
 
+
+
 .emphasisblock--cta button,
 .emphasisblock--cta a.button--small,
+.section__contactblock a.button--small,
 .emphasisblock--cta a.button--large {
 	border-color: $white;
 	&:hover {
@@ -110,6 +114,26 @@ a.button--small {
 	}
 }
 
+.footer__contactme,
+.team-member__contactme,
+.participant__contactme {
+	position: relative;
+	svg {
+		height: 2em;
+		max-height: 2em;
+		position: absolute;
+		margin-top: -0.125 * $global-margin;
+	}
+	a {
+		margin-left: 2.25em;
+	}
+}
+
+.footer__contactme {
+	svg path {
+		fill: $white;
+	}
+}
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES
@@ -573,6 +597,11 @@ ARTICLE STYLES:
 .participant__organisation__city {
 	font-weight: $global-weight-light;
 }
+
+.participant__contactme {
+	margin-top: $global-margin;
+}
+
 .collaboration__header__image-wrapper .image__caption,
 .collaboration__map .simplemap__caption {
 	text-align: right;
@@ -1038,7 +1067,6 @@ Pattern 9. Image
 }
 
 .image__placeholder {
-  background-color: #f6f6f6;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -1049,7 +1077,7 @@ Pattern 9. Image
 }
 
 .image__placeholder__thumb,
-.image--main {
+.image--main.lazyloaded {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1276,7 +1304,8 @@ Pattern 14. Interview (two styles: QA and name-based)
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
 
-.contactblock__team-member {
+.contactblock__team-member,
+.contactblock__cta {
 	overflow: hidden;
 	@include grid_column( 8 );
 	@include grid-column-position( center );
@@ -1292,22 +1321,37 @@ Pattern 15. Contact block for TANDEM team member
 
 }
 
-h6.team-member__cta {
+.contactblock__team-member:not(first-child) {
+	margin-top: 2 * $global-margin;
+}
+
+.contactblock__cta {
+	padding: 1.5 * $global-padding 0.75 * $global-padding;
+	font-size: $small-font-size;
 	margin-bottom: 2 * $global-margin;
 }
 
-li.team-member__position {
+.contactblock__cta:last-of-type {
+	margin-bottom: 0
+}
+
+.team-member__info__contact-details:first-child {
 	margin-bottom: $global-margin;
+}
+
+.team-member__info__contact-details:last-child {
+	margin-bottom: 0;
 }
 
 li.team-member__name {
 	font-weight: $global-weight-semibold;
 }
 
-.contactblock__image {
-	.image_placeholder {
+li.team-member__story-link {
+	margin-top: 0.25 * $global-margin;
+}
 
-	}
+.contactblock__image {
 	@include breakpoint( small ) {
 		@include grid_column( 7 );
 		@include grid-column-position( center );
@@ -1329,7 +1373,10 @@ li.team-member__name {
 	@include breakpoint( medium ) {
 		@include grid_column( 8 );
 	}
+}
 
+.section__contactblock:last-child {
+	margin-bottom: 0;
 }
 
 /**************************************************
