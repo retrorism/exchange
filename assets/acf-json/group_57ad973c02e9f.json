@@ -1865,7 +1865,7 @@
                                     "type": "radio",
                                     "instructions": "",
                                     "required": 1,
-                                    "conditional_logic": "",
+                                    "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -2010,7 +2010,7 @@
                                     "label": "Select collaborations",
                                     "name": "map_collaborations",
                                     "type": "post_object",
-                                    "instructions": "Select the collaboration(s) you would like to display on the map",
+                                    "instructions": "Select the collaboration(s) you would like to display on the map. Note: you can also select programme rounds, for which the relevant collaborations will be chosen. The maximum number of collaborations is 20.",
                                     "required": 1,
                                     "conditional_logic": [
                                         [
@@ -2027,6 +2027,7 @@
                                         "id": ""
                                     },
                                     "post_type": [
+                                        "programme_round",
                                         "collaboration"
                                     ],
                                     "taxonomy": [],
@@ -2225,5 +2226,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471605552
+    "modified": 1471700726
 }
