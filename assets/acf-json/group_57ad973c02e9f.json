@@ -971,6 +971,75 @@
                                             "max": ""
                                         },
                                         {
+                                            "key": "57bc1dc3a85d5",
+                                            "name": "uploaded_files",
+                                            "label": "Document \/ File",
+                                            "display": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_57bebe62f50c0",
+                                                    "label": "Instruction \/ Header for the document list",
+                                                    "name": "uploaded_files_header",
+                                                    "type": "text",
+                                                    "instructions": "Add a description here",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                },
+                                                {
+                                                    "key": "field_57bc1dd2a85d6",
+                                                    "label": "Add File",
+                                                    "name": "add_file",
+                                                    "type": "repeater",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "collapsed": "",
+                                                    "min": "",
+                                                    "max": "",
+                                                    "layout": "table",
+                                                    "button_label": "Add Row",
+                                                    "sub_fields": [
+                                                        {
+                                                            "key": "field_57bc1e68a85d7",
+                                                            "label": "Upload a file",
+                                                            "name": "file",
+                                                            "type": "file",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "return_format": "id",
+                                                            "library": "all",
+                                                            "min_size": "",
+                                                            "max_size": "",
+                                                            "mime_types": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "min": "",
+                                            "max": ""
+                                        },
+                                        {
                                             "key": "574c14b088c69",
                                             "name": "emphasis_block",
                                             "label": "Emphasis block",
@@ -1783,7 +1852,7 @@
                                                     "default_value": ""
                                                 },
                                                 {
-                                                    "key": "field_574c194e24810",
+                                                    "key": "field_57bedeb0844b6",
                                                     "label": "Grid width",
                                                     "name": "grid_width",
                                                     "type": "select",
@@ -1802,13 +1871,11 @@
                                                         "grid_two_third": "2 \/ 3",
                                                         "grid_full": "full width"
                                                     },
-                                                    "default_value": [
-                                                        "grid_third"
-                                                    ],
-                                                    "allow_null": 1,
-                                                    "multiple": 1,
+                                                    "default_value": [],
+                                                    "allow_null": 0,
+                                                    "multiple": 0,
                                                     "ui": 1,
-                                                    "ajax": 1,
+                                                    "ajax": 0,
                                                     "return_format": "value",
                                                     "placeholder": ""
                                                 }
@@ -2226,5 +2293,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471700726
+    "modified": 1472126698
 }
