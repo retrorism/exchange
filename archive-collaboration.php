@@ -17,17 +17,26 @@
 		<?php else: ?>
 			<?php get_template_part( 'parts/content', 'archive-header'); ?>
 		<?php endif; ?>
-		<?php if ( is_archive('collaboration' ) ) : ?>
+		<?php if ( is_post_type_archive('collaboration' ) ) : ?>
 			<?php get_template_part( 'parts/content', 'archive-map'); ?>
-		<?php endif; ?>
-		<section class="archive__interface-wrapper section--blue-1-web section--coloured">
+			<section class="archive__interface-wrapper section--blue-1-web section--coloured">
 			<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+				<div class="archive__view__toggle">
+					<small><a class="grid-toggle active" data-exchange-toggle="archive__view--grid"><?php _e('Show on the grid', 'exchange' ); ?></a></small>
+					<small><a class="map-toggle" data-exchange-toggle="archive__view--map"><?php _e('Show on the map', 'exchange' ); ?></a></small>
+				</div>
 
+		<?php else: ?>
+
+			<section class="archive__interface-wrapper section--blue-1-web section--coloured">
+				<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+
+		<?php endif; ?>
 			<?php get_template_part( 'parts/content', 'archive-filters'); ?>
 
 		    <?php if (have_posts()) : ?>
 
-				<div class="archive__grid">
+				<div class="archive__grid" id="archive__view--grid">
 
 				<?php while (have_posts()) : the_post(); ?>
 
@@ -35,11 +44,12 @@
 				<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 
 				<?php endwhile; ?>
+					<?php //exchange_page_navi(); //?>
+					<div class="button-wrapper">
+						<?php exchange_create_archive_button(); ?>
+					</div>
 				</div>
-				<?php //exchange_page_navi(); //?>
-				<div class="button-wrapper">
-					<?php exchange_create_archive_button(); ?>
-				</div>
+
 			<?php else : ?>
 
 				<?php get_template_part( 'parts/content', 'missing' ); ?>

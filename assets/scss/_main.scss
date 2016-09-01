@@ -2373,16 +2373,22 @@ ARCHIVE STYLES
 		min-height: 3em;
 		padding: 0.5 * $global-padding;
 		box-shadow: inset 2px -2px 0 lighten( $blue-1-web, 2% ), inset -2px 2px 0 darken( $blue-1-web, 3% );
-
 	}
 }
 
-.archive__filter__toggle {
+.archive__filter__toggle,
+.archive__view__toggle {
+	clear:both;
 	text-align: center;
 }
 
+#archive__view--map {
+	height: 0; // Initial value
+	overflow: hidden;
+}
+
 #leaflet-archive-map {
-	height: 50em;
+	height: 500px;
 	//margin-bottom: 2 * $global-margin;
 }
 

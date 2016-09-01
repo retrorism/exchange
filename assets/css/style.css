@@ -5418,11 +5418,17 @@ ARCHIVE STYLES
     padding: 0.5rem;
     box-shadow: inset 2px -2px 0 #e3f2f3, inset -2px 2px 0 #d1eaeb; }
 
-.archive__filter__toggle {
+.archive__filter__toggle,
+.archive__view__toggle {
+  clear: both;
   text-align: center; }
 
+#archive__view--map {
+  height: 0;
+  overflow: hidden; }
+
 #leaflet-archive-map {
-  height: 50em; }
+  height: 500px; }
 
 .datalist--fallback {
   list-style: none;
