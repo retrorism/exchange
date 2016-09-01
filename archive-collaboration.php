@@ -37,19 +37,16 @@
 		    <?php if (have_posts()) : ?>
 
 				<div class="archive__grid" id="archive__view--grid">
-					<div class="masonry-wrapper">
+					<div class="masonry">
 
-						<div class="masonry">
+					<?php while (have_posts()) : the_post(); ?>
 
-						<?php while (have_posts()) : the_post(); ?>
+					<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 
-						<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+					<?php endwhile; ?>
 
-						<?php endwhile; ?>
+					</div><!--masonry-->
 
-						</div><!--masonry-->
-
-					</div>
 					<div class="button-wrapper">
 						<?php exchange_create_archive_button(); ?>
 					</div>

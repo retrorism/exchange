@@ -7,18 +7,16 @@
 
     	<?php if (have_posts()) : ?>
 			<div class="archive__grid">
-				<div class="masonry-wrapper">
 
-					<div class="masonry">
-					<?php while (have_posts()) : the_post(); ?>
+				<div class="masonry">
+				<?php while (have_posts()) : the_post(); ?>
 
-						<!-- To see additional archive styles, visit the /parts directory -->
-						<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+					<!-- To see additional archive styles, visit the /parts directory -->
+					<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 
-					<?php endwhile; ?>
-					</div>
-
+				<?php endwhile; ?>
 				</div>
+
 				<div class="button-wrapper">
 					<?php exchange_create_archive_button(); ?>
 				</div>
