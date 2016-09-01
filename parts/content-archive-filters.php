@@ -1,6 +1,6 @@
 <section class="archive__filter">
 	<div class="section-inner">
-		<aside class="archive__filter__fieldset" data-toggler=".hide">
+		<aside class="archive__filter__fieldset" id="archive__filters" data-toggler=".hide">
 		<div class="archive__filter__query-tags">
 			<ul>
 			</ul>
@@ -23,7 +23,9 @@
 				?>
 
 		</aside>
-		<small class="archive__filter__toggle"><a data-toggle="archive__filter__callout"><?php _e('Hide / Show filters', EXCHANGE_PLUGIN ); ?></a></small>
+		<div class="archive__filter__toggle">
+			<small><a data-toggle="archive__filters"><?php _e('Hide / Show filters', EXCHANGE_PLUGIN ); ?></a></small>
+		</div>
 
 	</div>
 </section>
