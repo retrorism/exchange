@@ -23,28 +23,34 @@
 			<div class="section-inner">
 				<?php get_template_part( 'parts/content', 'archive-filters'); ?>
 				<div class="archive__grid">
-				<?php while (have_posts()) : the_post(); ?>
+					<div class="masonry-wrapper">
+						<div class="masonry">
 
-					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php $featured_posts = get_option('options_featured_stories'); ?>
-					<?php include( get_stylesheet_directory() . '/parts/loop-archive-grid.php' ); ?>
+						<?php while (have_posts()) : the_post(); ?>
 
-				<?php endwhile; ?>
-				</div>
+							<!-- To see additional archive styles, visit the /parts directory -->
+							<?php $featured_posts = get_option('options_featured_stories'); ?>
+							<?php include( get_stylesheet_directory() . '/parts/loop-archive-grid.php' ); ?>
 
-			<?php // exchange_page_navi(); // ?>
-			<div class="button-wrapper">
-				<?php exchange_create_archive_button(); ?>
-			</div>
+						<?php endwhile; ?>
+
+						</div><!--masonry-->
+					</div>
+					<div class="button-wrapper">
+						<?php exchange_create_archive_button(); ?>
+					</div>
+				<?php else : ?>
+
+					<?php get_template_part( 'parts/content', 'missing' ); ?>
+
+				<?php endif; ?>
+			</div><!-- end .archive__grid-->
+
 			</div>
 
 			<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex('blue-1-web') ); ?>
 		</section>
-		<?php else : ?>
 
-			<?php get_template_part( 'parts/content', 'missing' ); ?>
-
-		<?php endif; ?>
 	</div> <!-- end .main-inner -->
 </main> <!-- end #main -->
 

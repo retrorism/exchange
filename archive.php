@@ -5,25 +5,31 @@
 	<div class="main-inner">
 		<?php get_template_part( 'parts/content', 'archive-header'); ?>
 
-	    <?php if (have_posts()) : ?>
-			<div class="archive__grid" data-masonry='{ "itemSelector": ".archive__grid__griditem" }'>
-			<?php while (have_posts()) : the_post(); ?>
+    	<?php if (have_posts()) : ?>
+			<div class="archive__grid">
+				<div class="masonry-wrapper">
 
-				<!-- To see additional archive styles, visit the /parts directory -->
-				<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+					<div class="masonry">
+					<?php while (have_posts()) : the_post(); ?>
 
-			<?php endwhile; ?>
-			</div>
+						<!-- To see additional archive styles, visit the /parts directory -->
+						<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 
-			<?php //exchange_page_navi();// ?>
-			<div class="button-wrapper">
-				<?php exchange_create_archive_button(); ?>
-			</div>
+					<?php endwhile; ?>
+					</div>
+
+				</div>
+				<div class="button-wrapper">
+					<?php exchange_create_archive_button(); ?>
+				</div>
+				<?php //exchange_page_navi();// ?>
+
 		<?php else : ?>
 
 			<?php get_template_part( 'parts/content', 'missing' ); ?>
 
 		<?php endif; ?>
+	</div><!-- end .archive__grid -->
 	</div> <!-- end .main-inner -->
 </main> <!-- end #main -->
 
