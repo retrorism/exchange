@@ -122,7 +122,50 @@ function createRoute(arr_m,arr_l,arr_c) {
 	return route;
 };
 
-
+function fetchCollaborations() {
+	var restUrl = fetchCollaborationsQuery();
+	if ( restUrl === null ) {
+		console.log( 'emptying map' );
+		map.removeLayer(routeLayer);
+	} else {
+		console.log('called with ' + restUrl );
+		jQuery.when(
+			jQuery.ajax({
+				url: restUrl,
+				method: 'GET',
+				crossDomain: true,
+				contentType: 'application/json',
+			})
+		).then(
+			function( data, status, request ) {
+				// console.log( 'X-WP-Total: ' + request.getResponseHeader('X-WP-Total') );
+				// console.log( 'X-WP-TotalPages: ' + request.getResponseHeader('X-WP-TotalPages') );
+				var dataLength = data.length,
+				collection = [];
+				if ( dataLength > 0 ) {
+					for ( var k = 0; k < dataLength; k++ ) {
+						collection.push( data[k].exchange_basics.data );
+					}
+					collectionLength = collection.length;
+					routes = [];
+					for ( var l = 0; l < collectionLength; l++ ) {
+						var route = prepareCollaborationMarkers( collection[l] );
+						if ( route !== null ) {
+							routes.push(route);
+						}
+					}
+					console.log( routes );
+					if ( routeLayer !== undefined ) {
+						map.removeLayer(routeLayer);
+					}
+					if ( routes.length > 0 ) {
+						routeLayer = L.layerGroup(routes).addTo(map);
+					}
+				}
+			}
+		)
+	}
+}
 
 function getQueryTag( data, option ) {
 	var tag = document.createElement('a'),
@@ -356,51 +399,6 @@ jQuery(document).ready(function() {
 				restBase = '/wp-json/wp/v2/' + filters.object,
 				restUrl = baseUrl + restBase + restFilters;
 				return restUrl;
-			}
-		}
-
-		function fetchCollaborations() {
-			var restUrl = fetchCollaborationsQuery();
-			if ( restUrl === null ) {
-				console.log( 'emptying map' );
-				map.removeLayer(routeLayer);
-			} else {
-				console.log('called with ' + restUrl );
-				jQuery.when(
-					jQuery.ajax({
-						url: restUrl,
-						method: 'GET',
-						crossDomain: true,
-						contentType: 'application/json',
-					})
-				).then(
-					function( data, status, request ) {
-						// console.log( 'X-WP-Total: ' + request.getResponseHeader('X-WP-Total') );
-						// console.log( 'X-WP-TotalPages: ' + request.getResponseHeader('X-WP-TotalPages') );
-						var dataLength = data.length,
-						collection = [];
-						if ( dataLength > 0 ) {
-							for ( var k = 0; k < dataLength; k++ ) {
-								collection.push( data[k].exchange_basics.data );
-							}
-							collectionLength = collection.length;
-							routes = [];
-							for ( var l = 0; l < collectionLength; l++ ) {
-								var route = prepareCollaborationMarkers( collection[l] );
-								if ( route !== null ) {
-									routes.push(route);
-								}
-							}
-							console.log( routes );
-							if ( routeLayer !== undefined ) {
-								map.removeLayer(routeLayer);
-							}
-							if ( routes.length > 0 ) {
-								routeLayer = L.layerGroup(routes).addTo(map);
-							}
-						}
-					}
-				)
 			}
 		}
 
