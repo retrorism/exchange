@@ -1595,7 +1595,7 @@ Pattern 20. Emphasis blocks
 }
 
 .emphasisblock-inner {
-	padding: $global-padding;
+	padding: $global-padding $global-padding 4 * $global-padding $global-padding;
 }
 
 .documentblock--post-it .emphasisblock-inner,
