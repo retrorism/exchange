@@ -1,9 +1,7 @@
 // Speed up calls to hasOwnProperty
-var hasOwnProperty = Object.prototype.hasOwnProperty,
-baseUrl = location.origin,
-mapInitial = 1,
-map,
-routeLayer;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var baseUrl = location.origin;
+var map;
 
 if (! location.origin) {
 	baseUrl = location.protocol + "//" + location.host;
@@ -122,51 +120,6 @@ function createRoute(arr_m,arr_l,arr_c) {
 	return route;
 };
 
-function createArchiveRoute(collab,arr_m,arr_l,arr_c) {
-	var iconUrl = leaflet_vars.markerUrl,
-	exchange_icon = L.icon({
-		iconUrl: iconUrl,
-		iconSize:     [14, 14], // size of the icon
-		shadowSize:   [0, 0], // size of the shadow
-		iconAnchor:   [7, 7], // point of the icon which will correspond to marker's location
-		shadowAnchor: [4, 62],  // the same for the shadow
-		popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
-	}),
-	route = L.featureGroup({snakingPause: 500 });
-	if ( arr_m.length > 0 && arr_l.length > 0 ) {
-		for ( i = 0; i < arr_l.length; i++ ) {
-			var marker = L.marker( arr_m[i], {
-				icon : new L.DivIcon({
-					className: 'map__marker',
-					html:   '<img class="map__marker__image" src="' + iconUrl + '">'
-						})
-			});
-			var line = L.polyline( arr_l[i], {
-				color : leaflet_vars.yellowTandem,
-				className: 'map__line',
-				weight : 6,
-				opacity : 0.9,
-				dashArray : '12, 10',
-				lineJoin: 'round',
-				snakingSpeed: 200
-			} );
-			route.addLayer( marker ).addLayer( line );
-		}
-		if ( arr_l.length == 1 ) {
-				var marker2 = L.marker( arr_m[i], {
-					icon : new L.DivIcon({
-						className: 'map__marker',
-						html:   '<img class="map__marker__image" src="' + iconUrl + '">'
-							})
-				} );
-				marker2.bindPopup(arr_c[i]);
-			route.addLayer( marker2 );
-		}
-		route.bindPopup('<a href="' + collab.link + '">' + collab.name + '</a>');
-	}
-	return route;
-};
-
 function getQueryTag( data, option ) {
 	var tag = document.createElement('a'),
 	item = document.createElement('li'),
@@ -179,8 +132,8 @@ function getQueryTag( data, option ) {
 	tag.addEventListener('click',function( event ) {
 		event.preventDefault();
 		option.removeAttr('selected');
-		this.parentNode.remove();
-		fetchCollaborations();
+		console.log(option);
+		this.remove();
 	})
 	tag.className = 'tag query-tag' + ' ' + data.tax;
 	tag.appendChild(text);
@@ -188,49 +141,28 @@ function getQueryTag( data, option ) {
 	return item;
 }
 
-function getRandomProgrammeRound() {
-	var termOptions = jQuery('.archive__filter').find('.archive__filter__tax-datalist[data-tax=post_tag]').find('option');
-	if ( termOptions.length ) {
-		var randomTotal = termOptions.length,
-		randomN = Math.floor(Math.random() * randomTotal);
-		console.log(randomN);
-		prog = jQuery( termOptions[randomN] );
-		return prog.data('slug');
-	}
-}
-
 function fetchCollaborationsQuery() {
+	alert('called');
 	var tags = jQuery('.archive__filter__query-tags').find('a.tag');
-	console.log( tags );
+	console.log(tags);
 	var filters = {
 		'object' : 'collaborations',
-		'taxquery': {},
 	};
 	if ( tags.length ) {
 		for ( var i = 0; i < tags.length; i++ ) {
-			var tag = jQuery( tags[i] );
-			var k = tag.data('tax'),
-			v = tag.data('slug');
+			var k = tags[i].data('tax'),
+			v = tags[i].data('slug');
 			if ( ( typeof k === 'string' || k instanceof String )
 			 	&& ( typeof v === 'string' || v instanceof String ) ) {
 				filters.taxquery[k] = v;
 			}
 		}
-	} else {
-		if ( mapInitial == 1 ) {
-			var post_tag = getRandomProgrammeRound();
-			filters.taxquery = {
-				'tag' : post_tag
-			}
-			mapInitial = 0;
+		taxquery = filters.taxquery,
+		queryFilters = '';
+		if ( isEmpty(taxquery) ) {
+			throw new Error("No filters given");
 		}
-	}
-	var queryFilters = '',
-	taxquery = filters.taxquery;
-	if ( isEmpty(taxquery) ) {
-		return null;
-	} else {
-		for (var key in filters.taxquery) {
+		for (var key in taxquery) {
 			if (taxquery.hasOwnProperty(key)) {
 				queryFilters += '&filter[' + key + ']=' + taxquery[key];
 			}
@@ -238,18 +170,15 @@ function fetchCollaborationsQuery() {
 		var restFilters = '?filter[post_status]=publish' + queryFilters + '&filter[orderby]=date&filter[order]=desc',
 		restBase = '/wp-json/wp/v2/' + filters.object,
 		restUrl = baseUrl + restBase + restFilters;
-		console.log( filters );
+		console.log( restUrl );
 		return restUrl;
 	}
+	console.log( filters );
 }
 
 function fetchCollaborations() {
 	var restUrl = fetchCollaborationsQuery();
-	if ( restUrl === null ) {
-		console.log( 'emptying map' );
-		map.removeLayer(routeLayer);
-	} else {
-		console.log('called with ' + restUrl );
+	if ( restUrl !== null ) {
 		jQuery.when(
 			jQuery.ajax({
 				url: restUrl,
@@ -263,25 +192,14 @@ function fetchCollaborations() {
 				// console.log( 'X-WP-TotalPages: ' + request.getResponseHeader('X-WP-TotalPages') );
 				var dataLength = data.length,
 				collection = [];
-				if ( dataLength > 0 ) {
-					for ( var k = 0; k < dataLength; k++ ) {
-						collection.push( data[k].exchange_basics.data );
-					}
-					collectionLength = collection.length;
-					routes = [];
-					for ( var l = 0; l < collectionLength; l++ ) {
-						var route = prepareCollaborationMarkers( collection[l] );
-						if ( route !== null ) {
-							routes.push(route);
-						}
-					}
-					console.log( routes );
-					if ( routeLayer !== undefined ) {
-						map.removeLayer(routeLayer);
-					}
-					if ( routes.length > 0 ) {
-						routeLayer = L.layerGroup(routes).addTo(map);
-					}
+				for ( var k = 0; k < dataLength; k++ ) {
+					collection.push( data[k].exchange_basics.data );
+				}
+				collectionLength = collection.length;
+				for ( var l = 0; l < collectionLength; l++ ) {
+					var route = prepareCollaborationMarkers( collection[l] );
+					console.log( route );
+					route.addTo( map );
 				}
 			}
 		)
@@ -289,17 +207,12 @@ function fetchCollaborations() {
 }
 
 function prepareCollaborationMarkers( obj ) {
-	console.log( obj );
 	var locations = [],
 	markers = [],
 	cities = [],
-	lines = [],
-	collab = {
-		'name' : obj.title,
-		'link' : obj.link
-	};
+	lines = [];
 	if ( isEmpty( obj.locations ) ) {
-		return null;
+		throw new Error('no locations found');
 	}
 	for (var participant_id in obj.locations ) {
 		if ( obj.locations.hasOwnProperty(participant_id) ) {
@@ -334,7 +247,7 @@ function prepareCollaborationMarkers( obj ) {
 	if ( length == 2 ) {
 		markers.push( locations[1] );
 	}
-	var route = createArchiveRoute(collab,markers,lines,cities);
+	var route = createRoute(markers,lines,cities);
 	return route;
 
 }
@@ -440,11 +353,10 @@ jQuery(document).ready(function() {
 						termData.name = term;
 						termData.tax = tax;
 						// Pass term option element object, so it can be removed on click
-						var tag = getQueryTag(termData, termOption),
-						tagBox = jQuery('.archive__filter__query-tags ul');
-						tagBox.empty().append( tag );
+						var tag = getQueryTag(termData, termOption);
+						jQuery('.archive__filter__query-tags ul').append( tag );
 						termOption.attr('selected','selected');
-						fetchCollaborations();
+
 					}
 					termList.val('');
 				}
@@ -499,7 +411,7 @@ jQuery(document).ready(function() {
 	}
 	if ( jQuery('body').hasClass('post-type-archive-collaboration') ) {
 
-		var baseMapUrl = 'https://api.mapbox.com/styles/v1/retrorism/cio2pv2ft001ybvm8qb4da6f9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmV0cm9yaXNtIiwiYSI6IlhRWTE0d2cifQ.-Wi_jReZU4Wz_owPnVZDwQ',
+		var baseMapUrl = 'https://api.mapbox.com/styles/v1/retrorism/cio2pv2ft001ybvm8qb4da6f9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmV0cm9yaXNtjwiYSI6IlhRWTE0d2cifQ.-Wi_jReZU4Wz_owPnVZDwQ',
 		base = L.tileLayer(baseMapUrl, {subdomains: '1234'});
 		map = L.map('leaflet-archive-map',{
 			layers: [base],

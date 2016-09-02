@@ -5419,7 +5419,7 @@ ARCHIVE STYLES
     box-shadow: inset 2px -2px 0 #e3f2f3, inset -2px 2px 0 #d1eaeb; }
 
 .archive__filter__toggle {
-  text-align: center; }
+  width: 100%; }
 
 #leaflet-archive-map {
   height: 50em; }
