@@ -122,164 +122,6 @@ function createRoute(arr_m,arr_l,arr_c) {
 	return route;
 };
 
-function fetchCollaborationsQuery() {
-	var tags = jQuery('.archive__filter__query-tags').find('a.tag');
-	var filters = {
-		'object' : 'collaborations',
-		'taxquery': {},
-	};
-	if ( tags.length ) {
-		for ( var i = 0; i < tags.length; i++ ) {
-			var tag = jQuery( tags[i] );
-			var k = tag.data('tax'),
-			v = tag.data('slug');
-			if ( ( typeof k === 'string' || k instanceof String )
-				&& ( typeof v === 'string' || v instanceof String ) ) {
-				filters.taxquery[k] = v;
-			}
-		}
-	} else {
-		if ( mapInitial == 1 ) {
-			var post_tag = getRandomProgrammeRound();
-			filters.taxquery = {
-				'tag' : post_tag
-			}
-			mapInitial = 0;
-		}
-	}
-	var queryFilters = '',
-	taxquery = filters.taxquery;
-	if ( isEmpty(taxquery) ) {
-		return null;
-	} else {
-		for (var key in filters.taxquery) {
-			if (taxquery.hasOwnProperty(key)) {
-				queryFilters += '&filter[' + key + ']=' + taxquery[key];
-			}
-		}
-		var restFilters = '?filter[post_status]=publish' + queryFilters + '&filter[orderby]=date&filter[order]=desc',
-		restBase = '/wp-json/wp/v2/' + filters.object,
-		restUrl = baseUrl + restBase + restFilters;
-		return restUrl;
-	}
-}
-
-function prepareCollaborationMarkers( obj ) {
-	console.log( obj );
-	var locations = [],
-	markers = [],
-	cities = [],
-	lines = [],
-	collab = {
-		'name' : obj.title,
-		'link' : obj.link
-	};
-	if ( isEmpty( obj.locations ) ) {
-		return null;
-	}
-	for (var participant_id in obj.locations ) {
-		if ( obj.locations.hasOwnProperty(participant_id) ) {
-			var participant = obj.locations[participant_id],
-			latlngs = []
-			if ( jQuery.isNumeric( participant.org_lat ) ) {
-				latlngs.push( participant.org_lat );
-			}
-			if ( jQuery.isNumeric( participant.org_lng ) ) {
-				latlngs.push( participant.org_lng );
-			}
-			if ( latlngs.length == 2 ) {
-				locations.push( latlngs );
-			}
-			if ( '' != participant.org_city ) {
-				cities.push( participant.org_city );
-			}
-		}
-	}
-	var length = locations.length;
-	// Adding markers and lines to their respective arrays.
-	for ( var j = 0; j < length; j++ ) {
-		markers.push( locations[j] );
-		if ( j === length - 1 ) {
-			if ( length > 2 ) {
-				lines.push( [ locations[j], locations[0] ] );
-			}
-		} else {
-			lines.push( [ locations[j], locations[j+1] ] );
-		}
-	}
-	if ( length == 2 ) {
-		markers.push( locations[1] );
-	}
-	var route = createArchiveRoute(collab,markers,lines,cities);
-	return route;
-}
-
-function createArchiveRoute(collab,arr_m,arr_l,arr_c) {
-	var iconUrl = leaflet_vars.markerUrl,
-	exchange_icon = L.icon({
-		iconUrl: iconUrl,
-		iconSize:     [14, 14], // size of the icon
-		shadowSize:   [0, 0], // size of the shadow
-		iconAnchor:   [7, 7], // point of the icon which will correspond to marker's location
-		shadowAnchor: [4, 62],  // the same for the shadow
-		popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
-	}),
-	route = L.featureGroup({snakingPause: 500 });
-	if ( arr_m.length > 0 && arr_l.length > 0 ) {
-		for ( i = 0; i < arr_l.length; i++ ) {
-			var marker = L.marker( arr_m[i], {
-				icon : new L.DivIcon({
-					className: 'map__marker',
-					html:   '<img class="map__marker__image" src="' + iconUrl + '">'
-						})
-			});
-			var line = L.polyline( arr_l[i], {
-				color : leaflet_vars.yellowTandem,
-				className: 'map__line',
-				weight : 6,
-				opacity : 0.9,
-				dashArray : '12, 10',
-				lineJoin: 'round',
-				snakingSpeed: 200
-			} );
-			route.addLayer( marker ).addLayer( line );
-		}
-		if ( arr_l.length == 1 ) {
-				var marker2 = L.marker( arr_m[i], {
-					icon : new L.DivIcon({
-						className: 'map__marker',
-						html:   '<img class="map__marker__image" src="' + iconUrl + '">'
-							})
-				} );
-				marker2.bindPopup(arr_c[i]);
-			route.addLayer( marker2 );
-		}
-		route.bindPopup('<a href="' + collab.link + '">' + collab.name + '</a>');
-	}
-	return route;
-};
-
-function loadMap() {
-	var baseMapUrl = 'https://api.mapbox.com/styles/v1/retrorism/cio2pv2ft001ybvm8qb4da6f9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmV0cm9yaXNtIiwiYSI6IlhRWTE0d2cifQ.-Wi_jReZU4Wz_owPnVZDwQ',
-	base = L.tileLayer(baseMapUrl, {subdomains: '1234'});
-	if ( map == undefined ) {
-		map = L.map('leaflet-archive-map',{
-			layers: [base],
-			maxZoom: 20,
-			minZoom: 0,
-			zoomControl: 1,
-			scrollWheelZoom: 0,
-			attributionControl: false
-		}).setView([48, 16], 4);
-		var attControl = L.control.attribution({prefix:false}).addTo(map);attControl.addAttribution('Tiles Courtesy of <a href="http://www.mapbox.com/" target="_blank">MapBox</a> © <a href="http://www.openstreetmap.org/">OpenStreetMap</a> contributors');
-	}
-	fetchCollaborations();
-}
-
-function loadGrid() {
-	console.log( 'grid loaded' );
-}
-
 function fetchCollaborations() {
 	var restUrl = fetchCollaborationsQuery();
 	if ( restUrl === null ) {
@@ -317,8 +159,7 @@ function fetchCollaborations() {
 						map.removeLayer(routeLayer);
 					}
 					if ( routes.length > 0 ) {
-						routeLayer = L.featureGroup(routes).addTo(map);
-						map.fitBounds( routeLayer.getBounds().pad(0.033) );
+						routeLayer = L.layerGroup(routes).addTo(map);
 					}
 				}
 			}
@@ -327,7 +168,6 @@ function fetchCollaborations() {
 }
 
 function getQueryTag( data, option ) {
-	console.log(data.tax);
 	var tag = document.createElement('a'),
 	item = document.createElement('li'),
 	text = document.createTextNode( data.name );
@@ -349,7 +189,7 @@ function getQueryTag( data, option ) {
 }
 
 function getRandomProgrammeRound() {
-	var termOptions = jQuery('.archive__filter').find('.archive__filter__tax-datalist[data-tax=tag]').find('option');
+	var termOptions = jQuery('.archive__filter').find('.archive__filter__tax-datalist[data-tax=post_tag]').find('option');
 	if ( termOptions.length ) {
 		var randomTotal = termOptions.length,
 		randomN = Math.floor(Math.random() * randomTotal);
@@ -519,6 +359,165 @@ jQuery(document).ready(function() {
 		});
 	}
 	if ( jQuery('body').hasClass('post-type-archive-collaboration') ) {
+
+		function fetchCollaborationsQuery() {
+			var tags = jQuery('.archive__filter__query-tags').find('a.tag');
+			var filters = {
+				'object' : 'collaborations',
+				'taxquery': {},
+			};
+			if ( tags.length ) {
+				for ( var i = 0; i < tags.length; i++ ) {
+					var tag = jQuery( tags[i] );
+					var k = tag.data('tax'),
+					v = tag.data('slug');
+					if ( ( typeof k === 'string' || k instanceof String )
+					 	&& ( typeof v === 'string' || v instanceof String ) ) {
+						filters.taxquery[k] = v;
+					}
+				}
+			} else {
+				if ( mapInitial == 1 ) {
+					var post_tag = getRandomProgrammeRound();
+					filters.taxquery = {
+						'tag' : post_tag
+					}
+					mapInitial = 0;
+				}
+			}
+			var queryFilters = '',
+			taxquery = filters.taxquery;
+			if ( isEmpty(taxquery) ) {
+				return null;
+			} else {
+				for (var key in filters.taxquery) {
+					if (taxquery.hasOwnProperty(key)) {
+						queryFilters += '&filter[' + key + ']=' + taxquery[key];
+					}
+				}
+				var restFilters = '?filter[post_status]=publish' + queryFilters + '&filter[orderby]=date&filter[order]=desc',
+				restBase = '/wp-json/wp/v2/' + filters.object,
+				restUrl = baseUrl + restBase + restFilters;
+				return restUrl;
+			}
+		}
+
+		function prepareCollaborationMarkers( obj ) {
+			console.log( obj );
+			var locations = [],
+			markers = [],
+			cities = [],
+			lines = [],
+			collab = {
+				'name' : obj.title,
+				'link' : obj.link
+			};
+			if ( isEmpty( obj.locations ) ) {
+				return null;
+			}
+			for (var participant_id in obj.locations ) {
+				if ( obj.locations.hasOwnProperty(participant_id) ) {
+					var participant = obj.locations[participant_id],
+					latlngs = []
+					if ( jQuery.isNumeric( participant.org_lat ) ) {
+						latlngs.push( participant.org_lat );
+					}
+					if ( jQuery.isNumeric( participant.org_lng ) ) {
+						latlngs.push( participant.org_lng );
+					}
+					if ( latlngs.length == 2 ) {
+						locations.push( latlngs );
+					}
+					if ( '' != participant.org_city ) {
+						cities.push( participant.org_city );
+					}
+				}
+			}
+			var length = locations.length;
+			// Adding markers and lines to their respective arrays.
+			for ( var j = 0; j < length; j++ ) {
+				markers.push( locations[j] );
+				if ( j === length - 1 ) {
+					if ( length > 2 ) {
+						lines.push( [ locations[j], locations[0] ] );
+					}
+				} else {
+					lines.push( [ locations[j], locations[j+1] ] );
+				}
+			}
+			if ( length == 2 ) {
+				markers.push( locations[1] );
+			}
+			var route = createArchiveRoute(collab,markers,lines,cities);
+			return route;
+
+		}
+
+		function createArchiveRoute(collab,arr_m,arr_l,arr_c) {
+			var iconUrl = leaflet_vars.markerUrl,
+			exchange_icon = L.icon({
+				iconUrl: iconUrl,
+				iconSize:     [14, 14], // size of the icon
+				shadowSize:   [0, 0], // size of the shadow
+				iconAnchor:   [7, 7], // point of the icon which will correspond to marker's location
+				shadowAnchor: [4, 62],  // the same for the shadow
+				popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+			}),
+			route = L.featureGroup({snakingPause: 500 });
+			if ( arr_m.length > 0 && arr_l.length > 0 ) {
+				for ( i = 0; i < arr_l.length; i++ ) {
+					var marker = L.marker( arr_m[i], {
+						icon : new L.DivIcon({
+							className: 'map__marker',
+							html:   '<img class="map__marker__image" src="' + iconUrl + '">'
+								})
+					});
+					var line = L.polyline( arr_l[i], {
+						color : leaflet_vars.yellowTandem,
+						className: 'map__line',
+						weight : 6,
+						opacity : 0.9,
+						dashArray : '12, 10',
+						lineJoin: 'round',
+						snakingSpeed: 200
+					} );
+					route.addLayer( marker ).addLayer( line );
+				}
+				if ( arr_l.length == 1 ) {
+						var marker2 = L.marker( arr_m[i], {
+							icon : new L.DivIcon({
+								className: 'map__marker',
+								html:   '<img class="map__marker__image" src="' + iconUrl + '">'
+									})
+						} );
+						marker2.bindPopup(arr_c[i]);
+					route.addLayer( marker2 );
+				}
+				route.bindPopup('<a href="' + collab.link + '">' + collab.name + '</a>');
+			}
+			return route;
+		};
+
+		function loadMap() {
+			var baseMapUrl = 'https://api.mapbox.com/styles/v1/retrorism/cio2pv2ft001ybvm8qb4da6f9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmV0cm9yaXNtIiwiYSI6IlhRWTE0d2cifQ.-Wi_jReZU4Wz_owPnVZDwQ',
+			base = L.tileLayer(baseMapUrl, {subdomains: '1234'});
+			if ( map == undefined ) {
+				map = L.map('leaflet-archive-map',{
+					layers: [base],
+					maxZoom: 20,
+					minZoom: 0,
+					zoomControl: 1,
+					scrollWheelZoom: 0,
+					attributionControl: false
+				}).setView([48, 16], 4);
+				var attControl = L.control.attribution({prefix:false}).addTo(map);attControl.addAttribution('Tiles Courtesy of <a href="http://www.mapbox.com/" target="_blank">MapBox</a> © <a href="http://www.openstreetmap.org/">OpenStreetMap</a> contributors');
+			}
+			fetchCollaborations();
+		}
+
+		function loadGrid() {
+			console.log( 'grid loaded' );
+		}
 
 		jQuery('.archive__view__toggle').find('a').each( function() {
 			jQuery(this).on('click', function( e ) {

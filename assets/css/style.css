@@ -5383,8 +5383,7 @@ a:hover .griditem__title {
 ARCHIVE STYLES
 *********************/
 .archive__grid {
-  padding-bottom: 8rem;
-  position: relative; }
+  padding-bottom: 8rem; }
   .archive__grid .button-wrapper {
     position: absolute;
     bottom: 0;

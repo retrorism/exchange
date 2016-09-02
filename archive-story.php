@@ -23,17 +23,19 @@
 			<div class="section-inner">
 				<?php get_template_part( 'parts/content', 'archive-filters'); ?>
 				<div class="archive__grid">
-					<div class="masonry">
+					<div class="masonry-wrapper">
+						<div class="masonry">
 
-					<?php while (have_posts()) : the_post(); ?>
+						<?php while (have_posts()) : the_post(); ?>
 
-						<!-- To see additional archive styles, visit the /parts directory -->
-						<?php $featured_posts = get_option('options_featured_stories'); ?>
-						<?php include( get_stylesheet_directory() . '/parts/loop-archive-grid.php' ); ?>
+							<!-- To see additional archive styles, visit the /parts directory -->
+							<?php $featured_posts = get_option('options_featured_stories'); ?>
+							<?php include( get_stylesheet_directory() . '/parts/loop-archive-grid.php' ); ?>
 
-					<?php endwhile; ?>
+						<?php endwhile; ?>
 
-					</div><!--masonry-->
+						</div><!--masonry-->
+					</div>
 					<div class="button-wrapper">
 						<?php exchange_create_archive_button(); ?>
 					</div>
