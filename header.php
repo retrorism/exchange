@@ -27,7 +27,7 @@
 	    <?php } ?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/vendor/modernizr/custom/modernizr.js"></script>
+
 		<script>
 			/*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
 			(function( w ){
@@ -58,7 +58,9 @@
 			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/lazysizes/lazysizes.min.js", function() {});
 			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/fontfaceobserver/fontfaceobserver.js", function() {});
 			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/what-input/what-input.min.js", function() {});
-			
+			loadJS( "<?php echo get_template_directory_uri(); ?>/vendor/masonry/dist/masonry.pkgd.min.js", function() {});
+
+
 		</script>
 
 		<?php wp_head(); ?>

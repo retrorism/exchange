@@ -189,7 +189,7 @@
 
 			if(!srcSet && isImage){
 				srcSet = !elem._lazypolyfill ?
-					(elem.getAttribute(config.srcAttr) || elem.getAttribute('src')) :
+					(elem.getAttribute('src') || elem.getAttribute(config.srcAttr)) :
 					elem._lazypolyfill._set
 				;
 			}
@@ -201,7 +201,7 @@
 					parsedSet.isPicture = elem.parentNode.nodeName.toUpperCase() == 'PICTURE';
 
 					if(parsedSet.isPicture){
-						if(window.matchMedia){
+						if(window.matchMedia || (window.Modernizr && Modernizr.mq)){
 							lazySizes.aC(elem, 'lazymatchmedia');
 							runMatchMedia();
 						}
@@ -227,6 +227,8 @@
 				matchesMedia = function(media){
 					return !media || (matchMedia(media) || {}).matches;
 				};
+			} else if(window.Modernizr && Modernizr.mq){
+				return !media || Modernizr.mq(media);
 			} else {
 				return !media;
 			}

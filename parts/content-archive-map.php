@@ -1,3 +1,6 @@
 <section class="archive__map">
-<div id="leaflet-archive-map"></div>
+	<div class="section-inner">
+		<figure class="collaboration__interactivemap">
+		</figure>
+	</div>
 </section>

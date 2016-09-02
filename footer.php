@@ -25,17 +25,6 @@
 		</footer> <!-- end .footer -->
 		<?php wp_footer(); ?>
 		<script>
-		<?php if ( is_post_type_archive( 'collaboration' ) ) : ?>
-			if (!Modernizr.input.list) {
-				var exchange_relevantDropdown = document.createElement('script');
-				exchange_relevantDropdown.setAttribute('src','<?php echo get_template_directory_uri(); ?>/vendor/css-tricks/Relevant-Dropdowns/js/jquery.relevant-dropdown.js');
-				if(document.body != null){ document.body.appendChild(exchange_relevantDropdown) }
-				var exchange_loadFallback = document.createElement('script');
-				exchange_loadFallback.setAttribute('src','<?php echo get_template_directory_uri(); ?>/vendor/css-tricks/Relevant-Dropdowns/js/load-fallbacks.js');
-				if(document.body != null){ document.body.appendChild(exchange_loadFallback) }
-			}
-		<?php endif; ?>
-
 		(function( w ){
 		if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
 			return;

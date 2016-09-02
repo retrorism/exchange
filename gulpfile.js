@@ -13,9 +13,7 @@ var gulp  = require('gulp'),
     plumber = require('gulp-plumber'),
     bower = require('gulp-bower'),
     babel = require('gulp-babel'),
-    browserSync = require('browser-sync').create(),
-	modernizr = require('gulp-modernizr');
-
+    browserSync = require('browser-sync').create();
 
 // Compile Sass, Autoprefix and minify
 gulp.task('styles', function() {
@@ -123,27 +121,6 @@ gulp.task('browsersync', function() {
     gulp.watch('./assets/scss/**/*.scss', ['styles']);
     gulp.watch('./assets/js/scripts/*.js', ['site-js']).on('change', browserSync.reload);
 
-});
-
-// Custom Modernizr builds
-gulp.task('modernizr', function() {
-  gulp.src(
-	  	[
-		'./assets/**/*.{js,css,scss}',
-		'./vendor/**/*.{js,css,scss}'
-		]
-  )
-    .pipe(modernizr({
-	"options" : [
-        "setClasses",
-        "addTest",
-        "html5printshiv",
-        "testProp",
-        "fnBind"
-    ],
-    "tests": ['input']
-  }))
-    .pipe(gulp.dest("./vendor/modernizr/custom"))
 });
 
 // Watch files for changes (without Browser-Sync)

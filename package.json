@@ -19,7 +19,6 @@
     "gulp-concat": "^2.5.2",
     "gulp-cssnano": "^2.1.1",
     "gulp-jshint": "^1.11.0",
-    "gulp-modernizr": "0.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.1",

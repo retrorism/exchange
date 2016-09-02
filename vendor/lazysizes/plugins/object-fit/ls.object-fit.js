@@ -59,7 +59,7 @@
 			var hideElement = element;
 			var container = element.parentNode;
 
-			if(container.nodeName.toUpperCase() == 'PICTURE'){
+			if(container.nodeName.toLowerCase() == 'PICTURE'){
 				hideElement = container;
 				container = container.parentNode;
 			}

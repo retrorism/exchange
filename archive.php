@@ -15,10 +15,8 @@
 			<?php endwhile; ?>
 			</div>
 
-			<?php //exchange_page_navi();// ?>
-			<div class="button-wrapper">
-				<?php exchange_create_archive_button(); ?>
-			</div>
+			<?php exchange_page_navi(); ?>
+
 		<?php else : ?>
 
 			<?php get_template_part( 'parts/content', 'missing' ); ?>

@@ -17,9 +17,7 @@
 		<?php else: ?>
 			<?php get_template_part( 'parts/content', 'archive-header'); ?>
 		<?php endif; ?>
-		<?php if ( is_archive('collaboration' ) ) : ?>
-			<?php get_template_part( 'parts/content', 'archive-map'); ?>
-		<?php endif; ?>
+
 		<section class="archive__interface-wrapper section--blue-1-web section--coloured">
 			<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 
@@ -27,7 +25,11 @@
 
 		    <?php if (have_posts()) : ?>
 
-				<div class="archive__grid">
+				<?php if ( is_archive('collaboration' ) ) : ?>
+					<?php get_template_part( 'parts/content', 'archive-map'); ?>
+				<?php endif; ?>
+
+				<div class="archive__grid" data-masonry='{ "itemSelector": ".archive__grid__griditem" }'>
 
 				<?php while (have_posts()) : the_post(); ?>
 
@@ -36,10 +38,8 @@
 
 				<?php endwhile; ?>
 				</div>
-				<?php //exchange_page_navi(); //?>
-				<div class="button-wrapper">
-					<?php exchange_create_archive_button(); ?>
-				</div>
+				<?php exchange_page_navi(); ?>
+
 			<?php else : ?>
 
 				<?php get_template_part( 'parts/content', 'missing' ); ?>

@@ -1,36 +1,17 @@
 <?php
-
 function site_scripts() {
-	// Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way.
-	global $wp_styles;
+  global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
-	// Adding Foundation scripts file in the footer.
-	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/js/foundation.js', array( 'jquery' ), '6.2', true );
+    // Adding Foundation scripts file in the footer
+    wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/js/foundation.js', array( 'jquery' ), '6.2', true );
 
-	// Adding masonry script for archive templates.
-	if ( is_archive() ) {
-		wp_enqueue_script( 'masonry-js', get_template_directory_uri() . '/vendor/masonry/dist/masonry.pkgd.min.js', array( 'jquery' ), '', true );
-	}
+	// Adding scripts file in the footer
+    wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
 
-	if ( is_post_type_archive('collaboration') ) {
-		// Adding Foundation scripts file in the header.
-		wp_dequeue_script( 'leaflet_map_construct' );
-		wp_enqueue_style( 'leaflet_stylesheet' );
-		wp_dequeue_script( 'leaflet_js' );
-		wp_enqueue_script( 'leaflet_js', get_template_directory_uri() . '/vendor/leaflet/dist/leaflet.js', array(), '', false );
-		wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery', 'masonry-js', 'leaflet_js', 'leaflet_snake_js' ), '', true );
-
-		$translation_array = array(
-			'yellowTandem' => exchange_slug_to_hex('yellow-tandem'),
-			'markerUrl'    => get_template_directory_uri() . '/assets/images/png/T_dot_WEB.png',
-		);
-		//after wp_enqueue_script
-		wp_localize_script( 'site-js', 'leaflet_vars', $translation_array );
-	} else {
-		// Adding scripts file in the footer.
-		wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
-	}
-
+    // Comment reply script for threaded comments
+    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+      wp_enqueue_script( 'comment-reply' );
+    }
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);
 

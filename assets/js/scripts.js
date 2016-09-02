@@ -1,40 +1,3 @@
-
-
-jQuery(document).foundation();
-// Speed up calls to hasOwnProperty
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var baseUrl = location.origin;
-var map;
-
-if (! location.origin) {
-	baseUrl = location.protocol + "//" + location.host;
-}
-
-if ( location.origin == 'http://localhost' ) {
-  baseUrl = location.origin + "/tandem";
-}
-
-function isEmpty(obj) {
-    if (obj == null) {
-		return true;
-	}
-    if (obj.length > 0) {
-		return false;
-	}
-    if (obj.length === 0) {
-		return true;
-	}
-    if (typeof obj !== "object") {
-		return true;
-	}
-    for (var key in obj) {
-        if (hasOwnProperty.call(obj, key)) {
-			return false;
-		}
-    }
-    return true;
-}
-
 var getFocusTranslate = function( img_placeholder, img ) {
 	img_data = img_placeholder.parentNode.dataset;
 	if ( ! img_data ) {
@@ -77,201 +40,18 @@ var doFocusTranslate = function( img ) {
 	}
 };
 
-function createRoute(arr_m,arr_l,arr_c) {
-	var iconUrl = leaflet_vars.markerUrl,
-	exchange_icon = L.icon({
-		iconUrl: iconUrl,
-		iconSize:     [14, 14], // size of the icon
-		shadowSize:   [0, 0], // size of the shadow
-		iconAnchor:   [7, 7], // point of the icon which will correspond to marker's location
-		shadowAnchor: [4, 62],  // the same for the shadow
-		popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
-	}),
-	route = L.featureGroup({snakingPause: 500 });
-	if ( arr_m.length > 0 && arr_l.length > 0 ) {
-		for ( i = 0; i < arr_l.length; i++ ) {
-			var marker = L.marker( arr_m[i], {
-				icon : new L.DivIcon({
-					className: 'map__marker',
-					html:   '<img class="map__marker__image" src="' + iconUrl + '">'+
-							'<span class="map__marker__label">'+arr_c[i]+'</span>'
-						})
-			});
-			var line = L.polyline( arr_l[i], {
-				color : leaflet_vars.yellowTandem,
-				className: 'map__line',
-				weight : 6,
-				opacity : 0.9,
-				dashArray : '12, 10',
-				lineJoin: 'round',
-				snakingSpeed: 200
-			} );
-			route.addLayer( marker ).addLayer( line );
-		}
-		if ( arr_l.length == 1 ) {
-				var marker2 = L.marker( arr_m[i], {
-					icon : new L.DivIcon({
-						className: 'map__marker',
-						html:   '<img class="map__marker__image" src="' + iconUrl + '">'+
-								'<span class="map__marker__label">'+arr_c[i]+'</span>'
-							})
-				} );
-				marker2.bindPopup(arr_c[i]);
-			route.addLayer( marker2 );
-		}
-	}
-	return route;
-};
-
-function getQueryTag( data, option ) {
-	var tag = document.createElement('a'),
-	item = document.createElement('li'),
-	text = document.createTextNode( data.name );
-	tag.setAttribute( 'data-term_id',data.id );
-	tag.setAttribute( 'data-slug',data.slug );
-	tag.setAttribute( 'data-tax',data.tax );
-	tag.setAttribute( 'title',data.name );
-	tag.setAttribute( 'href','#' );
-	tag.addEventListener('click',function( event ) {
-		event.preventDefault();
-		option.removeAttr('selected');
-		console.log(option);
-		this.remove();
-	})
-	tag.className = 'tag query-tag' + ' ' + data.tax;
-	tag.appendChild(text);
-	item.appendChild(tag);
-	return item;
-}
-
-function fetchCollaborationsQuery() {
-	alert('called');
-	var tags = jQuery('.archive__filter__query-tags').find('a.tag');
-	console.log(tags);
-	var filters = {
-		'object' : 'collaborations',
-	};
-	if ( tags.length ) {
-		for ( var i = 0; i < tags.length; i++ ) {
-			var k = tags[i].data('tax'),
-			v = tags[i].data('slug');
-			if ( ( typeof k === 'string' || k instanceof String )
-			 	&& ( typeof v === 'string' || v instanceof String ) ) {
-				filters.taxquery[k] = v;
-			}
-		}
-		taxquery = filters.taxquery,
-		queryFilters = '';
-		if ( isEmpty(taxquery) ) {
-			throw new Error("No filters given");
-		}
-		for (var key in taxquery) {
-			if (taxquery.hasOwnProperty(key)) {
-				queryFilters += '&filter[' + key + ']=' + taxquery[key];
-			}
-		}
-		var restFilters = '?filter[post_status]=publish' + queryFilters + '&filter[orderby]=date&filter[order]=desc',
-		restBase = '/wp-json/wp/v2/' + filters.object,
-		restUrl = baseUrl + restBase + restFilters;
-		console.log( restUrl );
-		return restUrl;
-	}
-	console.log( filters );
-}
-
-function fetchCollaborations() {
-	var restUrl = fetchCollaborationsQuery();
-	if ( restUrl !== null ) {
-		jQuery.when(
-			jQuery.ajax({
-				url: restUrl,
-				method: 'GET',
-				crossDomain: true,
-				contentType: 'application/json',
-			})
-		).then(
-			function( data, status, request ) {
-				// console.log( 'X-WP-Total: ' + request.getResponseHeader('X-WP-Total') );
-				// console.log( 'X-WP-TotalPages: ' + request.getResponseHeader('X-WP-TotalPages') );
-				var dataLength = data.length,
-				collection = [];
-				for ( var k = 0; k < dataLength; k++ ) {
-					collection.push( data[k].exchange_basics.data );
-				}
-				collectionLength = collection.length;
-				for ( var l = 0; l < collectionLength; l++ ) {
-					var route = prepareCollaborationMarkers( collection[l] );
-					console.log( route );
-					route.addTo( map );
-				}
-			}
-		)
-	}
-}
-
-function prepareCollaborationMarkers( obj ) {
-	var locations = [],
-	markers = [],
-	cities = [],
-	lines = [];
-	if ( isEmpty( obj.locations ) ) {
-		throw new Error('no locations found');
-	}
-	for (var participant_id in obj.locations ) {
-		if ( obj.locations.hasOwnProperty(participant_id) ) {
-			var participant = obj.locations[participant_id],
-			latlngs = []
-			if ( jQuery.isNumeric( participant.org_lat ) ) {
-				latlngs.push( participant.org_lat );
-			}
-			if ( jQuery.isNumeric( participant.org_lng ) ) {
-				latlngs.push( participant.org_lng );
-			}
-			if ( latlngs.length == 2 ) {
-				locations.push( latlngs );
-			}
-			if ( '' != participant.org_city ) {
-				cities.push( participant.org_city );
-			}
-		}
-	}
-	var length = locations.length;
-	// Adding markers and lines to their respective arrays.
-	for ( var j = 0; j < length; j++ ) {
-		markers.push( locations[j] );
-		if ( j === length - 1 ) {
-			if ( length > 2 ) {
-				lines.push( [ locations[j], locations[0] ] );
-			}
-		} else {
-			lines.push( [ locations[j], locations[j+1] ] );
-		}
-	}
-	if ( length == 2 ) {
-		markers.push( locations[1] );
-	}
-	var route = createRoute(markers,lines,cities);
-	return route;
-
-}
-
 jQuery(document).foundation();
 /*
 These functions make sure WordPress
 and Foundation play nice together.
 */
 
+
 jQuery(document).ready(function() {
 
-	// var baseUrl = location.origin;
-	//
-	// if (! location.origin) {
-	// 	baseUrl = location.protocol + "//" + location.host;
-	// }
-	//
-	// if ( location.origin == 'http://localhost' ) {
-	//   baseUrl = location.origin + "/tandem";
- //  	}
+	// jQuery(document).on('open.zf.reveal', function() {
+	// 	jQuery(document).foundation('orbit', 'reflow');
+	// });
 
 	var focus_img_containers = document.querySelectorAll('.focus');
 	for ( var i = 0; i < focus_img_containers.length; i++ ) {
@@ -284,11 +64,11 @@ jQuery(document).ready(function() {
 	}
 
 	var floated_elements = document.querySelectorAll('.floated');
-	for (var j = 0; j < floated_elements.length; j++ ) {
-		var equal_element = floated_elements[j].nextElementSibling,
-		h = floated_elements[j].offsetHeight,
+	for (var ii = 0; ii < floated_elements.length; ii++ ) {
+		var equal_element = floated_elements[ii].nextElementSibling,
+		h = floated_elements[ii].offsetHeight,
 		equal_h = equal_element.offsetHeight;
-		// console.log( floated_elements[j] );
+		// console.log( floated_elements[ii] );
 		// console.log( equal_element );
 		// console.log( 'neighbour: ' + equal_h + ' px');
 		if ( h > equal_h ) {
@@ -330,108 +110,12 @@ jQuery(document).ready(function() {
 	jQuery('.archive__grid .columns', 'relatedgrid .columns').last().addClass( 'end' );
 
 	// Adds Flex Video to YouTube and Vimeo Embeds
-	jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {
-		if ( jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5 ) {
-		  jQuery(this).wrap("<div class='widescreen flex-video'/>");
-		} else {
-		  jQuery(this).wrap("<div class='flex-video'/>");
-		}
-	});
-
-  // Archive functions
-	if ( jQuery('body').hasClass('archive') ) {
-		var $archiveGrid = jQuery('.archive__grid').masonry({
-		  "itemSelector": ".archive__grid__griditem"
-		});
-
-		jQuery('.archive__filter__button').each(function() {
-			jQuery(this).on('click', function() {
-				var tax = jQuery(this).data('tax'),
-				termList = jQuery(this).parent().find('.archive__filter__datalist'),
-				term = termList.val();
-				if ( term !== null && term !== undefined && term !== '' ) {
-					var termOption = jQuery('.archive__filter').find('.archive__filter__tax-datalist[data-tax=' + tax + ']').find('option[value="' + term + '"]:not(:selected)');
-					if ( termOption.length ) {
-						var termData = termOption.data();
-						termData.name = term;
-						termData.tax = tax;
-						// Pass term option element object, so it can be removed on click
-						var tag = getQueryTag(termData, termOption);
-						jQuery('.archive__filter__query-tags ul').append( tag );
-						termOption.attr('selected','selected');
-
-					}
-					termList.val('');
-				}
-			})
-		})
-
-		jQuery('.archive__button').on('click',function( e ) {
-			e.preventDefault();
-			var $moreButton = jQuery(this),
-			paged = $moreButton.data('paged'),
-			max_num_pages = $moreButton.data('max_num_pages'),
-			object = $moreButton.data('object'),
-			posts_per_page = $moreButton.data('posts_per_page'),
-			tax_query = $moreButton.data('tax_query');
-			if ( tax_query ) {
-				restBase = '/wp-json/exchange/v1/' + object + '/' + tax_query;
-				filters = '?page=' + ( paged + 2 ) + '&posts_per_page=' + posts_per_page;
-			} else {
-				restBase = '/wp-json/wp/v2/' + object;
-				filters = '?filter[post_status]=publish&filter[posts_per_page]=' + posts_per_page + '&page=' + ( paged + 2 ) + '&filter[orderby]=date&filter[order]=desc';
-			}
-			var restUrl = baseUrl + restBase + filters;
-			if ( ( paged + 1 ) < max_num_pages ) {
-				jQuery.ajax({
-					url: restUrl,
-					method: 'GET',
-					crossDomain: true,
-					contentType: 'application/json',
-					success: function( data, status, request ) {
-						// console.log( 'X-WP-Total: ' + request.getResponseHeader('X-WP-Total') );
-						// console.log( 'X-WP-TotalPages: ' + request.getResponseHeader('X-WP-TotalPages') );
-						console.log( restUrl );
-						var pagelength = data.length,
-							items = '';
-						for ( var i = 0; i < pagelength; i++ ) {
-							items = items + data[i].exchange_basics.griditem;
-						}
-						var $items = jQuery( items );
-						$archiveGrid.append( $items ).masonry( 'appended',$items ).masonry();
-						paged = paged + 1;
-						$moreButton.data('paged', paged );
-						if ( paged + 1 == max_num_pages ) {
-							$moreButton.hide();
-						}
-					},
-					error: function( error ) {
-						console.log( error );
-					}
-				});
-			}
-		});
-	}
-	if ( jQuery('body').hasClass('post-type-archive-collaboration') ) {
-
-		var baseMapUrl = 'https://api.mapbox.com/styles/v1/retrorism/cio2pv2ft001ybvm8qb4da6f9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmV0cm9yaXNtjwiYSI6IlhRWTE0d2cifQ.-Wi_jReZU4Wz_owPnVZDwQ',
-		base = L.tileLayer(baseMapUrl, {subdomains: '1234'});
-		map = L.map('leaflet-archive-map',{
-			layers: [base],
-			maxZoom: 20,
-			minZoom: 0,
-			zoomControl: 1,
-			scrollWheelZoom: 0,
-			attributionControl: false
-		}).setView([48, 16], 4);
-		var attControl = L.control.attribution({prefix:false}).addTo(map);attControl.addAttribution('Tiles Courtesy of <a href="http://www.mapbox.com/" target="_blank">MapBox</a> © <a href="http://www.openstreetmap.org/">OpenStreetMap</a> contributors');
-		fetchCollaborations();
-		// route = createRoute([[41.0082376,28.9783589],[45.8609375,25.7885796],[45.8609375,25.7885796]],[[[41.0082376,28.9783589],[45.8609375,25.7885796]]],["Istanbul","Sfantu Gheorghe",""]);
-		// route.bindPopup('<a class=\"\" href=\"http://localhost/tandem/collaborations/looking-forat-the-invisible/\" title=\"Navigate to Looking For/At The Invisible\">Looking For/At The Invisible</a>');
-		// route.addTo( map );
-		// map.fitBounds( route.getBounds().pad(0.033) );
-		// route.snakeIn();
-	}
-
+  jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {
+    if ( jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5 ) {
+      jQuery(this).wrap("<div class='widescreen flex-video'/>");
+    } else {
+      jQuery(this).wrap("<div class='flex-video'/>");
+    }
+  });
 
 });

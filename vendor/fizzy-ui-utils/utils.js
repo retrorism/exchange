@@ -1,5 +1,5 @@
 /**
- * Fizzy UI utils v2.0.3
+ * Fizzy UI utils v2.0.2
  * MIT license
  */
 
@@ -172,8 +172,7 @@ utils.debounceMethod = function( _class, methodName, threshold ) {
 utils.docReady = function( callback ) {
   var readyState = document.readyState;
   if ( readyState == 'complete' || readyState == 'interactive' ) {
-    // do async to allow for other scripts to run. metafizzy/flickity#441
-    setTimeout( callback );
+    callback();
   } else {
     document.addEventListener( 'DOMContentLoaded', callback );
   }
@@ -221,7 +220,7 @@ utils.htmlInit = function( WidgetClass, namespace ) {
       }
       // initialize
       var instance = new WidgetClass( elem, options );
-      // make available via $().data('namespace')
+      // make available via $().data('layoutname')
       if ( jQuery ) {
         jQuery.data( elem, namespace, instance );
       }
