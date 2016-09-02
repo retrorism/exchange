@@ -4,16 +4,23 @@
 			<div id="programmes">
 			<?php
 				$img_root = get_template_directory() . '/assets/images/';
-				$programmes = $GLOBALS['EXCHANGE_PLUGIN_CONFIG']['TAXONOMIES']['programmes'];
-				foreach ( $programmes as $slug => $title ) {
-					$page_id = get_page_by_title( $title );
+				global $post;
+				$page_query = new WP_Query();
+				$all_pages = $page_query->query(array('post_type' => 'page','post_status' => 'publish' ) );
+				$programmes = get_page_children( $post->ID, $all_pages );
+				foreach ( $programmes as $page_obj ) {
 					$anchor = '<a href="#">';
-					if ( ! empty( $page_id ) ) {
-						$anchor = exchange_create_link( BaseController::exchange_factory( $page_id ), false );
+					if ( ! $page_obj instanceof WP_Post || 'publish' !== $page_obj->post_status ) {
+						var_dump( $page_obj );
+						continue;
+					} else {
+						$anchor = exchange_create_link( BaseController::exchange_factory( $page_obj ), false );
+						$slug = array_search( $page_obj->post_title, $GLOBALS['EXCHANGE_PLUGIN_CONFIG']['IMAGES']['programme-logos'] );
+						if ( ! empty( $slug ) ) {
+							echo $anchor . exchange_build_svg( $img_root . 'svg/T_logo_' . $slug . '_WEB.svg', true ) . '</a>';
+						}
+
 					}
-					echo $anchor;
-					echo exchange_build_svg( $img_root . 'svg/T_logo_' . $slug . '_WEB.svg', true );
-					echo '</a>';
 				}
 			?>
 			</div>
