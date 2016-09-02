@@ -28,41 +28,34 @@
 
 		<?php else: ?>
 
-		<section class="archive__interface-wrapper section--blue-1-web section--coloured">
+			<section class="archive__interface-wrapper section--blue-1-web section--coloured">
 				<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+
 		<?php endif; ?>
-			<div class="section-inner">
 			<?php get_template_part( 'parts/content', 'archive-filters'); ?>
 
 		    <?php if (have_posts()) : ?>
 
 				<div class="archive__grid" id="archive__view--grid">
-					<div class="masonry-wrapper">
 
-						<div class="masonry">
+				<?php while (have_posts()) : the_post(); ?>
 
-						<?php while (have_posts()) : the_post(); ?>
+				<!-- To see additional archive styles, visit the /parts directory -->
+				<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 
-						<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
-
-						<?php endwhile; ?>
-
-						</div><!--masonry-->
-
-					</div>
+				<?php endwhile; ?>
+					<?php //exchange_page_navi(); //?>
 					<div class="button-wrapper">
 						<?php exchange_create_archive_button(); ?>
 					</div>
+				</div>
 
-				<?php else : ?>
+			<?php else : ?>
 
-					<?php get_template_part( 'parts/content', 'missing' ); ?>
+				<?php get_template_part( 'parts/content', 'missing' ); ?>
+				</div>
 
 			<?php endif; ?>
-				</div><!-- end archive__grid -->
-
-			</div><!-- section-inner -->
-
 
 			<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 		</section><!--archive__interface-wrapper-->

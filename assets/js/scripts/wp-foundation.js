@@ -242,7 +242,7 @@ jQuery(document).ready(function() {
 
   // Archive functions
 	if ( jQuery('body').hasClass('archive') ) {
-		var $archiveGrid = jQuery('.masonry').masonry({
+		var $archiveGrid = jQuery('.archive__grid').masonry({
 		  "itemSelector": ".archive__grid__griditem"
 		});
 
