@@ -1,13 +1,15 @@
 <?php get_header(); ?>
 
 <main id="main" class="archive__wrapper" role="main">
+
 	<div class="main-inner">
+
 		<?php
 		$args = array(
-  			'name'        => 'stories',
-  			'post_type'   => 'page',
+			'name'        => 'stories',
+			'post_type'   => 'page',
 			'post_status' => 'private',
-  			'numberposts' => 1
+			'numberposts' => 1
 		);
 		$get_stories_page = get_posts( $args );
 		if ( $get_stories_page ) :
@@ -21,23 +23,46 @@
 
 		<?php endif; ?>
 
-		<?php if (have_posts()) : ?>
-		<?php $colour = $GLOBALS['EXCHANGE_PLUGIN_CONFIG']['COLOURS']['blue-1-web']; ?>
-		<section class="section--story-grid section--has_grid section--blue-1-web">
-			<?php echo BasePattern::build_edge_svg('top', '#' . $colour ); ?>
-			<div class="section-inner">
-				<?php get_template_part( 'parts/content', 'archive-filters' ); ?>
-				<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
-			<?php exchange_page_navi(); ?>
-			</div>
-			<?php echo BasePattern::build_edge_svg('top', '#' . $colour ); ?>
-		</section>
+		<?php if ( have_posts() ) : ?>
+
+			<div class="archive__interface section--has_grid section--blue-1-web section--coloured">
+				<?php echo BasePattern::build_edge_svg( 'top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+
+				<div class="archive__interface-inner">
+
+
+					<?php get_template_part( 'parts/content', 'archive-filters' ); ?>
+
+					<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
+
+					<?php exchange_page_navi(); ?>
+
+
 		<?php else : ?>
 
-			<?php get_template_part( 'parts/content', 'missing' ); ?>
+				<?php get_template_part( 'parts/content', 'missing' ); ?>
 
 		<?php endif; ?>
+				</div><!-- end .archive__interface-inner -->
+				<?php echo BasePattern::build_edge_svg( 'bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+		</div><!-- end .archive__interface-->
+
+		<footer class="archive__footer">
+
+			<section class="archive__footer__section footer__section">
+
+				<div class="section-inner">
+
+					<?php get_template_part( 'parts/content','story-share-cta' ); ?>
+
+				</div>
+
+			</section>
+
+		</footer>
+
 	</div> <!-- end .main-inner -->
+
 </main> <!-- end #main -->
 
 <?php get_footer(); ?>

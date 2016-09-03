@@ -2,5 +2,5 @@
 	<div class="section-inner">
 		<figure class="collaboration__interactivemap">
 		</figure>
-	</div>
+	</div><!-- section-inner-->
 </section>

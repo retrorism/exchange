@@ -20,5 +20,5 @@
 		</nav>
 		<small class="archive__filter__toggle"><a data-toggle="archive__filter__callout"><?php _e('Hide / Show filters', EXCHANGE_PLUGIN ); ?></a></small>
 
-	</div>
+	</div><!-- section-inner -->
 </section>

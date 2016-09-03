@@ -12,46 +12,57 @@
 	$three_plus = 3 <= count( $featured_stories ) ? '--three-or-more ' : '';
 
 	if ( ! empty( $featured_stories ) ) : ?>
-		<section class="featured-stories<?php echo $three_plus; ?> <?php echo $prefix; ?>__featured-stories section--featured-stories ">
-			<div class="section-inner">
-				<div class="section__featuredgrid">
-				<?php
-					$length = count( $featured_stories );
-					for ( $i = 0; $i < $length ; $i++ ) {
-						$griditem = BaseController::exchange_factory( $featured_stories[$i],'griditem' );
-						if ( $i === 0 && $length !== 2 ) {
+
+		<div class="featured-stories featured-stories<?php echo esc_attr( $three_plus ); ?> <?php echo esc_attr( $prefix ); ?>__featured-stories">
+
+			<section class="section--has-grid section--featured-grid">
+
+				<div class="section-inner">
+
+					<div class="row" data-equalizer>
+
+					<?php $length = count( $featured_stories );
+					for ( $i = 0; $i < $length; $i++ ) {
+
+						$griditem = BaseController::exchange_factory( $featured_stories[ $i ],'griditem' );
+
+						if ( 0 === $i && 2 !== $length ) {
 							$modifiers = array(
 								'grid_width' => 'grid_full',
 								'grid_width_num' => 12,
 							);
 						} else {
-							if ( $length === 3 ) {
+							if ( 3 === $length ) {
 								$modifiers = array(
 									'grid_width' => 'grid_half',
 									'grid_width_num' => 6,
 								);
-							} elseif ( $length === 4 ) {
+							} elseif ( 4 === $length ) {
 								$modifiers = array(
 									'grid_width' => 'grid_third',
 									'grid_width_num' => 4,
 								);
-							} elseif ( $length === 2 ) {
+							} elseif ( 2 === $length ) {
 								$modifiers = array(
 									'grid_width' => 'grid_half',
 									'grid_width_num' => 6,
 								);
 							}
 						}
-						if ( $i === 1 || $length === 2 ) {
-							echo '<div class="row" data-equalizer>';
+						if ( 1 === $i && 2 < $length ) {
+							echo '</div><!-- end row --><div class="row" data-equalizer>';
 						}
 						Exchange::publish_grid_featured( $griditem, 'featuredgrid', $modifiers );
 					}
+
 					if ( $length > 0 ) {
 						echo '</div>';
 					} ?>
 
-				</div>
-			</div>
-		</section>
-		<?php endif; ?>
+				</div><!-- section-inner-->
+
+			</section><!-- section--has-grid-->
+
+		</div>
+
+	<?php endif; ?>

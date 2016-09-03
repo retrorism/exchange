@@ -19,22 +19,16 @@ $exchange = new Story( $post ); ?>
 
 	<?php include_once( get_stylesheet_directory() . '/parts/content-page-header.php' ) ?>
 
-	<div id="article-body" class="entry-content story__content" itemprop="articleBody">
+	<div class="entry-content story__content" itemprop="articleBody">
 		<?php
 		// Loop through sections.
 		$exchange->publish_sections();
 		?>
-	</div> <!-- end article -->
+	</div> <!-- end story__content -->
+
+	<?php include_once( get_stylesheet_directory() . '/parts/content-story-footer.php' ); ?>
 
 </article> <!-- end article -->
-
-<?php if ( $exchange->has_related_content ) : ?>
-	<section class="article-related-content story__section story__extras section--salmon-1-web section--coloured">
-		<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
-			<?php $exchange->publish_related_content('story'); ?>
-		<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
-	</section>
-<?php endif; ?>
 
 <?php if ( $exchange->has_gallery ) : ?>
 	<div class="story__modal--gallery full reveal" role="dialog" id="story__modal--gallery" aria-describedby="description" data-reveal>

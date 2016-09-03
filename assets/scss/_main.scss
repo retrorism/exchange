@@ -382,24 +382,15 @@ nav.top-bar {
 ARTICLE STYLES:
 *********************/
 
-.story__header__introduction,
 .story__header__lowres-image-wrapper,
-.story__section .section-inner,
-.section--has_grid .section-inner,
-.section--featured-stories .section-inner,
-.collaboration__section .section-inner,
-.story__footer,
-.story__relatedgrid,
-.section__archive-grid,
-.collaboration__relatedgrid,
+.story__header__introduction,
 .archive__header__introduction,
-.archive__filter,
-.archive__map,
-.collaboration__header {
+.collaboration__header,
+section .section-inner {
 	@include grid-row;
 }
 
-.section-inner, .archive__wrapper {
+.section-inner {
 	padding-bottom: 2 * $global-padding;
 	padding-top: 2 * $global-padding;
 	overflow: hidden;
@@ -464,7 +455,8 @@ ARTICLE STYLES:
 
 }
 
-.section__featuredgrid {
+.section__featuredgrid,
+.section__archive-grid {
 	@include grid-column();
 	@include grid-column( 12 );
 	@include breakpoint( small ) {
@@ -610,10 +602,6 @@ ARTICLE STYLES:
 	padding-right: $global-padding;
 }
 
-.story__header__introduction {
-	margin-bottom: 2 * $global-margin;
-}
-
 /*********************
 ARTICLE PATTERN STYLES
 *********************/
@@ -656,8 +644,6 @@ ARTICLE PATTERN STYLES
 }
 
 .page__footer__widgets > svg,
-.story__extras > svg,
-.section--story-grid > svg,
 .section--coloured > svg {
 	position: relative;
 	width: 100%;
@@ -665,37 +651,59 @@ ARTICLE PATTERN STYLES
 	margin: 0;
 	padding: 0;
 	top: -20px;
+	z-index: -1;
 	&.section__edge--bottom {
 		transform: scale(1,-1);
 		top: 20px;
 	}
 }
 
-// Remove top-padding for first element in the story
-.story__content .story__section:first-child .section-inner,
-.section--coloured > .section-inner:first-of-type {
+/* Remove top-padding for first section in the story
+ * and remove top padding for coloured sections. */
+
+.story__section:first-child .section-inner,
+.section--coloured > .section-inner {
 	padding-top: 0;
+	// Remove top margin for the first element in the first section.
+	.section__slice:first-of-type:not(.paragraph .sectionheader) {
+		margin-top: 0;
+	}
 }
 
-.story__content .story__section:first-child .section-inner .section__slice.section__paragraph {
-	margin-top: 0;
+// Remove bottom-padding from the last section in the story and coloured sections
+.story__section:last-child .section-inner,
+.story__section:last-child.section--coloured {
+	padding-bottom: 0;
+	// Remove bottom margin for the last element
+	.section__slice:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 .story__section:last-child.section--coloured > .section-inner:first-of-type {
 	padding-bottom: 2 * $global-padding;
 }
 
-.story__section.section--coloured .section-inner .section__slice:last-of-type {
-	margin-bottom: 0;
-}
-
-.story__extras,
-.collaboration__extras,
-.page .story__section:last-of-type,
-.home .story__section:last-child {
-	padding-bottom: 2 * $global-padding;
+.footer__section {
+	margin: 2 * $global-margin auto;
+	.section-inner {
+		padding: 0;
+	}
+	&:last-of-type {
+		padding-bottom: 4 * $global-padding;
+		margin-bottom: 0;
+	}
+	&.section--coloured {
+		margin-top: 4 * $global-margin;
+	}
 	svg.section__edge--bottom {
 		display: none;
+	}
+}
+
+.archive__footer__section:first-of-type {
+	.section-inner {
+		padding-top: 2 * $global-padding;
 	}
 }
 
@@ -704,7 +712,6 @@ ARTICLE PATTERN STYLES
 		display: none;
 	}
 }
-
 
 .section--featured-stories .section-inner {
 	padding-top: 0;
@@ -767,7 +774,6 @@ Pattern 2. Bylines
 	font-size: $lead-font-size;
 	line-height: $lead-lineheight;
 	font-style: italic;
-	margin-bottom: 4 * $global-margin;
 }
 
 /********************************
@@ -1001,6 +1007,7 @@ h4.share-cta-header,
 		display: inline-block;
 		height: auto;
 		position: relative;
+		margin-top: 2 * $global-margin;
 	}
 	h4 {
 		position: relative;
@@ -1800,8 +1807,6 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-
-
 .emphasisblock--full .emphasisblock-inner {
 	@include flex;
 	@include flex-align( justify, middle );
@@ -2052,7 +2057,6 @@ ARTICLE EXTRAS STYLES
 		width: 0;
 	}
 	@include breakpoint( medium ) {
-		padding: 0 0.625em;
 		.masonry__grid-sizer,
 		.archive__grid__griditem {
 			width: 48.5%;
@@ -2286,21 +2290,25 @@ a:hover .griditem__title {
 
 .section--featured-stories {
 	position: relative;
-	z-index: 3;
+	z-index: 4;
 }
 
 @include breakpoint( large ) {
-	.section--featured-stories + .section--has_grid {
+	.featured-stories + section.section--has_grid,
+	.featured-stories + .archive__interface {
 		margin-top: -12 * $global-margin;
-		& > .section-inner {
-			padding-top: 4.5 * $global-padding;
-		}
 	}
-	.section--featured-stories.featured-stories--three-or-more + .section--has_grid {
+	.featured-stories + section.section--has_grid > .section-inner,
+	.featured-stories + .archive__interface > .archive__interface-inner {
+		padding-top: 4.5 * $global-padding;
+	}
+	.featured-stories.featured-stories--three-or-more + section.section--has_grid,
+	.featured-stories.featured-stories--three-or-more + .archive__interface {
 		margin-top: -25.5 * $global-margin;
-		& > .section-inner {
-			padding-top: 20.5 * $global-padding;
-		}
+	}
+	.featured-stories.featured-stories--three-or-more + section.section--has_grid > .section-inner,
+	.featured-stories.featured-stories--three-or-more + .archive__interface > .archive__interface-inner {
+		padding-top: 20.5 * $global-padding;
 	}
 }
 
@@ -2554,7 +2562,7 @@ FOOTER STYLES
 .story__footer,
 .collaboration__footer {
 	clear: both;
-	margin: 4 * $global-margin auto;
+	margin: 0 auto;
 }
 
 .share-cta-wrapper {
