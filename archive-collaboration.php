@@ -29,19 +29,10 @@
 
 		    <?php if (have_posts()) : ?>
 
-				<?php if ( is_archive('collaboration' ) ) : ?>
-					<?php get_template_part( 'parts/content', 'archive-map'); ?>
-				<?php endif; ?>
+				<?php get_template_part( 'parts/content', 'archive-map'); ?>
 
-				<div class="archive__grid" data-masonry='{ "itemSelector": ".archive__grid__griditem" }'>
+				<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
 
-				<?php while (have_posts()) : the_post(); ?>
-
-				<!-- To see additional archive styles, visit the /parts directory -->
-				<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
-
-				<?php endwhile; ?>
-				</div>
 				<?php exchange_page_navi(); ?>
 
 			<?php else : ?>

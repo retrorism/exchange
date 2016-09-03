@@ -26,17 +26,8 @@
 		<section class="section--story-grid section--has_grid section--blue-1-web">
 			<?php echo BasePattern::build_edge_svg('top', '#' . $colour ); ?>
 			<div class="section-inner">
-				<?php get_template_part( 'parts/content', 'archive-filters'); ?>
-				<div class="archive__grid" data-masonry=''>
-				<?php while (have_posts()) : the_post(); ?>
-
-					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php $featured_posts = get_option('options_featured_stories'); ?>
-					<?php include( get_stylesheet_directory() . '/parts/loop-archive-grid.php' ); ?>
-
-				<?php endwhile; ?>
-				</div>
-
+				<?php get_template_part( 'parts/content', 'archive-filters' ); ?>
+				<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
 			<?php exchange_page_navi(); ?>
 			</div>
 			<?php echo BasePattern::build_edge_svg('top', '#' . $colour ); ?>

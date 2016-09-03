@@ -385,16 +385,17 @@ ARTICLE STYLES:
 .story__header__introduction,
 .story__header__lowres-image-wrapper,
 .story__section .section-inner,
+.section--has_grid .section-inner,
 .section--featured-stories .section-inner,
 .collaboration__section .section-inner,
 .story__footer,
 .story__relatedgrid,
+.section__archive-grid,
 .collaboration__relatedgrid,
 .archive__header__introduction,
 .archive__filter,
 .archive__map,
-.collaboration__header,
-.archive__grid {
+.collaboration__header {
 	@include grid-row;
 }
 
@@ -448,6 +449,7 @@ ARTICLE STYLES:
 .page__footer__widgets-inner,
 .collaboration__gallery .section-inner,
 .section__simplegrid,
+.section__archive-grid-inner,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
 	@include grid-column(12);
@@ -2041,8 +2043,37 @@ footer .social-icons-list__item:last-child .social-icons-list__link {
 ARTICLE EXTRAS STYLES
 *********************/
 
-.relatedgrid__griditem,
-.archive__grid__griditem {
+.archive__grid {
+	.masonry__grid-sizer,
+	.archive__grid__griditem {
+		width: 100%;
+	}
+	.masonry__gutter-sizer {
+		width: 0;
+	}
+	@include breakpoint( medium ) {
+		padding: 0 0.625em;
+		.masonry__grid-sizer,
+		.archive__grid__griditem {
+			width: 48.5%;
+			padding: 0;
+		}
+		.masonry__gutter-sizer {
+			width: 3%;
+		}
+	}
+	@include breakpoint( large ) {
+		.masonry__grid-sizer,
+		.archive__grid__griditem {
+			width: 32%
+		}
+		.masonry__gutter-sizer {
+			width: 2%;
+		}
+	}
+}
+
+.relatedgrid__griditem {
 	@include grid_column();
 	@include breakpoint( medium ) {
 		@include grid_column( 6 );
@@ -2054,6 +2085,12 @@ ARTICLE EXTRAS STYLES
 	&.griditem--cta {
 		margin-top: 0;
 	}
+}
+
+.archive__grid__griditem {
+	padding-left: 0;
+	padding-right: 0;
+	margin-bottom: $global-margin;
 }
 
 .featuredgrid__griditem,
@@ -2254,15 +2291,15 @@ a:hover .griditem__title {
 
 @include breakpoint( large ) {
 	.section--featured-stories + .section--has_grid {
-		margin-top: -12em;
-		.section-inner {
-			padding-top: 4.5em;
+		margin-top: -12 * $global-margin;
+		& > .section-inner {
+			padding-top: 4.5 * $global-padding;
 		}
 	}
 	.section--featured-stories.featured-stories--three-or-more + .section--has_grid {
-		margin-top: -25.5em;
-		.section-inner {
-			padding-top: 22em;
+		margin-top: -25.5 * $global-margin;
+		& > .section-inner {
+			padding-top: 20.5 * $global-padding;
 		}
 	}
 }
