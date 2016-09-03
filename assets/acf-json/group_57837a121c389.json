@@ -17,7 +17,7 @@
             },
             "choices": {
                 "featuredgrid": "'Featured' stories on the homepage \/ Stories page.",
-                "archive_grid": "Story overview page",
+                "archive__grid": "Story overview page",
                 "simplegrid": "Curated grids inside story pages",
                 "relatedgrid": "Related content grids"
             },
@@ -363,5 +363,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471605184
+    "modified": 1472815075
 }

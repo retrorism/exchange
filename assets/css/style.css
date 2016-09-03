@@ -5234,14 +5234,14 @@ a:hover .griditem__title {
   z-index: 3; }
 
 @media screen and (min-width: 60em) {
-  .home__featured-stories + .section--has_grid {
+  .section--featured-stories + .section--has_grid {
+    margin-top: -12em; }
+    .section--featured-stories + .section--has_grid .section-inner {
+      padding-top: 4.5em; }
+  .section--featured-stories.featured-stories--three-or-more + .section--has_grid {
     margin-top: -25.5em; }
-    .home__featured-stories + .section--has_grid .section-inner {
-      padding-top: 22em; }
-  .story-archive__featured-stories + .section--has_grid {
-    margin-top: -8em; }
-    .story-archive__featured-stories + .section--has_grid .section-inner {
-      padding-top: 4.5em; } }
+    .section--featured-stories.featured-stories--three-or-more + .section--has_grid .section-inner {
+      padding-top: 22em; } }
 
 #programmes {
   background-image: url("../images/png/T_Build_together_WEB-SCALED-ALPHA.png");

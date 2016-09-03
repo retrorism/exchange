@@ -6,19 +6,23 @@
 		$args = array(
 			'name'        => 'collaborations',
 			'post_type'   => 'page',
-			'post_status' => 'publish',
+			'post_status' => 'private',
 			'numberposts' => 1
 		);
-		$collaborations_page = get_posts( $args );
-		if ( $collaborations_page ) : ?>
-			<?php $exchange = BaseController::exchange_factory( $collaborations_page[0] ); ?>
+		$get_collaborations_page = get_posts( $args );
+		if ( $get_collaborations_page ) : ?>
 
-			<?php include_once( get_stylesheet_directory() . '/parts/content-page-header.php' ); ?>
+			<?php $exchange = BaseController::exchange_factory( $get_collaborations_page[0] );
+			include_once( get_stylesheet_directory() . '/parts/content-page-header.php' ); ?>
+
 		<?php else: ?>
+
 			<?php get_template_part( 'parts/content', 'archive-header'); ?>
+
 		<?php endif; ?>
 
 		<section class="archive__interface-wrapper section--blue-1-web section--coloured">
+
 			<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 
 			<?php get_template_part( 'parts/content', 'archive-filters'); ?>

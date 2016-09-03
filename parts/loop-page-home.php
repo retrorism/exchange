@@ -13,14 +13,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 };
 
-$story = new Story( $post );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/Article">
 	<div id="article-body" class="entry-content story__content" itemprop="articleBody">
 
-		<?php get_template_part( 'parts/loop-featured-stories' ); ?>
+		<?php $exchange = new Story( $post ); 
 
-		<?php $story->publish_sections(); ?>
+			include_once( get_stylesheet_directory() . '/parts/loop-featured-stories.php' );
+
+			$exchange->publish_sections();
+		?>
+
 	</div> <!-- end article -->
 
 </article> <!-- end article -->

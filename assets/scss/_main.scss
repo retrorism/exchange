@@ -2253,16 +2253,16 @@ a:hover .griditem__title {
 }
 
 @include breakpoint( large ) {
-	.home__featured-stories + .section--has_grid {
+	.section--featured-stories + .section--has_grid {
+		margin-top: -12em;
+		.section-inner {
+			padding-top: 4.5em;
+		}
+	}
+	.section--featured-stories.featured-stories--three-or-more + .section--has_grid {
 		margin-top: -25.5em;
 		.section-inner {
 			padding-top: 22em;
-		}
-	}
-	.story-archive__featured-stories + .section--has_grid {
-		margin-top: -8em;
-		.section-inner {
-			padding-top: 4.5em;
 		}
 	}
 }
