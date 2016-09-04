@@ -2,18 +2,12 @@
 
 	$featured_stories = get_post_meta( $exchange->post_id, 'featured_stories' )[0];
 
-	if ( is_home() ) {
-		$prefix = 'home';
-	} elseif ( is_post_type_archive('story') ) {
-		$prefix = 'story-archive';
-	}
-
 	// Add class when 3 or more featured stories are selected.
 	$three_plus = 3 <= count( $featured_stories ) ? '--three-or-more ' : '';
 
 	if ( ! empty( $featured_stories ) ) : ?>
 
-		<div class="featured-stories featured-stories<?php echo esc_attr( $three_plus ); ?> <?php echo esc_attr( $prefix ); ?>__featured-stories">
+		<div class="featured-stories featured-stories<?php echo esc_attr( $three_plus ); ?>">
 
 			<section class="section--has-grid section--featured-grid">
 

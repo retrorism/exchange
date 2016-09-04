@@ -2212,7 +2212,7 @@ kbd {
   margin-bottom: 0.5rem;
   font-weight: 400;
   line-height: 1.4;
-  color: #6d6d6d; }
+  color: #343438; }
 
 .lead {
   font-size: 120%;
@@ -3379,32 +3379,28 @@ nav.top-bar {
   display: none; }
 
 /*********************
-ARTICLE STYLES:
+ARTICLE STYLES
 *********************/
-.story__header__lowres-image-wrapper,
 .story__header__introduction,
 .archive__header__introduction,
 .collaboration__header,
-section .section-inner {
+.section-inner {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto; }
-  .story__header__lowres-image-wrapper::before, .story__header__lowres-image-wrapper::after,
-  .story__header__introduction::before,
-  .story__header__introduction::after,
+  .story__header__introduction::before, .story__header__introduction::after,
   .archive__header__introduction::before,
   .archive__header__introduction::after,
   .collaboration__header::before,
   .collaboration__header::after,
-  section .section-inner::before,
-  section .section-inner::after {
+  .section-inner::before,
+  .section-inner::after {
     content: ' ';
     display: table; }
-  .story__header__lowres-image-wrapper::after,
   .story__header__introduction::after,
   .archive__header__introduction::after,
   .collaboration__header::after,
-  section .section-inner::after {
+  .section-inner::after {
     clear: both; }
 
 .section-inner {
@@ -3412,21 +3408,14 @@ section .section-inner {
   padding-top: 2rem;
   overflow: hidden; }
 
-.post-type-archive-story .archive__wrapper {
-  padding-bottom: 0; }
-
-.story__header__image.lowres,
 .story__editorialintro,
 .story__title-wrapper,
 .story__intro,
-.section__slice,
 .story__footer__byline,
+.section__slice:not(.simplegrid),
 .section--has_gravity_forms .section-inner > div,
 .story__meta-wrapper,
 .archive__title-wrapper {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  clear: both;
   width: 100%;
   float: left;
   padding-left: 0.625rem;
@@ -3439,36 +3428,33 @@ section .section-inner {
   margin-left: auto;
   margin-right: auto; }
   @media screen and (min-width: 40em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
@@ -3480,24 +3466,22 @@ section .section-inner {
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 60em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
@@ -3509,24 +3493,22 @@ section .section-inner {
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 75em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
@@ -3538,29 +3520,29 @@ section .section-inner {
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 75em) and (min-width: 40em) {
-    .story__header__image.lowres,
     .story__editorialintro,
     .story__title-wrapper,
     .story__intro,
-    .section__slice,
     .story__footer__byline,
+    .section__slice:not(.simplegrid),
     .section--has_gravity_forms .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
 
-.section__slice:last-child:not(:first-child) {
-  float: none;
-  margin-left: auto;
-  margin-right: auto; }
+.story__editorialintro,
+.story__title-wrapper,
+.story__intro,
+.story__footer__byline,
+.section--has_gravity_forms .section-inner > div,
+.story__meta-wrapper,
+.archive__title-wrapper {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  clear: both; }
 
-.archive__filter .section-inner,
-.archive__map .section-inner,
 .page__footer__widgets-inner,
-.collaboration__gallery .section-inner,
-.section__simplegrid,
-.section__archive-grid-inner,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
   width: 100%;
@@ -3573,23 +3555,13 @@ section .section-inner {
   margin-left: auto;
   margin-right: auto; }
   @media screen and (min-width: 40em) {
-    .archive__filter .section-inner,
-    .archive__map .section-inner,
     .page__footer__widgets-inner,
-    .collaboration__gallery .section-inner,
-    .section__simplegrid,
-    .section__archive-grid-inner,
     .section__imageduo,
     .section__simplemap.simplemap--wide {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) {
-    .archive__filter .section-inner,
-    .archive__map .section-inner,
     .page__footer__widgets-inner,
-    .collaboration__gallery .section-inner,
-    .section__simplegrid,
-    .section__archive-grid-inner,
     .section__imageduo,
     .section__simplemap.simplemap--wide {
       width: 95%;
@@ -3600,19 +3572,17 @@ section .section-inner {
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .archive__filter .section-inner,
-    .archive__map .section-inner,
     .page__footer__widgets-inner,
-    .collaboration__gallery .section-inner,
-    .section__simplegrid,
-    .section__archive-grid-inner,
     .section__imageduo,
     .section__simplemap.simplemap--wide {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
 
-.section__featuredgrid,
-.section__archive-grid {
+@media screen and (min-width: 60em) {
+  .section--has-grid .section__slice.section__simplegrid {
+    width: 100%; } }
+
+.section__featuredgrid {
   width: 100%;
   float: left;
   padding-left: 0.625rem;
@@ -3628,18 +3598,15 @@ section .section-inner {
   margin-right: auto;
   overflow: hidden; }
   @media screen and (min-width: 40em) {
-    .section__featuredgrid,
-    .section__archive-grid {
+    .section__featuredgrid {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) {
-    .section__featuredgrid,
-    .section__archive-grid {
+    .section__featuredgrid {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) {
-    .section__featuredgrid,
-    .section__archive-grid {
+    .section__featuredgrid {
       width: 95%;
       float: left;
       padding-left: 0.625rem;
@@ -3648,8 +3615,7 @@ section .section-inner {
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .section__featuredgrid,
-    .section__archive-grid {
+    .section__featuredgrid {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
 
@@ -3804,16 +3770,8 @@ section .section-inner {
   padding-right: 1rem; }
 
 /*********************
-ARTICLE PATTERN STYLES
+SECTION STYLES
 *********************/
-.section__slice p,
-.section__slice li {
-  font-weight: 400;
-  line-height: 1.7;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none; }
-
 .section--custom-colour {
   background-color: #fefefe !important; }
   .section--custom-colour svg polygon {
@@ -3844,28 +3802,21 @@ ARTICLE PATTERN STYLES
   height: 20px;
   margin: 0;
   padding: 0;
-  top: -20px;
-  z-index: -1; }
+  top: -20px; }
   .page__footer__widgets > svg.section__edge--bottom,
   .section--coloured > svg.section__edge--bottom {
     transform: scale(1, -1);
     top: 20px; }
 
-/* Remove top-padding for first section in the story
- * and remove top padding for coloured sections. */
-.story__section:first-child .section-inner,
-.section--coloured > .section-inner {
+.story__section:first-child .section-inner {
   padding-top: 0; }
-  .story__section:first-child .section-inner .section__slice:first-of-type:not(.paragraph .sectionheader),
-  .section--coloured > .section-inner .section__slice:first-of-type:not(.paragraph .sectionheader) {
-    margin-top: 0; }
+
+.story__section:first-child.section--coloured {
+  margin-top: 2rem; }
 
 .story__section:last-child .section-inner,
 .story__section:last-child.section--coloured {
   padding-bottom: 0; }
-  .story__section:last-child .section-inner .section__slice:last-of-type,
-  .story__section:last-child.section--coloured .section__slice:last-of-type {
-    margin-bottom: 0; }
 
 .story__section:last-child.section--coloured > .section-inner:first-of-type {
   padding-bottom: 2rem; }
@@ -3874,9 +3825,12 @@ ARTICLE PATTERN STYLES
   margin: 2rem auto; }
   .footer__section .section-inner {
     padding: 0; }
+  .footer__section:first-of-type .section-inner {
+    padding-top: 2rem; }
   .footer__section:last-of-type {
-    padding-bottom: 4rem;
     margin-bottom: 0; }
+    .footer__section:last-of-type .section-inner {
+      padding-bottom: 4rem; }
   .footer__section.section--coloured {
     margin-top: 4rem; }
   .footer__section svg.section__edge--bottom {
@@ -3887,9 +3841,6 @@ ARTICLE PATTERN STYLES
 
 .section--coloured + .section--coloured svg.section__edge--top {
   display: none; }
-
-.section--featured-stories .section-inner {
-  padding-top: 0; }
 
 .post-it-bg {
   position: absolute;
@@ -3918,6 +3869,36 @@ ARTICLE PATTERN STYLES
   hyphens: auto; }
 
 /***************
+Pattern styles
+***************/
+.section__slice {
+  margin: 4rem 0 2rem; }
+
+.section__slice p,
+.section__slice li {
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
+
+/* Remove top margin for the first element in the first section,
+ * unless it's a sectionheader or a paragraph. */
+.story__section:first-child:not(.section--coloured) .section__slice:first-child,
+.story__section .section__slice:first-child {
+  margin-top: 2rem; }
+
+/* Remove top margin for the first element in a coloured section
+ * unless it's in the first section */
+.story__section.section--coloured:not(:first-child) .section__slice:first-child {
+  margin-top: 0; }
+
+/* Remove top margin for the last element in a section
+ * unless it's in the first section */
+.story__section.section--coloured .section__slice:last-child {
+  margin-bottom: 0; }
+
+/***************
 Pattern 1. Title
 ****************/
 .story__title-wrapper,
@@ -3932,6 +3913,11 @@ Pattern 1. Title
 /*****************
 Pattern 2. Bylines
 ******************/
+.footer__section:first-child.section--byline {
+  margin-top: 0; }
+  .footer__section:first-child.section--byline .section-inner {
+    padding-top: 0; }
+
 .story__footer__byline {
   font-size: 120%;
   line-height: 1.4;
@@ -4107,6 +4093,21 @@ Pattern 5. Hero / cover image
 /*********************
 Pattern 6. Paragraph
 *********************/
+.story__section:first-child:not(.section--coloured) .section__slice:first-child.section__paragraph {
+  margin-top: 0; }
+
+/* Reduce top margin from the first paragraph section slice after a header,
+ * image, duo-image */
+.section__sectionheader + .section__paragraph,
+.section__image + .section__paragraph {
+  margin-top: 2rem; }
+
+.section__subheader + .section__paragraph {
+  margin-top: 0.5rem; }
+
+.section__slice:last-child.section__paragraph p:last-of-type {
+  margin-bottom: 0; }
+
 .translatedparagraph__paragraph {
   display: none; }
   .translatedparagraph__paragraph.show {
@@ -4118,27 +4119,26 @@ Pattern 6. Paragraph
 .translatedparagraph--has_translations select {
   margin: 1rem auto; }
 
-.section__slice:last-child.section__paragraph p:last-of-type {
-  margin-bottom: 0; }
-
-/*******************
-Pattern 7. Subheader
+/********************
+Pattern 7a Subheader
 ********************/
 .section__subheader {
   margin-bottom: 0; }
 
-.section__subheader + .section__paragraph {
-  margin-top: 0; }
+.section__subheader {
+  margin-top: 2rem; }
 
-.sectionheader--taped_header h4 {
-  font-size: 120%;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  text-align: center;
-  padding: 0.25em; }
+/************************
+Pattern 7b Sectionheader
+************************/
+.section__slice.sectionheader {
+  margin-bottom: 0; }
 
-.relatedgrid__sectionheader {
-  margin: 2rem 0; }
+.section__slice:first-child.section__sectionheader {
+  margin-top: 2rem; }
+
+.footer__section .sectionheader {
+  margin-top: 2rem; }
 
 h4.share-cta-header,
 .section__sectionheader h4,
@@ -4156,13 +4156,17 @@ h4.share-cta-header,
     display: inline-block;
     height: auto;
     position: relative;
-    margin-top: 2rem; }
+    padding: 0 1.5em; }
   .sectionheader--taped_header h4 {
     position: relative;
     display: block;
-    padding: 0.5rem 2rem;
     margin: 0;
-    z-index: 1; }
+    z-index: 1;
+    font-size: 120%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+    padding: 0.25em; }
   .sectionheader--taped_header svg {
     height: 100%;
     width: 100%;
@@ -4196,6 +4200,9 @@ Pattern 8. Embedded Video
 /****************
 Pattern 9. Image
 ****************/
+.section__paragraph + .section__image {
+  margin-top: 2rem; }
+
 .section__image--programme-logo {
   width: 50%;
   max-width: 17.5em;
@@ -4482,6 +4489,15 @@ Pattern 14. Interview (two styles: QA and name-based)
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
+.section__contactblock:first-child {
+  margin-top: 0; }
+
+.section__contactblock:last-child {
+  margin-bottom: 0; }
+
+.story__section:last-child.section--has_contact_details .section-inner {
+  padding-bottom: 2rem; }
+
 .contactblock__team-member,
 .contactblock__cta {
   overflow: hidden;
@@ -4545,7 +4561,16 @@ li.team-member__name {
   font-weight: 600; }
 
 li.team-member__story-link {
-  margin-top: 0.25rem; }
+  margin-top: 1rem; }
+  li.team-member__story-link .button--small {
+    margin-bottom: 0; }
+
+.section--has_contact_details:not(.section--coloured) .button--small {
+  border-color: #9fd3d6; }
+
+.section--has_contact_details:not(.section--coloured) .button--small:hover {
+  background-color: #9fd3d6;
+  color: white; }
 
 .contactblock__image {
   width: 58.33333%;
@@ -4593,9 +4618,6 @@ li.team-member__story-link {
     .contactblock__info {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-
-.section__contactblock:last-child {
-  margin-bottom: 0; }
 
 /**************************************************
 Pattern 16 becomes Content block for TANDEM partner
@@ -5206,8 +5228,7 @@ ARTICLE META STYLES
   fill: #eba847; }
 
 footer .social-icons-list {
-  text-align: center;
-  margin-bottom: 2rem; }
+  text-align: center; }
 
 footer .social-icons-list__link path.circle {
   transition: fill 1s; }
@@ -5246,6 +5267,10 @@ ARTICLE EXTRAS STYLES
     width: 32%; }
   .archive__grid .masonry__gutter-sizer {
     width: 2%; } }
+
+section.section--has-grid .section-inner {
+  padding-left: 0;
+  padding-right: 0; }
 
 .relatedgrid__griditem {
   width: 100%;
@@ -5493,12 +5518,15 @@ a:hover .griditem__title {
 
 .section--featured-stories {
   position: relative;
-  z-index: 4; }
+  z-index: 3; }
 
 @media screen and (min-width: 60em) {
   .featured-stories + section.section--has_grid,
   .featured-stories + .archive__interface {
     margin-top: -12rem; }
+    .featured-stories + section.section--has_grid svg,
+    .featured-stories + .archive__interface svg {
+      z-index: -1; }
   .featured-stories + section.section--has_grid > .section-inner,
   .featured-stories + .archive__interface > .archive__interface-inner {
     padding-top: 4.5rem; }

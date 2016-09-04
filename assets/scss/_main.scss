@@ -82,13 +82,10 @@ a.button--share-cta {
 	}
 }
 
-
 a.button--small {
 	padding: 0.2 * $global-padding;
 	font-size: $small-font-size;
 }
-
-
 
 .emphasisblock--cta button,
 .emphasisblock--cta a.button--small,
@@ -99,7 +96,6 @@ a.button--small {
 		background-color: $white;
 	}
 }
-
 
 .widget_nav_menu li {
 	display: block;
@@ -379,39 +375,33 @@ nav.top-bar {
 }
 
 /*********************
-ARTICLE STYLES:
+ARTICLE STYLES
 *********************/
 
-.story__header__lowres-image-wrapper,
+// Rows (max 1200px);
 .story__header__introduction,
 .archive__header__introduction,
 .collaboration__header,
-section .section-inner {
+.section-inner {
 	@include grid-row;
 }
 
+// Sections need
 .section-inner {
 	padding-bottom: 2 * $global-padding;
 	padding-top: 2 * $global-padding;
 	overflow: hidden;
 }
 
-.post-type-archive-story .archive__wrapper {
-	padding-bottom: 0;
-}
-
-.story__header__image.lowres,
+// Readable-width columns
 .story__editorialintro,
 .story__title-wrapper,
 .story__intro,
-.section__slice,
 .story__footer__byline,
+.section__slice:not(.simplegrid),
 .section--has_gravity_forms .section-inner > div,
 .story__meta-wrapper,
 .archive__title-wrapper {
-	margin-bottom: 2 * $global-margin;
-	margin-top: 2 * $global-margin;
-	clear: both;
 	@include grid-column();
 	@include breakpoint( small ) {
 		@include grid-column( 95% );
@@ -431,16 +421,20 @@ section .section-inner {
 	}
 }
 
-.section__slice:last-child:not(:first-child) {
-	@include grid-column-position(center);
+// Readable width columns
+.story__editorialintro,
+.story__title-wrapper,
+.story__intro,
+.story__footer__byline,
+.section--has_gravity_forms .section-inner > div,
+.story__meta-wrapper,
+.archive__title-wrapper {
+	margin-bottom: 2 * $global-margin;
+	margin-top: 2 * $global-margin;
+	clear: both;
 }
 
-.archive__filter .section-inner,
-.archive__map .section-inner,
 .page__footer__widgets-inner,
-.collaboration__gallery .section-inner,
-.section__simplegrid,
-.section__archive-grid-inner,
 .section__imageduo,
 .section__simplemap.simplemap--wide {
 	@include grid-column(12);
@@ -452,11 +446,15 @@ section .section-inner {
 		@include grid-column( 95% );
 		@include grid-column-position(center);
 	}
-
 }
 
-.section__featuredgrid,
-.section__archive-grid {
+@include breakpoint( large ) {
+	.section--has-grid .section__slice.section__simplegrid {
+		width: 100%;
+	}
+}
+
+.section__featuredgrid {
 	@include grid-column();
 	@include grid-column( 12 );
 	@include breakpoint( small ) {
@@ -603,15 +601,8 @@ section .section-inner {
 }
 
 /*********************
-ARTICLE PATTERN STYLES
+SECTION STYLES
 *********************/
-
-.section__slice p,
-.section__slice li {
-	font-weight: $global-weight-normal;
-	line-height: $paragraph-lineheight;
-	hyphens: none;
-}
 
 .section--custom-colour {
 	background-color: $white !important;
@@ -651,33 +642,26 @@ ARTICLE PATTERN STYLES
 	margin: 0;
 	padding: 0;
 	top: -20px;
-	z-index: -1;
 	&.section__edge--bottom {
 		transform: scale(1,-1);
 		top: 20px;
 	}
 }
 
-/* Remove top-padding for first section in the story
- * and remove top padding for coloured sections. */
-
-.story__section:first-child .section-inner,
-.section--coloured > .section-inner {
+// Remove top-padding for first section in the story.
+.story__section:first-child .section-inner{
 	padding-top: 0;
-	// Remove top margin for the first element in the first section.
-	.section__slice:first-of-type:not(.paragraph .sectionheader) {
-		margin-top: 0;
-	}
+}
+
+// Add top margin if the first section is coloured.
+.story__section:first-child.section--coloured {
+	margin-top: 2 * $global-margin;
 }
 
 // Remove bottom-padding from the last section in the story and coloured sections
 .story__section:last-child .section-inner,
 .story__section:last-child.section--coloured {
 	padding-bottom: 0;
-	// Remove bottom margin for the last element
-	.section__slice:last-of-type {
-		margin-bottom: 0;
-	}
 }
 
 .story__section:last-child.section--coloured > .section-inner:first-of-type {
@@ -689,9 +673,16 @@ ARTICLE PATTERN STYLES
 	.section-inner {
 		padding: 0;
 	}
+	&:first-of-type {
+		.section-inner {
+			padding-top: 2 * $global-padding;
+		}
+	}
 	&:last-of-type {
-		padding-bottom: 4 * $global-padding;
 		margin-bottom: 0;
+		.section-inner {
+		padding-bottom: 4 * $global-padding;
+		}
 	}
 	&.section--coloured {
 		margin-top: 4 * $global-margin;
@@ -711,10 +702,6 @@ ARTICLE PATTERN STYLES
 	svg.section__edge--top {
 		display: none;
 	}
-}
-
-.section--featured-stories .section-inner {
-	padding-top: 0;
 }
 
 .post-it-bg {
@@ -751,6 +738,44 @@ ARTICLE PATTERN STYLES
 }
 
 /***************
+Pattern styles
+***************/
+
+.section__slice {
+	margin: 4 * $global-margin 0 2 * $global-margin;
+}
+
+.section__slice p,
+.section__slice li {
+	font-weight: $global-weight-normal;
+	line-height: $paragraph-lineheight;
+	hyphens: none;
+}
+
+/* Remove top margin for the first element in the first section,
+ * unless it's a sectionheader or a paragraph. */
+.story__section:first-child:not(.section--coloured),
+.story__section {
+	.section__slice:first-child {
+		margin-top: 2 * $global-margin;
+	}
+}
+
+/* Remove top margin for the first element in a coloured section
+ * unless it's in the first section */
+.story__section.section--coloured:not(:first-child) {
+	.section__slice:first-child {
+		margin-top: 0;
+	}
+}
+
+/* Remove top margin for the last element in a section
+ * unless it's in the first section */
+.story__section.section--coloured .section__slice:last-child {
+	margin-bottom: 0;
+}
+
+/***************
 Pattern 1. Title
 ****************/
 
@@ -769,6 +794,14 @@ Pattern 1. Title
 /*****************
 Pattern 2. Bylines
 ******************/
+
+// Remove byline top padding if the first footer section is a byline
+.footer__section:first-child.section--byline {
+	margin-top: 0;
+	.section-inner {
+		padding-top: 0;
+	}
+}
 
 .story__footer__byline {
 	font-size: $lead-font-size;
@@ -878,7 +911,6 @@ Pattern 4. Tag list
 	}
 }
 
-
 /****************************
 Pattern 5. Hero / cover image
 *****************************/
@@ -945,6 +977,32 @@ Pattern 5. Hero / cover image
 Pattern 6. Paragraph
 *********************/
 
+// Remove top margin for the first paragraph in the first section
+.story__section:first-child:not(.section--coloured) {
+	.section__slice:first-child.section__paragraph {
+		margin-top: 0
+	}
+}
+
+/* Reduce top margin from the first paragraph section slice after a header,
+ * image, duo-image */
+
+.section__sectionheader + .section__paragraph,
+.section__image + .section__paragraph {
+	margin-top: 2 * $global-margin;
+}
+
+
+// Remove margin almost completely if the header is a subheader.
+.section__subheader + .section__paragraph {
+	margin-top: 0.5 * $global-margin;
+}
+
+// Remove the last paragraph's margin in the last section slice
+.section__slice:last-child.section__paragraph p:last-of-type {
+	margin-bottom: 0;
+}
+
 .translatedparagraph__paragraph {
 	display: none;
 	&.show {
@@ -960,34 +1018,39 @@ Pattern 6. Paragraph
 	margin: $global-margin auto;
 }
 
-.section__slice:last-child.section__paragraph p:last-of-type {
-	margin-bottom: 0;
-}
-
-
-
-/*******************
-Pattern 7. Subheader
+/********************
+Pattern 7a Subheader
 ********************/
 
 .section__subheader {
 	margin-bottom: 0;
 }
 
-.section__subheader + .section__paragraph {
-	margin-top: 0;
+// Reduce subheader's top-margin {
+.section__subheader {
+	margin-top: 2 * $global-margin;
 }
 
-.sectionheader--taped_header h4 {
-	font-size: $lead-font-size;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	text-align: center;
-	padding: 0.25em;
+//
+// .relatedgrid__sectionheader {
+// 	margin: 2 * $global-margin 0;
+// }
+
+/************************
+Pattern 7b Sectionheader
+************************/
+
+.section__slice.sectionheader {
+	margin-bottom: 0;
 }
 
-.relatedgrid__sectionheader {
-	margin: 2 * $global-margin 0;
+// Reduce top margin for the first header in a section.
+.section__slice:first-child.section__sectionheader {
+	margin-top: 2 * $global-margin;
+}
+
+.footer__section .sectionheader {
+	margin-top: 2 * $global-margin;
 }
 
 h4.share-cta-header,
@@ -1007,14 +1070,19 @@ h4.share-cta-header,
 		display: inline-block;
 		height: auto;
 		position: relative;
-		margin-top: 2 * $global-margin;
+		padding: 0 1.5em;
+
 	}
 	h4 {
 		position: relative;
 		display: block;
-		padding: 0.5 * $global-padding 2 * $global-padding;
 		margin: 0;
 		z-index: 1;
+		font-size: $lead-font-size;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		text-align: center;
+		padding: 0.25em;
 	}
 	svg {
 		height: 100%;
@@ -1057,6 +1125,10 @@ Pattern 8. Embedded Video
 /****************
 Pattern 9. Image
 ****************/
+
+.section__paragraph + .section__image {
+	margin-top: 2 * $global-margin;
+}
 
 .section__image--programme-logo {
 	width: 50%;
@@ -1281,10 +1353,6 @@ aside.section__pullquote {
 	padding: 2 * $global-padding 4 * $global-padding;
 }
 
-
-
-
-
 /*************************
 Pattern 12. Embedded Tweet
 **************************/
@@ -1337,11 +1405,22 @@ Pattern 14. Interview (two styles: QA and name-based)
 	}
 }
 
-
-
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
+
+.section__contactblock:first-child {
+	margin-top: 0;
+}
+
+.section__contactblock:last-child {
+	margin-bottom: 0;
+}
+
+// Add bottom  padding to story-inner if the last section is a contact-block
+.story__section:last-child.section--has_contact_details .section-inner {
+	padding-bottom: 2 * $global-padding;
+}
 
 .contactblock__team-member,
 .contactblock__cta {
@@ -1387,7 +1466,20 @@ li.team-member__name {
 }
 
 li.team-member__story-link {
-	margin-top: 0.25 * $global-margin;
+	margin-top: $global-margin;
+	.button--small {
+		margin-bottom: 0;
+	}
+}
+
+.section--has_contact_details:not(.section--coloured) {
+	.button--small {
+		border-color: $blue-2-web;
+	}
+	.button--small:hover {
+		background-color: $blue-2-web;
+		color: white;
+	}
 }
 
 .contactblock__image {
@@ -1412,10 +1504,6 @@ li.team-member__story-link {
 	@include breakpoint( medium ) {
 		@include grid_column( 8 );
 	}
-}
-
-.section__contactblock:last-child {
-	margin-bottom: 0;
 }
 
 /**************************************************
@@ -1721,8 +1809,6 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-
-
 .emphasisblock--salmon-4 .emphasisblock-inner {
 	background-color: $salmon-4;
 	a.button--big,
@@ -2021,7 +2107,6 @@ ARTICLE META STYLES
 
 footer .social-icons-list {
 	text-align: center;
-	margin-bottom: 2 * $global-margin;
 }
 
 footer .social-icons-list__link path.circle {
@@ -2074,6 +2159,13 @@ ARTICLE EXTRAS STYLES
 		.masonry__gutter-sizer {
 			width: 2%;
 		}
+	}
+}
+
+section.section--has-grid {
+	.section-inner {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
@@ -2290,13 +2382,16 @@ a:hover .griditem__title {
 
 .section--featured-stories {
 	position: relative;
-	z-index: 4;
+	z-index: 3;
 }
 
 @include breakpoint( large ) {
 	.featured-stories + section.section--has_grid,
 	.featured-stories + .archive__interface {
 		margin-top: -12 * $global-margin;
+		svg {
+			z-index: -1;
+		}
 	}
 	.featured-stories + section.section--has_grid > .section-inner,
 	.featured-stories + .archive__interface > .archive__interface-inner {

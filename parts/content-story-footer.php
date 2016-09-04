@@ -1,8 +1,8 @@
 <footer class="article-footer story__footer">
 
-	<?php if ( is_singular('story') ) : ?>
+	<?php if ( is_singular('story') && $exchange->has_byline ) : ?>
 
-		<section class="article-byline story__footer__section footer__section">
+		<section class="article-byline story__footer__section footer__section section--byline">
 
 			<div class="section-inner">
 
@@ -24,7 +24,7 @@
 
 		<div class="section-inner">
 
-		<?php $exchange->publish_related_content('story__footer'); ?>
+		<?php $exchange->publish_related_content( $exchange->type . '__footer'); ?>
 
 		</div><!-- section-inner-->
 

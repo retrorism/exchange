@@ -94,13 +94,7 @@ $exchange = new Collaboration( $post );
 	</div> <!-- end articleBpdy -->
 
 
-	<footer class="article-footer collaboration__footer">
-		<?php include_once( get_stylesheet_directory() . '/parts/content-sharing-footer.php' ); ?>
-	</footer> <!-- end article footer -->
+	<?php include_once( get_stylesheet_directory() . '/parts/content-story-footer.php' ); ?>
+
 
 </article> <!-- end article -->
-<div class="article-related-content collaboration__section collaboration__extras section--salmon-1-web section--coloured">
-	<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
-		<?php $exchange->publish_related_content('collaboration'); ?>
-	<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
-</div>
