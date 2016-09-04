@@ -3513,7 +3513,7 @@ ARTICLE STYLES
 .story__intro,
 .story__footer__byline,
 .section__slice:not(.simplegrid),
-.section--has_gravity_forms .section-inner > div,
+.section--has_form .section-inner > div,
 .story__meta-wrapper,
 .archive__title-wrapper {
   width: 100%;
@@ -3533,7 +3533,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
@@ -3544,7 +3544,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
@@ -3555,7 +3555,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       width: 85%;
@@ -3571,7 +3571,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
@@ -3582,7 +3582,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       width: 66.66667%;
@@ -3598,7 +3598,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;
@@ -3609,7 +3609,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       width: 60%;
@@ -3625,7 +3625,7 @@ ARTICLE STYLES
     .story__intro,
     .story__footer__byline,
     .section__slice:not(.simplegrid),
-    .section--has_gravity_forms .section-inner > div,
+    .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
       padding-left: 0.625rem;

@@ -524,7 +524,7 @@ ARTICLE STYLES
 .story__intro,
 .story__footer__byline,
 .section__slice:not(.simplegrid),
-.section--has_gravity_forms .section-inner > div,
+.section--has_form .section-inner > div,
 .story__meta-wrapper,
 .archive__title-wrapper {
 	@include grid-column();
