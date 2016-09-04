@@ -1,6 +1,6 @@
 <footer class="article-footer story__footer">
 
-	<?php if ( is_singular('story') && $exchange->has_byline ) : ?>
+	<?php if ( is_singular('story') && ! empty( $exchange->byline ) ) : ?>
 
 		<section class="article-byline story__footer__section footer__section section--byline">
 
