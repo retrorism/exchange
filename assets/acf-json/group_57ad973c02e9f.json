@@ -2198,6 +2198,44 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        {
+                            "key": "57cc8a1e59040",
+                            "name": "has_social_icons",
+                            "label": "Social Media Icons",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_57cc8a6759041",
+                                    "label": "Platforms",
+                                    "name": "platforms",
+                                    "type": "checkbox",
+                                    "instructions": "Select the platforms for which you want to show an icon",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "facebook": "Facebook",
+                                        "instagram": "Instagram",
+                                        "vimeo": "Vimeo",
+                                        "twitter": "Twitter"
+                                    },
+                                    "default_value": [
+                                        "facebook",
+                                        "instagram",
+                                        "vimeo"
+                                    ],
+                                    "layout": "vertical",
+                                    "toggle": 1,
+                                    "return_format": "value"
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     ]
                 }
@@ -2293,5 +2331,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1472126698
+    "modified": 1473023273
 }

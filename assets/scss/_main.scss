@@ -2222,6 +2222,7 @@ ARTICLE META STYLES
 .social-icons-list__link {
 	display: block;
 	width: 2em;
+	height: 2em;
 	outline: none;
 	svg, image {
 		width: 100%;
@@ -2240,28 +2241,29 @@ ARTICLE META STYLES
 	}
 }
 
-footer .social-icons-list {
-	text-align: center;
-}
+footer,
+.section--has_social_icons {
+	.social-icons-list {
+		text-align: center;
+	}
+	.social-icons-list__link path.circle {
+		transition: fill 1s;
+	}
+	.social-icons-list__link {
+		width: 3em;
+		height: 3.25em;
+		margin-right: 1em;
+		&:hover {
+			path.circle {
+				fill: $yellow-3;
+				transition: fill 1s;
 
-footer .social-icons-list__link path.circle {
-	transition: fill 1s;
-}
-
-footer .social-icons-list__link {
-	width: 3em;
-	margin-right: 1em;
-	&:hover {
-		path.circle {
-			fill: $yellow-3;
-			transition: fill 1s;
-
+			}
 		}
 	}
-}
-
-footer .social-icons-list__item:last-child .social-icons-list__link {
-	margin-right: 0;
+	.social-icons-list__item:last-child .social-icons-list__link {
+		margin-right: 0;
+	}
 }
 
 /*********************
