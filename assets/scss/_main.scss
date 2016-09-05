@@ -689,6 +689,10 @@ SECTION STYLES
 	&.section--coloured {
 		margin-top: 4 * $global-margin;
 	}
+}
+
+.footer__section,
+.home .story__section:last-child {
 	svg.section__edge--bottom {
 		display: none;
 	}

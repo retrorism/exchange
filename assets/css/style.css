@@ -3789,8 +3789,10 @@ SECTION STYLES
       padding-bottom: 4rem; }
   .footer__section.section--coloured {
     margin-top: 4rem; }
-  .footer__section svg.section__edge--bottom {
-    display: none; }
+
+.footer__section svg.section__edge--bottom,
+.home .story__section:last-child svg.section__edge--bottom {
+  display: none; }
 
 .archive__footer__section:first-of-type .section-inner {
   padding-top: 2rem; }
