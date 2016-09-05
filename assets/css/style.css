@@ -5322,6 +5322,7 @@ ARTICLE META STYLES
   display: block;
   width: 2em;
   height: 2em;
+  max-height: 2em;
   outline: none; }
   .social-icons-list__link__icon svg, .social-icons-list__link__icon image {
     width: 100%;
