@@ -4496,7 +4496,7 @@ Pattern 15. Contact block for TANDEM team member
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
 
-.contactblock__team-member:not(first-child) {
+.contactblock__team-member:not(:first-child) {
   margin-top: 2rem; }
 
 .contactblock__cta {
@@ -5318,42 +5318,57 @@ ARTICLE META STYLES
 .social-icons-list__item {
   display: inline-block; }
 
-.social-icons-list__link {
+.social-icons-list__link__icon {
   display: block;
   width: 2em;
   height: 2em;
   outline: none; }
-  .social-icons-list__link svg, .social-icons-list__link image {
+  .social-icons-list__link__icon svg, .social-icons-list__link__icon image {
     width: 100%;
     height: auto; }
-  .social-icons-list__link g.icon path,
-  .social-icons-list__link path.icon {
+  .social-icons-list__link__icon g.icon path,
+  .social-icons-list__link__icon path.icon {
     transition: fill 1s; }
 
-.story__meta .social-icons-list__link:hover g.icon path,
-.story__meta .social-icons-list__link:hover path.icon {
+.story__meta .social-icons-list__link__icon:hover g.icon path,
+.story__meta .social-icons-list__link__icon:hover path.icon {
   fill: #eba847; }
 
-footer .social-icons-list,
+.page__footer .social-icons-list__item {
+  display: block; }
+
+.page__footer .social-icons-list__link__icon {
+  display: table-cell; }
+  .page__footer .social-icons-list__link__icon g.icon path,
+  .page__footer .social-icons-list__link__icon path.icon {
+    fill: #fefefe; }
+
+.page__footer span {
+  display: table-cell;
+  vertical-align: middle;
+  color: #fefefe;
+  font-weight: 600; }
+
+.story__footer .social-icons-list,
 .section--has_social_icons .social-icons-list {
   text-align: center; }
 
-footer .social-icons-list__link path.circle,
-.section--has_social_icons .social-icons-list__link path.circle {
+.story__footer .social-icons-list__link__icon path.circle,
+.section--has_social_icons .social-icons-list__link__icon path.circle {
   transition: fill 1s; }
 
-footer .social-icons-list__link,
-.section--has_social_icons .social-icons-list__link {
+.story__footer .social-icons-list__link__icon,
+.section--has_social_icons .social-icons-list__link__icon {
   width: 3em;
   height: 3.25em;
   margin-right: 1em; }
-  footer .social-icons-list__link:hover path.circle,
-  .section--has_social_icons .social-icons-list__link:hover path.circle {
+  .story__footer .social-icons-list__link__icon:hover path.circle,
+  .section--has_social_icons .social-icons-list__link__icon:hover path.circle {
     fill: #eba847;
     transition: fill 1s; }
 
-footer .social-icons-list__item:last-child .social-icons-list__link,
-.section--has_social_icons .social-icons-list__item:last-child .social-icons-list__link {
+.story__footer .social-icons-list__item:last-child .social-icons-list__link__icon,
+.section--has_social_icons .social-icons-list__item:last-child .social-icons-list__link__icon {
   margin-right: 0; }
 
 /*********************

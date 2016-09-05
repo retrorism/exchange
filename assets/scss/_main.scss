@@ -1436,7 +1436,7 @@ Pattern 15. Contact block for TANDEM team member
 
 }
 
-.contactblock__team-member:not(first-child) {
+.contactblock__team-member:not(:first-child) {
 	margin-top: 2 * $global-margin;
 }
 
@@ -2219,7 +2219,7 @@ ARTICLE META STYLES
 	display: inline-block;
 }
 
-.social-icons-list__link {
+.social-icons-list__link__icon {
 	display: block;
 	width: 2em;
 	height: 2em;
@@ -2234,22 +2234,41 @@ ARTICLE META STYLES
 	}
 }
 
-.story__meta .social-icons-list__link:hover {
+.story__meta .social-icons-list__link__icon:hover {
 	g.icon path,
 	path.icon {
 		fill: $yellow-3;
 	}
 }
 
-footer,
+.page__footer {
+	.social-icons-list__item {
+		display: block;
+	}
+	.social-icons-list__link__icon {
+		display: table-cell;
+		g.icon path,
+		path.icon {
+			fill: $white;
+		}
+	}
+	span {
+		display: table-cell;
+		vertical-align: middle;
+		color: $white;
+		font-weight: $global-weight-semibold;
+	}
+}
+
+.story__footer,
 .section--has_social_icons {
 	.social-icons-list {
 		text-align: center;
 	}
-	.social-icons-list__link path.circle {
+	.social-icons-list__link__icon path.circle {
 		transition: fill 1s;
 	}
-	.social-icons-list__link {
+	.social-icons-list__link__icon {
 		width: 3em;
 		height: 3.25em;
 		margin-right: 1em;
@@ -2261,7 +2280,7 @@ footer,
 			}
 		}
 	}
-	.social-icons-list__item:last-child .social-icons-list__link {
+	.social-icons-list__item:last-child .social-icons-list__link__icon {
 		margin-right: 0;
 	}
 }
