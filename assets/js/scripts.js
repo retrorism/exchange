@@ -45,7 +45,26 @@ jQuery(document).foundation();
 These functions make sure WordPress
 and Foundation play nice together.
 */
+function handleScroll() {
+	var previousScroll = pageYOffset;
+	jQuery(window).scroll(function(){
+		var currentScroll = jQuery(this).scrollTop();
+		if (currentScroll > previousScroll){
+			//console.log('down');
+		} else {
+			//console.log('up');
+		}
+		previousScroll = currentScroll;
+		if ( pageYOffset < 100 ) {
+			console.log( 'hiding' );
+			jQuery('.breadcrumbs-bar').removeClass('scrolled');
+		} else {
+			console.log( 'showing' );
+			jQuery('.breadcrumbs-bar').addClass('scrolled');
+		}
 
+	});
+}
 
 jQuery(document).ready(function() {
 
@@ -102,6 +121,10 @@ jQuery(document).ready(function() {
 	jQuery('.image--main').each( function() {
 		console.log( jQuery(this).height() );
 	});
+
+	if ( jQuery('body').hasClass('single') || jQuery('body').hasClass('page-child') ) {
+		jQuery('#main').on('scrollme.zf.trigger',handleScroll);
+	}
 
     // Remove empty P tags created by WP inside of Accordion and Orbit
     jQuery('.accordion p:empty, .orbit p:empty').remove();

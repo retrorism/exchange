@@ -3339,24 +3339,28 @@ caption {
 BANNER STYLES
 *********************/
 #header {
-  position: relative;
   width: 100%;
-  z-index: 9999;
   background-color: #fefefe; }
 
 .inner-header {
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 9998; }
+
+.single .inner-header,
+.page-child .inner-header {
+  position: relative; }
 
 #main {
-  padding-top: 3.4em; }
+  padding-top: 3.6em; }
 
 /*********************
 NAVIGATION STYLES
 *********************/
 nav.top-bar {
   height: auto;
-  padding: 0; }
+  padding: 0;
+  position: relative; }
 
 #responsive-menu {
   width: 100%;
@@ -3364,7 +3368,7 @@ nav.top-bar {
   border-bottom: 1px solid rgba(211, 211, 211, 0.4);
   position: absolute;
   left: 0;
-  top: 3.4em;
+  top: 3.6em;
   height: 100vh; }
   #responsive-menu ul#menu-main-menu-left,
   #responsive-menu ul#menu-main-menu-right {
@@ -3477,6 +3481,51 @@ nav.top-bar {
 
 .top-bar__search {
   display: none; }
+
+.breadcrumbs-bar {
+  position: relative;
+  width: 100%;
+  height: auto; }
+
+.breadcrumbs-bar-inner {
+  background-color: #fefefe;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  top: -4em;
+  left: 0;
+  transition: top 0.1s;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.4); }
+
+@media screen and (min-width: 40em) {
+  .breadcrumbs-bar.scrolled .breadcrumbs-bar-inner {
+    top: 0; } }
+
+.breadcrumbs-bar__logo {
+  width: 10em;
+  position: absolute; }
+  .breadcrumbs-bar__logo a svg {
+    display: table-cell;
+    width: 90%;
+    height: 100%;
+    display: inline-block;
+    padding: 0.6667rem; }
+
+.breadcrumbs-bar__path {
+  position: relative;
+  width: 100%;
+  text-align: center; }
+  .breadcrumbs-bar__path ol {
+    margin: 0; }
+  .breadcrumbs-bar__path li {
+    text-align: left;
+    height: 100%;
+    display: inline-block;
+    margin-right: 1em;
+    padding: 1rem 0; }
+  .breadcrumbs-bar__path li > svg {
+    width: 1em;
+    height: 0.8em; }
 
 /*********************
 ARTICLE STYLES

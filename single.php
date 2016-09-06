@@ -1,27 +1,19 @@
+<?php
+/*
+Exchange story template
+*/
+?>
+
 <?php get_header(); ?>
-			
-<div id="content">
 
-	<div id="inner-content" class="row">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<main id="main" class="large-8 medium-8 columns" role="main">
-		
-		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-		    	<?php get_template_part( 'parts/loop', 'single' ); ?>
-		    	
-		    <?php endwhile; else : ?>
-		
-		   		<?php get_template_part( 'parts/content', 'missing' ); ?>
+		<?php get_template_part( 'parts/loop', $post->post_type ); ?>
 
-		    <?php endif; ?>
+	<?php endwhile; else : ?>
 
-		</main> <!-- end #main -->
+		<?php get_template_part( 'parts/content', 'missing' ); ?>
 
-		<?php get_sidebar(); ?>
-
-	</div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
+	<?php endif; ?>
 
 <?php get_footer(); ?>
