@@ -4513,6 +4513,9 @@ Pattern 15. Contact block for TANDEM team member
 .section__contactblock:last-child {
   margin-bottom: 0; }
 
+.section__sectionheader + .section__contactblock {
+  margin-top: 2rem; }
+
 .story__section:last-child.section--has_contact_details .section-inner {
   padding-bottom: 2rem; }
 

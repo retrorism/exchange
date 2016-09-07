@@ -1493,6 +1493,10 @@ Pattern 15. Contact block for TANDEM team member
 	margin-bottom: 0;
 }
 
+.section__sectionheader + .section__contactblock {
+	margin-top: 2 * $global-margin;
+}
+
 // Add bottom  padding to story-inner if the last section is a contact-block
 .story__section:last-child.section--has_contact_details .section-inner {
 	padding-bottom: 2 * $global-padding;
