@@ -2365,6 +2365,22 @@ ARTICLE META STYLES
 		height: 6.5em;
 		margin-right: 2em;
 	}
+	&.section--blue-1-web .social-icons-list__link__icon {
+		path.circle {
+			fill: $blue-3;
+		}
+		&:hover path.circle {
+			fill: $blue-4;
+		}
+	}
+	&.section--salmon-1-web .social-icons-list__link__icon {
+		path.circle {
+			fill: $salmon-3;
+		}
+		&:hover path.circle {
+			fill: $salmon-4;
+		}
+	}
 }
 
 .story__footer {

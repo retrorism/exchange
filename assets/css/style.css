@@ -5433,6 +5433,18 @@ ARTICLE META STYLES
   height: 6.5em;
   margin-right: 2em; }
 
+.section--has_social_icons.section--blue-1-web .social-icons-list__link__icon path.circle {
+  fill: #0f9fd6; }
+
+.section--has_social_icons.section--blue-1-web .social-icons-list__link__icon:hover path.circle {
+  fill: #1f588e; }
+
+.section--has_social_icons.section--salmon-1-web .social-icons-list__link__icon path.circle {
+  fill: #eaab73; }
+
+.section--has_social_icons.section--salmon-1-web .social-icons-list__link__icon:hover path.circle {
+  fill: #e07856; }
+
 .story__footer .social-icons-list__link__icon {
   width: 3em;
   height: 3.25em;
