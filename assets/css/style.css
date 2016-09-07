@@ -3465,7 +3465,7 @@ nav.top-bar {
     padding: 0.667rem; }
     .top-bar__center a svg {
       width: 90%;
-      max-width: 90%; }
+      max-width: 9em; }
   .top-bar__center .menu-toggle {
     display: block;
     float: right;
