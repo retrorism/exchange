@@ -1481,6 +1481,11 @@ Pattern 14. Interview (two styles: QA and name-based)
 	}
 }
 
+.section__sectionheader + .section__interviewqa,
+.section__sectionheader + .section__interviewconversation {
+	margin-top: 2 * $global-margin;
+}
+
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/

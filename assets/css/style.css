@@ -4504,6 +4504,10 @@ Pattern 14. Interview (two styles: QA and name-based)
     .interviewconversation__paragraph td.interviewconversation__voice::after {
       content: ''; } }
 
+.section__sectionheader + .section__interviewqa,
+.section__sectionheader + .section__interviewconversation {
+  margin-top: 2rem; }
+
 /***********************************************
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
