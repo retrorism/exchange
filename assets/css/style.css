@@ -3448,7 +3448,7 @@ nav.top-bar {
 .top-bar__center {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
   top: 0;
   left: 0;
   margin: auto;
