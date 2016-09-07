@@ -40,7 +40,7 @@ $exchange = new Story( $post ); ?>
 
 		<?php if ( $exchange->has_gallery ) : ?>
 
-			<?php include_once( get_stylesheet_directory() .'/parts/content/content-story-modal.php' ); ?>
+			<?php include_once( get_stylesheet_directory() .'/parts/content-story-modal.php' ); ?>
 
 		<?php endif; ?>
 
