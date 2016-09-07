@@ -471,11 +471,9 @@ nav.top-bar {
 		margin: auto;
 		border-bottom: 1px solid transparentize( $light-gray, 0.6 );
 		a {
-			display: table-cell;
 			width: 10em;
 			height: 100%;
 			line-height:0;
-			vertical-align: middle;
 			text-align: center;
 			box-sizing: border-box;
 			float: left;

@@ -3456,11 +3456,9 @@ nav.top-bar {
   margin: auto;
   border-bottom: 1px solid rgba(211, 211, 211, 0.4); }
   .top-bar__center a {
-    display: table-cell;
     width: 10em;
     height: 100%;
     line-height: 0;
-    vertical-align: middle;
     text-align: center;
     box-sizing: border-box;
     float: left;
