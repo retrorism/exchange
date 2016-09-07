@@ -368,6 +368,7 @@ nav.top-bar {
 	height: 100%;
 	padding: 0;
 	position: relative;
+	background: $white;
 }
 
 #responsive-menu {
@@ -488,6 +489,7 @@ nav.top-bar {
 			box-sizing: border-box;
 			svg {
 				width: 80%;
+				transform: translateY(0.75em);
 			}
 		}
 		.menu-toggle {
@@ -524,7 +526,7 @@ nav.top-bar {
 	width: 100%;
 	top: -5em;
 	left: 0;
-	transition: top 0.1s;
+	transition: top 0.5s;
 	border-bottom: 1px solid transparentize( $light-gray, 0.6 );
 }
 
@@ -539,6 +541,10 @@ nav.top-bar {
 		vertical-align: middle;
 		text-align: center;
 		box-sizing: border-box;
+		svg {
+			width: 80%;
+			transform: translateY(0.75em);
+		}
 	}
 }
 
@@ -573,10 +579,11 @@ nav.top-bar {
 		display: none;
 	}
 	@include breakpoint( medium ) {
+		display: block;
 		&.scrolled {
-			display: block;
 			.breadcrumbs-bar-inner {
 				top: 0;
+				transition: top 0.5s;
 			}
 		}
 		.breadcrumbs-bar__path {
@@ -1356,7 +1363,7 @@ blockquote {
 .blockquote__border-image {
 	position: absolute;
 	top: 0;
-	width: 0.75em;
+	width: 0.5em;
 	height: 100%;
 }
 

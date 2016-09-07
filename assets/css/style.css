@@ -3369,7 +3369,8 @@ NAVIGATION STYLES
 nav.top-bar {
   height: 100%;
   padding: 0;
-  position: relative; }
+  position: relative;
+  background: #fefefe; }
 
 #responsive-menu {
   width: 100%;
@@ -3469,7 +3470,8 @@ nav.top-bar {
     text-align: center;
     box-sizing: border-box; }
     .top-bar__center a svg {
-      width: 80%; }
+      width: 80%;
+      transform: translateY(0.75em); }
   .top-bar__center .menu-toggle {
     display: block;
     float: right;
@@ -3498,7 +3500,7 @@ nav.top-bar {
   width: 100%;
   top: -5em;
   left: 0;
-  transition: top 0.1s;
+  transition: top 0.5s;
   border-bottom: 1px solid rgba(211, 211, 211, 0.4); }
 
 .breadcrumbs-bar__logo {
@@ -3512,6 +3514,9 @@ nav.top-bar {
     vertical-align: middle;
     text-align: center;
     box-sizing: border-box; }
+    .breadcrumbs-bar__logo a svg {
+      width: 80%;
+      transform: translateY(0.75em); }
 
 .breadcrumbs-bar__path {
   position: relative;
@@ -3538,14 +3543,15 @@ nav.top-bar {
   height: auto;
   display: none; }
   @media screen and (min-width: 40em) {
-    .breadcrumbs-bar.scrolled {
+    .breadcrumbs-bar {
       display: block; }
       .breadcrumbs-bar.scrolled .breadcrumbs-bar-inner {
-        top: 0; }
-    .breadcrumbs-bar .breadcrumbs-bar__path ol {
-      width: 100%;
-      padding: 0 0 0 25%;
-      font-size: 80%; } }
+        top: 0;
+        transition: top 0.5s; }
+      .breadcrumbs-bar .breadcrumbs-bar__path ol {
+        width: 100%;
+        padding: 0 0 0 25%;
+        font-size: 80%; } }
   @media screen and (min-width: 60em) {
     .breadcrumbs-bar .breadcrumbs-bar__path {
       text-align: center; }
@@ -4386,7 +4392,7 @@ blockquote {
 .blockquote__border-image {
   position: absolute;
   top: 0;
-  width: 0.75em;
+  width: 0.5em;
   height: 100%; }
 
 .blockquote__border-image--right {
