@@ -3479,7 +3479,6 @@ nav.top-bar {
       z-index: 2; }
       .top-bar__center a {
         float: none;
-        width: 100%;
         line-height: 0; }
       .top-bar__center .menu-toggle {
         display: none; } }
