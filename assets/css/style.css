@@ -3458,7 +3458,7 @@ nav.top-bar {
   .top-bar__center a {
     display: table-cell;
     width: 10em;
-    height: 2em;
+    height: 100%;
     line-height: 0;
     vertical-align: middle;
     text-align: center;
