@@ -5572,8 +5572,8 @@ section.section--has-grid.section--archive-grid .section-inner {
   .simplegrid__griditem.griditem--cta {
     margin-top: 0; }
 
-.section__slice.sectionheader + .section__slice.section__simplegrid {
-  margin-top: 4rem; }
+.section__sectionheader + .section__simplegrid {
+  margin-top: 2rem; }
 
 .simplegrid__griditem:first-child:last-child {
   float: none;
