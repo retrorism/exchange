@@ -1896,13 +1896,15 @@ Pattern 20. Emphasis blocks
 			@include grid-column( 40% );
 			@include grid-column-position( center );
 		}
-		.emphasisblock-inner {
-			padding: $global-padding $global-padding 5 * $global-padding $global-padding;
-		}
+
 	}
-	&.emphasisblock--full .emphasisblock-inner {
-		padding: $global-padding;
-	}
+}
+
+.emphasisblock:not(.emphasisblock--full) .emphasisblock-inner {
+	padding: $global-padding $global-padding 5 * $global-padding $global-padding;
+}
+.emphasisblock-inner {
+	padding: $global-padding;
 }
 
 .documentblock--post-it .emphasisblock-inner,
@@ -2103,23 +2105,25 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-.emphasisblock--full .emphasisblock-inner {
-	@include flex;
-	@include flex-align( justify, middle );
-	flex-wrap: wrap;
-	.emphasisblock__paragraph,
-	.emphasisblock__imagesvg,
-	.emphasisblock__subheader,
-	.emphasisblock__button-wrapper {
-		min-width: 10em;
-		align-self: center middle;
-		flex: 1;
-	}
-	.emphasisblock__imagesvg {
-		margin: $global-margin auto;
-	}
-	.emphasisblock__subheader {
-		margin-top: 0;
+@include breakpoint( medium ) {
+	.emphasisblock--full .emphasisblock-inner {
+		@include flex;
+		@include flex-align( justify, middle );
+		flex-wrap: wrap;
+		.emphasisblock__paragraph,
+		.emphasisblock__imagesvg,
+		.emphasisblock__subheader,
+		.emphasisblock__button-wrapper {
+			min-width: 10em;
+			align-self: center middle;
+			flex: 1;
+		}
+		.emphasisblock__imagesvg {
+			margin: $global-margin auto;
+		}
+		.emphasisblock__subheader {
+			margin-top: 0;
+		}
 	}
 }
 

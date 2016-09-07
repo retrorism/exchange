@@ -4934,10 +4934,12 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock:not(.emphasisblock--full) {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
-    .section__emphasisblock:not(.emphasisblock--full) .emphasisblock-inner {
-      padding: 1rem 1rem 5rem 1rem; }
-  .section__emphasisblock.emphasisblock--full .emphasisblock-inner {
-    padding: 1rem; }
+
+.emphasisblock:not(.emphasisblock--full) .emphasisblock-inner {
+  padding: 1rem 1rem 5rem 1rem; }
+
+.emphasisblock-inner {
+  padding: 1rem; }
 
 .documentblock--post-it .emphasisblock-inner,
 .emphasisblock--post-it .emphasisblock-inner {
@@ -5091,28 +5093,29 @@ Pattern 20. Emphasis blocks
     width: 100%;
     height: auto; }
 
-.emphasisblock--full .emphasisblock-inner {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-  .emphasisblock--full .emphasisblock-inner .emphasisblock__paragraph,
-  .emphasisblock--full .emphasisblock-inner .emphasisblock__imagesvg,
-  .emphasisblock--full .emphasisblock-inner .emphasisblock__subheader,
-  .emphasisblock--full .emphasisblock-inner .emphasisblock__button-wrapper {
-    min-width: 10em;
-    -ms-flex-item-align: center middle;
-    align-self: center middle;
-    -ms-flex: 1;
-    flex: 1; }
-  .emphasisblock--full .emphasisblock-inner .emphasisblock__imagesvg {
-    margin: 1rem auto; }
-  .emphasisblock--full .emphasisblock-inner .emphasisblock__subheader {
-    margin-top: 0; }
+@media screen and (min-width: 40em) {
+  .emphasisblock--full .emphasisblock-inner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .emphasisblock--full .emphasisblock-inner .emphasisblock__paragraph,
+    .emphasisblock--full .emphasisblock-inner .emphasisblock__imagesvg,
+    .emphasisblock--full .emphasisblock-inner .emphasisblock__subheader,
+    .emphasisblock--full .emphasisblock-inner .emphasisblock__button-wrapper {
+      min-width: 10em;
+      -ms-flex-item-align: center middle;
+      align-self: center middle;
+      -ms-flex: 1;
+      flex: 1; }
+    .emphasisblock--full .emphasisblock-inner .emphasisblock__imagesvg {
+      margin: 1rem auto; }
+    .emphasisblock--full .emphasisblock-inner .emphasisblock__subheader {
+      margin-top: 0; } }
 
 .emphasisblock__button-wrapper {
   text-align: center; }
