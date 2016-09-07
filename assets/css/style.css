@@ -3469,7 +3469,6 @@ nav.top-bar {
     text-align: center;
     box-sizing: border-box; }
     .top-bar__center a svg {
-      margin: 7.5%;
       width: 80%; }
   .top-bar__center .menu-toggle {
     display: block;
@@ -3513,9 +3512,6 @@ nav.top-bar {
     vertical-align: middle;
     text-align: center;
     box-sizing: border-box; }
-    .breadcrumbs-bar__logo a svg {
-      margin: 7.5%;
-      width: 80%; }
 
 .breadcrumbs-bar__path {
   position: relative;
