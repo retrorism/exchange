@@ -498,6 +498,9 @@ nav.top-bar {
 		a {
 			float: none;
 			line-height: 0;
+			svg {
+				margin-top: 5%;
+			}
 		}
 		.menu-toggle {
 			display: none;
@@ -718,7 +721,6 @@ SECTION STYLES
 	padding: 0;
 	top: -19px;
 	&.section__edge--bottom {
-		transform: scale(1,-1);
 		top: 20px;
 	}
 }
