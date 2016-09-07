@@ -73,7 +73,7 @@ $exchange = new Collaboration( $post );
 				<?php $exchange->publish_sections(); ?>
 
 				<!-- GALLERY -->
-				<?php if ( $exchange->has_gallery ) : ?>
+				<?php /* if ( $exchange->has_gallery ) : ?>
 					<section class="collaboration__section collaboration__gallery section--blue-1-web section--coloured">
 						<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 						<div class="section-inner">
@@ -81,7 +81,7 @@ $exchange = new Collaboration( $post );
 						</div><!-- section-inner-->
 						<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 					</section>
-				<?php endif; ?>
+				<?php endif; */ ?>
 
 				<!-- SHARED STORIES -->
 				<?php if ( $exchange->has_stories ) : ?>

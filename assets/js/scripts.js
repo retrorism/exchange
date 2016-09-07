@@ -56,10 +56,10 @@ function handleScroll() {
 		}
 		previousScroll = currentScroll;
 		if ( pageYOffset < 100 ) {
-			console.log( 'hiding' );
+			//console.log( 'hiding' );
 			jQuery('.breadcrumbs-bar').removeClass('scrolled');
 		} else {
-			console.log( 'showing' );
+			//console.log( 'showing' );
 			jQuery('.breadcrumbs-bar').addClass('scrolled');
 		}
 
@@ -95,6 +95,14 @@ jQuery(document).ready(function() {
 		}
 	}
 
+	jQuery('a[data-open=story__modal--gallery]').on('click', function( e ) {
+		e.preventDefault();
+		var id = jQuery(this).data('img_id'),
+		target = jQuery('#' + id);
+		jQuery('.orbit').foundation( 'changeSlide', true, target );
+	});
+
+
 /* 	jQuery('#gform_6 #input_6_7').change(function(){
     var attendees = jQuery(this).val();
     gfRepeater_setRepeater(6, 1, attendees);
@@ -119,7 +127,7 @@ jQuery(document).ready(function() {
 	});
 
 	jQuery('.image--main').each( function() {
-		console.log( jQuery(this).height() );
+		//console.log( jQuery(this).height() );
 	});
 
 	if ( jQuery('body').hasClass('single') || jQuery('body').hasClass('page-child') ) {
