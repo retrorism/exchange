@@ -1896,12 +1896,13 @@ Pattern 20. Emphasis blocks
 			@include grid-column( 40% );
 			@include grid-column-position( center );
 		}
+		.emphasisblock-inner {
+			padding: $global-padding $global-padding 5 * $global-padding $global-padding;
+		}
 	}
 }
 
-.emphasisblock-inner {
-	padding: $global-padding $global-padding 5 * $global-padding $global-padding;
-}
+
 
 .documentblock--post-it .emphasisblock-inner,
 .emphasisblock--post-it .emphasisblock-inner {
