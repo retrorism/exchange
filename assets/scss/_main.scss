@@ -343,16 +343,22 @@ BANNER STYLES
 	z-index: 9998;
 }
 
-@include breakpoint( large ) {
+#main {
+	padding-top: 3.6em;
+}
+
+@include breakpoint( medium ) {
 	.single .inner-header,
 	.page-child .inner-header {
 		position: relative;
 	}
+	.single #main,
+	.page-child #main {
+		padding-top: 0;
+	}
 }
 
-#main {
-	padding-top: 3.6em;
-}
+
 
 /*********************
 NAVIGATION STYLES
@@ -478,9 +484,8 @@ nav.top-bar {
 			box-sizing: border-box;
 			float: left;
 			svg {
-				margin: 5%;
-				width: 90%;
-				max-width: 9em;
+				margin: 7.5%;
+				width: 80%;
 			}
 		}
 		.menu-toggle {
@@ -509,11 +514,6 @@ nav.top-bar {
 	display: none;
 }
 
-.breadcrumbs-bar {
-	position: relative;
-	width: 100%;
-	height: auto;
-}
 .breadcrumbs-bar-inner {
 	background-color: $white;
 	position: fixed;
@@ -523,14 +523,6 @@ nav.top-bar {
 	left: 0;
 	transition: top 0.1s;
 	border-bottom: 1px solid transparentize( $light-gray, 0.6 );
-}
-
-@include breakpoint( medium ) {
-	.breadcrumbs-bar.scrolled {
-		.breadcrumbs-bar-inner {
-			top: 0;
-		}
-	}
 }
 
 .breadcrumbs-bar__logo {
@@ -544,9 +536,9 @@ nav.top-bar {
 		vertical-align: middle;
 		text-align: center;
 		box-sizing: border-box;
-		padding: 0.667 * $global-padding;
 		svg {
-			width: 90%;
+			margin: 7.5%;
+			width: 80%;
 		}
 	}
 }
@@ -557,17 +549,61 @@ nav.top-bar {
 	text-align: center;
 	ol {
 		margin: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 	li {
 		text-align: left;
 		height: 100%;
 		display: inline-block;
-		margin-right: 1em;
+		margin-right: 0.75em;
 		padding: $global-padding 0;
 	}
 	li > svg {
 		width: 1em;
 		height: 0.8em;
+	}
+}
+
+.breadcrumbs-bar {
+	position: relative;
+	width: 100%;
+	height: auto;
+	@include breakpoint( small ) {
+		display: none;
+	}
+	@include breakpoint( medium ) {
+		&.scrolled {
+			display: block;
+			.breadcrumbs-bar-inner {
+				top: 0;
+			}
+		}
+		.breadcrumbs-bar__path {
+			ol {
+				width: 100%;
+				padding: 0 0 0 25%;
+				font-size: $small-font-size;
+			}
+		}
+	}
+	@include breakpoint( large ) {
+		.breadcrumbs-bar__path {
+			text-align: center;
+			ol {
+				padding: 0 0 0 10%;
+				font-size: inherit;
+			}
+		}
+	}
+	@include breakpoint( xlarge ) {
+		.breadcrumbs-bar__path {
+			ol {
+				padding: 0%;
+				font-size: inherit;
+			}
+		}
 	}
 }
 

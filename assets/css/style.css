@@ -3352,13 +3352,16 @@ BANNER STYLES
   height: 3.6rem;
   z-index: 9998; }
 
-@media screen and (min-width: 60em) {
-  .single .inner-header,
-  .page-child .inner-header {
-    position: relative; } }
-
 #main {
   padding-top: 3.6em; }
+
+@media screen and (min-width: 40em) {
+  .single .inner-header,
+  .page-child .inner-header {
+    position: relative; }
+  .single #main,
+  .page-child #main {
+    padding-top: 0; } }
 
 /*********************
 NAVIGATION STYLES
@@ -3463,9 +3466,8 @@ nav.top-bar {
     box-sizing: border-box;
     float: left; }
     .top-bar__center a svg {
-      margin: 5%;
-      width: 90%;
-      max-width: 9em; }
+      margin: 7.5%;
+      width: 80%; }
   .top-bar__center .menu-toggle {
     display: block;
     float: right;
@@ -3486,11 +3488,6 @@ nav.top-bar {
 .top-bar__search {
   display: none; }
 
-.breadcrumbs-bar {
-  position: relative;
-  width: 100%;
-  height: auto; }
-
 .breadcrumbs-bar-inner {
   background-color: #fefefe;
   position: fixed;
@@ -3500,10 +3497,6 @@ nav.top-bar {
   left: 0;
   transition: top 0.1s;
   border-bottom: 1px solid rgba(211, 211, 211, 0.4); }
-
-@media screen and (min-width: 40em) {
-  .breadcrumbs-bar.scrolled .breadcrumbs-bar-inner {
-    top: 0; } }
 
 .breadcrumbs-bar__logo {
   width: 10em;
@@ -3515,26 +3508,54 @@ nav.top-bar {
     line-height: 0;
     vertical-align: middle;
     text-align: center;
-    box-sizing: border-box;
-    padding: 0.667rem; }
+    box-sizing: border-box; }
     .breadcrumbs-bar__logo a svg {
-      width: 90%; }
+      margin: 7.5%;
+      width: 80%; }
 
 .breadcrumbs-bar__path {
   position: relative;
   width: 100%;
   text-align: center; }
   .breadcrumbs-bar__path ol {
-    margin: 0; }
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
   .breadcrumbs-bar__path li {
     text-align: left;
     height: 100%;
     display: inline-block;
-    margin-right: 1em;
+    margin-right: 0.75em;
     padding: 1rem 0; }
   .breadcrumbs-bar__path li > svg {
     width: 1em;
     height: 0.8em; }
+
+.breadcrumbs-bar {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: none; }
+  @media screen and (min-width: 40em) {
+    .breadcrumbs-bar.scrolled {
+      display: block; }
+      .breadcrumbs-bar.scrolled .breadcrumbs-bar-inner {
+        top: 0; }
+    .breadcrumbs-bar .breadcrumbs-bar__path ol {
+      width: 100%;
+      padding: 0 0 0 25%;
+      font-size: 80%; } }
+  @media screen and (min-width: 60em) {
+    .breadcrumbs-bar .breadcrumbs-bar__path {
+      text-align: center; }
+      .breadcrumbs-bar .breadcrumbs-bar__path ol {
+        padding: 0 0 0 10%;
+        font-size: inherit; } }
+  @media screen and (min-width: 75em) {
+    .breadcrumbs-bar .breadcrumbs-bar__path ol {
+      padding: 0%;
+      font-size: inherit; } }
 
 /*********************
 ARTICLE STYLES
