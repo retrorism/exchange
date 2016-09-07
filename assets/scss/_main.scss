@@ -338,9 +338,11 @@ BANNER STYLES
 	z-index: 9998;
 }
 
-.single .inner-header,
-.page-child .inner-header {
-	position: relative;
+@include breakpoint( large ) {
+	.single .inner-header,
+	.page-child .inner-header {
+		position: relative;
+	}
 }
 
 #main {
@@ -514,7 +516,7 @@ nav.top-bar {
 	position: fixed;
 	z-index: 9999;
 	width: 100%;
-	top: -4em;
+	top: -5em;
 	left: 0;
 	transition: top 0.1s;
 	border-bottom: 1px solid transparentize( $light-gray, 0.6 );
@@ -531,12 +533,18 @@ nav.top-bar {
 .breadcrumbs-bar__logo {
 	width: 10em;
 	position: absolute;
-	a svg {
-		display: table-cell;
-		width: 90%;
+	a {
+		display: block;
+		width: 10em;
 		height: 100%;
-		display: inline-block;
-		padding: 0.6667 * $global-padding;
+		line-height:0;
+		vertical-align: middle;
+		text-align: center;
+		box-sizing: border-box;
+		padding: 0.667 * $global-padding;
+		svg {
+			width: 90%;
+		}
 	}
 }
 
@@ -573,7 +581,8 @@ ARTICLE STYLES
 }
 
 // Sections need
-.section-inner {
+.section-inner,
+.search .archive__interface-inner {
 	padding-bottom: 2 * $global-padding;
 	padding-top: 2 * $global-padding;
 	overflow: hidden;
@@ -753,6 +762,7 @@ SECTION STYLES
 }
 
 .footer__section,
+.search .archive__interface,
 .home .story__section:last-child {
 	svg.section__edge--bottom {
 		display: none;
@@ -849,6 +859,10 @@ Pattern 1. Title
 .story__title-wrapper,
 .archive__title-wrapper {
 	margin-top: 4 * $global-margin;
+}
+
+.search .archive__title-wrapper {
+	margin-bottom: 4 * $global-margin;
 }
 
 .page .story__title-wrapper,
@@ -2333,22 +2347,34 @@ ARTICLE META STYLES
 	.social-icons-list__link__icon path.circle {
 		transition: fill 1s;
 	}
-	.social-icons-list__link__icon {
-		width: 3em;
-		height: 3.25em;
-		margin-right: 1em;
-		&:hover {
-			path.circle {
-				fill: $yellow-3;
-				transition: fill 1s;
+	.social-icons-list__link__icon:hover {
+		path.circle {
+			fill: $yellow-3;
+			transition: fill 1s;
 
-			}
 		}
 	}
 	.social-icons-list__item:last-child .social-icons-list__link__icon {
 		margin-right: 0;
 	}
 }
+
+.section--has_social_icons {
+	.social-icons-list__link__icon {
+		width: 6em;
+		height: 6.5em;
+		margin-right: 2em;
+	}
+}
+
+.story__footer {
+	.social-icons-list__link__icon {
+		width: 3em;
+		height: 3.25em;
+		margin-right: 1em;
+	}
+}
+
 
 /*********************
 ARTICLE EXTRAS STYLES
@@ -2893,6 +2919,20 @@ FOOTER STYLES
 	margin-bottom: 0.5em;
 }
 
+input.search-submit {
+	@include button;
+	border: 0;
+	box-shadow: inset 1px 1px 0 0 $yellow-tandem, inset -1px -1px 0 0 $yellow-tandem;
+	display: inline;
+	position: relative;
+	top: 0.45em;
+	font-weight: $global-weight-semibold;
+	&:hover {
+		background-color: $yellow-tandem;
+		color: $white;
+	}
+}
+
 .widget_search {
 	line-height: 1.5em;
 	label {
@@ -2903,20 +2943,24 @@ FOOTER STYLES
 		display: none;
 	}
 	input.search-field {
+		border-color: $yellow-3;
+		outline-color: $yellow-3;
 		width: 10em;
 		display: inline;
+		padding: 0.675em;
 	}
 	input.search-submit {
-		@include button;
-		background-color: $yellow-tandem;
-		border: 1px solid $white;
-		display: inline;
-		position: relative;
-		top: 0.45em;
+		display: inline-block;
+		box-shadow: inset 1px 1px 0 0 $white, inset -1px -1px 0 0 $white;
 		color: $white;
-		font-weight: $global-weight-semibold;
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
 	}
 }
+
+
 
 /*********************
 ADMIN FORM STYLES

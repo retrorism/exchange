@@ -1,35 +1,39 @@
 <?php get_header(); ?>
-			
-	<div id="content">
 
-		<div id="inner-content" class="row">
-	
-			<main id="main" class="large-8 medium-8 columns first" role="main">
-				<header>
-					<h1 class="archive-title"><?php _e( 'Search Results for:', 'exchange' ); ?> <?php echo esc_attr(get_search_query()); ?></h1>
-				</header>
+<main id="main" role="main" data-scroll="main">
 
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			 
-					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/loop', 'archive' ); ?>
-				    
-				<?php endwhile; ?>	
+	<div class="main-inner">
 
-					<?php exchange_page_navi(); ?>
-					
-				<?php else : ?>
-				
-					<?php get_template_part( 'parts/content', 'missing' ); ?>
-						
-			    <?php endif; ?>
-	
-		    </main> <!-- end #main -->
-		
-		    <?php get_sidebar(); ?>
-		
-		</div> <!-- end #inner-content -->
+		<?php get_template_part( 'parts/content', 'archive-header'); ?>
 
-	</div> <!-- end #content -->
+		<?php if (have_posts()) : ?>
+
+		<div class="archive__interface section--salmon-1-web section--coloured">
+		<?php echo BasePattern::build_edge_svg( 'top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
+
+			<div class="archive__interface-inner">
+
+			<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
+
+			<?php exchange_page_navi(); ?>
+
+			</div><!-- end .archive__interface-inner -->
+
+		<?php echo BasePattern::build_edge_svg( 'bottom', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
+		</div><!-- end .archive__interface-->
+
+		<?php else : ?>
+
+			<?php get_template_part( 'parts/content', 'missing' ); ?>
+
+		<?php endif; ?>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</main> <!-- end #main -->
 
 <?php get_footer(); ?>

@@ -29,24 +29,26 @@
 
 		<div class="archive__interface section--blue-1-web section--coloured">
 
+			<div class="archive__interface-inner">
+
 			<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 
-				<?php get_template_part( 'parts/content', 'archive-filters'); ?>
+			<?php get_template_part( 'parts/content', 'archive-filters'); ?>
 
-				<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
+			<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
 
-				<?php exchange_page_navi(); ?>
+			<?php exchange_page_navi(); ?>
 
-			<?php else : ?>
-
-				<?php get_template_part( 'parts/content', 'missing' ); ?>
-				</div>
-
-			<?php endif; ?>
+			</div><!-- archive__interface-inner-->
 
 			<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
-
 		</div><!--archive__interface-->
+
+		<?php else : ?>
+
+			<?php get_template_part( 'parts/content', 'missing' ); ?>
+
+		<?php endif; ?>
 
 		<footer class="archive__footer">
 

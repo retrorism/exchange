@@ -26,26 +26,26 @@
 		<?php if ( have_posts() ) : ?>
 
 			<div class="archive__interface section--has_grid section--blue-1-web section--coloured">
-				<?php echo BasePattern::build_edge_svg( 'top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+			<?php echo BasePattern::build_edge_svg( 'top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 
 				<div class="archive__interface-inner">
 
+				<?php get_template_part( 'parts/content', 'archive-filters' ); ?>
 
-					<?php get_template_part( 'parts/content', 'archive-filters' ); ?>
+				<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
 
-					<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
+				<?php exchange_page_navi(); ?>
 
-					<?php exchange_page_navi(); ?>
+				</div><!-- end .archive__interface-inner -->
 
+			<?php echo BasePattern::build_edge_svg( 'bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+			</div><!-- end .archive__interface-->
 
 		<?php else : ?>
 
-				<?php get_template_part( 'parts/content', 'missing' ); ?>
+			<?php get_template_part( 'parts/content', 'missing' ); ?>
 
 		<?php endif; ?>
-				</div><!-- end .archive__interface-inner -->
-				<?php echo BasePattern::build_edge_svg( 'bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
-		</div><!-- end .archive__interface-->
 
 		<footer class="archive__footer">
 

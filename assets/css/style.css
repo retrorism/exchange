@@ -3347,9 +3347,10 @@ BANNER STYLES
   width: 100%;
   z-index: 9998; }
 
-.single .inner-header,
-.page-child .inner-header {
-  position: relative; }
+@media screen and (min-width: 60em) {
+  .single .inner-header,
+  .page-child .inner-header {
+    position: relative; } }
 
 #main {
   padding-top: 3.6em; }
@@ -3492,7 +3493,7 @@ nav.top-bar {
   position: fixed;
   z-index: 9999;
   width: 100%;
-  top: -4em;
+  top: -5em;
   left: 0;
   transition: top 0.1s;
   border-bottom: 1px solid rgba(211, 211, 211, 0.4); }
@@ -3504,12 +3505,17 @@ nav.top-bar {
 .breadcrumbs-bar__logo {
   width: 10em;
   position: absolute; }
-  .breadcrumbs-bar__logo a svg {
-    display: table-cell;
-    width: 90%;
+  .breadcrumbs-bar__logo a {
+    display: block;
+    width: 10em;
     height: 100%;
-    display: inline-block;
-    padding: 0.6667rem; }
+    line-height: 0;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.667rem; }
+    .breadcrumbs-bar__logo a svg {
+      width: 90%; }
 
 .breadcrumbs-bar__path {
   position: relative;
@@ -3552,7 +3558,8 @@ ARTICLE STYLES
   .section-inner::after {
     clear: both; }
 
-.section-inner {
+.section-inner,
+.search .archive__interface-inner {
   padding-bottom: 2rem;
   padding-top: 2rem;
   overflow: hidden; }
@@ -3840,6 +3847,7 @@ SECTION STYLES
     margin-top: 4rem; }
 
 .footer__section svg.section__edge--bottom,
+.search .archive__interface svg.section__edge--bottom,
 .home .story__section:last-child svg.section__edge--bottom {
   display: none; }
 
@@ -3911,6 +3919,9 @@ Pattern 1. Title
 .story__title-wrapper,
 .archive__title-wrapper {
   margin-top: 4rem; }
+
+.search .archive__title-wrapper {
+  margin-bottom: 4rem; }
 
 .page .story__title-wrapper,
 .archive .story__title-wrapper,
@@ -5408,19 +5419,24 @@ ARTICLE META STYLES
 .section--has_social_icons .social-icons-list__link__icon path.circle {
   transition: fill 1s; }
 
-.story__footer .social-icons-list__link__icon,
-.section--has_social_icons .social-icons-list__link__icon {
-  width: 3em;
-  height: 3.25em;
-  margin-right: 1em; }
-  .story__footer .social-icons-list__link__icon:hover path.circle,
-  .section--has_social_icons .social-icons-list__link__icon:hover path.circle {
-    fill: #eba847;
-    transition: fill 1s; }
+.story__footer .social-icons-list__link__icon:hover path.circle,
+.section--has_social_icons .social-icons-list__link__icon:hover path.circle {
+  fill: #eba847;
+  transition: fill 1s; }
 
 .story__footer .social-icons-list__item:last-child .social-icons-list__link__icon,
 .section--has_social_icons .social-icons-list__item:last-child .social-icons-list__link__icon {
   margin-right: 0; }
+
+.section--has_social_icons .social-icons-list__link__icon {
+  width: 6em;
+  height: 6.5em;
+  margin-right: 2em; }
+
+.story__footer .social-icons-list__link__icon {
+  width: 3em;
+  height: 3.25em;
+  margin-right: 1em; }
 
 /*********************
 ARTICLE EXTRAS STYLES
@@ -6023,6 +6039,36 @@ FOOTER STYLES
   text-transform: uppercase;
   margin-bottom: 0.5em; }
 
+input.search-submit {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  background-color: transparent;
+  color: #4c4d53;
+  border: 0;
+  box-shadow: inset 1px 1px 0 0 #f4c522, inset -1px -1px 0 0 #f4c522;
+  display: inline;
+  position: relative;
+  top: 0.45em;
+  font-weight: 600; }
+  [data-whatinput='mouse'] input.search-submit {
+    outline: 0; }
+  input.search-submit:hover, input.search-submit:focus {
+    background-color: transparent;
+    color: #4c4d53; }
+  input.search-submit:hover {
+    background-color: #f4c522;
+    color: #fefefe; }
+
 .widget_search {
   line-height: 1.5em; }
   .widget_search label {
@@ -6031,35 +6077,18 @@ FOOTER STYLES
   .widget_search .screen-reader-text {
     display: none; }
   .widget_search input.search-field {
+    border-color: #eba847;
+    outline-color: #eba847;
     width: 10em;
-    display: inline; }
+    display: inline;
+    padding: 0.675em; }
   .widget_search input.search-submit {
     display: inline-block;
-    text-align: center;
-    line-height: 1;
-    cursor: pointer;
-    -webkit-appearance: none;
-    transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    border-radius: 0;
-    padding: 0.85em 1em;
-    margin: 0 0 1rem 0;
-    font-size: 0.9rem;
-    background-color: transparent;
-    color: #4c4d53;
-    background-color: #f4c522;
-    border: 1px solid #fefefe;
-    display: inline;
-    position: relative;
-    top: 0.45em;
-    color: #fefefe;
-    font-weight: 600; }
-    [data-whatinput='mouse'] .widget_search input.search-submit {
-      outline: 0; }
-    .widget_search input.search-submit:hover, .widget_search input.search-submit:focus {
-      background-color: transparent;
-      color: #4c4d53; }
+    box-shadow: inset 1px 1px 0 0 #fefefe, inset -1px -1px 0 0 #fefefe;
+    color: #fefefe; }
+    .widget_search input.search-submit:hover {
+      background-color: #fefefe;
+      color: #343438; }
 
 /*********************
 ADMIN FORM STYLES
