@@ -477,8 +477,8 @@ nav.top-bar {
 			text-align: center;
 			box-sizing: border-box;
 			float: left;
-			padding: 0.667 * $global-padding;
 			svg {
+				margin: 5%;
 				width: 90%;
 				max-width: 9em;
 			}
@@ -498,9 +498,6 @@ nav.top-bar {
 		a {
 			float: none;
 			line-height: 0;
-			svg {
-				margin-top: 5%;
-			}
 		}
 		.menu-toggle {
 			display: none;
