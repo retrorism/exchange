@@ -70,7 +70,8 @@ jQuery(document).ready(function() {
 					prid : selection.data('programme-round'),
 					security : jQuery( 'token-form__nonce' ).val()
 			};
-			jQuery('.loader--exchange').addClass('go');
+			jQuery('.loader-pointer').remove();
+			jQuery('.loader-wrapper').addClass('go');
 			grid.html('');
 			jQuery.ajax( {
 				'url':    exchange_ajax.ajax_url,
@@ -78,7 +79,7 @@ jQuery(document).ready(function() {
 				'data':   data
 			} ).done( function ( response ) {
 				grid.html( response );
-				jQuery('.loader--exchange').removeClass('go');
+				jQuery('.loader-wrapper').removeClass('go');
 			} );
 		};
 	} );
