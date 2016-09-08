@@ -4637,6 +4637,13 @@ li.team-member__story-link {
   background-color: #9fd3d6;
   color: white; }
 
+.section--has_contact_details.section--yellow-1-web .button--small {
+  border-color: #eba847; }
+
+.section--has_contact_details.section--yellow-1-web .button--small:hover {
+  background-color: #eba847;
+  color: white; }
+
 .contactblock__image {
   width: 58.33333%;
   float: left;
@@ -4878,7 +4885,8 @@ Pattern 19. Gallery
 *******************/
 .story__modal--gallery {
   z-index: 9999;
-  padding: 3.6rem 1rem; }
+  padding: 3.6rem 1rem;
+  background: #fefefe; }
 
 .story__modal--gallery .orbit,
 .collaboration__gallery .orbit {
@@ -6223,10 +6231,9 @@ input.search-submit {
 /*********************
 ADMIN FORM STYLES
 *********************/
-#wpbody-content textarea th, #wpbody-content textarea td,
-#exchange_tokenlist_widget th,
-#exchange_tokenlist_widget td {
-  text-align: left; }
+#wpbody-content textarea table td,
+#exchange_tokenlist_widget table td {
+  vertical-align: top; }
 
 #wpbody-content textarea input,
 #exchange_tokenlist_widget input {

@@ -1626,6 +1626,16 @@ li.team-member__story-link {
 	}
 }
 
+.section--has_contact_details.section--yellow-1-web {
+	.button--small {
+		border-color: $yellow-3;
+	}
+	.button--small:hover {
+		background-color: $yellow-3;
+		color: white;
+	}
+}
+
 .contactblock__image {
 	@include breakpoint( small ) {
 		@include grid_column( 7 );
@@ -1869,7 +1879,8 @@ Pattern 19. Gallery
 
 .story__modal--gallery {
 	z-index: 9999;
-	padding: 3.6 * $global-padding 1 * $global-padding;;
+	padding: 3.6 * $global-padding 1 * $global-padding;
+	background: $white;
 }
 
 .story__modal--gallery .orbit,
@@ -3094,8 +3105,8 @@ ADMIN FORM STYLES
 
 #wpbody-content textarea,
 #exchange_tokenlist_widget {
-	th, td {
-		text-align: left;
+	table td {
+		vertical-align: top;
 	}
 	input {
 		width: 100%;
