@@ -74,7 +74,7 @@ jQuery(document).ready(function() {
 
 	var focus_img_containers = document.querySelectorAll('.focus');
 	for ( var i = 0; i < focus_img_containers.length; i++ ) {
-  		var img_container = focus_img_containers[i];
+		var img_container = focus_img_containers[i],
 		img = img_container.getElementsByClassName('image--main')[0];
 		if ( ! img.classList.contains( 'lazy' ) ) {
 			//console.log('no lazy image detected');
@@ -95,12 +95,36 @@ jQuery(document).ready(function() {
 		}
 	}
 
-	jQuery('a[data-open=story__modal--gallery]').on('click', function( e ) {
+	jQuery( 'a[data-open=story__modal--gallery]' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var id = jQuery(this).data('img_id'),
 		target = jQuery('#' + id);
 		jQuery('.orbit').foundation( 'changeSlide', true, target );
 	});
+
+	jQuery( '#token-form__submit' ).on( 'click', function( e ) {
+		e.preventDefault();
+		var selection = jQuery( '.token-form__collab-select option:selected' ),
+		grid = jQuery('.grid--form-options');
+		if ( undefined !== selection ) {
+			var data = {
+					action: 'exchange_token_form',
+					cid : selection.val(),
+					prid : selection.data('programme-round'),
+					security : jQuery( 'token-form__nonce' ).val()
+			};
+			jQuery('.loader--exchange').addClass('go');
+			grid.html('');
+			jQuery.ajax( {
+				'url':    exchange_ajax.ajax_url,
+				'method': 'POST',
+				'data':   data
+			} ).done( function ( response ) {
+				grid.html( response );
+				jQuery('.loader--exchange').removeClass('go');
+			} );
+		};
+	} );
 
 
 /* 	jQuery('#gform_6 #input_6_7').change(function(){
@@ -134,19 +158,19 @@ jQuery(document).ready(function() {
 		jQuery('#main').on('scrollme.zf.trigger',handleScroll);
 	}
 
-    // Remove empty P tags created by WP inside of Accordion and Orbit
-    jQuery('.accordion p:empty, .orbit p:empty').remove();
+	// Remove empty P tags created by WP inside of Accordion and Orbit
+	jQuery('.accordion p:empty, .orbit p:empty').remove();
 
-	 // Makes sure last grid item floats left
+	// Makes sure last grid item floats left
 	jQuery('.archive__grid .columns', 'relatedgrid .columns').last().addClass( 'end' );
 
 	// Adds Flex Video to YouTube and Vimeo Embeds
-  jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {
-    if ( jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5 ) {
-      jQuery(this).wrap("<div class='widescreen flex-video'/>");
-    } else {
-      jQuery(this).wrap("<div class='flex-video'/>");
-    }
-  });
+	jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function() {
+		if ( jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5 ) {
+			jQuery(this).wrap("<div class='widescreen flex-video'/>");
+		} else {
+			jQuery(this).wrap("<div class='flex-video'/>");
+		}
+	});
 
 });
