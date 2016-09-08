@@ -5,13 +5,11 @@
 			<?php
 				$img_root = get_template_directory() . '/assets/images/';
 				global $post;
-				$page_query = new WP_Query();
-				$all_pages = $page_query->query(array('post_type' => 'page','post_status' => 'publish' ) );
+				$all_pages = BaseController::get_all_from_type( 'page' );
 				$programmes = get_page_children( $post->ID, $all_pages );
 				foreach ( $programmes as $page_obj ) {
 					$anchor = '<a href="#">';
 					if ( ! $page_obj instanceof WP_Post || 'publish' !== $page_obj->post_status ) {
-						var_dump( $page_obj );
 						continue;
 					} else {
 						$anchor = exchange_create_link( BaseController::exchange_factory( $page_obj ), false );
