@@ -768,7 +768,8 @@ SECTION STYLES
 }
 
 // Remove top-padding for first section in the story.
-.story__section:first-child .section-inner{
+.story__section:first-child .section-inner,
+.home .section--featured-grid .section-inner {
 	padding-top: 0;
 }
 
@@ -1810,9 +1811,11 @@ a.token-form__submit {
 		margin: 0;
 		padding: 2 * $global-padding $global-padding;
 	}
-	.griditem--cta .emphasisblock--cta .emphasisblock-inner {
-		padding-bottom: $global-padding;
-		min-height: 26em;
+	.griditem--cta .emphasisblock--cta {
+		.emphasisblock-inner {
+			min-height: 22em;
+			padding-bottom: $global-padding;
+		}
 	}
 }
 
@@ -1990,7 +1993,7 @@ Pattern 20. Emphasis blocks
 	.emphasisblock-inner {
 		padding-bottom: 5 * $global-padding;
 	}
-	&.emphasisblock--full {
+	&.emphasisblock--full .emphasisblock-inner {
 		padding-bottom: $global-padding;
 	}
 }

@@ -104,6 +104,7 @@ jQuery(document).ready(function() {
 
 	jQuery( '#token-form__submit' ).on( 'click', function( e ) {
 		e.preventDefault();
+		jQuery(this).prop('disabled',true);
 		var selection = jQuery( '.token-form__collab-select option:selected' ),
 		grid = jQuery('.grid--form-options');
 		if ( undefined !== selection ) {
@@ -111,7 +112,7 @@ jQuery(document).ready(function() {
 					action: 'exchange_token_form',
 					cid : selection.val(),
 					prid : selection.data('programme-round'),
-					security : jQuery( 'token-form__nonce' ).val()
+					security : jQuery( '.token-form__nonce' ).val()
 			};
 			jQuery('.loader-pointer').remove();
 			jQuery('.loader-wrapper').addClass('go');
@@ -123,6 +124,8 @@ jQuery(document).ready(function() {
 			} ).done( function ( response ) {
 				grid.html( response );
 				jQuery('.loader-wrapper').removeClass('go');
+				jQuery(this).removeProp('disabled');
+
 			} );
 		};
 	} );

@@ -3852,7 +3852,8 @@ SECTION STYLES
   .section--coloured > svg.section__edge--bottom {
     top: 20px; }
 
-.story__section:first-child .section-inner {
+.story__section:first-child .section-inner,
+.home .section--featured-grid .section-inner {
   padding-top: 0; }
 
 .story__section:first-child.section--coloured {
@@ -4832,8 +4833,8 @@ a.token-form__submit {
   padding: 2rem 1rem; }
 
 .section--form-options .griditem--cta .emphasisblock--cta .emphasisblock-inner {
-  padding-bottom: 1rem;
-  min-height: 26em; }
+  min-height: 22em;
+  padding-bottom: 1rem; }
 
 .section__helper {
   position: absolute;
@@ -4997,7 +4998,7 @@ Pattern 20. Emphasis blocks
 .emphasisblock .emphasisblock-inner {
   padding-bottom: 5rem; }
 
-.emphasisblock.emphasisblock--full {
+.emphasisblock.emphasisblock--full .emphasisblock-inner {
   padding-bottom: 1rem; }
 
 .documentblock--post-it .emphasisblock-inner,
