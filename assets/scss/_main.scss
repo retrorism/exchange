@@ -3092,6 +3092,12 @@ input.search-submit {
 ADMIN FORM STYLES
 *********************/
 
-#wpbody-content textarea {
-	width: 100%;
+#wpbody-content textarea,
+#exchange_tokenlist_widget {
+	th, td {
+		text-align: left;
+	}
+	input {
+		width: 100%;
+	}
 }

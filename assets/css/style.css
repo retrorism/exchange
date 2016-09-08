@@ -6223,7 +6223,13 @@ input.search-submit {
 /*********************
 ADMIN FORM STYLES
 *********************/
-#wpbody-content textarea {
+#wpbody-content textarea th, #wpbody-content textarea td,
+#exchange_tokenlist_widget th,
+#exchange_tokenlist_widget td {
+  text-align: left; }
+
+#wpbody-content textarea input,
+#exchange_tokenlist_widget input {
   width: 100%; }
 
 /******************************************************************
