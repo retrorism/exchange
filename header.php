@@ -16,6 +16,7 @@
 		<!-- Facebook -->
 		<?php if ( is_home() ) : ?>
 			<meta property="og:url" content="<?php echo esc_url( home_url() ); ?>" />
+			<meta property="og:image" content="<?php echo esc_url( home_url('/site/wp-content/themes/exchange/assets/images/png/T_logo_Strapline_WEB.png') ); ?>" />
 		<?php else : ?>
 			<?php if ( is_single() || is_page() ) : ?>
 	        	<meta property="og:url" content="<?php the_permalink(); ?>" />
