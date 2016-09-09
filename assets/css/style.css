@@ -3536,6 +3536,8 @@ nav.top-bar {
     display: inline-block;
     margin-right: 0.75em;
     padding: 1rem 0; }
+    .breadcrumbs-bar__path li a:hover {
+      color: #343438; }
   .breadcrumbs-bar__path li > svg {
     width: 1em;
     height: 0.8em; }

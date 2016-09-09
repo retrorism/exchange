@@ -567,6 +567,9 @@ nav.top-bar {
 		display: inline-block;
 		margin-right: 0.75em;
 		padding: $global-padding 0;
+		a:hover {
+			color: $black;
+		}
 	}
 	li > svg {
 		width: 1em;
