@@ -14,9 +14,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Facebook -->
-        <meta property="og:url" content="<?php the_permalink() ?>" />
-		<meta property="og:type" content="article" />
-
+		<?php if ( is_single() ) : ?>
+        	<meta property="og:url" content="<?php the_permalink() ?>" />
+			<meta property="og:type" content="article" />
+		<?php endif; ?>
 		<?php if ( function_exists( 'exchange_get_share_title' ) && is_single() ) : ?>
 			<meta property="og:title" content="<?php exchange_get_share_title(); ?>" />
 		<?php endif; ?>
