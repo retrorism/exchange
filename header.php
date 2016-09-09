@@ -14,11 +14,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Facebook -->
-		<?php if ( is_single() ) : ?>
+		<?php if ( is_single() || is_page() ) : ?>
         	<meta property="og:url" content="<?php the_permalink() ?>" />
 			<meta property="og:type" content="article" />
 		<?php endif; ?>
-		<?php if ( function_exists( 'exchange_get_share_title' ) && is_single() ) : ?>
+		<?php if ( function_exists( 'exchange_get_share_title' ) && ( is_single() || is_page() ) ) : ?>
 			<meta property="og:title" content="<?php exchange_get_share_title(); ?>" />
 		<?php endif; ?>
 		<?php if ( function_exists( 'exchange_get_share_description' ) ) : ?>
