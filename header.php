@@ -14,19 +14,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Facebook -->
-		<?php if ( is_single() || is_page() ) : ?>
-        	<meta property="og:url" content="<?php the_permalink() ?>" />
-			<meta property="og:type" content="article" />
+		<?php if ( is_home() ) : ?>
+			<meta property="og:url" content="<?php echo esc_url( home_url() ); ?>" />
 		<?php endif; ?>
-		<?php if ( function_exists( 'exchange_get_share_title' ) && ( is_single() || is_page() ) ) : ?>
-			<meta property="og:title" content="<?php exchange_get_share_title(); ?>" />
+		<?php else: ?>
+			<?php if ( is_single() || is_page() ) : ?>
+	        	<meta property="og:url" content="<?php the_permalink(); ?>" />
+				<meta property="og:type" content="article" />
+			<?php endif; ?>
+			<?php if ( function_exists( 'exchange_get_share_title' ) && ( is_single() || is_page() ) ) : ?>
+				<meta property="og:title" content="<?php exchange_get_share_title(); ?>" />
+			<?php endif; ?>
+			<?php if ( function_exists( 'exchange_get_share_description' ) ) : ?>
+				<meta property="og:description" content="<?php exchange_get_share_description(); ?>" />
+			<?php endif; ?>
+			<?php if ( function_exists( 'exchange_get_share_image' ) ) : ?>
+				<meta property="og:image" content="<?php exchange_get_share_image(); ?>" />
+			<?php endif; ?>
 		<?php endif; ?>
-		<?php if ( function_exists( 'exchange_get_share_description' ) ) : ?>
-			<meta property="og:description" content="<?php exchange_get_share_description(); ?>" />
-		<?php endif; ?>
-		<?php if ( function_exists( 'exchange_get_share_image' ) ) : ?>
-			<meta property="og:image" content="<?php exchange_get_share_image(); ?>" />
-		<?php endif; ?>
+
 
 		<!-- If Site Icon isn't set in customizer -->
 		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
