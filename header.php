@@ -14,7 +14,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Facebook -->
-		<?php if ( is_home() ) : ?>
+		<?php if ( is_front_page() ) : ?>
 			<meta property="og:url" content="<?php echo esc_url( home_url() ); ?>" />
 			<meta property="og:image" content="<?php echo esc_url( home_url('/site/wp-content/themes/exchange/assets/images/png/T_logo_Inverse_2016.png') ); ?>" />
 		<?php else : ?>
