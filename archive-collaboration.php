@@ -25,15 +25,14 @@
 
 		<?php if (have_posts()) : ?>
 
-		<?php get_template_part( 'parts/content', 'archive-map'); ?>
+		<?php /* get_template_part( 'parts/content', 'archive-map'); */ ?>
 
 		<div class="archive__interface section--blue-1-web section--coloured">
+			<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 
 			<div class="archive__interface-inner">
 
-			<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
-
-			<?php get_template_part( 'parts/content', 'archive-filters'); ?>
+			<?php /* get_template_part( 'parts/content', 'archive-filters'); */ ?>
 
 			<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
 

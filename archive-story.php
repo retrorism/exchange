@@ -30,7 +30,7 @@
 
 				<div class="archive__interface-inner">
 
-				<?php get_template_part( 'parts/content', 'archive-filters' ); ?>
+				<?php /* get_template_part( 'parts/content', 'archive-filters' ); */ ?>
 
 				<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
 
