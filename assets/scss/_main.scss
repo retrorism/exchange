@@ -2695,17 +2695,19 @@ ARTICLE META STYLES
 
 .page__footer {
 	.social-icons-list__item {
-		display: block;
+		display: inline-block;
+		line-height: 0;
 	}
 	.social-icons-list__link__icon {
-		display: table-cell;
+		width: 3.5em;
+		height: 3em;
 		g.icon path,
 		path.icon {
 			fill: $white;
 		}
 	}
 	span {
-		display: table-cell;
+		display: none;
 		vertical-align: middle;
 		color: $white;
 		font-weight: $global-weight-semibold;
@@ -3040,12 +3042,13 @@ FOOTER STYLES
 
 .footer__widget-wrapper {
 	color: $white;
-	margin-bottom: 2 * $global-margin;
-	&:last-child {
-		margin-bottom: 0;
-	}
 	@include grid-column();
+	@include breakpoint( small ) {
+		margin-bottom: 2 * $global-margin;
+
+	}
 	@include breakpoint( medium ) {
+		margin-bottom: 0;
 		@include grid-column( 6 );
 		min-height: 8em;
 		&:last-child {
@@ -3054,8 +3057,11 @@ FOOTER STYLES
 	}
 	@include breakpoint( large ) {
 		@include grid-column( 3 );
-		min-height: 6em;
+		min-height: 4em;
 		margin-bottom: 0;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 
@@ -3092,6 +3098,7 @@ input.search-submit {
 		border-color: $yellow-3;
 		outline-color: $yellow-3;
 		width: 10em;
+		height: 2.6em;
 		display: inline;
 		padding: 0.675em;
 	}
