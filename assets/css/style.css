@@ -5041,6 +5041,9 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock--yellow-tandem .emphasisblock-inner {
   background-color: #f4c522; }
+  .emphasisblock--yellow-tandem .emphasisblock-inner a.button--large:hover,
+  .emphasisblock--yellow-tandem .emphasisblock-inner a.button--small:hover {
+    color: #343438; }
 
 .section--yellow-1-web .griditem__emphasisblock.emphasisblock--yellow-1-web,
 .emphasisblock--yellow-3 .emphasisblock-inner {

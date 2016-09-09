@@ -2048,6 +2048,12 @@ Pattern 20. Emphasis blocks
 
 .emphasisblock--yellow-tandem .emphasisblock-inner {
 	background-color: $yellow-tandem;
+	a.button--large,
+	a.button--small {
+		&:hover {
+			color: $black;
+		}
+	}
 }
 
 .section--yellow-1-web .griditem__emphasisblock.emphasisblock--yellow-1-web,
