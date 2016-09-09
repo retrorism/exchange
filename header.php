@@ -17,14 +17,14 @@
         <meta property="og:url" content="<?php the_permalink() ?>" />
 		<meta property="og:type" content="article" />
 
-		<?php function_exists( 'exchange_get_share_title' ) && is_single() ) : ?>
-			<meta property="og:title" content="<?php exchange_get_share_title(''); ?>" />
+		<?php if ( function_exists( 'exchange_get_share_title' ) && is_single() ) : ?>
+			<meta property="og:title" content="<?php exchange_get_share_title(); ?>" />
 		<?php endif; ?>
-		<?php function_exists( 'exchange_get_share_description' ) : ?>
+		<?php if ( function_exists( 'exchange_get_share_description' ) ) : ?>
 			<meta property="og:description" content="<?php exchange_get_share_description(); ?>" />
 		<?php endif; ?>
-		<?php function_exists( 'exchange_get_share_image' ) : ?>
-			<meta property="og:image" content="<?php exchange_get_share_image(); ?>?>" />
+		<?php if ( function_exists( 'exchange_get_share_image' ) ) : ?>
+			<meta property="og:image" content="<?php exchange_get_share_image(); ?>" />
 		<?php endif; ?>
 
 		<!-- If Site Icon isn't set in customizer -->
