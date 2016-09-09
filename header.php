@@ -14,15 +14,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Facebook -->
-        <meta property="og:url"          content="<?php the_permalink() ?>" />
-		<meta property="og:type"         content="article" />
-		<?php if ( is_single() ) : ?>
-		<meta property="og:title"        content="<?php single_post_title(''); ?>" />
+        <meta property="og:url" content="<?php the_permalink() ?>" />
+		<meta property="og:type" content="article" />
+
+		<?php function_exists( 'exchange_get_share_title' && is_single() ) : ?>
+			<meta property="og:title" content="<?php exchange_get_share_title(''); ?>" />
 		<?php endif; ?>
-		<meta property="og:description"  content="<?php exchange_get_share_description(); ?>" />
-		<meta property="og:image"        content="<?php exchange_get_share_image(); ?>?>" />
-
-
+		<?php function_exists( 'exchange_get_share_description' ) : ?>
+			<meta property="og:description" content="<?php exchange_get_share_description(); ?>" />
+		<?php endif; ?>
+		<?php function_exists( 'exchange_get_share_image' ) : ?>
+			<meta property="og:image" content="<?php exchange_get_share_image(); ?>?>" />
+		<?php endif; ?>
+		
 		<!-- If Site Icon isn't set in customizer -->
 		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
 			<!-- Icons & Favicons -->
