@@ -16,8 +16,7 @@
 		<!-- Facebook -->
 		<?php if ( is_home() ) : ?>
 			<meta property="og:url" content="<?php echo esc_url( home_url() ); ?>" />
-		<?php endif; ?>
-		<?php else: ?>
+		<?php else : ?>
 			<?php if ( is_single() || is_page() ) : ?>
 	        	<meta property="og:url" content="<?php the_permalink(); ?>" />
 				<meta property="og:type" content="article" />
