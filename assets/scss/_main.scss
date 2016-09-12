@@ -1554,6 +1554,11 @@ Pattern 14. Interview (two styles: QA and name-based)
 Pattern 15. Contact block for TANDEM team member
 ************************************************/
 
+
+.section__contactblock {
+	overflow: hidden;
+}
+
 .section__contactblock:first-child {
 	margin-top: 0;
 }
@@ -1573,7 +1578,6 @@ Pattern 15. Contact block for TANDEM team member
 
 .contactblock__team-member,
 .contactblock__cta {
-	overflow: hidden;
 	@include grid_column( 8 );
 	@include grid-column-position( center );
 	@include breakpoint( small ) {
