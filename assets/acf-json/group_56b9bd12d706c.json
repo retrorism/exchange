@@ -150,8 +150,59 @@
             ]
         },
         {
-            "key": "field_57876b06ccc11",
-            "label": "Video",
+            "key": "field_577e3c937d7d6",
+            "label": "Gallery",
+            "name": "collaboration_gallery",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "preview_size": "thumbnail",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_57e6561ec9866",
+            "label": "Documents",
+            "name": "collaboration_documents",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 16,
+            "mime_types": "pdf,doc,docx,odt,xls,xlsx,zip"
+        },
+        {
+            "key": "field_57e9090e9b7da",
+            "label": "collaboration_video_embed_code",
             "name": "collaboration_video_embed_code",
             "type": "oembed",
             "instructions": "",
@@ -185,25 +236,6 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
-        },
-        {
-            "key": "field_577e3c937d7d6",
-            "label": "Gallery",
-            "name": "collaboration_gallery",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
         },
         {
             "key": "field_56cf377d22b9c",
@@ -290,5 +322,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1473431869
+    "modified": 1474890012
 }
