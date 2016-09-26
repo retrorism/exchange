@@ -5384,6 +5384,28 @@ Pattern 21 & 22 Grids
   .archive__grid .masonry__gutter-sizer {
     width: 2%; } }
 
+.collaboration__media__grid .masonry__grid-sizer,
+.collaboration__media__grid .collaboration__griditem {
+  width: 100%; }
+
+.collaboration__media__grid .masonry__gutter-sizer {
+  width: 0; }
+
+@media screen and (min-width: 40em) {
+  .collaboration__media__grid .masonry__grid-sizer,
+  .collaboration__media__grid .collaboration__griditem {
+    width: 48.5%;
+    padding: 0; }
+  .collaboration__media__grid .masonry__gutter-sizer {
+    width: 3%; } }
+
+@media screen and (min-width: 60em) {
+  .collaboration__media__grid .masonry__grid-sizer,
+  .collaboration__media__grid .collaboration__griditem {
+    width: 32%; }
+  .collaboration__media__grid .masonry__gutter-sizer {
+    width: 2%; } }
+
 section.section--has_grid .section-inner {
   padding-left: 0;
   padding-right: 0; }
@@ -5399,15 +5421,15 @@ section.section--has_grid.section--collaboration-grid .section-inner {
   padding-left: 0.625em;
   padding-right: 0.625em; }
 
-.archive__grid__griditem {
+.archive__grid__griditem,
+.collaboration__griditem {
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 1rem; }
 
 .featuredgrid__griditem,
 .simplegrid__griditem,
-.relatedgrid__griditem,
-.collaboration__griditem {
+.relatedgrid__griditem {
   width: 100%;
   float: left;
   padding-left: 0.625rem;
@@ -5416,15 +5438,13 @@ section.section--has_grid.section--collaboration-grid .section-inner {
   @media screen and (min-width: 40em) {
     .featuredgrid__griditem,
     .simplegrid__griditem,
-    .relatedgrid__griditem,
-    .collaboration__griditem {
+    .relatedgrid__griditem {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_sixth,
     .simplegrid__griditem.griditem--grid_sixth,
-    .relatedgrid__griditem.griditem--grid_sixth,
-    .collaboration__griditem.griditem--grid_sixth {
+    .relatedgrid__griditem.griditem--grid_sixth {
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
@@ -5434,8 +5454,7 @@ section.section--has_grid.section--collaboration-grid .section-inner {
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_sixth,
     .simplegrid__griditem.griditem--grid_sixth,
-    .relatedgrid__griditem.griditem--grid_sixth,
-    .collaboration__griditem.griditem--grid_sixth {
+    .relatedgrid__griditem.griditem--grid_sixth {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) {
@@ -5447,11 +5466,7 @@ section.section--has_grid.section--collaboration-grid .section-inner {
     .relatedgrid__griditem.griditem--grid_half,
     .relatedgrid__griditem.griditem--grid_third,
     .relatedgrid__griditem.griditem--grid_fourth,
-    .relatedgrid__griditem.griditem--grid_two_third,
-    .collaboration__griditem.griditem--grid_half,
-    .collaboration__griditem.griditem--grid_third,
-    .collaboration__griditem.griditem--grid_fourth,
-    .collaboration__griditem.griditem--grid_two_third {
+    .relatedgrid__griditem.griditem--grid_two_third {
       width: 50%;
       float: left;
       padding-left: 0.625rem;
@@ -5465,11 +5480,7 @@ section.section--has_grid.section--collaboration-grid .section-inner {
     .relatedgrid__griditem.griditem--grid_half,
     .relatedgrid__griditem.griditem--grid_third,
     .relatedgrid__griditem.griditem--grid_fourth,
-    .relatedgrid__griditem.griditem--grid_two_third,
-    .collaboration__griditem.griditem--grid_half,
-    .collaboration__griditem.griditem--grid_third,
-    .collaboration__griditem.griditem--grid_fourth,
-    .collaboration__griditem.griditem--grid_two_third {
+    .relatedgrid__griditem.griditem--grid_two_third {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 40em) and (max-width: 59.9375em) {
@@ -5477,45 +5488,35 @@ section.section--has_grid.section--collaboration-grid .section-inner {
     .simplegrid__griditem.griditem--grid_third > .column,
     .simplegrid__griditem.griditem--grid_third > .columns,
     .relatedgrid__griditem.griditem--grid_third > .column,
-    .relatedgrid__griditem.griditem--grid_third > .columns,
-    .collaboration__griditem.griditem--grid_third > .column,
-    .collaboration__griditem.griditem--grid_third > .columns {
+    .relatedgrid__griditem.griditem--grid_third > .columns {
       width: 50%;
       float: left; }
       .featuredgrid__griditem.griditem--grid_third > .column:nth-of-type(1n), .featuredgrid__griditem.griditem--grid_third > .columns:nth-of-type(1n),
       .simplegrid__griditem.griditem--grid_third > .column:nth-of-type(1n),
       .simplegrid__griditem.griditem--grid_third > .columns:nth-of-type(1n),
       .relatedgrid__griditem.griditem--grid_third > .column:nth-of-type(1n),
-      .relatedgrid__griditem.griditem--grid_third > .columns:nth-of-type(1n),
-      .collaboration__griditem.griditem--grid_third > .column:nth-of-type(1n),
-      .collaboration__griditem.griditem--grid_third > .columns:nth-of-type(1n) {
+      .relatedgrid__griditem.griditem--grid_third > .columns:nth-of-type(1n) {
         clear: none; }
       .featuredgrid__griditem.griditem--grid_third > .column:nth-of-type(2n+1), .featuredgrid__griditem.griditem--grid_third > .columns:nth-of-type(2n+1),
       .simplegrid__griditem.griditem--grid_third > .column:nth-of-type(2n+1),
       .simplegrid__griditem.griditem--grid_third > .columns:nth-of-type(2n+1),
       .relatedgrid__griditem.griditem--grid_third > .column:nth-of-type(2n+1),
-      .relatedgrid__griditem.griditem--grid_third > .columns:nth-of-type(2n+1),
-      .collaboration__griditem.griditem--grid_third > .column:nth-of-type(2n+1),
-      .collaboration__griditem.griditem--grid_third > .columns:nth-of-type(2n+1) {
+      .relatedgrid__griditem.griditem--grid_third > .columns:nth-of-type(2n+1) {
         clear: both; }
       .featuredgrid__griditem.griditem--grid_third > .column:last-child, .featuredgrid__griditem.griditem--grid_third > .columns:last-child,
       .simplegrid__griditem.griditem--grid_third > .column:last-child,
       .simplegrid__griditem.griditem--grid_third > .columns:last-child,
       .relatedgrid__griditem.griditem--grid_third > .column:last-child,
-      .relatedgrid__griditem.griditem--grid_third > .columns:last-child,
-      .collaboration__griditem.griditem--grid_third > .column:last-child,
-      .collaboration__griditem.griditem--grid_third > .columns:last-child {
+      .relatedgrid__griditem.griditem--grid_third > .columns:last-child {
         float: left; }
     .featuredgrid__griditem.griditem--grid_third:nth-child(2n+1):last-child,
     .simplegrid__griditem.griditem--grid_third:nth-child(2n+1):last-child,
-    .relatedgrid__griditem.griditem--grid_third:nth-child(2n+1):last-child,
-    .collaboration__griditem.griditem--grid_third:nth-child(2n+1):last-child {
+    .relatedgrid__griditem.griditem--grid_third:nth-child(2n+1):last-child {
       margin-left: 25%; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem.griditem--grid_sixth,
     .simplegrid__griditem.griditem--grid_sixth,
-    .relatedgrid__griditem.griditem--grid_sixth,
-    .collaboration__griditem.griditem--grid_sixth {
+    .relatedgrid__griditem.griditem--grid_sixth {
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
@@ -5525,15 +5526,13 @@ section.section--has_grid.section--collaboration-grid .section-inner {
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_sixth,
     .simplegrid__griditem.griditem--grid_sixth,
-    .relatedgrid__griditem.griditem--grid_sixth,
-    .collaboration__griditem.griditem--grid_sixth {
+    .relatedgrid__griditem.griditem--grid_sixth {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem.griditem--grid_fourth,
     .simplegrid__griditem.griditem--grid_fourth,
-    .relatedgrid__griditem.griditem--grid_fourth,
-    .collaboration__griditem.griditem--grid_fourth {
+    .relatedgrid__griditem.griditem--grid_fourth {
       width: 25%;
       float: left;
       padding-left: 0.625rem;
@@ -5541,15 +5540,13 @@ section.section--has_grid.section--collaboration-grid .section-inner {
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_fourth,
     .simplegrid__griditem.griditem--grid_fourth,
-    .relatedgrid__griditem.griditem--grid_fourth,
-    .collaboration__griditem.griditem--grid_fourth {
+    .relatedgrid__griditem.griditem--grid_fourth {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem.griditem--grid_third,
     .simplegrid__griditem.griditem--grid_third,
-    .relatedgrid__griditem.griditem--grid_third,
-    .collaboration__griditem.griditem--grid_third {
+    .relatedgrid__griditem.griditem--grid_third {
       width: 33.33333%;
       float: left;
       padding-left: 0.625rem;
@@ -5557,15 +5554,13 @@ section.section--has_grid.section--collaboration-grid .section-inner {
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_third,
     .simplegrid__griditem.griditem--grid_third,
-    .relatedgrid__griditem.griditem--grid_third,
-    .collaboration__griditem.griditem--grid_third {
+    .relatedgrid__griditem.griditem--grid_third {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem.griditem--grid_two_third,
     .simplegrid__griditem.griditem--grid_two_third,
-    .relatedgrid__griditem.griditem--grid_two_third,
-    .collaboration__griditem.griditem--grid_two_third {
+    .relatedgrid__griditem.griditem--grid_two_third {
       width: 66.66667%;
       float: left;
       padding-left: 0.625rem;
@@ -5573,14 +5568,12 @@ section.section--has_grid.section--collaboration-grid .section-inner {
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_two_third,
     .simplegrid__griditem.griditem--grid_two_third,
-    .relatedgrid__griditem.griditem--grid_two_third,
-    .collaboration__griditem.griditem--grid_two_third {
+    .relatedgrid__griditem.griditem--grid_two_third {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
   .featuredgrid__griditem.griditem--cta,
   .simplegrid__griditem.griditem--cta,
-  .relatedgrid__griditem.griditem--cta,
-  .collaboration__griditem.griditem--cta {
+  .relatedgrid__griditem.griditem--cta {
     margin-top: 0; }
 
 .section__sectionheader + .section__simplegrid {
@@ -6020,7 +6013,8 @@ COLLABORATION STYLES
 *********************/
 .collaboration__header--no--image,
 .collaboration__header--has-image,
-.collaboration__participants {
+.collaboration__participants,
+.collaboration__map {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto; }
@@ -6028,12 +6022,15 @@ COLLABORATION STYLES
   .collaboration__header--has-image::before,
   .collaboration__header--has-image::after,
   .collaboration__participants::before,
-  .collaboration__participants::after {
+  .collaboration__participants::after,
+  .collaboration__map::before,
+  .collaboration__map::after {
     content: ' ';
     display: table; }
   .collaboration__header--no--image::after,
   .collaboration__header--has-image::after,
-  .collaboration__participants::after {
+  .collaboration__participants::after,
+  .collaboration__map::after {
     clear: both; }
 
 .collaboration__header__image-wrapper:not(.tridem_or_more) {

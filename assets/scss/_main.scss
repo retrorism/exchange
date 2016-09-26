@@ -2381,6 +2381,35 @@ Pattern 21 & 22 Grids
 	}
 }
 
+.collaboration__media__grid {
+	.masonry__grid-sizer,
+	.collaboration__griditem {
+		width: 100%;
+	}
+	.masonry__gutter-sizer {
+		width: 0;
+	}
+	@include breakpoint( medium ) {
+		.masonry__grid-sizer,
+		.collaboration__griditem {
+			width: 48.5%;
+			padding: 0;
+		}
+		.masonry__gutter-sizer {
+			width: 3%;
+		}
+	}
+	@include breakpoint( large ) {
+		.masonry__grid-sizer,
+		.collaboration__griditem {
+			width: 32%
+		}
+		.masonry__gutter-sizer {
+			width: 2%;
+		}
+	}
+}
+
 section.section--has_grid {
 	.section-inner {
 		padding-left: 0;
@@ -2406,7 +2435,8 @@ section.section--has_grid {
 
 }
 
-.archive__grid__griditem {
+.archive__grid__griditem,
+.collaboration__griditem {
 	padding-left: 0;
 	padding-right: 0;
 	margin-bottom: $global-margin;
@@ -2414,8 +2444,7 @@ section.section--has_grid {
 
 .featuredgrid__griditem,
 .simplegrid__griditem,
-.relatedgrid__griditem,
-.collaboration__griditem {
+.relatedgrid__griditem {
 	@include grid_column();
 	@include breakpoint( medium ) {
 		&.griditem--grid_sixth {
@@ -2919,8 +2948,8 @@ COLLABORATION STYLES
 
 .collaboration__header--no--image,
 .collaboration__header--has-image,
-.collaboration__participants {
-	 //@include grid-row( null, null, 2 * $grid-row-width, true )
+.collaboration__participants,
+.collaboration__map {
 	@include grid-row()
 }
 
