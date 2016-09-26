@@ -56,7 +56,7 @@ $exchange = new Collaboration( $post );
 					</section><!-- collaboration__participants -->
 				<?php endif; ?>
 
-				<!-- MAP / MEDIA -->
+				<!-- MAP -->
 				<?php if ( $exchange->has_participants && count ( $exchange->participants ) > 1 ) : ?>
 					<section class="collaboration__extras collaboration__section section--blue-1-web section--coloured section--has-grid section--collaboration-grid">
 						<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
@@ -75,41 +75,40 @@ $exchange = new Collaboration( $post );
 						</div><!-- section-inner -->
 						<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 					</section>
-
 				<?php endif; ?>
 
+				<!-- MEDIA -->
+				<?php if ( $exchange->has_files || $exchange->has_gallery ) : ?>
+					<?php if ( $exchange->has_files && $exchange->has_gallery ) {
+						$title = __( 'The process (gallery and downloads)', 'exchange' );
+					} elseif ( ! $exchange->has_gallery ) {
+						$title = __( 'The process (gallery)', 'exchange' );
+					} elseif ( ! $exchange->has_files ) {
+						$title = __( 'The process (downloads)', 'exchange' );
+					} ?>
+					<section class="collaboration__extras collaboration__section section--blue-1-web section--coloured section--has-grid section--collaboration-grid">
+						<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
+						<div class="section-inner">
+							<header class="sectionheader">
+								<div class="sectionheader-inner">
+									<h4 class="sectionheader__text sectionheader__text--black"><?php echo $title; ?></h4>
+								</div>
+								<?php if ( $exchange->has_gallery ) : ?>
+									<p><?php _e('Hint: click on the image to see a larger version!', 'exchange' ); ?>
+								<?php endif; ?>
+							</header>
+						<div class="collaboration__media__grid" data-masonry='{ "percentPosition": true, "columnWidth": ".masonry__grid-sizer", "gutter": ".masonry__gutter-sizer", "itemSelector": ".collaboration__griditem" }'>
+							<div class="masonry__grid-sizer"></div>
+							<div class="masonry__gutter-sizer"></div>
+							<?php $exchange->publish_collab_media_gallery(); ?>
+							<?php $exchange->publish_collab_video(); ?>
+							<?php $exchange->publish_collab_files(); ?>
+						</div>
+					</div><!-- section-inner -->
+					<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
+					</section>
 
-			<?php if ( $exchange->has_files || $exchange->has_gallery ) : ?>
-				<?php if ( $exchange->has_files && $exchange->has_gallery ) {
-					$title = __( 'The process (gallery and downloads)', 'exchange' );
-				} elseif ( ! $exchange->has_gallery ) {
-					$title = __( 'The process (gallery)', 'exchange' );
-				} elseif ( ! $exchange->has_files ) {
-					$title = __( 'The process (downloads)', 'exchange' );
-				} ?>
-				<section class="collaboration__extras collaboration__section section--blue-1-web section--coloured section--has-grid section--collaboration-grid">
-					<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
-					<div class="section-inner">
-						<header class="sectionheader">
-							<div class="sectionheader-inner">
-								<h4 class="sectionheader__text sectionheader__text--black"><?php echo $title; ?></h4>
-							</div>
-							<?php if ( $exchange->has_gallery ) : ?>
-								<p><?php _e('Hint: click on the image to see a larger version!', 'exchange' ); ?>
-							<?php endif; ?>
-						</header>
-					<div class="collaboration__media__grid" data-masonry='{ "percentPosition": true, "columnWidth": ".masonry__grid-sizer", "gutter": ".masonry__gutter-sizer", "itemSelector": ".collaboration__griditem" }'>
-						<div class="masonry__grid-sizer"></div>
-						<div class="masonry__gutter-sizer"></div>
-						<?php $exchange->publish_collab_media_gallery(); ?>
-						<?php $exchange->publish_collab_video(); ?>
-						<?php $exchange->publish_collab_files(); ?>
-					</div>
-				</div><!-- section-inner -->
-				<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
-				</section>
-
-			<?php endif; ?>
+				<?php endif; ?>
 
 				<!-- SHARED STORIES -->
 				<?php if ( $exchange->has_stories ) : ?>
@@ -122,11 +121,7 @@ $exchange = new Collaboration( $post );
 					</section>
 				<?php endif; ?>
 
-				<!-- MEDIA -->
-
-
 			</div> <!-- end articleBpdy -->
-
 
 			<?php include_once( get_stylesheet_directory() . '/parts/content-story-footer.php' ); ?>
 
