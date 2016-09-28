@@ -79,9 +79,7 @@ $exchange = new Collaboration( $post );
 
 				<!-- MEDIA -->
 				<?php if ( $exchange->has_files || $exchange->has_gallery ) : ?>
-					<?php if ( $exchange->has_files && $exchange->has_gallery ) {
-						$title = __( 'The process (gallery and downloads)', 'exchange' );
-					} ?>
+					<?php $title = __( 'The process (gallery and downloads)', 'exchange' ); ?>
 					<section class="collaboration__extras collaboration__section section--blue-1-web section--coloured section--has-grid section--collaboration-grid">
 						<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
 						<div class="section-inner">
