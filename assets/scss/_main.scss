@@ -2162,7 +2162,7 @@ Pattern 20. Emphasis blocks
 	}
 }
 
-.documentblock__subheader,
+.documentblock__sectionheader,
 .emphasisblock__subheader {
 	margin-top: $global-margin;
 	text-align: center;
@@ -2335,14 +2335,22 @@ Pattern 20.5 Documentblock
 		z-index: 0;
 		transform: none;
 	}
-	.documentblock__subheader,
+	.documentblock__sectionheader,
 	.documentblock__paragraph,
 	.documentblock__paragraph a {
 		position: relative;
 		z-index: 1;
 	}
+	.documentblock__paragraph a:hover {
+		color: $black;
+		border-bottom: 2px solid $blue-3;
+	}
 	.documentblock__paragraph {
 		text-align: left;
+	}
+	.documentblock__sectionheader {
+		text-transform: uppercase;
+		font-size: $small-font-size;
 	}
 
 }

@@ -5125,7 +5125,7 @@ Pattern 20. Emphasis blocks
   .emphasisblock--black-tandem .emphasisblock-inner a.button--small:hover {
     color: #4c4d53; }
 
-.documentblock__subheader,
+.documentblock__sectionheader,
 .emphasisblock__subheader {
   margin-top: 1rem;
   text-align: center; }
@@ -5350,14 +5350,22 @@ Pattern 20.5 Documentblock
   z-index: 0;
   transform: none; }
 
-.griditem--documentblock .documentblock__subheader,
+.griditem--documentblock .documentblock__sectionheader,
 .griditem--documentblock .documentblock__paragraph,
 .griditem--documentblock .documentblock__paragraph a {
   position: relative;
   z-index: 1; }
 
+.griditem--documentblock .documentblock__paragraph a:hover {
+  color: #343438;
+  border-bottom: 2px solid #0f9fd6; }
+
 .griditem--documentblock .documentblock__paragraph {
   text-align: left; }
+
+.griditem--documentblock .documentblock__sectionheader {
+  text-transform: uppercase;
+  font-size: 80%; }
 
 /********************************************
 Pattern 21 & 22 Grids

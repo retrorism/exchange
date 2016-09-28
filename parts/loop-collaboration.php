@@ -79,7 +79,7 @@ $exchange = new Collaboration( $post );
 
 				<!-- MEDIA -->
 				<?php if ( $exchange->has_files || $exchange->has_gallery ) : ?>
-					<?php $title = __( 'The process (gallery and downloads)', 'exchange' ); ?>
+					<?php $title = __( 'The process', 'exchange' ); ?>
 					<section class="collaboration__extras collaboration__section section--blue-1-web section--coloured section--has-grid section--collaboration-grid">
 						<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'salmon-1-web' ) ); ?>
 						<div class="section-inner">
@@ -87,18 +87,23 @@ $exchange = new Collaboration( $post );
 								<div class="sectionheader-inner">
 									<h4 class="sectionheader__text sectionheader__text--black"><?php echo $title; ?></h4>
 								</div>
-								<?php if ( $exchange->has_gallery ) : ?>
-									<p><?php _e('Hint: click on the image to see a larger version!', 'exchange' ); ?>
-								<?php endif; ?>
 							</header>
 						<div class="collaboration__media__grid" data-masonry='{ "percentPosition": true, "columnWidth": ".masonry__grid-sizer", "gutter": ".masonry__gutter-sizer", "itemSelector": ".collaboration__griditem" }'>
 							<div class="masonry__grid-sizer"></div>
 							<div class="masonry__gutter-sizer"></div>
-							<?php $exchange->publish_collab_media_gallery(); ?>
-							<?php $exchange->publish_collab_video(); ?>
+
+							<?php if ( count( $exchange->gallery > 0 ) ) : ?>
+								<?php $exchange->publish_collab_media_gallery(); ?>
+							<?php endif; ?>
+
+							<?php if ( $exchange->has_video ) : ?>
+								<?php $exchange->publish_collab_video(); ?>
+							<?php endif; ?>
+
 							<?php if ( $exchange->has_files ) : ?>
 								<?php $exchange->publish_collab_files(); ?>
 							<?php endif; ?>
+							
 						</div>
 					</div><!-- section-inner -->
 					<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
