@@ -96,7 +96,9 @@ $exchange = new Collaboration( $post );
 							<div class="masonry__gutter-sizer"></div>
 							<?php $exchange->publish_collab_media_gallery(); ?>
 							<?php $exchange->publish_collab_video(); ?>
-							<?php $exchange->publish_collab_files(); ?>
+							<?php if ( $exchange->has_files ) : ?>
+								<?php $exchange->publish_collab_files(); ?>
+							<?php endif; ?>
 						</div>
 					</div><!-- section-inner -->
 					<?php echo BasePattern::build_edge_svg('bottom', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
