@@ -3508,7 +3508,9 @@ nav.top-bar {
 
 .breadcrumbs-bar__logo {
   width: 10em;
-  position: absolute; }
+  position: absolute;
+  top: 0;
+  left: 0; }
   .breadcrumbs-bar__logo a {
     display: block;
     width: 10em;
