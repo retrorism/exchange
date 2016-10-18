@@ -66,6 +66,18 @@ function handleScroll() {
 	});
 }
 
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 jQuery(document).ready(function() {
 
 	// jQuery(document).on('open.zf.reveal', function() {
@@ -106,12 +118,14 @@ jQuery(document).ready(function() {
 		e.preventDefault();
 		jQuery(this).prop('disabled',true);
 		var selection = jQuery( '.token-form__collab-select option:selected' ),
-		grid = jQuery('.grid--form-options');
+		grid = jQuery('.grid--form-options'),
+		prToken = getUrlVars()['pr'];
 		if ( undefined !== selection ) {
 			var data = {
 					action: 'exchange_token_form',
-					cid : selection.val(),
+					update_id : selection.val(),
 					prid : selection.data('programme-round'),
+					token : prToken,
 					security : jQuery( '.token-form__nonce' ).val()
 			};
 			jQuery('.loader-pointer').remove();
