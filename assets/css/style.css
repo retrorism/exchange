@@ -4031,10 +4031,7 @@ Pattern 4. Tag list
   cursor: default;
   border-radius: 0;
   font-size: 80%;
-  border: 1px solid #f4c522;
-  max-width: 14em;
-  overflow: hidden;
-  text-overflow: ellipsis; }
+  border: 1px solid #f4c522; }
   .tag[href],
   .collaboration__tag[href],
   .griditem__tag[href],
@@ -4121,30 +4118,27 @@ Pattern 4. Tag list
     background-color: #fefefe;
     color: #343438; }
 
-/****************************
-Pattern 5. Hero / cover image
-*****************************/
-.story__header__image-wrapper {
+.story .story__header__image-wrapper {
   position: relative; }
-  .story__header__image-wrapper .story__header__image.highres {
+  .story .story__header__image-wrapper .story__header__image.highres {
     overflow: hidden;
     font-size: inherit; }
-    .story__header__image-wrapper .story__header__image.highres img {
+    .story .story__header__image-wrapper .story__header__image.highres img {
       max-width: 100%;
       height: auto !important;
       width: auto\9;
       -ms-interpolation-mode: bicubic; }
-    .story__header__image-wrapper .story__header__image.highres .image__caption {
+    .story .story__header__image-wrapper .story__header__image.highres .image__caption {
       position: absolute;
       width: 100%;
       z-index: 20;
       text-align: right;
       padding-right: 1rem; }
-    .story__header__image-wrapper .story__header__image.highres .image__caption {
+    .story .story__header__image-wrapper .story__header__image.highres .image__caption {
       text-align: right;
       padding-right: 1rem; }
     @media screen and (min-width: 40em) {
-      .story__header__image-wrapper .story__header__image.highres .image__caption {
+      .story .story__header__image-wrapper .story__header__image.highres .image__caption {
         text-align: right;
         padding-right: 1rem; } }
 
@@ -5812,6 +5806,11 @@ ARTICLE META STYLES
     .story__meta-inner {
       padding-left: 0.625rem;
       padding-right: 0.625rem; } }
+  @media screen and (min-width: 75em) {
+      .story__meta-inner .story__meta__tag {
+        max-width: 14em;
+        overflow: hidden;
+        text-overflow: ellipsis; } }
 
 .story__meta__item--category,
 .story__meta__item--storyteller,

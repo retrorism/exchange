@@ -994,9 +994,6 @@ Pattern 4. Tag list
 	@include label;
 	font-size: $small-font-size;
 	border: 1px solid $yellow-tandem;
-	max-width: 14em;
-	overflow: hidden;
-  	text-overflow: ellipsis;
 	&[href] {
 		cursor: pointer;
 	}
@@ -1047,6 +1044,8 @@ Pattern 4. Tag list
 		color: $black;
 	}
 }
+
+.story
 
 /****************************
 Pattern 5. Hero / cover image
@@ -2736,6 +2735,11 @@ ARTICLE META STYLES
 		min-width: 13em;
 		min-height: 13em;
 		text-align: right;
+		.story__meta__tag {
+			max-width: 14em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
 }
 .story__meta__item--category,
