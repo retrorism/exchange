@@ -1,11 +1,12 @@
 <?php
 
-	$featured_stories = get_post_meta( $exchange->post_id, 'featured_stories' )[0];
+	$featured_stories = get_post_meta( $exchange->post_id, 'featured_stories', true );
 
 	// Add class when 3 or more featured stories are selected.
 	$three_plus = 3 <= count( $featured_stories ) ? '--three-or-more ' : '';
 
 	if ( ! empty( $featured_stories ) ) : ?>
+
 
 		<div class="featured-stories featured-stories<?php echo esc_attr( $three_plus ); ?>">
 
