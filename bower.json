@@ -9,5 +9,11 @@
     "lazysizes": "^2.0.0",
     "masonry": "^4.1.0",
     "packery": "^2.1.1"
+  },
+  "resolutions": {
+    "leaflet": "^1.0.1"
+  },
+  "devDependencies": {
+    "leaflet": "^1.0.1"
   }
 }

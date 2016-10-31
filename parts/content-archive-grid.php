@@ -17,3 +17,7 @@
 	</div><!--section-inner-->
 
 </section>
+
+<div class="button-wrapper">
+	<?php exchange_create_archive_button(); ?>
+</div>

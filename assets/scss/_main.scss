@@ -1721,13 +1721,57 @@ select {
 }
 
 
-.archive__filter select {
-	flex-grow: 1;
-	margin-right: 2em;
-	text-transform: uppercase;
-	&:last-child {
-		margin-right: 0;
+// .archive__filter select {
+// 	flex-grow: 1;
+// 	margin-right: 2em;
+// 	text-transform: uppercase;
+// 	&:last-child {
+// 		margin-right: 0;
+// 	}
+// }
+
+.archive__filter fieldset {
+	text-align: center;
+	@include grid-column();
+	@include breakpoint(medium) {
+		@include grid-column(6);
 	}
+	@include breakpoint(large) {
+		@include grid-column(4);
+	}
+}
+
+.archive__filter__datalist {
+	text-align: left;
+	max-width: 70%;
+	display: inline-block;
+	margin: 0.5 * $global-margin 0;
+}
+
+.archive__filter__query-tags {
+	@include grid-column(12);
+	margin-bottom: $global-margin;
+	ul {
+		min-height: 3em;
+		padding: 0.5 * $global-padding;
+		box-shadow: inset 2px -2px 0 lighten( $blue-1-web, 2% ), inset -2px 2px 0 darken( $blue-1-web, 3% );
+	}
+}
+
+.archive__filter__toggle,
+.archive__view__toggle {
+	clear:both;
+	text-align: center;
+}
+
+#archive__view--map {
+	height: 0; // Initial value
+	overflow: hidden;
+}
+
+#leaflet-archive-map {
+	height: 500px;
+	//margin-bottom: 2 * $global-margin;
 }
 
 .gform_wrapper input[type=radio] {

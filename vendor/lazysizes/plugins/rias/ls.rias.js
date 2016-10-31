@@ -74,6 +74,7 @@
 
 	function getElementOptions(elem, src){
 		var attr, parent, setOption, options;
+		var elemStyles = window.getComputedStyle(elem);
 
 
 		parent = elem.parentNode;
@@ -84,7 +85,18 @@
 		setOption = function(attr, run){
 			var attrVal = elem.getAttribute('data-'+ attr);
 
-			if(attrVal != null){
+			if (!attrVal) {
+				// no data- attr, get value from the CSS
+				var styles = elemStyles.getPropertyValue('--ls-' + attr);
+				// at least Safari 9 returns null rather than
+				// an empty string for getPropertyValue causing
+				// .trim() to fail
+				if (styles) {
+					attrVal = styles.trim();
+				}
+			}
+
+			if (attrVal) {
 				if(attrVal == 'true'){
 					attrVal = true;
 				} else if(attrVal == 'false'){

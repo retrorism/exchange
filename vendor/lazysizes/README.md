@@ -184,7 +184,7 @@ The LQIP technique can be enhanced by combining it with CSS transitions/animatio
 </style>
 
 <div class="ratio-box fade-box">
-	<img src="lqip-src.jpg" data-src="image.jpg" />
+	<img src="lqip-src.jpg" />
 	<img data-src="image.jpg" class="lazyload" />
 </div>
 ```
@@ -192,7 +192,7 @@ The LQIP technique can be enhanced by combining it with CSS transitions/animatio
 
 ###modern transparent ``srcset`` pattern
 
-Combine a normal ``src`` attribute with a transparent image as ``srcset`` value and a ``data-srcset`` attribute. This way modern browsers will lazy load without loading the ``src`` attribute and all others will simply fallback to the initial ``src`` attribute (without lazyload). (This nice pattern originated from @ivopetkov.)
+Combine a normal ``src`` attribute with a transparent or low quality image as ``srcset`` value and a ``data-srcset`` attribute. This way modern browsers will lazy load without loading the ``src`` attribute and all others will simply fallback to the initial ``src`` attribute (without lazyload). (This nice pattern originated from @ivopetkov.)
 
 ```html
 <img
@@ -311,7 +311,7 @@ Here the list of options:
 * ``lazySizesConfig.preloadClass`` (default: ``"lazypreload"``): Marker class for elements which should be lazy pre-loaded after onload. Those elements will be even preloaded, if the ``preloadAfterLoad`` option is set to ``false``. Note: This *class* can be also dynamically set (``$currentSlide.next().find('.lazyload').addClass('lazypreload');``).
 * ``lazySizesConfig.loadingClass`` (default: ``"lazyloading"``): This ``class`` will be added to ``img`` element as soon as image loading starts. Can be used to add unveil effects.
 * ``lazySizesConfig.loadedClass`` (default: ``"lazyloaded"``): This ``class`` will be added to any element as soon as the image is loaded or the image comes into view. Can be used to add unveil effects or to apply styles.
-* ``lazySizesConfig.expand`` (default: ``400-500``): The ``expand`` option expands the calculated visual viewport area in all directions, so that elements can be loaded before they become visible. The default value is calculated depending on the viewport size of the device. (Note: Reasonable values are between ``300`` and ``1000`` (depending on the ``expFactor`` option.) In case you have a lot of small images or you are using the LQIP pattern you can lower the value, in case you have larger images set it to a higher value. Also note, that lazySizes will dynamically shrink this value to ``0`` if the browser is currently downloading and expand it if the browser network is currently idling and the user not scrolling (by multiplying the ``expand`` option with ``1.5`` (``expFactor``)). This option can also be overridden with the ``[data-expand]`` attribute.
+* ``lazySizesConfig.expand`` (default: ``370-500``): The ``expand`` option expands the calculated visual viewport area in all directions, so that elements can be loaded before they become visible. The default value is calculated depending on the viewport size of the device. (Note: Reasonable values are between ``300`` and ``1000`` (depending on the ``expFactor`` option.) In case you have a lot of small images or you are using the LQIP pattern you can lower the value, in case you have larger images set it to a higher value. Also note, that lazySizes will dynamically shrink this value to ``0`` if the browser is currently downloading and expand it if the browser network is currently idling and the user not scrolling (by multiplying the ``expand`` option with ``1.5`` (``expFactor``)). This option can also be overridden with the ``[data-expand]`` attribute.
 * ``lazySizesConfig.minSize`` (default: ``40``): For ``data-sizes="auto"`` feature. The minimum size of an image that is used to calculate the ``sizes`` attribute. In case it is under ``minSize`` the script traverses up the DOM tree until it finds a parent that is over ``minSize``.
 * ``lazySizesConfig.srcAttr`` (default: ``"data-src"``): The attribute, which should be transformed to ``src``.
 * ``lazySizesConfig.srcsetAttr`` (default: ``"data-srcset"``): The attribute, which should be transformed to ``srcset``.
@@ -463,21 +463,6 @@ Fixes, PRs and issues are always welcome, make sure to create a new branch from 
 ##<a name="plugins"></a>Available plugins in this repo
 It is recommended to concat all plugins together with lazySizes. In case you don't concat it is recommended to include the plugin scripts *before* the lazySizes main script.
 
-###[RIaS plugin - (Responsive Images as a Service / Responsive image on demand)](plugins/rias)
-The [RIaS plugin is a neat full responsive images solution](plugins/rias) without the need of any additional plugins/polyfills.
-
-It enables lazySizes to generate the best suitable image source based on an URL pattern. It works with pre-build images (i.e. grunt-responsive-images) as also with any third party (ReSrc, Pixtulate, mobify, WURFL's Image Tailor ...) or self hosted restful responsive image service (responsive image on demand). It makes responsive images even more easier without any need for another third party script.
-
-```html
-<img
-	data-src="image-service/w_{width}/image.jpg"
-	data-sizes="auto"
-	class="lazyload"
-	alt="" />
-```
-
-In general the [RIaS plugin](plugins/rias) plugin combines the simplicity of the famous Imager.js solution with the future power of native responsive images implementations and the webcomponent-like working of lazySizes' ``.lazyload`` elements (self-initialization, self-configuration and self-destroying).
-
 ###[respimg polyfill plugin](plugins/respimg)
 
 The respimg polyfill plugin is an extremely lightweight alternate polyfill for the most important subsets of responsive images (srcset and picture).
@@ -522,6 +507,12 @@ The [print plugin](plugins/print) plugin enables lazySizes to unveil all element
 
 ###[progressive plugin](plugins/progressive)
 The [progressive plugin](plugins/progressive) adds better support for rendering progressive jpgs/pngs.
+
+###[RIaS plugin - (Responsive Images as a Service / Responsive image on demand)](plugins/rias)
+The [RIaS plugin is a neat full responsive images solution](plugins/rias) without the need of any additional plugins/polyfills.
+
+It enables lazySizes to generate the best suitable image source based on an URL pattern. It works with pre-build images (i.e. grunt-responsive-images) as also with any third party (ReSrc, Pixtulate, mobify, WURFL's Image Tailor ...) or self hosted restful responsive image service (responsive image on demand). It makes responsive images even more easier without any need for another third party script.
+
 
 ##<a name="specify-dimensions"></a>Tip: Specifying image dimensions (minimizing reflows and avoiding page jumps)
 To minimize reflows, content jumping or unpredictable behavior with some other JS widgets (isotope, masonry, some sliders/carousels...) the width **and** the height of an image should be calculable by the browser before the image source itself is loaded. For "static" images this can be done using either CSS or using the content attributes:

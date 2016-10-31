@@ -45,15 +45,14 @@
     "plato-report"
   ],
   "homepage": "https://github.com/aFarkas/lazysizes",
-  "version": "2.0.0",
-  "_release": "2.0.0",
+  "version": "2.0.5",
+  "_release": "2.0.5",
   "_resolution": {
     "type": "version",
-    "tag": "2.0.0",
-    "commit": "97b1ab678380c97ec9bb40d49af2245c0f5c8d62"
+    "tag": "2.0.5",
+    "commit": "d9bff740e977c1482a1e567a3ddff17b0a2f22ed"
   },
   "_source": "https://github.com/aFarkas/lazysizes.git",
   "_target": "^2.0.0",
-  "_originalSource": "lazysizes",
-  "_direct": true
+  "_originalSource": "lazysizes"
 }

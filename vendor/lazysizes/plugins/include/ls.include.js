@@ -19,8 +19,14 @@
 	var docElem = document.documentElement;
 	var conditionalIncludes = document.getElementsByClassName('lazyconditionalinclude');
 
-	var getComputedStyle = function(){
-		return window.getComputedStyle.apply(window.getComputedStyle, arguments) || {getPropertyValue: function(){}};
+	var getStyles = function (element, pseudo) {
+		var view = element.ownerDocument.defaultView;
+
+		if (!view.opener) {
+			view = window;
+		}
+
+		return view.getComputedStyle(element, pseudo || null) || {getPropertyValue: function(){}, isNull: true};
 	};
 
 	var queue = (function(){
@@ -178,7 +184,7 @@
 		var includeStr = (elem.getAttribute('data-include') || '');
 		var includeData = elem.lazyInclude;
 		var initialContent;
-		if(!includeData || includeData.str != includeStr){
+		if(!includeData || includeData.str != includeStr || includeConfig.allowReload){
 			initialContent = {saved: false, content: null};
 			includeData = {
 				str: includeStr,
@@ -240,14 +246,14 @@
 			}
 
 			if(baseContentElement){
-				cStyle = (getComputedStyle(baseContentElement, ':after').getPropertyValue('content') || 'none').replace(regCleanPseudos, '');
+				cStyle = (getStyles(baseContentElement, ':after').getPropertyValue('content') || 'none').replace(regCleanPseudos, '');
 
 				basePseudos = {};
 
 				if(cStyle){
 					basePseudos[cStyle] = 1;
 				}
-				cStyle = (getComputedStyle(baseContentElement, ':before').getPropertyValue('content') || 'none').replace(regCleanPseudos, '');
+				cStyle = (getStyles(baseContentElement, ':before').getPropertyValue('content') || 'none').replace(regCleanPseudos, '');
 				if(cStyle){
 					basePseudos[cStyle] = 1;
 				}

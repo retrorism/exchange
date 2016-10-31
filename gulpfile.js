@@ -13,6 +13,7 @@ var gulp  = require('gulp'),
     plumber = require('gulp-plumber'),
     bower = require('gulp-bower'),
     babel = require('gulp-babel'),
+	modernizr = require('gulp-modernizr'),
     browserSync = require('browser-sync').create();
 
 // Compile Sass, Autoprefix and minify
@@ -54,6 +55,28 @@ gulp.task('site-js', function() {
     .pipe(sourcemaps.write('.')) // Creates sourcemap for minified JS
     .pipe(gulp.dest('./assets/js'))
 });
+
+// Custom Modernizr builds
+gulp.task('modernizr', function() {
+  gulp.src(
+	  	[
+		'./assets/**/*.{js,css,scss}',
+		'./vendor/**/*.{js,css,scss}'
+		]
+  )
+    .pipe(modernizr({
+	"options" : [
+        "setClasses",
+        "addTest",
+        "html5printshiv",
+        "testProp",
+        "fnBind"
+    ],
+    "tests": ['input']
+  }))
+    .pipe(gulp.dest("./vendor/modernizr/custom"))
+});
+
 
 // JSHint, concat, and minify Foundation JavaScript
 gulp.task('foundation-js', function() {
