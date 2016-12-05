@@ -6139,7 +6139,6 @@ COLLABORATION STYLES
 
 @media screen and (min-width: 75em) {
   .collaboration__tags {
-    max-width: 60%;
     margin: 1rem auto; } }
 
 .collaboration__tags ol {

@@ -3054,7 +3054,6 @@ COLLABORATION STYLES
 
 .collaboration__tags {
 	@include breakpoint( xlarge ) {
-		max-width: 60%;
 		margin: $global-margin auto;
 	}
 	ol {
