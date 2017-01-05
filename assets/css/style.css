@@ -893,12 +893,12 @@ button {
     padding-right: 0; }
   .row .row {
     max-width: none;
-    margin-left: -0.625rem;
-    margin-right: -0.625rem; }
+    margin-left: -1rem;
+    margin-right: -1rem; }
     @media screen and (min-width: 40em) {
       .row .row {
-        margin-left: -0.625rem;
-        margin-right: -0.625rem; } }
+        margin-left: -1rem;
+        margin-right: -1rem; } }
     .row .row.collapse {
       margin-left: 0;
       margin-right: 0; }
@@ -911,12 +911,12 @@ button {
 .column, .columns {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 1rem;
+  padding-right: 1rem; }
   @media screen and (min-width: 40em) {
     .column, .columns {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .column.row.row, .row.row.columns {
   float: none; }
@@ -1176,8 +1176,8 @@ button {
   margin-right: 0; }
 
 .small-uncollapse > .column, .small-uncollapse > .columns {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
 .small-centered {
   float: none;
@@ -1387,8 +1387,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .medium-uncollapse > .column, .medium-uncollapse > .columns {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
+    padding-left: 1rem;
+    padding-right: 1rem; }
   .medium-centered {
     float: none;
     margin-left: auto;
@@ -1596,8 +1596,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .large-uncollapse > .column, .large-uncollapse > .columns {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
+    padding-left: 1rem;
+    padding-right: 1rem; }
   .large-centered {
     float: none;
     margin-left: auto;
@@ -1805,8 +1805,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .xlarge-uncollapse > .column, .xlarge-uncollapse > .columns {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
+    padding-left: 1rem;
+    padding-right: 1rem; }
   .xlarge-centered {
     float: none;
     margin-left: auto;
@@ -2014,8 +2014,8 @@ button {
     margin-left: 0;
     margin-right: 0; }
   .xxlarge-uncollapse > .column, .xxlarge-uncollapse > .columns {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
+    padding-left: 1rem;
+    padding-right: 1rem; }
   .xxlarge-centered {
     float: none;
     margin-left: auto;
@@ -3140,7 +3140,8 @@ a.button--small {
   border: 2px solid #4c4d53;
   text-transform: uppercase;
   font-weight: 600;
-  min-width: 5em; }
+  min-width: 5em;
+  max-width: 90%; }
   [data-whatinput='mouse'] a.button--large, [data-whatinput='mouse']
   a.button--small {
     outline: 0; }
@@ -3611,12 +3612,12 @@ ARTICLE STYLES
 .archive__title-wrapper {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: 95%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   float: none;
   margin-left: auto;
   margin-right: auto; }
@@ -3629,8 +3630,8 @@ ARTICLE STYLES
     .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .story__editorialintro,
     .story__title-wrapper,
@@ -3640,8 +3641,8 @@ ARTICLE STYLES
     .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .story__editorialintro,
     .story__title-wrapper,
@@ -3653,8 +3654,8 @@ ARTICLE STYLES
     .archive__title-wrapper {
       width: 85%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
@@ -3667,8 +3668,8 @@ ARTICLE STYLES
     .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) {
     .story__editorialintro,
     .story__title-wrapper,
@@ -3680,8 +3681,8 @@ ARTICLE STYLES
     .archive__title-wrapper {
       width: 66.66667%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
@@ -3694,8 +3695,8 @@ ARTICLE STYLES
     .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 75em) {
     .story__editorialintro,
     .story__title-wrapper,
@@ -3707,8 +3708,8 @@ ARTICLE STYLES
     .archive__title-wrapper {
       width: 60%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
@@ -3721,8 +3722,8 @@ ARTICLE STYLES
     .section--has_form .section-inner > div,
     .story__meta-wrapper,
     .archive__title-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .story__editorialintro,
 .story__title-wrapper,
@@ -3736,12 +3737,12 @@ ARTICLE STYLES
   clear: both; }
 
 .page__footer__widgets-inner,
-.section__imageduo,
+.section__slice.section__imageduo,
 .section__simplemap.simplemap--wide {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-left: 0;
   padding-right: 0;
   float: none;
@@ -3749,27 +3750,27 @@ ARTICLE STYLES
   margin-right: auto; }
   @media screen and (min-width: 40em) {
     .page__footer__widgets-inner,
-    .section__imageduo,
+    .section__slice.section__imageduo,
     .section__simplemap.simplemap--wide {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .page__footer__widgets-inner,
-    .section__imageduo,
+    .section__slice.section__imageduo,
     .section__simplemap.simplemap--wide {
       width: 95%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .page__footer__widgets-inner,
-    .section__imageduo,
+    .section__slice.section__imageduo,
     .section__simplemap.simplemap--wide {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 @media screen and (min-width: 60em) {
   .section--has_grid .section__slice.section__simplegrid {
@@ -3778,12 +3779,12 @@ ARTICLE STYLES
 .section__featuredgrid {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-left: 0;
   padding-right: 0;
   float: none;
@@ -3792,25 +3793,25 @@ ARTICLE STYLES
   overflow: hidden; }
   @media screen and (min-width: 40em) {
     .section__featuredgrid {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .section__featuredgrid {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .section__featuredgrid {
       width: 95%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .section__featuredgrid {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .story__section.section--has_contact_details {
   max-width: inherit; }
@@ -4120,25 +4121,25 @@ Pattern 4. Tag list
 
 .story .story__header__image-wrapper {
   position: relative; }
-  .story .story__header__image-wrapper .story__header__image.highres {
+  .story .story__header__image-wrapper .story__header__image {
     overflow: hidden;
     font-size: inherit; }
-    .story .story__header__image-wrapper .story__header__image.highres img {
+    .story .story__header__image-wrapper .story__header__image img {
       max-width: 100%;
       height: auto !important;
-      width: auto\9;
+      width: auto;
       -ms-interpolation-mode: bicubic; }
-    .story .story__header__image-wrapper .story__header__image.highres .image__caption {
+    .story .story__header__image-wrapper .story__header__image .image__caption {
       position: absolute;
       width: 100%;
       z-index: 20;
       text-align: right;
       padding-right: 1rem; }
-    .story .story__header__image-wrapper .story__header__image.highres .image__caption {
+    .story .story__header__image-wrapper .story__header__image .image__caption {
       text-align: right;
       padding-right: 1rem; }
     @media screen and (min-width: 40em) {
-      .story .story__header__image-wrapper .story__header__image.highres .image__caption {
+      .story .story__header__image-wrapper .story__header__image .image__caption {
         text-align: right;
         padding-right: 1rem; } }
 
@@ -4281,66 +4282,91 @@ Pattern 9. Image
   @media screen and (min-width: 40em) {
     .imageduo__wrapper {
       max-width: none;
-      margin-left: -0.625rem;
-      margin-right: -0.625rem; } }
+      margin-left: -1rem;
+      margin-right: -1rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .imageduo__wrapper {
-      margin-left: -0.625rem;
-      margin-right: -0.625rem; } }
+      margin-left: -1rem;
+      margin-right: -1rem; } }
 
 .imageduo__image {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-left: 0;
   padding-right: 0;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  width: 100%;
+  float: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-left: small 2rem medium 2rem/2;
+  padding-right: small 2rem medium 2rem/2; }
   @media screen and (min-width: 40em) {
     .imageduo__image {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+    .imageduo__image {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .imageduo__image {
       width: 50%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .imageduo__image {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
-  .imageduo__image.image--portrait.image--right {
-    width: 41.66667%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
-    @media screen and (min-width: 40em) {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+      .imageduo__image.image--landscape.image--right {
+        width: 41.66667%;
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem; } }
+    @media screen and (min-width: 40em) and (min-width: 40em) {
+      .imageduo__image.image--landscape.image--right {
+        padding-left: 1rem;
+        padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+        .imageduo__image.image--landscape.image--right:last-child:last-child {
+          float: left; }
       .imageduo__image.image--portrait.image--right {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem; } }
-    .imageduo__image.image--portrait.image--right:last-child:last-child {
-      float: left; }
-  .imageduo__image.image--portrait.image--left {
-    width: 41.66667%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    margin-left: 8.33333%; }
-    @media screen and (min-width: 40em) {
-      .imageduo__image.image--portrait.image--left {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem; } }
-  .imageduo__image.image--landscape.image--left {
-    width: 41.66667%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    margin-left: 8.33333%; }
-    @media screen and (min-width: 40em) {
+        width: 41.66667%;
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem; } }
+    @media screen and (min-width: 40em) and (min-width: 40em) {
+      .imageduo__image.image--portrait.image--right {
+        padding-left: 1rem;
+        padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+        .imageduo__image.image--portrait.image--right:last-child:last-child {
+          float: left; }
       .imageduo__image.image--landscape.image--left {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem; } }
+        width: 41.66667%;
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: 8.33333%; } }
+    @media screen and (min-width: 40em) and (min-width: 40em) {
+      .imageduo__image.image--landscape.image--left {
+        padding-left: 1rem;
+        padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+      .imageduo__image.image--portrait.image--left {
+        width: 41.66667%;
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: 8.33333%; } }
+    @media screen and (min-width: 40em) and (min-width: 40em) {
+      .imageduo__image.image--portrait.image--left {
+        padding-left: 1rem;
+        padding-right: 1rem; } }
 
 .image__placeholder {
   background-size: cover;
@@ -4350,36 +4376,52 @@ Pattern 9. Image
 .griditem__pattern__image .image__placeholder {
   background: none; }
 
+.image--main {
+  visibility: hidden;
+  opacity: 0; }
+
+.image--main.lazyload,
+.image--main.lazyloading,
+.image--main.lazyloaded + .image__placeholder__thumb,
+.no-js .image__placeholder__thumb {
+  opacity: 0;
+  transition: opacity .6s linear; }
+
+.image--main.lazyloaded + .image__placeholder__thumb {
+  transition-delay: .2s; }
+
 .image__placeholder__thumb,
 .image--main.lazyloaded {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  transition: opacity .4s linear; }
+  max-width: 100%;
+  height: auto;
+  min-height: 100%; }
+
+/* Add min-width for anything on a card */
+.gallery__item .image--main {
+  min-width: inherit; }
 
 .image__placeholder__thumb {
-  opacity: 1;
-  -webkit-filter: blur(50px);
-  filter: blur(50px);
+  height: 100%;
+  min-width: 100%;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
   /* this is needed so Safari keeps sharp edges */
   transform: scale(1); }
 
-.lazyloaded {
+.image--main.lazyloaded {
+  visibility: visible;
+  transition: visibility .1s linear .1s;
+  opacity: 1;
   -webkit-filter: blur(0);
   filter: blur(0); }
 
-.image--main.lazyload,
-.image--main.lazyloading,
-.image--main.lazyloaded + .image__placeholder__thumb,
-.no-js .image__placeholder__thumb {
-  opacity: 0; }
-
-.image--main.responsively-lazy.lazyloaded {
-  opacity: 1; }
-
-.image--portrait .image__placeholder {
-  max-width: 28em; }
+@media screen and (min-width: 60em) {
+  .image--portrait {
+    max-width: 40%; } }
 
 /***********************
 Pattern 10. Block quote
@@ -4568,33 +4610,33 @@ Pattern 15. Contact block for TANDEM team member
   overflow: hidden;
   width: 66.66667%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   float: none;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center; }
   @media screen and (min-width: 40em) {
     .contactblock__team-member,
     .contactblock__cta {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .contactblock__team-member,
     .contactblock__cta {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .contactblock__team-member,
     .contactblock__cta {
       width: 83.33333%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       float: none;
       margin-left: auto;
       margin-right: auto;
@@ -4602,8 +4644,8 @@ Pattern 15. Contact block for TANDEM team member
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .contactblock__team-member,
     .contactblock__cta {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .contactblock__team-member:not(:first-child) {
   margin-top: 2rem; }
@@ -4647,49 +4689,49 @@ li.team-member__story-link {
 .contactblock__image {
   width: 58.33333%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   float: none;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem; }
   @media screen and (min-width: 40em) {
     .contactblock__image {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .contactblock__image {
       width: 33.33333%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       margin-bottom: 0; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .contactblock__image {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   .contactblock__image img {
     border-radius: 50%; }
 
 .contactblock__info {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 1rem;
+  padding-right: 1rem; }
   @media screen and (min-width: 40em) {
     .contactblock__info {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .contactblock__info {
       width: 66.66667%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .contactblock__info {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 /**************************************************
 Pattern 16 becomes Content block for TANDEM partner
@@ -4975,41 +5017,41 @@ Pattern 20. Emphasis blocks
   .section__emphasisblock:not(.emphasisblock--full) {
     width: 100%;
     float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     float: none;
     margin-left: auto;
     margin-right: auto; }
     @media screen and (min-width: 40em) {
       .section__emphasisblock:not(.emphasisblock--full) {
-        padding-left: 0.625rem;
-        padding-right: 0.625rem; } }
+        padding-left: 1rem;
+        padding-right: 1rem; } }
     @media screen and (min-width: 40em) {
       .section__emphasisblock:not(.emphasisblock--full) {
         width: 60%;
         float: left;
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         float: none;
         margin-left: auto;
         margin-right: auto; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .section__emphasisblock:not(.emphasisblock--full) {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
     @media screen and (min-width: 60em) {
       .section__emphasisblock:not(.emphasisblock--full) {
         width: 40%;
         float: left;
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         float: none;
         margin-left: auto;
         margin-right: auto; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .section__emphasisblock:not(.emphasisblock--full) {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .emphasisblock-inner {
   padding: 1rem; }
@@ -5017,7 +5059,8 @@ Pattern 20. Emphasis blocks
 .emphasisblock .emphasisblock-inner {
   padding-bottom: 5rem; }
 
-.emphasisblock.emphasisblock--full .emphasisblock-inner {
+.emphasisblock.emphasisblock--full .emphasisblock-inner,
+.emphasisblock.emphasisblock--post-it .emphasisblock-inner {
   padding-bottom: 1rem; }
 
 .documentblock--post-it .emphasisblock-inner,
@@ -5217,8 +5260,8 @@ Pattern 20. Emphasis blocks
   clear: none;
   width: 95%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   float: none;
   margin-left: auto;
   margin-right: auto; }
@@ -5258,8 +5301,8 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--left + .section__slice.emphasisblock--right,
     .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right + .section__slice {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
@@ -5269,8 +5312,8 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--right + .section__slice {
       width: 85%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       float: none;
       margin-left: auto;
       margin-right: auto; } }
@@ -5281,8 +5324,8 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--left + .section__slice.emphasisblock--right,
     .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right + .section__slice {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
@@ -5292,8 +5335,8 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--right + .section__slice {
       width: 41.66667%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .section__emphasisblock.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right,
@@ -5301,8 +5344,8 @@ Pattern 20. Emphasis blocks
     .section__emphasisblock.emphasisblock--left + .section__slice.emphasisblock--right,
     .section__emphasisblock.emphasisblock--right + .section__slice.emphasisblock--left,
     .section__emphasisblock.emphasisblock--right + .section__slice {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .emphasisblock--left + .section__slice {
   float: none !important; }
@@ -5443,31 +5486,31 @@ section.section--has_grid.section--collaboration-grid .section-inner {
 .relatedgrid__griditem {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-bottom: 1rem; }
   @media screen and (min-width: 40em) {
     .featuredgrid__griditem,
     .simplegrid__griditem,
     .relatedgrid__griditem {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_sixth,
     .simplegrid__griditem.griditem--grid_sixth,
     .relatedgrid__griditem.griditem--grid_sixth {
       width: 33.33333%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       padding: 1rem;
       background-color: #fefefe; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_sixth,
     .simplegrid__griditem.griditem--grid_sixth,
     .relatedgrid__griditem.griditem--grid_sixth {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_half, .featuredgrid__griditem.griditem--grid_third, .featuredgrid__griditem.griditem--grid_fourth, .featuredgrid__griditem.griditem--grid_two_third,
     .simplegrid__griditem.griditem--grid_half,
@@ -5480,8 +5523,8 @@ section.section--has_grid.section--collaboration-grid .section-inner {
     .relatedgrid__griditem.griditem--grid_two_third {
       width: 50%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_half, .featuredgrid__griditem.griditem--grid_third, .featuredgrid__griditem.griditem--grid_fourth, .featuredgrid__griditem.griditem--grid_two_third,
     .simplegrid__griditem.griditem--grid_half,
@@ -5492,8 +5535,8 @@ section.section--has_grid.section--collaboration-grid .section-inner {
     .relatedgrid__griditem.griditem--grid_third,
     .relatedgrid__griditem.griditem--grid_fourth,
     .relatedgrid__griditem.griditem--grid_two_third {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) and (max-width: 59.9375em) {
     .featuredgrid__griditem.griditem--grid_third > .column, .featuredgrid__griditem.griditem--grid_third > .columns,
     .simplegrid__griditem.griditem--grid_third > .column,
@@ -5530,58 +5573,58 @@ section.section--has_grid.section--collaboration-grid .section-inner {
     .relatedgrid__griditem.griditem--grid_sixth {
       width: 33.33333%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       padding: 1rem;
       background-color: #fefefe; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_sixth,
     .simplegrid__griditem.griditem--grid_sixth,
     .relatedgrid__griditem.griditem--grid_sixth {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem.griditem--grid_fourth,
     .simplegrid__griditem.griditem--grid_fourth,
     .relatedgrid__griditem.griditem--grid_fourth {
       width: 25%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_fourth,
     .simplegrid__griditem.griditem--grid_fourth,
     .relatedgrid__griditem.griditem--grid_fourth {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem.griditem--grid_third,
     .simplegrid__griditem.griditem--grid_third,
     .relatedgrid__griditem.griditem--grid_third {
       width: 33.33333%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_third,
     .simplegrid__griditem.griditem--grid_third,
     .relatedgrid__griditem.griditem--grid_third {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) {
     .featuredgrid__griditem.griditem--grid_two_third,
     .simplegrid__griditem.griditem--grid_two_third,
     .relatedgrid__griditem.griditem--grid_two_third {
       width: 66.66667%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .featuredgrid__griditem.griditem--grid_two_third,
     .simplegrid__griditem.griditem--grid_two_third,
     .relatedgrid__griditem.griditem--grid_two_third {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   .featuredgrid__griditem.griditem--cta,
   .simplegrid__griditem.griditem--cta,
   .relatedgrid__griditem.griditem--cta {
@@ -5664,7 +5707,6 @@ a:hover .griditem__title {
 
 .griditem__image {
   width: 100%;
-  max-height: 12.5em;
   overflow: hidden; }
 
 .featuredgrid__griditem.griditem--grid_full .griditem__content {
@@ -5680,7 +5722,7 @@ a:hover .griditem__title {
 
 .featuredgrid__griditem.griditem--grid_half .griditem__image,
 .featuredgrid__griditem.griditem--grid_third .griditem__image {
-  max-height: 15em; }
+  max-height: 66.67%; }
 
 .griditem__collaboration-info {
   -ms-flex-pack: center;
@@ -5794,8 +5836,8 @@ ARTICLE META STYLES
     .story__meta-inner {
       width: 16.66667%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       padding-left: 0;
       padding-right: 0;
       padding: 1rem;
@@ -5804,8 +5846,8 @@ ARTICLE META STYLES
       text-align: right; } }
   @media screen and (min-width: 75em) and (min-width: 40em) {
     .story__meta-inner {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 75em) {
       .story__meta-inner .story__meta__tag {
         max-width: 14em;
@@ -6055,29 +6097,26 @@ COLLABORATION STYLES
   @media screen and (min-width: 60em) {
     .collaboration__header__image-wrapper:not(.tridem_or_more) {
       width: 50%;
-      float: left; }
-      .collaboration__header__image-wrapper:not(.tridem_or_more) .image__placeholder,
-      .collaboration__header__image-wrapper:not(.tridem_or_more) .collaboration__header__image,
-      .collaboration__header__image-wrapper:not(.tridem_or_more) img {
-        height: 100% !important;
-        width: auto;
-        max-width: none; } }
+      float: left; } }
 
-.collaboration__header__image-wrapper.tridem_or_more {
-  height: inherit !important; }
+/* Switch around min-height and width for tridem collab-headers */
+.collaboration__header__image.image--tridem_or_more .image__placeholder__thumb,
+.collaboration__header__image.image--tridem_or_more .image--main.lazyloaded {
+  width: 100%;
+  height: auto; }
 
 .collaboration__header__desc {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
   background: #ff8e78;
   color: #343438; }
   @media screen and (min-width: 40em) {
     .collaboration__header__desc {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) {
     .collaboration__header__desc {
       width: 50%;
@@ -6108,8 +6147,8 @@ COLLABORATION STYLES
   .collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc {
     width: 100%;
     float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     float: none;
     margin-left: auto;
     margin-right: auto;
@@ -6119,8 +6158,8 @@ COLLABORATION STYLES
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .collaboration__header--no-image .collaboration__header__desc,
     .collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 @media screen and (min-width: 60em) {
     .collaboration__header--no-image .collaboration__header__desc .collaboration__header__desc-inner,
@@ -6150,12 +6189,12 @@ COLLABORATION STYLES
 .collaboration__participants__item {
   width: 50%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 1rem;
+  padding-right: 1rem; }
   @media screen and (min-width: 40em) {
     .collaboration__participants__item {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .collaboration__participant__details {
   padding: 2rem; }
@@ -6229,25 +6268,25 @@ FOOTER STYLES
   color: #fefefe;
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-bottom: 2rem; }
   @media screen and (min-width: 40em) {
     .footer__widget-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
     .footer__widget-wrapper {
       margin-bottom: 0;
       width: 50%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       min-height: 8em; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .footer__widget-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 40em) {
       .footer__widget-wrapper:last-child {
         margin-bottom: 2rem; } }
@@ -6255,14 +6294,14 @@ FOOTER STYLES
     .footer__widget-wrapper {
       width: 25%;
       float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       min-height: 4em;
       margin-bottom: 0; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
     .footer__widget-wrapper {
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; } }
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   @media screen and (min-width: 60em) {
       .footer__widget-wrapper:last-child {
         margin-bottom: 0; } }

@@ -69,6 +69,7 @@ a.button--small {
 	text-transform: uppercase;
 	font-weight: $global-weight-semibold;
 	min-width: 5em;
+	max-width: 90%;
 }
 
 a.button--share-cta {
@@ -683,7 +684,7 @@ ARTICLE STYLES
 }
 
 .page__footer__widgets-inner,
-.section__imageduo,
+.section__slice.section__imageduo,
 .section__simplemap.simplemap--wide {
 	@include grid-column(12);
 	@include breakpoint( small ) {
@@ -1053,13 +1054,13 @@ Pattern 5. Hero / cover image
 
 .story__header__image-wrapper {
 	position: relative;
-	.story__header__image.highres {
+	.story__header__image {
 		overflow: hidden;
 		font-size: inherit;
 		img {
 			max-width: 100%;
 			height: auto !important;
-			width: auto\9;
+			width: auto;
 			-ms-interpolation-mode: bicubic;
 		}
 		.image__caption {
@@ -1085,25 +1086,6 @@ Pattern 5. Hero / cover image
 				padding-right: $global-padding;
 			}
 
-		}
-		@include breakpoint( large ) {
-			//height: 30rem;
-			.image__caption {
-				//top: 30rem;
-			}
-
-		}
-		@include breakpoint( xlarge ) {
-			//height: 35rem;
-			.image__caption {
-				//top: 35rem;
-			}
-		}
-		@include breakpoint( xxlarge ) {
-			//height: 40rem;
-			.image__caption {
-				//top: 40rem;
-			}
 		}
 	}
 }
@@ -1289,21 +1271,27 @@ Pattern 9. Image
 	@include grid-column-collapse;
 	@include breakpoint( small ) {
 		margin-bottom: 2*$global-margin;
-	}
+		@include grid-column( 12 );
+		@include grid-column-uncollapse;
+ 	}
 	@include breakpoint( medium ) {
 		@include grid-column( 6 );
-	}
-	&.image--portrait.image--right {
+		&.image--landscape.image--right {
 		@include grid-column( 5 );
 		@include grid-col-end();
-	}
-	&.image--portrait.image--left {
-		@include grid-column( 5 );
-		@include grid-column-offset( 1 );
-	}
-	&.image--landscape.image--left {
-		@include grid-column( 5 );
-		@include grid-column-offset( 1 );
+		}
+		&.image--portrait.image--right {
+			@include grid-column( 5 );
+			@include grid-col-end();
+		}
+		&.image--landscape.image--left {
+			@include grid-column( 5 );
+			@include grid-column-offset( 1 );
+		}
+		&.image--portrait.image--left {
+			@include grid-column( 5 );
+			@include grid-column-offset( 1 );
+		}
 	}
 }
 
@@ -1317,26 +1305,9 @@ Pattern 9. Image
 	background: none;
 }
 
-.image__placeholder__thumb,
-.image--main.lazyloaded {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	transition: opacity .4s linear;
-}
-
-.image__placeholder__thumb {
-  opacity: 1;
-  -webkit-filter: blur(50px);
-  filter: blur(50px);
-  /* this is needed so Safari keeps sharp edges */
-  transform: scale(1);
-}
-
-.lazyloaded {
-	-webkit-filter: blur(0);
-	filter: blur(0);
+.image--main {
+	visibility: hidden;
+	opacity: 0;
 }
 
 .image--main.lazyload,
@@ -1344,14 +1315,54 @@ Pattern 9. Image
 .image--main.lazyloaded + .image__placeholder__thumb,
 .no-js .image__placeholder__thumb {
 	opacity: 0;
+	transition: opacity .6s linear;
 }
 
-.image--main.responsively-lazy.lazyloaded {
+.image--main.lazyloaded + .image__placeholder__thumb {
+	transition-delay: .2s;
+}
+
+.image__placeholder__thumb,
+.image--main.lazyloaded {
+	position: absolute;
+	top: 0;
+	left: 0;
+	// height: 100%;
+	// width: auto;
+	// max-width: none;
+	// min-width: 100%;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	min-height: 100%;
+}
+
+/* Add min-width for anything on a card */
+.gallery__item .image--main {
+	min-width: inherit;
+}
+
+.image__placeholder__thumb {
+	height: 100%;
+	min-width: 100%;
+	-webkit-filter: blur(10px);
+	filter: blur(10px);
+	/* this is needed so Safari keeps sharp edges */
+	transform: scale(1);
+}
+
+.image--main.lazyloaded {
+	visibility: visible;
+	transition: visibility .1s linear .1s;
 	opacity: 1;
+	-webkit-filter: blur(0);
+	filter: blur(0);
 }
 
-.image--portrait .image__placeholder {
-	max-width: 28em;
+.image--portrait {
+	@include breakpoint( large ) {
+		max-width: 40%;
+	}
 }
 
 /***********************
@@ -2024,7 +2035,8 @@ Pattern 20. Emphasis blocks
 	.emphasisblock-inner {
 		padding-bottom: 5 * $global-padding;
 	}
-	&.emphasisblock--full .emphasisblock-inner {
+	&.emphasisblock--full .emphasisblock-inner, 
+	&.emphasisblock--post-it .emphasisblock-inner {
 		padding-bottom: $global-padding;
 	}
 }
@@ -2592,7 +2604,6 @@ a:hover .griditem__title {
 
 .griditem__image {
 	width: 100%;
-	max-height: 12.5em;
 	overflow: hidden;
 }
 
@@ -2611,7 +2622,7 @@ a:hover .griditem__title {
 }
 .featuredgrid__griditem.griditem--grid_half .griditem__image,
 .featuredgrid__griditem.griditem--grid_third .griditem__image {
-	max-height: 15em;
+	max-height: 66.67%;
 }
 
 .griditem__collaboration-info {
@@ -2979,19 +2990,18 @@ COLLABORATION STYLES
 	@include grid-column( 12, '0 px');
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
-		.image__placeholder,
-		.collaboration__header__image,
-		img {
-			height: 100% !important;
-			width: auto;
-			max-width: none;
-		}
 	}
 }
 
-.collaboration__header__image-wrapper.tridem_or_more {
-	height: inherit !important;
+/* Switch around min-height and width for tridem collab-headers */
+.collaboration__header__image.image--tridem_or_more {
+	.image__placeholder__thumb,
+	.image--main.lazyloaded {		
+		width: 100%;
+		height: auto;
+	}
 }
+
 
 .collaboration__header__desc {
 	@include grid-column( 12 );

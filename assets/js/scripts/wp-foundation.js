@@ -41,15 +41,12 @@ jQuery(document).ready(function() {
 	// 	jQuery(document).foundation('orbit', 'reflow');
 	// });
 
-	var focus_img_containers = document.querySelectorAll('.focus');
-	for ( var i = 0; i < focus_img_containers.length; i++ ) {
-		var img_container = focus_img_containers[i],
-		img = img_container.getElementsByClassName('image--main')[0];
-		if ( ! img.classList.contains( 'lazy' ) ) {
-			//console.log('no lazy image detected');
-			doFocusTranslate( img );
-		}
-	}
+	jQuery('.focus').each(function() {
+		var img = jQuery(this).find('.image--main');
+		img.on('load', function(e){
+			doFocusTranslate(e.target);
+		});
+	})
 
 	var floated_elements = document.querySelectorAll('.floated');
 	for (var ii = 0; ii < floated_elements.length; ii++ ) {
@@ -69,7 +66,7 @@ jQuery(document).ready(function() {
 		var id = jQuery(this).data('img_id'),
 		target = jQuery('#' + id);
 		jQuery('.orbit').foundation( 'changeSlide', true, target );
-	});
+	})
 
 	jQuery( '#token-form__submit' ).on( 'click', function( e ) {
 		e.preventDefault();

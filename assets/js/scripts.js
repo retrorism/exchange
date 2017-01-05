@@ -3,20 +3,22 @@ var getFocusTranslate = function( img_placeholder, img ) {
 	if ( ! img_data ) {
 		return false;
 	}
-	var h = img.offsetHeight,
+	console.log( img );
+	console.log( img_placeholder );
+	var h = img.clientHeight,
 	container_h =  img_placeholder.offsetHeight,
 	px_translate = ( img_data.focus_h * h ) - ( container_h / 2 ),
 	max_translate = ( ( h - container_h ) / h ) * 100,
 	translate = ( px_translate / h ) * 100;
 
-	// console.log( 'image height: ' + h );
-	// console.log( 'focus point on ' + ( img_data.focus_h * h ) );
-	// console.log( 'container center ' + ( container_h / 2 ) );
-	// console.log( 'number of pixels to move: ' + px_translate );
-	// console.log( 'number of percents to move: ' + translate );
-	// console.log( 'max percent to move: ' + max_translate );
-	// If the center of the container is below the focus point, don't move.
-	// Or: if the translation is downwards, don't move (we're working from top).
+	console.log( 'image height: ' + h );
+	console.log( 'focus point on ' + ( img_data.focus_h * h ) );
+	console.log( 'container center ' + ( container_h / 2 ) );
+	console.log( 'number of pixels to move: ' + px_translate );
+	console.log( 'number of percents to move: ' + translate );
+	console.log( 'max percent to move: ' + max_translate );
+	//If the center of the container is below the focus point, don't move.
+	//Or: if the translation is downwards, don't move (we're working from top).
 	if ( px_translate < 0 || translate < 0 ) {
 		//alert( 'translation smaller than 0' );
 		return false;
@@ -84,15 +86,12 @@ jQuery(document).ready(function() {
 	// 	jQuery(document).foundation('orbit', 'reflow');
 	// });
 
-	var focus_img_containers = document.querySelectorAll('.focus');
-	for ( var i = 0; i < focus_img_containers.length; i++ ) {
-		var img_container = focus_img_containers[i],
-		img = img_container.getElementsByClassName('image--main')[0];
-		if ( ! img.classList.contains( 'lazy' ) ) {
-			//console.log('no lazy image detected');
-			doFocusTranslate( img );
-		}
-	}
+	jQuery('.focus').each(function() {
+		var img = jQuery(this).find('.image--main');
+		img.on('load', function(e){
+			doFocusTranslate(e.target);
+		});
+	})
 
 	var floated_elements = document.querySelectorAll('.floated');
 	for (var ii = 0; ii < floated_elements.length; ii++ ) {
@@ -112,7 +111,7 @@ jQuery(document).ready(function() {
 		var id = jQuery(this).data('img_id'),
 		target = jQuery('#' + id);
 		jQuery('.orbit').foundation( 'changeSlide', true, target );
-	});
+	})
 
 	jQuery( '#token-form__submit' ).on( 'click', function( e ) {
 		e.preventDefault();

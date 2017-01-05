@@ -50,6 +50,7 @@ function exchange_theme_support() {
 
 	add_image_size( 'placeholder', 24, 16, true );
 	add_image_size( 'placeholder-portrait', 16, 24, true );
+	add_image_size( 'placeholder-square', 24, 24, true );
 	add_image_size( 'large', $large_w, $large_h, true );
 	add_image_size( 'large-portrait', $large_h, $large_w, true );
 	add_image_size( 'medium', $med_w, $med_h, true );
