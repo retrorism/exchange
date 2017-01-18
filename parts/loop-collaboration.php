@@ -24,19 +24,23 @@ $exchange = new Collaboration( $post );
 		<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 			<?php $image_class = $exchange->has_header_image ? 'has-image' : 'no-image'; ?>
 
-			<header class="article-header collaboration__header collaboration__header--<?php echo $image_class; ?>" data-equalizer data-equalize-on="large">
+			<header class="article-header collaboration__header collaboration__header--<?php echo $image_class; ?>" >
 				<?php $exchange->publish_header_image();?>
-				<div class="collaboration__header__desc" data-equalizer-watch>
-					<div class="collaboration__header__desc-inner">
-						<h1 class="entry-title collaboration__title" itemprop="headline"><?php the_title(); ?></h1>
-						<?php if ( $exchange->description_length > 0 ) {
-								$exchange->description->publish('collaboration');
-							} ?>
-						<?php if ( ! empty( $exchange->website ) ) : ?>
-								<a class="button button--large" href="<?php echo esc_url( $exchange->website ); ?>"><?php _e('project website','exchange'); ?></a>
-								<hr>
-							<?php endif; ?>
-						<section class="collaboration__tags"><?php $exchange->publish_tags('collaboration'); ?></section>
+				<div class="collaboration__header__desc">
+					<div class="collaboration__header__desc-outer">
+						<div class="collaboration__header__desc-scroller">
+							<div class="collaboration__header__desc-inner">
+								<h1 class="entry-title collaboration__title" itemprop="headline"><?php the_title(); ?></h1>
+								<?php if ( $exchange->description_length > 0 ) {
+										$exchange->description->publish('collaboration');
+									} ?>
+								<?php if ( ! empty( $exchange->website ) ) : ?>
+										<a class="button button--large" href="<?php echo esc_url( $exchange->website ); ?>"><?php _e('project website','exchange'); ?></a>
+										<hr>
+									<?php endif; ?>
+								<section class="collaboration__tags"><?php $exchange->publish_tags('collaboration'); ?></section>
+							</div>
+						</div>
 					</div>
 				</div><!-- end description -->
 			</header> <!-- end article header -->

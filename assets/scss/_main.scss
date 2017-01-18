@@ -1046,8 +1046,6 @@ Pattern 4. Tag list
 	}
 }
 
-.story
-
 /****************************
 Pattern 5. Hero / cover image
 *****************************/
@@ -1063,30 +1061,13 @@ Pattern 5. Hero / cover image
 			width: auto;
 			-ms-interpolation-mode: bicubic;
 		}
-		.image__caption {
-			position: absolute;
-			width: 100%;
-			z-index: 20;
-			text-align: right;
-			padding-right: $global-padding;
-		}
-		@include breakpoint( small ) {
-			.image__caption {
-				//top: 20rem;
-				text-align: right;
-				padding-right: $global-padding;
-			}
-
-		}
-		@include breakpoint( medium ) {
-			//height: 25rem;
-			.image__caption {
-				//top: 25rem;
-				text-align: right;
-				padding-right: $global-padding;
-			}
-
-		}
+	}
+	.image__caption {
+		position: absolute;
+		width: 100%;
+		// z-index: 20;
+		text-align: right;
+		padding-right: $global-padding;
 	}
 }
 
@@ -1308,6 +1289,12 @@ Pattern 9. Image
 .image--main {
 	visibility: hidden;
 	opacity: 0;
+}
+.contactblock__image {
+	.image--main {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 
 .image--main.lazyload,
@@ -3010,6 +2997,8 @@ COLLABORATION STYLES
 	color: $black;
 	@include breakpoint( large ) {
 		@include grid-column( 6, '0 px' );
+		padding-left: 0;
+		padding-right: 0;
 		position: relative;
 	}
 	.button--small,
@@ -3026,13 +3015,26 @@ COLLABORATION STYLES
 		border-style: dashed;
 	}
 }
-
+.collaboration__header__desc-outer {
+	width: 100%;
+	padding-bottom: 100%;
+}
+.collaboration__header__desc-scroller {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+}
 .collaboration__header__desc-inner {
 	padding: 2 * $global-padding;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	@include breakpoint( large ) {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
 	}
 }
 
