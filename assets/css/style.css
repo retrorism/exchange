@@ -6160,6 +6160,12 @@ COLLABORATION STYLES
     border-style: dashed;
     width: 100%; }
 
+.collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc .collaboration__header__desc-outer {
+  padding-bottom: 0; }
+
+.collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc .collaboration__header__desc-scroller {
+  position: relative; }
+
 .collaboration__header__desc-inner {
   padding: 2rem; }
 
