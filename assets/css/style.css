@@ -6150,15 +6150,7 @@ COLLABORATION STYLES
         overflow-x: hidden; }
       .collaboration__header__desc .collaboration__header__desc-inner {
         width: 100%;
-        min-height: 100%;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-flex-pack: center;
-        justify-content: center; } }
+        min-height: 100%; } }
   .collaboration__header__desc .button--small,
   .collaboration__header__desc .button--large {
     color: #343438;
