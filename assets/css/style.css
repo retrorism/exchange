@@ -6137,7 +6137,8 @@ COLLABORATION STYLES
       position: relative; }
       .collaboration__header__desc .collaboration__header__desc-outer {
         width: 100%;
-        padding-bottom: 100%; }
+        padding-bottom: 100%;
+        position: relative; }
       .collaboration__header__desc .collaboration__header__desc-scroller {
         position: absolute;
         top: 0;
