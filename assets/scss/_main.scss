@@ -493,10 +493,8 @@ nav.top-bar {
 			box-sizing: border-box;
 			svg {
 				width: 80%;
-				height: auto;
-				position: relative;
-				top: 50%;
-				transform: translateY(-50%);
+				height: 2.15em;
+				margin: 0.75em auto;
 			}
 		}
 		.menu-toggle {
