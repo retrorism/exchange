@@ -3475,8 +3475,10 @@ nav.top-bar {
     box-sizing: border-box; }
     .top-bar__center a svg {
       width: 80%;
+      height: auto;
       position: relative;
-      top: 0.75em; }
+      top: 50%;
+      transform: translateY(-50%); }
   .top-bar__center .menu-toggle {
     display: block;
     float: right;
