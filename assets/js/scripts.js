@@ -3,24 +3,15 @@ var getFocusTranslate = function( img_placeholder, img ) {
 	if ( ! img_data ) {
 		return false;
 	}
-	console.log( img );
-	console.log( img_placeholder );
 	var h = img.clientHeight,
 	container_h =  img_placeholder.offsetHeight,
 	px_translate = ( img_data.focus_h * h ) - ( container_h / 2 ),
 	max_translate = ( ( h - container_h ) / h ) * 100,
 	translate = ( px_translate / h ) * 100;
 
-	console.log( 'image height: ' + h );
-	console.log( 'focus point on ' + ( img_data.focus_h * h ) );
-	console.log( 'container center ' + ( container_h / 2 ) );
-	console.log( 'number of pixels to move: ' + px_translate );
-	console.log( 'number of percents to move: ' + translate );
-	console.log( 'max percent to move: ' + max_translate );
 	//If the center of the container is below the focus point, don't move.
 	//Or: if the translation is downwards, don't move (we're working from top).
 	if ( px_translate < 0 || translate < 0 ) {
-		//alert( 'translation smaller than 0' );
 		return false;
 	}
 
@@ -43,25 +34,17 @@ var doFocusTranslate = function( img ) {
 };
 
 jQuery(document).foundation();
-/*
-These functions make sure WordPress
-and Foundation play nice together.
-*/
 function handleScroll() {
 	var previousScroll = pageYOffset;
 	jQuery(window).scroll(function(){
 		var currentScroll = jQuery(this).scrollTop();
 		if (currentScroll > previousScroll){
-			//console.log('down');
 		} else {
-			//console.log('up');
 		}
 		previousScroll = currentScroll;
 		if ( pageYOffset < 100 ) {
-			//console.log( 'hiding' );
 			jQuery('.breadcrumbs-bar').removeClass('scrolled');
 		} else {
-			//console.log( 'showing' );
 			jQuery('.breadcrumbs-bar').addClass('scrolled');
 		}
 
@@ -82,10 +65,6 @@ function getUrlVars() {
 
 jQuery(document).ready(function() {
 
-	// jQuery(document).on('open.zf.reveal', function() {
-	// 	jQuery(document).foundation('orbit', 'reflow');
-	// });
-
 	jQuery('.focus').each(function() {
 		var img = jQuery(this).find('.image--main');
 		img.on('load', function(e){
@@ -98,9 +77,6 @@ jQuery(document).ready(function() {
 		var equal_element = floated_elements[ii].nextElementSibling,
 		h = floated_elements[ii].offsetHeight,
 		equal_h = equal_element.offsetHeight;
-		// console.log( floated_elements[ii] );
-		// console.log( equal_element );
-		// console.log( 'neighbour: ' + equal_h + ' px');
 		if ( h > equal_h ) {
 			equal_element.style.height = h + 'px';
 		}
@@ -109,8 +85,8 @@ jQuery(document).ready(function() {
 	jQuery( 'a[data-open=story__modal--gallery]' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var id = jQuery(this).data('img_id'),
-		target = jQuery('#' + id);
-		jQuery('.orbit').foundation( 'changeSlide', true, target );
+		targetjQ = jQuery('#story__modal--gallery').find('#' + id);
+		jQuery('.orbit').foundation( 'changeSlide', true, targetjQ );
 	})
 
 	jQuery( '#token-form__submit' ).on( 'click', function( e ) {
@@ -144,11 +120,6 @@ jQuery(document).ready(function() {
 	} );
 
 
-/* 	jQuery('#gform_6 #input_6_7').change(function(){
-    var attendees = jQuery(this).val();
-    gfRepeater_setRepeater(6, 1, attendees);
-}); */
-
 	jQuery('.translatedparagraph--has_translations').each( function() {
 		var select = jQuery( this ).find('.translation-select');
 		select.on('change', function() {
@@ -167,14 +138,15 @@ jQuery(document).ready(function() {
 		});
 	});
 
-	jQuery('.image--main').each( function() {
-		//console.log( jQuery(this).height() );
-	});
-
 	if ( jQuery('body').hasClass('single') || jQuery('body').hasClass('page-child') ) {
 		jQuery('#main').on('scrollme.zf.trigger',handleScroll);
 	}
 
+
+	/*
+	These functions make sure WordPress
+	and Foundation play nice together.
+	*/
 	// Remove empty P tags created by WP inside of Accordion and Orbit
 	jQuery('.accordion p:empty, .orbit p:empty').remove();
 

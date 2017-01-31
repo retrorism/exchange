@@ -4122,17 +4122,21 @@ Pattern 4. Tag list
 /****************************
 Pattern 5. Hero / cover image
 *****************************/
-.story__header__image-wrapper {
+.story__header__image-wrapper,
+.story__header__lowres-image-wrapper {
   position: relative; }
-  .story__header__image-wrapper .story__header__image {
+  .story__header__image-wrapper .story__header__image,
+  .story__header__lowres-image-wrapper .story__header__image {
     overflow: hidden;
     font-size: inherit; }
-    .story__header__image-wrapper .story__header__image img {
+    .story__header__image-wrapper .story__header__image img,
+    .story__header__lowres-image-wrapper .story__header__image img {
       max-width: 100%;
       height: auto !important;
       width: auto;
       -ms-interpolation-mode: bicubic; }
-  .story__header__image-wrapper .image__caption {
+  .story__header__image-wrapper .image__caption,
+  .story__header__lowres-image-wrapper .image__caption {
     position: absolute;
     width: 100%;
     text-align: right;
@@ -6122,7 +6126,27 @@ COLLABORATION STYLES
       float: left;
       padding-left: 0;
       padding-right: 0;
-      position: relative; } }
+      position: relative; }
+      .collaboration__header__desc .collaboration__header__desc-outer {
+        width: 100%;
+        padding-bottom: 100%; }
+      .collaboration__header__desc .collaboration__header__desc-scroller {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-y: auto; }
+      .collaboration__header__desc .collaboration__header__desc-inner {
+        min-height: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .collaboration__header__desc .button--small,
   .collaboration__header__desc .button--large {
     color: #343438;
@@ -6133,31 +6157,11 @@ COLLABORATION STYLES
       background-color: #fefefe; }
   .collaboration__header__desc hr {
     border-color: white;
-    border-style: dashed; }
-
-.collaboration__header__desc-outer {
-  width: 100%;
-  padding-bottom: 100%; }
-
-.collaboration__header__desc-scroller {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow-y: auto; }
+    border-style: dashed;
+    width: 100%; }
 
 .collaboration__header__desc-inner {
-  padding: 2rem;
-  min-height: 100%;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  padding: 2rem; }
 
 @media screen and (min-width: 60em) {
   .collaboration__header--no-image .collaboration__header__desc,
@@ -6386,10 +6390,6 @@ ADMIN FORM STYLES
 #wpbody-content textarea table td,
 #exchange_tokenlist_widget table td {
   vertical-align: top; }
-
-#wpbody-content textarea input,
-#exchange_tokenlist_widget input {
-  width: 100%; }
 
 /******************************************************************
 

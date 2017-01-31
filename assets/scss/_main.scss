@@ -1050,7 +1050,8 @@ Pattern 4. Tag list
 Pattern 5. Hero / cover image
 *****************************/
 
-.story__header__image-wrapper {
+.story__header__image-wrapper,
+.story__header__lowres-image-wrapper {
 	position: relative;
 	.story__header__image {
 		overflow: hidden;
@@ -3000,6 +3001,25 @@ COLLABORATION STYLES
 		padding-left: 0;
 		padding-right: 0;
 		position: relative;
+		.collaboration__header__desc-outer {
+			width: 100%;
+			padding-bottom: 100%;
+		}
+		.collaboration__header__desc-scroller {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			overflow-y: auto;
+		}
+		.collaboration__header__desc-inner {
+			min-height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 	.button--small,
 	.button--large {
@@ -3013,29 +3033,12 @@ COLLABORATION STYLES
 	hr {
 		border-color: white;
 		border-style: dashed;
+		width: 100%;
 	}
 }
-.collaboration__header__desc-outer {
-	width: 100%;
-	padding-bottom: 100%;
-}
-.collaboration__header__desc-scroller {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	overflow-y: auto;
-}
+
 .collaboration__header__desc-inner {
 	padding: 2 * $global-padding;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	@include breakpoint( large ) {
-	}
 }
 
 .collaboration__header--no-image .collaboration__header__desc,
@@ -3239,8 +3242,5 @@ ADMIN FORM STYLES
 #exchange_tokenlist_widget {
 	table td {
 		vertical-align: top;
-	}
-	input {
-		width: 100%;
 	}
 }
