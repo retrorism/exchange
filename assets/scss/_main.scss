@@ -537,6 +537,7 @@ nav.top-bar {
 
 .breadcrumbs-bar__logo {
 	width: 10em;
+	height: 100%;
 	position: absolute;
 	top: 0;
     left: 0;
@@ -549,9 +550,9 @@ nav.top-bar {
 		text-align: center;
 		box-sizing: border-box;
 		svg {
-			width: 80%;
-			height: 2.15em;
-			margin: 0.75em auto;
+				width: 80%;
+				height: 2.15em;
+				margin: 0.75em auto;
 		}
 	}
 }
