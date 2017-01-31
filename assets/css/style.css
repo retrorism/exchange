@@ -6164,6 +6164,17 @@ COLLABORATION STYLES
     border-style: dashed;
     width: 100%; }
 
+@media screen and (min-width: 60em) {
+  .supports-flex .collaboration__header__desc-inner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; } }
+
 .collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc .collaboration__header__desc-outer,
 .collaboration__header--no-image .collaboration__header__desc-outer {
   padding-bottom: 0; }

@@ -3023,16 +3023,11 @@ COLLABORATION STYLES
 			right: 0;
 			width: 100%;
 			overflow-y: auto;
-			overflow-x: hidden;
-
+			overflow-x: hidden;			
 		}
 		.collaboration__header__desc-inner {
 			width: 100%;
 			min-height: 100%;
-			// display: flex;
-			// flex-direction: column;
-			// align-items: center;
-			// justify-content: center;
 		}
 	}
 	.button--small,
@@ -3048,6 +3043,17 @@ COLLABORATION STYLES
 		border-color: white;
 		border-style: dashed;
 		width: 100%;
+	}
+}
+
+.supports-flex {
+	@include breakpoint( large ) {
+		.collaboration__header__desc-inner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 }
 
