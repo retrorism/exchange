@@ -5732,14 +5732,19 @@ a:hover .griditem__title {
   justify-content: center;
   position: relative;
   text-align: center; }
-  .griditem__collaboration-info svg {
+  .griditem__collaboration-info .ampersand-wrapper {
     position: absolute;
     -ms-flex-item-align: center;
     align-self: center;
-    top: 50%;
     height: 4em;
-    width: auto;
-    transform: translateX(-50%) translateY(-50%);
+    width: 4em;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); }
+  .griditem__collaboration-info svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
     z-index: 1; }
   .griditem__collaboration-info ul.participants {
     height: 100%; }
