@@ -6173,7 +6173,11 @@ COLLABORATION STYLES
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-pack: center;
-    justify-content: center; } }
+    justify-content: center; }
+  .supports-flex .collaboration__header__desc-inner h1,
+  .supports-flex .collaboration__header__desc-inner div,
+  .supports-flex .collaboration__header__desc-inner section {
+    width: 100%; } }
 
 .collaboration__header__image-wrapper.tridem_or_more + .collaboration__header__desc .collaboration__header__desc-outer,
 .collaboration__header--no-image .collaboration__header__desc-outer {

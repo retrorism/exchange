@@ -3054,6 +3054,11 @@ COLLABORATION STYLES
 			align-items: center;
 			justify-content: center;
 		}
+		.collaboration__header__desc-inner h1,
+		.collaboration__header__desc-inner div,
+		.collaboration__header__desc-inner section {
+			width: 100%;
+		}
 	}
 }
 
