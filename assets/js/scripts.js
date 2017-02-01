@@ -34,6 +34,13 @@ var doFocusTranslate = function( img ) {
 };
 
 jQuery(document).foundation();
+var doc = document.body || document.documentElement;
+var style = doc.style;	
+
+if ( style.webkitFlexWrap === '' || style.msFlexWrap === '' || style.flexWrap === '' ) { 
+    doc.className += " supports-flex";
+}
+
 function handleScroll() {
 	var previousScroll = pageYOffset;
 	jQuery(window).scroll(function(){
@@ -64,13 +71,6 @@ function getUrlVars() {
 }
 
 jQuery(document).ready(function() {
-	var doc = document.body || document.documentElement;
-	var style = doc.style;	
-
-	if ( style.webkitFlexWrap === '' || style.msFlexWrap === '' || style.flexWrap === '' ) { 
-	    doc.className += " supports-flex";
-	}
-
 
 	jQuery('.focus').each(function() {
 		var img = jQuery(this).find('.image--main');
