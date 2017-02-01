@@ -52,6 +52,12 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<script>
+			var doc = document.body || document.documentElement;
+			var style = doc.style;	
+
+			if ( style.webkitFlexWrap === '' || style.msFlexWrap === '' || style.flexWrap === '' ) { 
+			    doc.className += " supports-flex";
+			}
 			/*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
 			(function( w ){
 			var loadJS = function( src, cb ){
