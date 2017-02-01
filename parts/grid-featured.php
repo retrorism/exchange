@@ -2,7 +2,7 @@
 
 	<!-- IMAGE -->
 	<?php echo exchange_create_link( $exchange, false ); ?>
-		<?php $exchange->publish_featured_image('griditem'); ?>
+		<?php $exchange->publish_featured_image('featuredgriditem'); ?>
 	</a>
 
 	<!-- META -->
