@@ -5723,6 +5723,13 @@ a:hover .griditem__title {
   margin-left: auto;
   margin-right: auto; }
 
+.featuredgrid__griditem.griditem--grid_full .image__placeholder {
+  padding-bottom: 66.7% !important; }
+
+@media screen and (min-width: 40em) {
+  .featuredgrid__griditem.griditem--grid_full .image__placeholder {
+    padding-bottom: 40% !important; } }
+
 .featuredgrid__griditem.griditem--grid_half .griditem__image,
 .featuredgrid__griditem.griditem--grid_third .griditem__image {
   max-height: 66.67%; }
