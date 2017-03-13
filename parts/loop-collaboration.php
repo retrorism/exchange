@@ -100,10 +100,6 @@ $exchange = new Collaboration( $post );
 								<?php $exchange->publish_collab_media_gallery(); ?>
 							<?php endif; ?>
 
-							<?php if ( $exchange->has_video ) : ?>
-								<?php $exchange->publish_collab_video(); ?>
-							<?php endif; ?>
-
 							<?php if ( $exchange->has_files ) : ?>
 								<?php $exchange->publish_collab_files(); ?>
 							<?php endif; ?>
