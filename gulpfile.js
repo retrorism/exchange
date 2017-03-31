@@ -80,7 +80,7 @@ gulp.task('foundation-js', function() {
 		'./vendor/foundation-sites/js/foundation.reveal.js',
 		//   './vendor/foundation-sites/js/foundation.slider.js',
 		'./vendor/foundation-sites/js/foundation.sticky.js',
-		//   './vendor/foundation-sites/js/foundation.tabs.js',
+		'./vendor/foundation-sites/js/foundation.tabs.js',
 		'./vendor/foundation-sites/js/foundation.toggler.js',
 		//   './vendor/foundation-sites/js/foundation.tooltip.js',
   ])

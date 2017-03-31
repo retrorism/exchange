@@ -282,6 +282,7 @@ NAVIGATION STYLES
 PAGE NAVI STYLES
 *********************/
 .page-navigation {
+	clear: both;
 	text-align: center;
 	margin-top: 1rem;
 	li {
@@ -633,7 +634,8 @@ ARTICLE STYLES
 .story__header__introduction,
 .archive__header__introduction,
 .collaboration__header,
-.section-inner {
+.section-inner,
+.archive__interface-inner {
 	@include grid-row;
 }
 
@@ -642,7 +644,6 @@ ARTICLE STYLES
 .search .archive__interface-inner {
 	padding-bottom: 2 * $global-padding;
 	padding-top: 2 * $global-padding;
-	overflow: hidden;
 }
 
 // Readable-width columns
@@ -2401,6 +2402,28 @@ Pattern 21 & 22 Grids
 	}
 }
 
+.facets-active .archive__grid {
+	@include breakpoint( medium ) {
+		.masonry__grid-sizer,
+		.archive__grid__griditem {
+			width: 48.5%;
+			padding: 0;
+		}
+		.masonry__gutter-sizer {
+			width: 3%;
+		}
+	}
+	@include breakpoint( xlarge ) {
+		.masonry__grid-sizer,
+		.archive__grid__griditem {
+			width: 32%
+		}
+		.masonry__gutter-sizer {
+			width: 2%;
+		}
+	}
+}
+
 .collaboration__media__grid {
 	.masonry__grid-sizer,
 	.collaboration__griditem {
@@ -2950,7 +2973,6 @@ ARTICLE EXTRAS STYLES
 
 		}
 	}
-
 }
 
 .button-wrapper {
@@ -2969,7 +2991,6 @@ ARCHIVE STYLES
 	padding: 0.5 * $global-padding;
 }
 
-
 .archive__filter__toggle {
 	width: 100%;
 	text-align: right;
@@ -2979,6 +3000,82 @@ ARCHIVE STYLES
 	margin-bottom:
 	2 * $global-margin;
 }
+
+.archive__facets {
+	.facetwp-facet {
+		margin-bottom: $global-margin;
+	}
+}
+
+.show-filters {
+	display: block;
+}
+.hide-filters {
+	display: none;
+}
+
+.tabs-panel {
+	padding: 0;
+}
+
+.archive__facets--top {
+	nav {
+		@include grid-row();
+	}
+	.archive__facets__search {
+		@include grid-column(3);
+		padding: 0.5 * $global-padding 0 $global-padding;
+		.facetwp-search,
+		.facetwp-facet {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.archive__facets__view-switcher {
+	padding: 1.5 * $global-padding 0 $global-padding;
+	.is-active a,
+	.is-active a:focus,
+	.is-active a:link {
+		background: $yellow-tandem;
+		-webkit-tap-highlight-color: $yellow-1-web;
+	}
+}
+
+.archive__facets__view-switcher {
+	float: right;
+	margin: 0;
+}
+
+.archive__facets--extra {
+	display: none;
+}
+
+.facets-active {
+	.show-filters {
+		display: none;
+	}
+	.hide-filters {
+		display: block;
+	}
+	.archive__facets--extra {
+		display: block;
+	}
+	@include breakpoint( large ) {
+		.archive__grid {
+			@include grid-column( 9 );
+		}
+		.archive__facets--extra {
+			@include grid-column( 3 );
+		}
+	}
+}
+
+.archive__facets__search__toggler p {
+	float: left;
+	margin-right: $global-margin;
+}
+
 
 /*********************
 COLLABORATION STYLES

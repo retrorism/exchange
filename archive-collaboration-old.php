@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="main" class="archive__wrapper" role="main" data-toggler=".facets-active">
+<main id="main" class="archive__wrapper  " role="main">
 
 	<div class="main-inner">
 
@@ -22,29 +22,19 @@
 			<?php get_template_part( 'parts/content', 'archive-header'); ?>
 
 		<?php endif; ?>
-		<?php get_template_part( 'parts/nav', 'facets-top' ); ?>
+
 		<?php if (have_posts()) : ?>
+
+		<?php /* get_template_part( 'parts/content', 'archive-map'); */ ?>
 
 		<div class="archive__interface section--blue-1-web section--coloured">
 			<?php echo BasePattern::build_edge_svg('top', exchange_slug_to_hex( 'blue-1-web' ) ); ?>
 
 			<div class="archive__interface-inner">
-			<?php get_template_part( 'parts/nav', 'facets-extra'); ?>
+
 			<?php /* get_template_part( 'parts/content', 'archive-filters'); */ ?>
-			
 
-
-
-			<div class="" data-tabs-content="facet-tabs">
-				<div class="tabs-panel is-active" id="facets-grid">
-					<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
-				</div>
-				<div class="tabs-panel" id="facets-map">
-					<?php get_template_part( 'parts/content', 'archive-map'); ?>
-				</div>
-			</div>
-
-		</ul>
+			<?php get_template_part( 'parts/content', 'archive-grid' ); ?>
 
 			<?php exchange_page_navi(); ?>
 

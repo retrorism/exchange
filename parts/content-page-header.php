@@ -22,7 +22,8 @@
 				$hide_title_class = '';
 				if ( 'Programmes' !== $exchange->title ) {
 					$programmes = get_page_by_title( 'Programmes' );
-					if ( $post->post_parent === $programmes->ID ) {
+					global $post;
+					if ( isset( $post ) && $post->post_parent === $programmes->ID ) {
 						get_template_part( 'parts/content', 'page-programme' );
 						$hide_title_class = ' show-for-sr';
 					};
