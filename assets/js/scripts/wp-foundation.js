@@ -15,6 +15,25 @@ function handleScroll() {
 	});
 }
 
+function getArchiveMap() {
+	if ( undefined == Exchange 
+		|| undefined == Exchange.PluginExtensions 
+		|| undefined == Exchange.PluginExtensions.LMP
+		|| undefined == Exchange.PluginExtensions.LMP.maps ) {
+		return;
+	}
+    for ( var hashedMap in Exchange.PluginExtensions.LMP.maps ) {
+        if ( Exchange.PluginExtensions.LMP.maps.hasOwnProperty( hashedMap ) ) {
+            var archiveMap = Exchange.PluginExtensions.LMP.maps[hashedMap];
+            archiveMap.hash = hashedMap.slice( 4 );
+            break;
+        }
+    }
+    if ( archiveMap ) {
+        return archiveMap;
+    }
+}
+
 function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -75,6 +94,23 @@ var masonryIsActive = false;
 
 	$(document).ready(function() {
 
+		if ( $grid == undefined ) {
+			var $grid = $('.archive__grid__masonry');
+		}
+
+		if ('object' == typeof FWP) { 
+		    wp.hooks.addFilter('facetwp/template_html', function(resp, params) {
+		        if (FWP.is_load_more) {
+		            FWP.is_load_more = false;
+		            $('.facetwp-template').append(params.html);
+		            return true;
+		        }
+		        return resp;
+		    });
+		} else {
+			console.log( 'FWP is not defined yet' );
+		}
+
 		$('.focus').each(function() {
 			var img = $(this).find('.image--main');
 			img.on('load', function(e){
@@ -129,7 +165,6 @@ var masonryIsActive = false;
 			};
 		} );
 
-
 		$('.translatedparagraph--has_translations').each( function() {
 			var select = $( this ).find('.translation-select');
 			select.on('change', function() {
@@ -149,18 +184,40 @@ var masonryIsActive = false;
 		});
 
 		if ( $('body').hasClass('single') || $('body').hasClass('page-child') ) {
-			$('#main').on('scrollme.zf.trigger',handleScroll);
+			$('#main').on('scrollme.zf.trigger', handleScroll);
 		}
 
-		if ($('body').hasClass('archive') ) {
-			$('.archive__grid__masonry').masonry(masonryOptions);
-			masonryIsActive = true;
-			$('#facet-tabs').on('change.zf.tabs', function() {
-			})
-			$('#facet-switch').on('click', function() {
+		if ( $('body').hasClass( 'archive' ) ) {
+
+			if ( ! $('body').hasClass( 'post-type-archive-story') ) {
+				if ( archiveMap == undefined ) {
+					var archiveMap = getArchiveMap();
+				}
+				if ( archiveMap ) {				
+					archiveMap.map.fitBounds( archiveMap.clusterLayer.getBounds() );
+				}
+			}
+			if ( $grid !== undefined ) {
+				$grid.masonry( masonryOptions ); // re-initialize
+				masonryIsActive = true;
+			}
+		}
+
+    	$('#facet-tabs').on('change.zf.tabs', function() {
+			if ( archiveMap == undefined ) {
+				var archiveMap = getArchiveMap();
+				archiveMap.map.invalidateSize().fitBounds( archiveMap.clusterLayer.getBounds() );
+			}
+
+			if ( $grid !== undefined ) {
+				$grid.masonry( masonryOptions ); // re-initialize
+				masonryIsActive = true;
+			}
+		})
+
+		$('#facet-switch').on('click', function() {
 				('#main').foundation('toggle');
-			})
-	     }
+		})
 
 		// Remove empty P tags created by WP inside of Accordion and Orbit
 		$('.accordion p:empty, .orbit p:empty').remove();
@@ -179,14 +236,18 @@ var masonryIsActive = false;
 
 	})
 
+	 $(document).on('click', '.fwp-load-more', function() {
+
+        $('.fwp-load-more').html('Loading...');
+        FWP.is_load_more = true;
+        FWP.paged = parseInt(FWP.settings.pager.page) + 1;
+        FWP.soft_refresh = true;
+        FWP.refresh();
+
+    });
+
 	$(document).on('facetwp-loaded', function() {
-		$('.facetwp-facet').each(function() {
-            var facet_name = $(this).attr('data-name');
-            var facet_label = FWP.settings.labels[facet_name];
-            if ($('.facet-label[data-for="' + facet_name + '"]').length < 1) {
-                $(this).before('<label class="facet-label" data-for="' + facet_name + '"><strong>' + facet_label + '</strong></label>');
-            }
-        });
+
 		var $grid = $('.archive__grid__masonry');
 		if ( masonryIsActive ) {
 			console.log('destroy');
@@ -194,9 +255,54 @@ var masonryIsActive = false;
 		}
 		$grid.masonry( masonryOptions ); // re-initialize
 		masonryIsActive = true;
-		if ( FWP_JSON !== undefined ) {
-			console.log( FWP_JSON );
+		
+		var archiveMap = getArchiveMap();
+		if ( archiveMap == undefined ) {
+			return;
 		}
+		
+		var allObjects = window['leaflet_objects_' + archiveMap.hash];
+		if ( allObjects == undefined ) {
+			return;
+		}
+		if ( allObjects.map_polylines.length > 0 && FWP.settings.matches.length > 0 ) {
+			var matchedPolylines = allObjects.map_polylines.filter( function( p ) {
+				if (  FWP.settings.matches.includes( p.id ) ) {
+					return true;
+				}
+			});
+			if ( matchedPolylines.length > 0 ) {
+				var refreshObjects = {
+					map_polylines : matchedPolylines
+				};
+				archiveMap.renderObjects( refreshObjects );
+			}
+		}
+
+		if (FWP.settings.pager.page < FWP.settings.pager.total_pages) {
+            if (! FWP.loaded && 1 > $('.fwp-load-more').length) {
+                $('.facetwp-template').after('<button style="clear: both;" class="fwp-load-more">Load more</button>');
+            }
+            else {
+                $('.fwp-load-more').html('Load more').show();
+            }
+        }
+        else {
+            $('.fwp-load-more').hide();
+        }
+
+		if ( FWP.settings.pager.page > 1 ) {
+			$('html, body').animate({
+	            scrollTop: $('.archive__grid__masonry').offset().bottom
+	        }, 1000);
+        }
+
 	})
+
+    $(document).on('facetwp-refresh', function() {
+        if (! FWP.loaded) {
+            FWP.paged = 1;
+        }
+    });
 
 })(jQuery);

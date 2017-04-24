@@ -65,7 +65,7 @@ gulp.task('foundation-js', function() {
 
 		// Pick the components you need in your project
 		//   './vendor/foundation-sites/js/foundation.abide.js',
-		//   './vendor/foundation-sites/js/foundation.accordion.js',
+		'./vendor/foundation-sites/js/foundation.accordion.js',
 		//   './vendor/foundation-sites/js/foundation.accordionMenu.js',
 		//   './vendor/foundation-sites/js/foundation.drilldown.js',
 		//   './vendor/foundation-sites/js/foundation.dropdown.js',

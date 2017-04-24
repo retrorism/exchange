@@ -48,13 +48,6 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
-$foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #ec5840,
-);
 $yellow-tandem : #f4c522; /* Tandem styleguide */
 $black-tandem : #4c4d53; /* Tandem styleguide */
 $white : #fefefe;
@@ -78,6 +71,13 @@ $light-gray: lighten( $gray, 20 );
 $dark-gray: darken( $gray, 20 );
 $body-background: $white;
 $body-font-color: $black;
+$foundation-palette: (
+  primary: $black-tandem,
+  secondary: #777,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #ec5840,
+);
 //$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-font-family: inherit;
 $body-antialiased: true;
@@ -214,15 +214,15 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $white;
-$accordion-plusminus: true;
+$accordion-background: transparent;
+$accordion-plusminus: false;
 $accordion-item-color: foreground($accordion-background, $primary-color);
-$accordion-item-background-hover: $light-gray;
-$accordion-item-padding: 1.25rem 1rem;
-$accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
+$accordion-item-background-hover: transparent;
+$accordion-item-padding: 1.25rem 0rem;
+$accordion-content-background: transparent;
+$accordion-content-border: 0px solid $light-gray;
 $accordion-content-color: foreground($accordion-background, $primary-color);
-$accordion-content-padding: 1rem;
+$accordion-content-padding: 1rem 0rem;
 
 // 8. Accordion Menu
 // -----------------
@@ -535,10 +535,10 @@ $show-header-for-stacked: false;
 
 $tab-margin: 0;
 $tab-background: $white;
-$tab-background-active: $light-gray;
+$tab-background-active: $white;
 $tab-item-font-size: rem-calc(12);
 $tab-item-background-hover: $white;
-$tab-item-padding: 1.25rem 1.5rem;
+$tab-item-padding:  0 0.5 * $global-padding;
 $tab-expand-max: 6;
 $tab-content-background: $white;
 $tab-content-border: $light-gray;

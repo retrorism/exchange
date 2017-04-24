@@ -2126,12 +2126,12 @@ h6 {
     font-size: 0.875rem; } }
 
 a {
-  color: #2199e8;
+  color: #4c4d53;
   text-decoration: none;
   line-height: inherit;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #1585cf; }
+    color: #414247; }
   a img {
     border: 0; }
 
@@ -2671,6 +2671,42 @@ select {
     .show-for-portrait {
       display: block !important; } }
 
+.accordion {
+  list-style-type: none;
+  background: transparent;
+  margin-left: 0; }
+
+.accordion-item:first-child > :first-child {
+  border-radius: 0 0 0 0; }
+
+.accordion-item:last-child > :last-child {
+  border-radius: 0 0 0 0; }
+
+.accordion-title {
+  display: block;
+  padding: 1.25rem 0rem;
+  line-height: 1;
+  font-size: 0.75rem;
+  color: #4c4d53;
+  position: relative;
+  border: 0px solid lightgray;
+  border-bottom: 0; }
+  :last-child:not(.is-active) > .accordion-title {
+    border-radius: 0 0 0 0;
+    border-bottom: 0px solid lightgray; }
+  .accordion-title:hover, .accordion-title:focus {
+    background-color: transparent; }
+
+.accordion-content {
+  padding: 1rem 0rem;
+  display: none;
+  border: 0px solid lightgray;
+  border-bottom: 0;
+  background-color: transparent;
+  color: #4c4d53; }
+  :last-child > .accordion-content:last-child {
+    border-bottom: 0px solid lightgray; }
+
 .label {
   display: inline-block;
   padding: 0.25rem 0.333rem;
@@ -2679,7 +2715,7 @@ select {
   white-space: nowrap;
   cursor: default;
   border-radius: 0;
-  background: #2199e8;
+  background: #4c4d53;
   color: #fefefe; }
   .label.secondary {
     background: #777;
@@ -2777,7 +2813,7 @@ select {
     margin-left: 1rem; }
   .menu .active > a {
     color: #fefefe;
-    background: #2199e8; }
+    background: #4c4d53; }
 
 .menu-text {
   font-weight: bold;
@@ -3066,7 +3102,7 @@ html.is-reveal-open body {
     transform: translate3d(0, 0, 0);
     border-radius: 0; }
   input:checked ~ .switch-paddle {
-    background: #2199e8; }
+    background: #4c4d53; }
     input:checked ~ .switch-paddle::after {
       left: 2.25rem; }
   [data-whatinput='mouse'] input:focus ~ .switch-paddle {
@@ -3146,23 +3182,23 @@ html.is-reveal-open body {
     background: transparent; }
 
 .tabs.primary {
-  background: #2199e8; }
+  background: #4c4d53; }
   .tabs.primary > li > a {
     color: #fefefe; }
     .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
-      background: #1893e4; }
+      background: #54555c; }
 
 .tabs-title {
   float: left; }
   .tabs-title > a {
     display: block;
-    padding: 1.25rem 1.5rem;
+    padding: 0 0.5rem;
     line-height: 1;
     font-size: 0.75rem; }
     .tabs-title > a:hover {
       background: #fefefe; }
     .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
-      background: lightgray; }
+      background: #fefefe; }
 
 .tabs-content {
   background: #fefefe;
@@ -3277,8 +3313,8 @@ a, a:visited {
   .page__footer__widgets p a:hover {
     border-bottom: 2px solid #fefefe; }
 
-a.button--large,
-a.button--small {
+.button--large,
+.button--small {
   display: inline-block;
   text-align: center;
   line-height: 1;
@@ -3298,24 +3334,24 @@ a.button--small {
   font-weight: 600;
   min-width: 5em;
   max-width: 90%; }
-  [data-whatinput='mouse'] a.button--large, [data-whatinput='mouse']
-  a.button--small {
+  [data-whatinput='mouse'] .button--large, [data-whatinput='mouse']
+  .button--small {
     outline: 0; }
-  a.button--large:hover, a.button--large:focus,
-  a.button--small:hover,
-  a.button--small:focus {
+  .button--large:hover, .button--large:focus,
+  .button--small:hover,
+  .button--small:focus {
     background-color: transparent;
     color: #4c4d53; }
 
-a.button--share-cta {
+.button--share-cta {
   border: 2px solid #f4c522;
   background-color: transparent;
   transition: background-color 0.5s; }
-  a.button--share-cta:hover {
+  .button--share-cta:hover {
     color: #343438;
     background-color: #f4c522; }
 
-a.button--small {
+.button--small {
   padding: 0.2rem;
   font-size: 80%; }
 
@@ -5604,6 +5640,17 @@ Pattern 21 & 22 Grids
   .archive__grid .masonry__gutter-sizer {
     width: 2%; } }
 
+.archive__grid__masonry {
+  padding-bottom: 4rem; }
+
+.archive__grid__load-more {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .archive__grid__load-more .button {
+    border: 2px solid #9fd3d6; }
+
 @media screen and (min-width: 40em) {
   .facets-active .archive__grid .masonry__grid-sizer,
   .facets-active .archive__grid .archive__grid__griditem {
@@ -6241,23 +6288,100 @@ ARTICLE EXTRAS STYLES
   text-align: center; }
 
 /*********************
+TANDEM ACCORDION STYLE
+*********************/
+a.accordion-title {
+  /* Accents on blue */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 99.23728 67.289766'%3E%3Cpath d='M99.2 13v1.3c-.4 0-.2 1-.8 1v1c-.8.2-.4 1.6-1.2 1.7v2.5c-1.6.3-1 2.8-2.5 3.3.3 1.2-1 .8-.8 2-.6.3-1 1-1 1.7-.5.2-1 .6-1 1.2-.2.4-.6.3-1 .4 0 .5 0 .5-.4.5.2 1-.7 1-.4 2-.5.2-.8.6-.8 1.3-.4 0-.3.5-.4.8-.4 0-.4.2-.4.4-.2.6-.7.7-.8 1.2-.3.3-.3.6-.5 1v.3s-1.2.4-.8 1.6c-1 .6-1.5 1.4-1.6 2.6-.5 0-.4.5-.5.8-.4 0-.4.2-.4.4-.3 0-.2.5-.3.8-.4 0-.4.2-.4.4-.6.8-.7 2.2-1.7 2.5-.6.8-.6 2-1.6 2.5-.4 1-1 1.6-1.3 2.8-1.2.6-1.7 2-2.4 3-.8 0-.3 1.2-1.2 1-.2.7-.6 1-1.2 1.4 0 1.2-1 1.2-.8 2.4-.8 0-.8 1-1.6 1.2-.2.4-.4.8-1 1 .2.3 0 .6-.3.7.3.5 1.2.3 1.8.4 0-.6.8-.4.8-1 .7.4 0 .8 0 1.3-.4.2-.7.4-.8.8-.6.3-.7.8-1.3 1-1.2.2-.7-1.2-2-1-.2.2-.7 0-.8 0v.5l-.8.4c-.4.2-.3.5-.6.8 0 0-.5 0-.4.4-1 0-1.7.4-2.4.8v.4h-.4v.4h-.4l-1 .4c-1 .3-1.4-.4-2.3-.4 0-.4-.5-.3-.8-.4-.4 0-.4-.4-1-.4-1.7 0-3 .6-5.2.4 0-.4-.5-.3-.8-.4 0-.4-.2-.4-.4-.4-.3-.4-.5-1-.4-1.7-2.3 0-3.8-.7-6.3-.5-1.6 0-2-1.4-3.7-1.2-.2-.6-.6-1-1.2-1.2 0-.7-1.3-.2-1.2-1.2-.2 0-.7.2-.8 0v-.4l-1-.4c0-.2 0-.6-.3-.8 0 0-.5 0-.4-.4h-.7v-.4h-.8c-.2 0-.3-.8-.4-.8h-.7c0-.4-.6-.4-1-.4.2-.4 0-.4-.3-.5-.3-.3-1-.4-1.6-.4-.7-1-1.6-2-3-2.4-.4-1.4-1.2-2.3-2.3-3-.5-1-1-2.3-2.4-2.5 0-1-.6-1.2-.8-2-.8 0-.3-1.4-1.3-1.2 0-.8-1-.6-.8-1.7-.6-.2-1-.6-1.2-1.2-.4-.5-.4-1.5-1.2-1.6 0-1-1.2-.6-1-1.7-1-.2-1-2-2.3-2.3 0-1.2-1-1.3-.8-2.5-.3-1-1.4-1-1.7-2 0-.6-.7-.7-.8-1.3-.2-.4-.4-.8-.8-1 0-.6-.4-1-1-1 0-.7 0-1.3-.3-1.4.2-1.2-1.3-1-1-2.4-.2-.7-1-1.2-1-2-.5-.8-1-1.3-1.7-1.7.2-1.3-1-1-1.3-2C3 18.2 3 17.2 2 17c.3-2-1.3-2.4-2-3.7-.2-1 1-.8 1-1.6 0-1-1-1-.5-2.2 1 0 .5-1.6 1.6-1.6.4-1.3-.6-1.2-.3-2.5.5 0 .7 0 .8-.4 0-.3.2-.4.4-.4.6-.2.6.3 1 .3.3-.8 0-1-.3-1.6-.7-.3 0-.8 0-1.2.8 0 1-.5 1.7-.5 0 .6 1 .4 1.6.5.5 0 .4-.8.4-1.3 0-.3.4-.4.4-.8.7 0 1.6-.2 1.7.4.3-.3 1-.2 1.2-.8.5 0 .7.7 1.2.8.6 0 .6.4 1.2.4 1.4-.2 2.3.2 3.2.4 1.3.3 1.2-.7 2.5-.4 1.5 0 2.4.8 4 .8.3 1 1 1 2 1.3A3.7 3.7 0 0 0 26.8 5a3.7 3.7 0 0 0 1.6 1.6c0 .6.4.7.4 1.2.5 0 .3.8 1 .8.3.6.2 1.5 1 1.6.3 1 1 1.4 1.3 2 .6.5 1.3.7 1.2 1.7 1.3 0 1.6.8 2.5 1.2l1.2 2.4c1 .3.8 1.6 1.2 2.5 1 .2.7 1.8 1.6 2 .4.5.2 1.3.8 1.4.2.3.5.6.4 1.2.2 1 1.5.8 1.3 2 .8.2.8 1 1.6 1.3-.2.3 0 .6.3.7.3 1 .4 2 .8 3 0 .8 1.3.3 1.4 1 .4 0 .3.6.4 1 .3-.2.4 0 .4.3 1 .3 1 1.7 2.4 1.7H51c1 0 1.5-.6 1.5-1.7 1 0 1-1 .8-2 1 0 .4-1.6 1.7-1.3.4-.5.4-1.5 1.2-1.6-.2-1 .8-.8.4-2 .6-.2 1-.6 1.2-1.2.2-.5.8-.6 1-1.2 0-.2 0-.6.3-.8.2-.2.8-.3 1-.4 0-.2-.2-.8 0-1 0 0 .3.2.3 0v-.7c.6-.2 1-.6 1.2-1.2.5-.2 1-.5.8-1.2 1-.5 1.5-1.3 1.7-2.5.6-.2 1-.6 1.2-1.2.4-.4.3-1 .8-1.3.5-1 1-2 2-2.4-.2-1.2 1-1 1-1.8 0-.5.6-.6.7-1.2.4-.3.3-1 .8-1.2.2-.6.8-.7 1-1.2h2c.3 0 .2-.5.3-1 .5.2.8 0 .8-.3.5 0 .8 0 1-.4-.2-.4 0-.5.3-.5.2-1 1.7-1 2-2 2 .3 2.5-1 3.6-1.7 1 .2 1.7.5 2.5.8h5c0 .4 0 .4.4.4 1-.2.8 1 1.2 1.3.6.2 1 .6 1.3 1.2.4 0 1 0 1-.4.4.3.8.5 1.3.5 0 1 1.5.7 2 1.2 0 2.4-.3 5 2.5 4.5.4 1.7-1.2 1.3-.8 3h1.2z' class='caret' fill='%230f9fd6' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: auto 20%;
+  color: #0f9fd6;
+  font-weight: 600; }
+  a.accordion-title:visited {
+    color: #0f9fd6; }
+
+.accordion-item.is-active .accordion-title {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath fill='%230F9FD6' fill-rule='evenodd' d='M.172 11.052c.088-.02.055-.168.163-.17v-.254c.167-.024.076-.316.243-.34v-.51c.32-.06.194-.588.487-.678-.06-.26.223-.163.163-.424.11-.056.15-.18.162-.34.117-.047.198-.132.244-.254.002-.083.1-.066.162-.085-.015-.072.032-.08.08-.085-.032-.204.15-.184.082-.424.1-.037.167-.11.163-.255.08-.002.064-.103.082-.17.07.016.077-.032.08-.084.03-.113.144-.135.164-.256.045-.05.044-.11.08-.17.01-.017-.013-.07 0-.084.018-.018.246-.09.163-.34.183-.09.294-.257.324-.51.08-.002.063-.103.08-.17.07.017.078-.032.082-.084.08-.002.063-.104.082-.17.07.016.076-.033.08-.084.118-.16.12-.44.325-.51.118-.16.12-.44.325-.51.068-.21.223-.332.244-.593.242-.116.337-.384.487-.595.152-.01.055-.28.243-.254.045-.122.126-.206.243-.254-.02-.25.184-.26.163-.51.164-.024.158-.23.323-.254.036-.075.072-.152.163-.17-.013-.098.018-.15.08-.17-.024-.114-.202-.07-.324-.084-.02.092-.16.057-.162.17-.145-.063-.012-.155 0-.255.072-.037.145-.074.162-.17.107-.03.128-.15.244-.17.25-.063.156.233.406.17.03-.02.14.028.162 0 .01-.012-.012-.076 0-.085.04-.027.126-.048.163-.085.045-.044.04-.12.08-.17.022-.026.114 0 .082-.084.227.007.35-.08.486-.17.013-.01-.01-.074 0-.086.014-.014.068.014.08 0 .015-.014-.012-.07 0-.085.014-.014.066.01.082 0 .055-.036.09-.07.163-.085.25-.062.297.086.488.084.002.082.1.065.162.084.066.016.08.085.163.085C8.73.336 9 .223 9.428.273c.003.083.1.066.163.085-.014.07.032.08.082.084.063.076.087.192.08.34.427.007.732.14 1.22.084.312.012.374.287.73.255.045.122.126.207.243.255.01.16.27.06.244.254.028.022.14-.028.16 0 .01.012-.01.077 0 .085.042.028.127.048.164.085.045.044.04.12.08.17.022.026.114 0 .082.084.03.022.14-.027.162 0 .007.01-.008.083 0 .085.045.018.122-.022.163 0 .035.02.053.158.082.17.045.022.115-.015.162 0 .003.084.1.067.163.086-.015.072.03.08.08.085.073.067.184.092.326.086.132.23.317.403.568.51.102.26.27.454.488.593.116.218.19.48.488.508-.013.21.127.263.162.425.153.01.056.28.243.254.002.17.223.108.164.34.117.047.198.132.243.254.082.114.077.317.244.34.002.17.222.108.163.34.257.072.23.438.488.51-.02.248.184.26.163.508.055.198.27.228.325.425.028.11.143.133.162.254.036.076.07.152.162.17-.003.145.06.22.163.255-.007.12-.013.24.08.254-.038.268.25.192.163.51.073.15.197.247.244.424.073.15.18.262.325.34-.04.266.218.223.243.424.166.025.16.23.325.254-.033.43.284.496.406.764.06.232-.16.17-.16.34-.035.204.147.184.08.424-.21.008-.116.33-.325.34-.06.26.14.25.08.508-.093-.014-.143.02-.16.085.014.07-.033.08-.082.084-.13.024-.14-.08-.244-.085-.035.177.055.224.08.34.145.06.012.153 0 .253-.145-.01-.17.104-.324.085-.026-.115-.204-.07-.325-.085-.094.014-.068.155-.08.255-.016.07-.082.085-.082.17-.128-.008-.31.04-.324-.085-.066.073-.223.05-.244.17-.106-.03-.128-.15-.244-.17-.13.024-.14-.08-.243-.085-.28.037-.455-.034-.65-.085-.248-.062-.238.146-.487.085-.324 0-.487-.17-.812-.17-.056-.168-.216-.226-.406-.254-.073-.15-.18-.263-.324-.34-.074-.15-.182-.263-.325-.34.02-.136-.078-.146-.082-.254-.09-.02-.056-.17-.163-.17-.08-.112-.077-.315-.243-.34-.048-.176-.17-.273-.244-.423-.12-.074-.257-.128-.244-.34-.247.004-.315-.18-.487-.255-.078-.173-.166-.335-.243-.51-.197-.048-.18-.32-.244-.508-.22-.025-.146-.357-.325-.424-.07-.07-.048-.233-.162-.255-.043-.068-.085-.138-.08-.254-.026-.2-.283-.157-.245-.424-.165-.025-.16-.23-.325-.254.013-.1-.018-.15-.08-.17-.06-.193-.073-.434-.163-.594.025-.196-.235-.094-.244-.255-.08-.002-.063-.103-.08-.17-.07.016-.078-.032-.082-.084-.22-.054-.202-.356-.487-.34h-.244c-.207.01-.315.123-.325.34-.177.01-.174.213-.162.423-.214-.025-.064.33-.325.255-.08.112-.076.315-.242.34.033.204-.15.183-.082.423-.117.05-.198.134-.243.256-.03.11-.143.133-.163.255-.048.035-.04.128-.08.17-.028.03-.145.054-.163.085-.02.03.026.148 0 .17-.008.007-.08-.01-.08 0-.018.05.01.118 0 .17-.118.047-.2.132-.245.254-.1.036-.167.108-.162.254-.184.09-.295.257-.325.51-.117.047-.198.13-.244.254-.07.068-.047.232-.16.254-.09.22-.206.408-.407.51.06.23-.16.17-.162.34-.028.11-.142.132-.162.253-.07.07-.048.233-.162.255-.03.112-.143.133-.163.255h-.406c-.08.002-.063.104-.08.17-.095-.015-.145.018-.163.084-.095-.015-.145.018-.163.084.016.072-.03.08-.08.085-.056.223-.37.178-.406.423-.41-.062-.502.21-.73.34-.19-.028-.336-.102-.488-.17h-.974c.015-.072-.032-.08-.08-.085-.22.06-.158-.175-.245-.254-.117-.048-.198-.133-.243-.255-.116-.008-.23-.015-.244.084-.065-.045-.132-.09-.243-.085-.01-.22-.303-.137-.406-.256.004-.484.07-1.033-.487-.933-.08-.338.243-.255.163-.593H.172v-.255z'/%3E%3C/svg%3E");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: auto 20%; }
+
+.accordion-item {
+  padding: 0 1rem;
+  border-top: 1px solid #0f9fd6; }
+
+/*********************
 ARCHIVE STYLES
 *********************/
 .archive__filter nav {
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
-  padding: 0.5rem; }
+  padding: 0; }
 
 .archive__filter__toggle {
   width: 100%;
   text-align: right; }
 
-.archive__map {
-  margin-bottom: 2rem; }
+.archive__facets-wrapper-outer {
+  font-size: 80%;
+  position: relative;
+  width: 100%;
+  float: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+  @media screen and (min-width: 40em) {
+    .archive__facets-wrapper-outer {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+    .archive__facets-wrapper-outer {
+      position: absolute;
+      z-index: 1001;
+      width: 25%;
+      float: left;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-left: 0 !important;
+      padding-right: 0 !important; } }
+  @media screen and (min-width: 40em) and (min-width: 40em) {
+    .archive__facets-wrapper-outer {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+      .archive__facets-wrapper-outer:last-child:last-child {
+        float: left; } }
+  @media screen and (min-width: 60em) {
+    .archive__facets-wrapper-outer {
+      width: 16.66667%;
+      float: left;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-left: 0 !important;
+      padding-right: 0 !important; } }
+  @media screen and (min-width: 60em) and (min-width: 40em) {
+    .archive__facets-wrapper-outer {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  @media screen and (min-width: 60em) {
+      .archive__facets-wrapper-outer:last-child:last-child {
+        float: left; } }
+  .archive__facets-wrapper-outer .facetwp-facet {
+    margin-bottom: 1rem; }
 
-.archive__facets .facetwp-facet {
-  margin-bottom: 1rem; }
+div.facetwp-checkbox {
+  background-image: url("../images/png/T_checkbox_Unchecked_WEB.png");
+  background-size: auto 1.5em;
+  padding-left: 2em; }
+
+div.facetwp-checkbox.checked {
+  background-image: url("../images/png/T_checkbox_Checked_WEB.png");
+  background-size: auto 1.5em; }
+
+.archive__facets-wrapper-inner {
+  padding: 0;
+  overflow-y: auto; }
 
 .show-filters {
   display: block; }
@@ -6268,44 +6392,71 @@ ARCHIVE STYLES
 .tabs-panel {
   padding: 0; }
 
-.archive__facets--top nav {
+.archive__facets--top .archive__facets__search {
+  padding: 1rem; }
+  .archive__facets--top .archive__facets__search .facetwp-search,
+  .archive__facets--top .archive__facets__search .facetwp-facet {
+    margin-bottom: 0;
+    padding: 0 0 0 1rem; }
+
+i.facetwp-btn {
+  top: 1.5rem; }
+
+.archive__view__toggle {
+  margin: 0;
+  min-height: 4.25em;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto; }
-  .archive__facets--top nav::before, .archive__facets--top nav::after {
+  .archive__view__toggle::before, .archive__view__toggle::after {
     content: ' ';
     display: table; }
-  .archive__facets--top nav::after {
+  .archive__view__toggle::after {
     clear: both; }
-
-.archive__facets--top .archive__facets__search {
-  width: 25%;
-  float: left;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding: 0.5rem 0 1rem; }
+  .archive__view__toggle a svg,
+  .archive__view__toggle a svg img {
+    height: 2em;
+    width: 2em; }
+  .archive__view__toggle label {
+    display: block;
+    float: right;
+    height: 2em;
+    margin: 0 0 0 0.5em; }
+  .archive__view__toggle .is-active a,
+  .archive__view__toggle .is-active a:focus,
+  .archive__view__toggle .is-active a:link {
+    background: transparent;
+    -webkit-tap-highlight-color: transparent; }
+    .archive__view__toggle .is-active a .globe,
+    .archive__view__toggle .is-active a .grid rect,
+    .archive__view__toggle .is-active a:focus .globe,
+    .archive__view__toggle .is-active a:focus .grid rect,
+    .archive__view__toggle .is-active a:link .globe,
+    .archive__view__toggle .is-active a:link .grid rect {
+      fill: #343438 !important; }
+  .archive__view__toggle a:active .globe,
+  .archive__view__toggle a:active .grid rect {
+    fill: #f4c522 !important; }
+  .archive__view__toggle a:active span {
+    color: #f4c522; }
+  .archive__view__toggle .controls {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+    width: 10em; }
   @media screen and (min-width: 40em) {
-    .archive__facets--top .archive__facets__search {
-      padding-left: 1rem;
-      padding-right: 1rem; } }
-  .archive__facets--top .archive__facets__search .facetwp-search,
-  .archive__facets--top .archive__facets__search .facetwp-facet {
-    margin-bottom: 0; }
-
-.archive__facets__view-switcher {
-  padding: 1.5rem 0 1rem; }
-  .archive__facets__view-switcher .is-active a,
-  .archive__facets__view-switcher .is-active a:focus,
-  .archive__facets__view-switcher .is-active a:link {
-    background: #f4c522;
-    -webkit-tap-highlight-color: #fffbdb; }
-
-.archive__facets__view-switcher {
-  float: right;
-  margin: 0; }
+    .archive__view__toggle .controls {
+      width: auto;
+      text-align: left;
+      float: right;
+      margin: 1.25rem 0; }
+    .archive__view__toggle label {
+      margin-right: 0.5em; } }
 
 .archive__facets--extra {
-  display: none; }
+  display: none;
+  background: #9fd3d6;
+  padding-top: 0.25rem; }
 
 .facets-active .show-filters {
   display: none; }
@@ -6313,34 +6464,68 @@ ARCHIVE STYLES
 .facets-active .hide-filters {
   display: block; }
 
+.facets-active .archive__grid {
+  min-height: 728px; }
+
+.facets-active .archive__facets-wrapper-outer {
+  background: #9fd3d6; }
+
+.facets-active .archive__facets-wrapper-inner {
+  min-height: 781px;
+  max-height: 781px; }
+
 .facets-active .archive__facets--extra {
   display: block; }
 
-@media screen and (min-width: 60em) {
-  .facets-active .archive__grid {
+@media screen and (min-width: 40em) {
+  .facets-active .archive__grid, .facets-active .archive__map {
     width: 75%;
     float: left;
     padding-left: 1rem;
-    padding-right: 1rem; } }
+    padding-right: 1rem;
+    margin-left: 25%; } }
+  @media screen and (min-width: 40em) and (min-width: 40em) {
+    .facets-active .archive__grid, .facets-active .archive__map {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+
+@media screen and (min-width: 40em) {
+  .facets-active .archive__map {
+    padding: 0; } }
+
+@media screen and (min-width: 60em) {
+  .facets-active .archive__grid, .facets-active .archive__map {
+    width: 83.33333%;
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 16.66667%; } }
   @media screen and (min-width: 60em) and (min-width: 40em) {
-    .facets-active .archive__grid {
+    .facets-active .archive__grid, .facets-active .archive__map {
       padding-left: 1rem;
       padding-right: 1rem; } }
 
 @media screen and (min-width: 60em) {
-  .facets-active .archive__facets--extra {
-    width: 25%;
-    float: left;
-    padding-left: 1rem;
-    padding-right: 1rem; } }
-  @media screen and (min-width: 60em) and (min-width: 40em) {
-    .facets-active .archive__facets--extra {
-      padding-left: 1rem;
-      padding-right: 1rem; } }
+  .facets-active .archive__map {
+    padding: 0; } }
 
 .archive__facets__search__toggler p {
   float: left;
   margin-right: 1rem; }
+
+#facets-map svg.section__edge--bottom,
+#facets-map svg.section__edge--top {
+  z-index: 800;
+  display: block; }
+
+#facets-map svg.section__edge--bottom {
+  top: 19px; }
+
+#facets-grid {
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
+  #facets-grid .section-inner {
+    padding: 0; }
 
 /*********************
 COLLABORATION STYLES
