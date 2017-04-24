@@ -187,8 +187,7 @@ var masonryIsActive = false;
 			$('#main').on('scrollme.zf.trigger', handleScroll);
 		}
 
-		if ( $('body').hasClass( 'archive' ) ) {
-
+		if ( $('body').hasClass( 'archive' ) || $('body').hasClass( 'page-template-archive') ) {
 			if ( ! $('body').hasClass( 'post-type-archive-story') ) {
 				if ( archiveMap == undefined ) {
 					var archiveMap = getArchiveMap();
@@ -206,11 +205,10 @@ var masonryIsActive = false;
     	$('#facet-tabs').on('change.zf.tabs', function() {
 			if ( archiveMap == undefined ) {
 				var archiveMap = getArchiveMap();
-				if ( typeof archiveMap.clusterLayer == 'Object' ) {
-					archiveMap.map.invalidateSize().fitBounds( archiveMap.clusterLayer.getBounds() );
-				}
 			}
-
+			if ( archiveMap.map != undefined ) {
+				archiveMap.map.invalidateSize().fitBounds( archiveMap.clusterLayer.getBounds() );
+			}
 			if ( $grid !== undefined ) {
 				$grid.masonry( masonryOptions ); // re-initialize
 				masonryIsActive = true;
