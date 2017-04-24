@@ -13,7 +13,11 @@ get_header(); ?>
 
 			<?php get_template_part( 'parts/content', 'archive-header'); ?>
 
-			<?php get_template_part( 'parts/nav', 'facets' ); ?>
+			<?php if ( function_exists( 'facetwp_display' ) ) : ?>
+
+				<?php get_template_part( 'parts/nav', 'facets' ); ?>
+
+			<?php endif; ?>
 		
 			<?php get_template_part( 'parts/nav', 'archive-view-toggle') ; ?>
 

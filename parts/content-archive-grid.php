@@ -6,15 +6,15 @@
 			<div class="masonry__grid-sizer"></div>
 			<div class="masonry__gutter-sizer"></div>
 			
-			<?php if ( is_post_type_archive( 'collaboration' ) ) : ?>
+			<?php if ( is_post_type_archive( 'collaboration' ) && function_exists( 'facetwp_display' ) ) : ?>
 
 				<?php echo facetwp_display( 'template', 'collaborations_filtered' ); ?> 
 			
-			<?php elseif ( is_post_type_archive( 'story' ) ) : ?>
+			<?php elseif ( is_post_type_archive( 'story' ) && function_exists( 'facetwp_display' ) ) : ?>
 
 				<?php echo facetwp_display( 'template', 'stories_filtered' ); ?> 
 
-			<?php else : ?>
+			<?php elseif ( function_exists( 'facetwp_display' ) ) : ?>
 				
 				<?php echo facetwp_display( 'template', 'archive_filtered' ); ?>
 

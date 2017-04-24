@@ -1,4 +1,3 @@
-		
 <div class="archive__facets-wrapper-outer">
 	<div class="archive__facets-wrapper-inner">
 		<nav class="archive__facets--top">
