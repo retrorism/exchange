@@ -209,7 +209,9 @@ var masonryIsActive = false;
     	$('#facet-tabs').on('change.zf.tabs', function() {
 			if ( archiveMap == undefined ) {
 				var archiveMap = getArchiveMap();
-				archiveMap.map.invalidateSize().fitBounds( archiveMap.clusterLayer.getBounds() );
+				if ( typeof archiveMap.clusterLayer == 'Object' ) {
+					archiveMap.map.invalidateSize().fitBounds( archiveMap.clusterLayer.getBounds() );
+				}
 			}
 
 			if ( $grid !== undefined ) {
@@ -252,8 +254,8 @@ var masonryIsActive = false;
 	$(document).on('facetwp-loaded', function() {
 
 		var $grid = $('.archive__grid__masonry');
+		
 		if ( masonryIsActive ) {
-			console.log('destroy');
 		    $grid.masonry('destroy'); // destroy
 		}
 		$grid.masonry( masonryOptions ); // re-initialize
@@ -265,9 +267,12 @@ var masonryIsActive = false;
 		}
 		
 		var allObjects = window['leaflet_objects_' + archiveMap.hash];
-		if ( allObjects == undefined ) {
+		if ( allObjects == undefined 
+			|| typeof allObjects.map_polylines != 'Array'
+			|| typeof FWP.settings.matches != 'Array' ) {
 			return;
 		}
+
 		if ( allObjects.map_polylines.length > 0 && FWP.settings.matches.length > 0 ) {
 			var matchedPolylines = allObjects.map_polylines.filter( function( p ) {
 				if (  FWP.settings.matches.includes( p.id ) ) {
