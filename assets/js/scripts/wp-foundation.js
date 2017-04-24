@@ -249,9 +249,8 @@ var masonryIsActive = false;
     });
 
 	$(document).on('facetwp-loaded', function() {
-
 		var $grid = $('.archive__grid__masonry');
-		
+
 		if ( masonryIsActive ) {
 		    $grid.masonry('destroy'); // destroy
 		}
@@ -264,9 +263,9 @@ var masonryIsActive = false;
 		}
 		
 		var allObjects = window['leaflet_objects_' + archiveMap.hash];
-		if ( allObjects == undefined 
-			|| typeof allObjects.map_polylines != 'Array'
-			|| typeof FWP.settings.matches != 'Array' ) {
+		if ( allObjects == undefined
+			|| allObjects.map_polylines.length == 0
+			|| FWP.settings.matches.length == 0 ) {
 			return;
 		}
 
