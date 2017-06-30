@@ -633,6 +633,7 @@ ARTICLE STYLES
 // Rows (max 1200px);
 .story__header__introduction,
 .archive__header__introduction,
+.archive__header__active-facet-summary,
 .collaboration__header,
 .section-inner,
 .archive__interface-inner {
@@ -925,7 +926,8 @@ Pattern 1. Title
 
 .page .story__title-wrapper,
 .archive .story__title-wrapper,
-.archive__title-wrapper, {
+.archive__title-wrapper,
+.archive__active-facet-summary {
 	text-align: center;
 }
 
@@ -974,7 +976,6 @@ Pattern 4. Tag list
 	margin-left: 0;
 	margin-bottom: 0;
 }
-
 
 .griditem__tags ol li,
 .collaboration__tags ol li,
@@ -2372,6 +2373,9 @@ Pattern 20.5 Documentblock
 Pattern 21 & 22 Grids
 *********************************************/
 
+.archive__interface {
+	clear: both;
+}
 
 .archive__grid {
 	.masonry__grid-sizer,
@@ -2417,6 +2421,7 @@ Pattern 21 & 22 Grids
 }
 
 .facets-active .archive__grid {
+	clear: none;
 	@include breakpoint( medium ) {
 		.masonry__grid-sizer,
 		.archive__grid__griditem {
@@ -3036,6 +3041,24 @@ ARCHIVE STYLES
 	text-align: right;
 }
 
+.archive__active-facet-summary {
+	margin-bottom: 2 * $global-margin;
+	.facet-list-title {
+		display: inline;
+		font-weight: bold;
+	}
+	ul, li {
+		display: inline;
+		&:not(:last-child)::after {
+			content: ', ';
+			display: inline;
+		}
+	}
+	@include breakpoint( large ) {
+		margin-bottom: 0;
+	}
+}
+
 .archive__facets-wrapper-outer {
 	font-size: $small-font-size;
 	@include breakpoint( small ) {
@@ -3045,8 +3068,6 @@ ARCHIVE STYLES
 		padding-right: 0 !important;
 	}
 	@include breakpoint( medium ) {
-		position: absolute;
-		z-index: 1001;
 		@include grid-column(3);
 		@include grid-col-end;
 		padding-left: 0 !important;
@@ -3091,16 +3112,45 @@ div.facetwp-checkbox.checked {
 .archive__facets--top {
 	.archive__facets__search {
 		padding: $global-padding;
-		.facetwp-search,
-		.facetwp-facet {
-			margin-bottom: 0;
-			padding: 0 0 0 $global-padding;
+	}
+	.facetwp-facet {
+		margin-bottom: 0;
+		padding: 0;
+	}
+	
+	.facetwp-search {
+		display: block;
+		float: left;
+		padding: 0;
+		width: 9.15rem;
+		width: calc(100% - 2.525rem);
+		margin-bottom: 0;
+	}
+	i.facetwp-btn {
+		display: block;
+		float: left;
+		top: 0;
+		right: 0;
+		position: relative;
+		line-height: normal;
+		height: auto;
+		width: 2.4rem;
+		height: 100%;
+		opacity: inherit;
+		margin-bottom: 0 !important;
+		margin-left: 0.125 * $global-margin;
+		padding: 0.25rem 0.25rem 0.2rem;
+		/* border: 1px solid $yellow-tandem;
+		background-color: $white; */
+		&:hover {
+			cursor: pointer; 
+		}
+		&::before {
+			display: none;
+			height: 0;
+			width: 0;
 		}
 	}
-}
-
-i.facetwp-btn {
-	top: 1.5rem;
 }
 
 .archive__view__toggle {
@@ -3186,7 +3236,17 @@ i.facetwp-btn {
 	.archive__facets--extra {
 		display: block;
 	}
+
+	i.facetwp-btn svg path,
+	i.facetwp-btn svg circle {
+		stroke: $blue-3;
+	}
 	@include breakpoint( medium ) {
+		.archive__facets-wrapper-outer {
+			position: absolute;
+			z-index: 1001;
+		}
+
 		.archive__grid, .archive__map {
 			@include grid-column( 9 );
 			@include grid-col-off( 3 );
@@ -3207,7 +3267,7 @@ i.facetwp-btn {
 }
 
 .fwp-load-more {
-
+	display: none;
 }
 
 .archive__facets__search__toggler p {
@@ -3232,6 +3292,8 @@ i.facetwp-btn {
 		padding: 0;
 	}
 }
+
+
 
 /*********************
 COLLABORATION STYLES

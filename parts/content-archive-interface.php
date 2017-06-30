@@ -21,17 +21,17 @@
 
 		</section>
 		
-		<?php if ( ! is_post_type_archive( 'story' ) ) : ?>
+		<?php if ( ! is_post_type_archive( 'story' ) && ! is_page_template('archive.php' ) ) : ?>
 
-			<section class="tabs-panel <?php echo esc_attr( $map_active ); ?> section--coloured" id="facets-map">
-				
-				<?php echo BasePattern::build_edge_svg('bottom', '#ffffff' ); ?>
-				
-				<?php get_template_part( 'parts/content', 'archive-map'); ?>
-				
-				<?php echo BasePattern::build_edge_svg('top', '#ffffff' ); ?>
+		<section class="tabs-panel <?php echo esc_attr( $map_active ); ?> section--coloured" id="facets-map">
+			
+			<?php echo BasePattern::build_edge_svg('bottom', '#ffffff' ); ?>
+			
+			<?php get_template_part( 'parts/content', 'archive-map'); ?>
+			
+			<?php echo BasePattern::build_edge_svg('top', '#ffffff' ); ?>
 
-			</section>
+		</section>
 
 		<?php endif; ?>
 

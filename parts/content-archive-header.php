@@ -17,7 +17,7 @@
 		<?php endif; ?>
 
 		</div>
-
+		<div class="archive__active-facet-summary"></div>
 	</div>
 
 </header>

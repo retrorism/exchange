@@ -18,18 +18,8 @@ get_header(); ?>
 				<?php get_template_part( 'parts/nav', 'facets' ); ?>
 
 			<?php endif; ?>
-		
-			<?php get_template_part( 'parts/nav', 'archive-view-toggle') ; ?>
 
-		    <?php if (have_posts()) : ?>
-
-				<?php get_template_part( 'parts/content', 'archive-interface' ); ?>
-
-			<?php else : ?>
-
-				<?php get_template_part( 'parts/content', 'missing' ); ?>
-
-			<?php endif; ?>
+			<?php get_template_part( 'parts/content', 'archive-interface' ); ?>
 
 		</div><!-- end archive__interface -->
 
