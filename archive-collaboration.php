@@ -27,17 +27,24 @@
 
 			<?php get_template_part( 'parts/nav', 'facets' ); ?>
 
-		<?php endif; ?>
-		
-		<?php get_template_part( 'parts/nav', 'archive-view-toggle') ; ?>
-		
-		<?php if (have_posts()) : ?>
-		
-		<?php get_template_part( 'parts/content', 'archive-interface' ); ?>
+			<div class="archive__info-and-controls">
+				<?php get_template_part( 'parts/nav', 'archive-view-toggle') ; ?>
+				<div class="archive__active-facet-summary"></div>
+			</div>
+
+			<?php get_template_part( 'parts/content', 'archive-interface' ); ?>
 
 		<?php else : ?>
+		
+			<?php if (have_posts()) : ?>
+			
+				<?php get_template_part( 'parts/content', 'archive-interface' ); ?>
 
-			<?php get_template_part( 'parts/content', 'missing' ); ?>
+			<?php else : ?>
+
+				<?php get_template_part( 'parts/content', 'missing' ); ?>
+
+			<?php endif; ?>
 
 		<?php endif; ?>
 

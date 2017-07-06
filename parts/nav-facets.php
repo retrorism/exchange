@@ -38,8 +38,9 @@
 				foreach( $facets as $facet_key => $facet_name ) : ?>
 
 					<?php $accordion_title = $facet_key === 'post_tag' ? 'accordion-item is-active' : 'accordion-item'; ?>
+					<?php $accordion_title = 'accordion-item'; ?>
 
-					<li class="<?php echo esc_attr( $accordion_title ); ?>" data-accordion-item>
+					<li class="<?php echo esc_attr( $accordion_title ); ?>" data-facet-type="<?php echo esc_html( $facet_key ); ?>" data-accordion-item>
 			    		<!-- Accordion tab title -->
 			    		<a href="#" class="accordion-title"><?php echo esc_html( $facet_name ); ?><span class="filter-count"></span></a>
 					    <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->

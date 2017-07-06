@@ -1,146 +1,8 @@
-var archiveMap,
-$grid;
-
-function handleScroll() {
-	var previousScroll = pageYOffset;
-	jQuery(window).scroll( function(){
-		var currentScroll = jQuery(this).scrollTop();
-		previousScroll = currentScroll;
-		if ( pageYOffset < 100 ) {
-			jQuery('.breadcrumbs-bar').removeClass('scrolled');
-		} else {
-			jQuery('.breadcrumbs-bar').addClass('scrolled');
-		}
-
-	});
-}
-
-function getArchiveMap() {
-	if ( undefined === Exchange || undefined === Exchange.PluginExtensions || undefined === Exchange.PluginExtensions.LMP || undefined === Exchange.PluginExtensions.LMP.maps ) {
-		return;
-	}
-    for ( var hashedMap in Exchange.PluginExtensions.LMP.maps ) {
-        if ( Exchange.PluginExtensions.LMP.maps.hasOwnProperty( hashedMap ) ) {
-            archiveMap = Exchange.PluginExtensions.LMP.maps[hashedMap];
-            archiveMap.hash = hashedMap.slice( 4 );
-            break;
-        }
-    }
-    if ( archiveMap ) {
-        return archiveMap;
-    }
-}
-
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for( var i = 0; i < hashes.length; i++ ) {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
-
-function getFocusTranslate( img_placeholder, img ) {
-	img_data = img_placeholder.parentNode.dataset;
-	if ( ! img_data ) {
-		return false;
-	}
-	var h = img.clientHeight,
-	container_h =  img_placeholder.offsetHeight,
-	px_translate = ( img_data.focus_h * h ) - ( container_h / 2 ),
-	max_translate = ( ( h - container_h ) / h ) * 100,
-	translate = ( px_translate / h ) * 100;
-
-	//If the center of the container is below the focus point, don't move.
-	//Or: if the translation is downwards, don't move (we're working from top).
-	if ( px_translate < 0 || translate < 0 ) {
-		return false;
-	}
-
-	if ( translate > max_translate ) {
-		return max_translate;
-	} else {
-		return translate;
-	}
-}
-
-function doFocusTranslate( img ) {
-	var img_placeholder = img.parentNode;
-	translate = getFocusTranslate( img_placeholder, img );
-	// Keep the negative, add minus if necessary
-	if ( translate ) {
-		var translateNeg = translate > 0 ? -1 * translate : translate,
-		transform = 'transform: translateY(' + translateNeg + '%);';
-		img.setAttribute( 'style', transform );
-	}
-}
-
-function openFacets() {
-	var facetsActive = false;
-	var facetList = [];
-	jQuery('.accordion-item').each( function() {
-		var parent = jQuery( this ),
-			facet = parent.find('a.accordion-title'),
-			content = parent.children('.accordion-content'),
-			boxes = content.children().children('.facetwp-checkbox'),
-			parentFilterCount = 0;
-			if ( facet ) {
-				var facetTax = facet.clone().children().remove().end().text().trim();
-				facetList.push( {
-					'name' : facetTax, 
-					'terms' : [] 
-				} );
-				boxes.each( function() {
-					if ( jQuery(this).hasClass('checked') ) {
-						facetsActive = true;
-						parent.addClass('.is-active');
-						parentFilterCount++;
-						var lastItem = facetList[ facetList.length - 1 ];
-						lastItem.terms.push( jQuery(this).clone().children().remove().end().text().trim() );
-					}
-				} );
-			}
-		parent.find('span.filter-count').html('');
-		if ( parentFilterCount > 0 ) {
-			parent.find('span.filter-count').html(' (' + parentFilterCount + ')' );
-		}
-	} );
-	if ( facetsActive ) {
-		jQuery('#main').addClass('facets-active');
-	}
-	if ( facetList ) {
-		var facetString = '';
-		if ( facetsActive ) {
-			facetString += '<h4>Showing results for:</h4>';
-		}
-		facetList.map( function( tax ) {
-			if ( tax.terms.length > 0 ) {
-				//facetString += '<span class="facet-list-title">' + tax.name + ': </span>';
-				facetString += '<ul class="term-list" data-value="' + tax.name + '">';
-				for ( var i = 0; tax.terms.length > i; i++ ) {
-					facetString += '<li class="term" title="' + tax.name + ': ' + tax.terms[i] + '">' + tax.terms[i] + '</li>'
-				}
-				facetString += '</ul>';
-			}
-		} );
-		jQuery('.archive__active-facet-summary').html( facetString );
-	}
-}
-
-var masonryOptions = { 
-			"percentPosition": true, 
-			"columnWidth": ".masonry__grid-sizer", 
-			"gutter": ".masonry__gutter-sizer", 
-			"itemSelector": ".archive__grid__griditem"
-};
-
-var masonryIsActive = false;
-
 ( function( $ ){
 
 	$( document ).ready( function() {
+
+		processFloatedElements();
 
 		var $body = $('body');
 
@@ -148,6 +10,7 @@ var masonryIsActive = false;
 			$grid = $('.archive__grid__masonry');
 		}
 
+		// Load more button for FWP
 		if ( 'object' == typeof FWP ) { 
 		    wp.hooks.addFilter('facetwp/template_html', function(resp, params) {
 		        if ( FWP.is_load_more ) {
@@ -157,27 +20,17 @@ var masonryIsActive = false;
 		        }
 		        return resp;
 		    });
-		} else {
-			console.log( 'FWP is not defined yet' );
 		}
 
+		// Proces images that have a focus property
 		$('.focus').each( function() {
 			var img = $(this).find('.image--main');
 			img.on('load', function( e ){
 				doFocusTranslate(e.target);
 			});
 		});
-
-		var floated_elements = document.querySelectorAll('.floated');
-		for (var ii = 0; ii < floated_elements.length; ii++ ) {
-			var equal_element = floated_elements[ii].nextElementSibling,
-			h = floated_elements[ii].offsetHeight,
-			equal_h = equal_element.offsetHeight;
-			if ( h > equal_h ) {
-				equal_element.style.height = h + 'px';
-			}
-		}
-
+		
+		// Open gallery when clicking an image
 		$( 'a[data-open=story__modal--gallery]' ).on( 'click', function( e ) {
 			e.preventDefault();
 			var id = $(this).data('img_id'),
@@ -185,6 +38,7 @@ var masonryIsActive = false;
 			$('.orbit').foundation( 'changeSlide', true, targetjQ );
 		});
 
+		// Token form submission
 		$( '#token-form__submit' ).on( 'click', function( e ) {
 			e.preventDefault();
 			$(this).prop( 'disabled',true );
@@ -215,6 +69,7 @@ var masonryIsActive = false;
 			}
 		});
 
+		// Switch for translated paragraphs
 		$('.translatedparagraph--has_translations').each( function() {
 			var select = $( this ).find('.translation-select');
 			select.on('change', function() {
@@ -233,10 +88,12 @@ var masonryIsActive = false;
 			});
 		});
 
+		// Scroll-handler for breadcrumbs.
 		if ( $body.hasClass('single') || $body.hasClass('page-child') ) {
 			$('#main').on('scrollme.zf.trigger', handleScroll);
 		}
 
+		// Archive functions (get map, activate masonry).
 		if ( $body.hasClass( 'archive' ) || $body.hasClass( 'page-template-archive' ) || $body.hasClass( 'search' ) || $('.featuredgrid__masonry').length === 1 ) {
 			if ( $body.hasClass( 'post-type-archive-participant') ) {
 				if ( archiveMap === undefined ) {
@@ -252,6 +109,7 @@ var masonryIsActive = false;
 			}
 		}
 
+		// Tab switcher
     	$('#facet-tabs').on( 'change.zf.tabs', function() {
 			if ( archiveMap === undefined ) {
 				archiveMap = getArchiveMap();
@@ -265,6 +123,7 @@ var masonryIsActive = false;
 			}
 		});
 
+    	// Facet switcher
 		$('#facet-switch').on( 'click', function() {
 			('#main').foundation('toggle');
 		});
@@ -285,61 +144,87 @@ var masonryIsActive = false;
 		});
 	});
 
-	 $(document).on('click', '.fwp-load-more', function() {
-
+	// Handle Load More click ( on archive pages );
+	$(document).on('click', '.fwp-load-more', function() {
         $('.fwp-load-more').html('Loading...');
         FWP.is_load_more = true;
         FWP.paged = parseInt( FWP.settings.pager.page ) + 1;
         FWP.soft_refresh = true;
         FWP.refresh();
-
     });
 
+	// Handle search click ( on archive pages );
+	$(document).on('click', '.facetwp-facet-search .facetwp-btn--exchange', function( e ) {
+		e.preventDefault();
+		var inputVal = $('.facetwp-search').val().trim(),
+			keyEvent = $.Event('keydown');
+		keyEvent.which = 50;
+		keyEvent.keyCode = 50;
+		FWP.facets.search = inputVal;
+		FWP.refresh();
+	} );
+
+	// Handle remove-facet click ( on archive pages );
+	$(document).on('click', '.remove-facet-value', function( e ) {
+		e.preventDefault();
+		var facetTag = $(this).parent();
+			facetType = facetTag.parent().data('facet-type'),
+			facetValue = facetTag.data('facet-value');
+		if ( 'search' === facetType ) {
+			jQuery('.facetwp-search').val('');
+			jQuery('ul[data-facet-type="search"]').first().remove();
+		} else {
+			var facetIndex = FWP.facets[facetType].indexOf(facetValue);
+			if ( facetIndex > -1 ) {
+				FWP.facets[facetType].splice(facetIndex, 1);
+				$('div[data-value="' + facetValue + '"]').first().removeClass('checked');
+			}
+		}
+		FWP.refresh();
+	} );
+
+})(jQuery);
+
+( function( $ ){
 	$(document).on('facetwp-loaded', function() {
-		
-		openFacets();
+		processFacetsUI();
+		$('.no-terms').show();
 
+		// Destroy and re-initialise grid.
 		$grid = $('.archive__grid__masonry');
-
 		if ( masonryIsActive ) {
 		    $grid.masonry('destroy'); // destroy
 		}
-
-		$grid.masonry( masonryOptions ); // re-initialize
-		
+		$grid.masonry( masonryOptions ); // re-initialise
 		masonryIsActive = true;
 
-		// if ( undefined !== FWP_HTTP.archive_args ) {
-		// 	$('#main').addClass('facets-active');
-		// 	FWP.facets[FWP_HTTP.archive_args.taxonomy] = [FWP_HTTP.archive_args.term];
-		// 	$('div[data-value="' + FWP_HTTP.archive_args.term + '"]').addClass('checked');
-		// }
-
+		// Update Load-more button.
 		if ( FWP.settings.pager.page < FWP.settings.pager.total_pages ) {
+			$('.fwp-load-more').html('Load more');
 		    $('.fwp-load-more').show();
 		} else {
 		    $('.fwp-load-more').hide();
 		}
 
+		// Scroll down to display new results
 		if ( FWP.settings.pager.page > 1 ) {
 			$('html, body').animate( {
 	            scrollTop: $('.archive__grid__masonry').offset().bottom
 	        }, 1000);
-        }
-
-
-		archiveMap = getArchiveMap();
+	    }
 		
+		// Look for leaflet map.
+		archiveMap = getArchiveMap();
 		if ( archiveMap === undefined ) {
 			return;
 		}
 		
+		// Map functions (will not run when archiveMap is undefined);
 		var allObjects = window['leaflet_objects_' + archiveMap.hash];
 		
 		if ( allObjects === undefined || allObjects.map_polylines.length === 0 || FWP.settings.matches.length === 0 ) {
 			return;
 		}
-
 		if ( allObjects.map_polylines.length > 0 && FWP.settings.matches.length > 0 ) {
 			var matchedPolylines = allObjects.map_polylines.filter( function( p ) {
 				if (  FWP.settings.matches.includes( p.id ) ) {
@@ -353,13 +238,14 @@ var masonryIsActive = false;
 				archiveMap.renderObjects( refreshObjects );
 			}
 		}
-
 	});
+})(jQuery);
 
+( function( $ ){
     $(document).on('facetwp-refresh', function() {
+    	jQuery('.archive__active-facet-summary').html('<h5>Loading...</h5>');
         if ( ! FWP.loaded ) {
             FWP.paged = 1;
         }
     });
-
 })(jQuery);

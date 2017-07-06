@@ -6,7 +6,6 @@
 		$grid_active = '';
 	}
 ?>
-
 <div class="archive__view__toggle">
 	<?php if ( ! is_post_type_archive( 'story' ) ) : ?>
 	<ul class="controls" data-tabs id="facet-tabs">

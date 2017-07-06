@@ -10,14 +10,14 @@
 
 		<?php the_archive_description( '<div class="taxonomy-description">', '</div>' );?>
 
-		<?php elseif ( is_search() ) : ?>
+		<?php elseif ( is_page_template('archive.php') || is_search() ) : ?>
 
-			<h1 class="archive__title"><?php echo esc_html( __( 'Search Results for: ', 'exchange' ) . esc_attr( get_search_query() ) ); ?></h1>
+			<h1 class="archive__title"><?php echo __( 'Browsing the archives', 'exchange' ); ?></h1>
 
 		<?php endif; ?>
 
 		</div>
-		<div class="archive__active-facet-summary"></div>
+
 	</div>
 
 </header>

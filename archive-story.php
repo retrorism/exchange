@@ -23,13 +23,17 @@
 
 		<?php endif; ?>
 
+
+		
 		<?php if ( function_exists( 'facetwp_display' ) ) : ?>
 
 			<?php get_template_part( 'parts/nav', 'facets' ); ?>
 
 		<?php endif; ?>
-		
-		<?php get_template_part( 'parts/nav', 'archive-view-toggle') ; ?>
+
+		<div class="archive__info-and-controls">
+			<div class="archive__active-facet-summary"></div>
+		</div>
 		
 		<?php if (have_posts()) : ?>
 		

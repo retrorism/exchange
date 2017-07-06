@@ -80,6 +80,9 @@ function exchange_theme_support() {
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
 	$GLOBALS['content_width'] = apply_filters( 'exchange_theme_support', 1200 );
 
+	// Add facetWP search override
+	add_theme_support( 'exchange_facet_search_override' );
+
 } /* end theme support */
 
 add_action( 'after_setup_theme', 'exchange_theme_support' );

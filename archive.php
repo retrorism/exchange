@@ -18,6 +18,9 @@ get_header(); ?>
 				<?php get_template_part( 'parts/nav', 'facets' ); ?>
 
 			<?php endif; ?>
+			<div class="archive__info-and-controls">
+				<div class="archive__active-facet-summary"></div>
+			</div>
 
 			<?php get_template_part( 'parts/content', 'archive-interface' ); ?>
 
