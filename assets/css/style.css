@@ -3313,6 +3313,9 @@ a, a:visited {
   .page__footer__widgets p a:hover {
     border-bottom: 2px solid #fefefe; }
 
+.button-wrapper {
+  text-align: center; }
+
 .button--large,
 .button--small {
   display: inline-block;
@@ -6351,8 +6354,12 @@ ARTICLE EXTRAS STYLES
         width: 10em;
         max-height: 4em; } }
 
-.button-wrapper {
-  text-align: center; }
+.home .story__section.section--has_grid {
+  position: relative;
+  z-index: -2; }
+  .home .story__section.section--has_grid svg.section__edge--top {
+    position: absolute;
+    left: 0; }
 
 /*********************
 TANDEM ACCORDION STYLE

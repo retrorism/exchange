@@ -62,6 +62,10 @@ a, a:visited {
 	}
 }
 
+.button-wrapper {
+	text-align: center;
+}
+
 .button--large,
 .button--small {
 	@include button;
@@ -3019,8 +3023,13 @@ ARTICLE EXTRAS STYLES
 	}
 }
 
-.button-wrapper {
-	text-align: center;
+.home .story__section.section--has_grid {
+	position: relative;
+	z-index: -2;
+	svg.section__edge--top {
+		position: absolute;
+		left: 0;
+	}
 }
 
 /*********************
@@ -3393,7 +3402,6 @@ COLLABORATION STYLES
 		height: auto;
 	}
 }
-
 
 .collaboration__header__desc {
 	@include grid-column( 12 );
