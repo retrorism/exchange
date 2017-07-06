@@ -6593,7 +6593,7 @@ div.facetwp-checkbox.checked {
   .search .archive__interface .section-inner,
   .post-type-archive-story .archive__interface .page-template-archive .archive__interface .section-inner,
   #facets-grid .section-inner {
-    padding: 0; }
+    padding: 0 2.5%; }
 
 @media screen and (min-width: 40em) {
   .post-type-archive .archive__interface {
@@ -6832,11 +6832,21 @@ COLLABORATION STYLES
   clear: both; }
 
 .collaboration__participants__item {
-  width: 50%;
+  width: 100%;
   float: left;
   padding-left: 1rem;
   padding-right: 1rem; }
   @media screen and (min-width: 40em) {
+    .collaboration__participants__item {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  @media screen and (min-width: 40em) {
+    .collaboration__participants__item {
+      width: 50%;
+      float: left;
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  @media screen and (min-width: 40em) and (min-width: 40em) {
     .collaboration__participants__item {
       padding-left: 1rem;
       padding-right: 1rem; } }
