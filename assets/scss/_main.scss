@@ -3040,11 +3040,16 @@ ARTICLE EXTRAS STYLES
 
 .home .story__section.section--has_grid {
 	position: relative;
-	z-index: -2;
+	z-index: 1;
 	svg.section__edge--top {
 		position: absolute;
 		left: 0;
 	}
+}
+
+.home .featured-stories {
+	position: relative;
+	z-index: 2;
 }
 
 /*********************
