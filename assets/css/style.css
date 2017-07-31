@@ -4199,6 +4199,10 @@ Pattern 3. Editorial introduction
   font-style: normal;
   text-align: center; }
 
+.archive .story__editorialintro,
+.page-template-archive .story__editorialintro {
+  margin-bottom: 4rem; }
+
 /******************
 Pattern 4. Tag list
 ******************/
@@ -4376,6 +4380,14 @@ Pattern 4. Tag list
     .story__meta__tag.location a.remove-facet-value,
     .story__meta__tag.methodology a.remove-facet-value {
       color: #eaab73; }
+
+.archive__active-facet-summary .tag {
+  font-size: 100%;
+  border-width: 2px; }
+
+.remove-facet-value {
+  font-weight: 600;
+  margin-left: 0.25rem; }
 
 .collaboration__header .collaboration__tag {
   color: #343438;
@@ -6429,6 +6441,10 @@ ARCHIVE STYLES
   @media screen and (min-width: 60em) {
     .archive__active-facet-summary {
       max-width: 80%; } }
+  .archive__active-facet-summary h5 {
+    font-size: 100%;
+    font-weight: normal;
+    margin-bottom: 1rem; }
   .archive__active-facet-summary .no-terms {
     display: none; }
 
@@ -6452,17 +6468,17 @@ ARCHIVE STYLES
     background: transparent;
     -webkit-tap-highlight-color: transparent; }
     .archive__view__toggle .is-active a .globe,
-    .archive__view__toggle .is-active a .grid rect,
+    .archive__view__toggle .is-active a .grid,
     .archive__view__toggle .is-active a:focus .globe,
-    .archive__view__toggle .is-active a:focus .grid rect,
+    .archive__view__toggle .is-active a:focus .grid,
     .archive__view__toggle .is-active a:link .globe,
-    .archive__view__toggle .is-active a:link .grid rect {
-      fill: #343438 !important; }
+    .archive__view__toggle .is-active a:link .grid {
+      fill: #e27f20; }
   .archive__view__toggle a:active .globe,
-  .archive__view__toggle a:active .grid rect {
-    fill: #f4c522 !important; }
+  .archive__view__toggle a:active .grid {
+    fill: #e27f20; }
   .archive__view__toggle a:active span {
-    color: #f4c522; }
+    color: #e27f20; }
   .archive__view__toggle .controls {
     float: none;
     margin: 0 auto;

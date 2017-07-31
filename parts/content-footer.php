@@ -25,7 +25,7 @@
 			<?php dynamic_sidebar( 'footer-3' ); ?>
 			<div class="social-icons">
 				<?php
-				 	$platforms = array( 'facebook','instagram','vimeo' );
+				 	$platforms = array( 'facebook','instagram','vimeo','flickr' );
 					echo exchange_build_social_icons( 'page__footer', $platforms );
 					?>
 			</div>

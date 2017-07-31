@@ -970,6 +970,11 @@ Pattern 3. Editorial introduction
 	text-align: center;
 }
 
+.archive .story__editorialintro,
+.page-template-archive .story__editorialintro {
+	margin-bottom: 4 * $global-margin;
+}
+
 /******************
 Pattern 4. Tag list
 ******************/
@@ -1069,6 +1074,16 @@ Pattern 4. Tag list
 		}
 	}
 
+}
+
+.archive__active-facet-summary .tag {
+	font-size: $global-font-size;
+	border-width: 2px;
+}
+
+.remove-facet-value {
+	font-weight: $global-weight-semibold;
+	margin-left: 0.25 * $global-margin;
 }
 
 .collaboration__header .collaboration__tag {
@@ -3115,6 +3130,11 @@ ARCHIVE STYLES
 	@include breakpoint( large ) {
 		max-width: 80%;
 	}
+	h5 {
+		font-size: $global-font-size;
+		font-weight: normal;
+		margin-bottom: $global-margin;
+	}
 	.no-terms {
 		display: none;
 	}
@@ -3141,17 +3161,17 @@ ARCHIVE STYLES
 		background: transparent;
 		-webkit-tap-highlight-color: transparent;
 		.globe,
-		.grid rect {
-			fill: $black !important;
+		.grid {
+			fill: $yellow-4;
 		}
 	}
 	a:active {
 		.globe,
-		.grid rect {
-			fill: $yellow-tandem !important;
+		.grid {
+			fill: $yellow-4;
 		}
 		span {
-			color: $yellow-tandem;
+			color: $yellow-4;
 		}
 	}
 
