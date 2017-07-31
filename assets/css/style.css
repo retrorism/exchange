@@ -6368,7 +6368,7 @@ ARTICLE EXTRAS STYLES
 
 .home .story__section.section--has_grid {
   position: relative;
-  z-index: 1; }
+  z-index: 0; }
   .home .story__section.section--has_grid svg.section__edge--top {
     position: absolute;
     left: 0; }
