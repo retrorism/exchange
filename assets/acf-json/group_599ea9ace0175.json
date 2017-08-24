@@ -1,0 +1,46 @@
+{
+    "key": "group_599ea9ace0175",
+    "title": "Programme",
+    "fields": [
+        {
+            "key": "field_599ea9c978883",
+            "label": "Current programme round",
+            "name": "current_programme_round",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "programme_round"
+            ],
+            "taxonomy": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_parent",
+                "operator": "==",
+                "value": "1390"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1503571392
+}

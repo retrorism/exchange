@@ -1,23 +1,27 @@
 <section class="story__section">
 	<div class="section-inner">
 		<figure class="section__slice section__image">
-			<div id="programmes">
 			<?php
 				$img_root = get_template_directory() . '/assets/images/';
 				global $post;
 				$all_pages = BaseController::get_all_from_type( 'page' );
 				$programmes = get_page_children( $post->ID, $all_pages );
 				foreach ( $programmes as $page_obj ) {
-					$anchor = '<a href="#">';
-					if ( ! $page_obj instanceof WP_Post || 'publish' !== $page_obj->post_status ) {
+					if ( ! $page_obj instanceof WP_Post
+						|| 'publish' !== $page_obj->post_status
+						|| ! exchange_has_active_programme_round( $page_obj ) ) {
 						continue;
 					} else {
-						$anchor = exchange_create_link( BaseController::exchange_factory( $page_obj ), false );
-						$slug = array_search( $page_obj->post_title, $GLOBALS['EXCHANGE_PLUGIN_CONFIG']['IMAGES']['programme-logos'] );
-						if ( ! empty( $slug ) ) {
-							echo $anchor . exchange_build_svg( $img_root . 'svg/T_logo_' . $slug . '_WEB.svg', true ) . '</a>';
-						}
-
+						$active_programmes[] = $page_obj;
+					}
+				} ?>
+				<div id="programmes" class="active<?php echo esc_attr( count( $active_programmes ) ); ?>">
+				<?php 
+				foreach( $active_programmes as $active_programme ) {
+					$anchor = exchange_create_link( BaseController::exchange_factory( $active_programme ), false );
+					$slug = array_search( $active_programme->post_title, $GLOBALS['EXCHANGE_PLUGIN_CONFIG']['IMAGES']['programme-logos'] );
+					if ( ! empty( $slug ) ) {
+						echo $anchor . exchange_build_svg( $img_root . 'svg/T_logo_' . $slug . '_WEB.svg', true ) . '</a>';
 					}
 				}
 			?>

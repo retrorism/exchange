@@ -24,7 +24,9 @@
             "default_value": [],
             "layout": "horizontal",
             "toggle": 1,
-            "return_format": "value"
+            "return_format": "value",
+            "allow_custom": 0,
+            "save_custom": 0
         },
         {
             "key": "field_57837b57cbfb3",
@@ -198,6 +200,7 @@
                             "choices": {
                                 "C_P": "Tandem Community & Participation",
                                 "Europe": "Tandem Europe",
+                                "Fryslan": "Tandem Fryslân",
                                 "Shaml": "Tandem Shaml",
                                 "Turkey": "Tandem Turkey",
                                 "Ukraine": "Tandem Ukraine",
@@ -363,5 +366,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1472815075
+    "modified": 1503580363
 }
