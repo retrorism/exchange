@@ -3020,6 +3020,12 @@ ARTICLE EXTRAS STYLES
 		svg {
 			width: 5em;
 		}
+		&.active6 {
+			@include on-circle( $item-count: 6, $circle-size: 14em, $item-size: 10%);
+			a {
+				margin-left: -2.5em;
+			}
+		}
 	}
 	@include breakpoint( medium ) {
 		@include on-circle( $item-count: 5, $circle-size: 30em, $item-size: 10%);

@@ -6330,6 +6330,35 @@ ARTICLE EXTRAS STYLES
     margin-top: -1em; }
   #programmes svg {
     width: 5em; }
+  #programmes.active6 {
+    position: relative;
+    width: 14em;
+    height: 14em;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none; }
+    #programmes.active6 > * {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10%;
+      height: 10%;
+      margin: -5%; }
+      #programmes.active6 > *:nth-of-type(1) {
+        transform: rotate(15deg) translate(7em) rotate(-15deg); }
+      #programmes.active6 > *:nth-of-type(2) {
+        transform: rotate(75deg) translate(7em) rotate(-75deg); }
+      #programmes.active6 > *:nth-of-type(3) {
+        transform: rotate(135deg) translate(7em) rotate(-135deg); }
+      #programmes.active6 > *:nth-of-type(4) {
+        transform: rotate(195deg) translate(7em) rotate(-195deg); }
+      #programmes.active6 > *:nth-of-type(5) {
+        transform: rotate(255deg) translate(7em) rotate(-255deg); }
+      #programmes.active6 > *:nth-of-type(6) {
+        transform: rotate(315deg) translate(7em) rotate(-315deg); }
+    #programmes.active6 a {
+      margin-left: -2.5em; }
   @media screen and (min-width: 40em) {
     #programmes {
       position: relative;
