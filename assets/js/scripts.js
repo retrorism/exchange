@@ -12,13 +12,11 @@ function handleScroll() {
 	} );
 }
 
-function getArchiveMap() {
-	if ( undefined === Exchange || undefined === Exchange.PluginExtensions || undefined === Exchange.PluginExtensions.LMP || undefined === Exchange.PluginExtensions.LMP.maps ) {
-		return;
-	}
-    for ( var hashedMap in Exchange.PluginExtensions.LMP.maps ) {
-        if ( Exchange.PluginExtensions.LMP.maps.hasOwnProperty( hashedMap ) ) {
-            archiveMap = Exchange.PluginExtensions.LMP.maps[hashedMap];
+function getArchiveMap( maps ) {
+
+    for ( var hashedMap in maps ) {
+        if ( maps.hasOwnProperty( hashedMap ) ) {
+            archiveMap = maps[hashedMap];
             archiveMap.hash = hashedMap.slice( 4 );
             break;
         }
@@ -197,6 +195,7 @@ function processFacetsUI() {
 		jQuery('.archive__active-facet-summary').html( facetHeader );
 	}
 }
+
 var archiveMap,
 	$grid,
 	masonryOptions = { 
@@ -206,7 +205,10 @@ var archiveMap,
 		"itemSelector": ".archive__grid__griditem"
 	},
 	masonryIsActive = false;
+
+
 jQuery(document).foundation();
+
 ( function( $ ){
 
 	$( document ).ready( function() {
@@ -355,12 +357,12 @@ jQuery(document).foundation();
 
 	// Handle Load More click ( on archive pages );
 	$(document).on('click', '.fwp-load-more', function() {
-        $('.fwp-load-more').html('Loading...');
-        FWP.is_load_more = true;
-        FWP.paged = parseInt( FWP.settings.pager.page ) + 1;
-        FWP.soft_refresh = true;
-        FWP.refresh();
-    });
+		$('.fwp-load-more').html('Loading...');
+		FWP.is_load_more = true;
+		FWP.paged = parseInt( FWP.settings.pager.page ) + 1;
+		FWP.soft_refresh = true;
+		FWP.refresh();
+	});
 
 	// Handle search click ( on archive pages );
 	$(document).on('click', '.facetwp-facet-search .facetwp-btn--exchange', function( e ) {
@@ -392,17 +394,17 @@ jQuery(document).foundation();
 		FWP.refresh();
 	} );
 
-})(jQuery);
-
-( function( $ ){
+	// Handle facet handling ( on archive pages );
 	$(document).on('facetwp-loaded', function() {
+
 		processFacetsUI();
+		
 		$('.no-terms').show();
 
 		// Destroy and re-initialise grid.
 		$grid = $('.archive__grid__masonry');
 		if ( masonryIsActive ) {
-		    $grid.masonry('destroy'); // destroy
+			$grid.masonry('destroy'); // destroy
 		}
 		$grid.masonry( masonryOptions ); // re-initialise
 		masonryIsActive = true;
@@ -410,30 +412,60 @@ jQuery(document).foundation();
 		// Update Load-more button.
 		if ( FWP.settings.pager.page < FWP.settings.pager.total_pages ) {
 			$('.fwp-load-more').html('Load more');
-		    $('.fwp-load-more').show();
+			$('.fwp-load-more').show();
 		} else {
-		    $('.fwp-load-more').hide();
+			$('.fwp-load-more').hide();
 		}
 
 		// Scroll down to display new results
 		if ( FWP.settings.pager.page > 1 ) {
 			$('html, body').animate( {
-	            scrollTop: $('.archive__grid__masonry').offset().bottom
-	        }, 1000);
-	    }
+				scrollTop: $('.archive__grid__masonry').offset().bottom
+			}, 1000);
+		}
 		
+	});
+
+	// Handle facet refresh
+	$(document).on('facetwp-refresh', function() {
+		jQuery('.archive__active-facet-summary').html('<h5>Loading...</h5>');
+		if ( ! FWP.loaded ) {
+			FWP.paged = 1;
+		}
+	});
+
+	// Handle map updates ( on archive pages );
+	$(document).on('lmp-loaded', function() {
+
+		if ( ! $('body').hasClass( 'post-type-archive-collaboration' ) ) {
+			return;
+		}
+
+		if ( undefined === Exchange || undefined === Exchange.PluginExtensions || undefined === Exchange.PluginExtensions.LMP ) {
+			return;
+		}
+
+		// Initiate Leaflet map
+		Exchange.PluginExtensions.LMP.init();
+
+		if ( undefined === Exchange.PluginExtensions.LMP.maps ) {
+			return;
+		}
+
 		// Look for leaflet map.
-		archiveMap = getArchiveMap();
+		archiveMap = getArchiveMap( Exchange.PluginExtensions.LMP.maps );
+
 		if ( archiveMap === undefined ) {
 			return;
 		}
-		
+
 		// Map functions (will not run when archiveMap is undefined);
 		var allObjects = window['leaflet_objects_' + archiveMap.hash];
-		
+			
 		if ( allObjects === undefined || allObjects.map_polylines.length === 0 || FWP.settings.matches.length === 0 ) {
 			return;
 		}
+
 		if ( allObjects.map_polylines.length > 0 && FWP.settings.matches.length > 0 ) {
 			var matchedPolylines = allObjects.map_polylines.filter( function( p ) {
 				if (  FWP.settings.matches.includes( p.id ) ) {
@@ -447,14 +479,9 @@ jQuery(document).foundation();
 				archiveMap.renderObjects( refreshObjects );
 			}
 		}
+
 	});
+
 })(jQuery);
 
-( function( $ ){
-    $(document).on('facetwp-refresh', function() {
-    	jQuery('.archive__active-facet-summary').html('<h5>Loading...</h5>');
-        if ( ! FWP.loaded ) {
-            FWP.paged = 1;
-        }
-    });
-})(jQuery);
+
