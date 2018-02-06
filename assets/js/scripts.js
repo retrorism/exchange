@@ -96,6 +96,36 @@ function removeFacetMarker( facet ) {
 	accordion.find('span.filter-count').html('');
 }
 
+function handleFacetsOnMap() {
+	// Look for leaflet map.
+	archiveMap = getArchiveMap( Exchange.PluginExtensions.LMP.maps );
+
+	if ( archiveMap === undefined ) {
+		return;
+	}
+
+	// Map functions (will not run when archiveMap is undefined);
+	var allObjects = window['leaflet_objects_' + archiveMap.hash];
+		
+	if ( allObjects === undefined || allObjects.map_polylines.length === 0 || FWP.settings.matches.length === 0 ) {
+		return;
+	}
+
+	if ( allObjects.map_polylines.length > 0 && FWP.settings.matches.length > 0 ) {
+		var matchedPolylines = allObjects.map_polylines.filter( function( p ) {
+			if (  FWP.settings.matches.includes( p.id ) ) {
+				return true;
+			}
+		});
+		if ( matchedPolylines.length > 0 ) {
+			var refreshObjects = {
+				map_polylines : matchedPolylines
+			};
+			archiveMap.renderObjects( refreshObjects );
+		}
+	}
+}
+
 function processFacetsUI() {
 	// Define variables
 	var facetHeader = '',
@@ -432,6 +462,9 @@ jQuery(document).foundation();
 		if ( ! FWP.loaded ) {
 			FWP.paged = 1;
 		}
+
+		handleFacetsOnMap();
+
 	});
 
 	// Handle map updates ( on archive pages );
@@ -452,33 +485,7 @@ jQuery(document).foundation();
 			return;
 		}
 
-		// Look for leaflet map.
-		archiveMap = getArchiveMap( Exchange.PluginExtensions.LMP.maps );
-
-		if ( archiveMap === undefined ) {
-			return;
-		}
-
-		// Map functions (will not run when archiveMap is undefined);
-		var allObjects = window['leaflet_objects_' + archiveMap.hash];
-			
-		if ( allObjects === undefined || allObjects.map_polylines.length === 0 || FWP.settings.matches.length === 0 ) {
-			return;
-		}
-
-		if ( allObjects.map_polylines.length > 0 && FWP.settings.matches.length > 0 ) {
-			var matchedPolylines = allObjects.map_polylines.filter( function( p ) {
-				if (  FWP.settings.matches.includes( p.id ) ) {
-					return true;
-				}
-			});
-			if ( matchedPolylines.length > 0 ) {
-				var refreshObjects = {
-					map_polylines : matchedPolylines
-				};
-				archiveMap.renderObjects( refreshObjects );
-			}
-		}
+		handleFacetsOnMap();
 
 	});
 
