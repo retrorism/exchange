@@ -97,6 +97,7 @@ function removeFacetMarker( facet ) {
 }
 
 function handleFacetsOnMap() {
+
 	// Look for leaflet map.
 	archiveMap = getArchiveMap( Exchange.PluginExtensions.LMP.maps );
 
@@ -106,10 +107,12 @@ function handleFacetsOnMap() {
 
 	// Map functions (will not run when archiveMap is undefined);
 	var allObjects = window['leaflet_objects_' + archiveMap.hash];
-		
+
 	if ( allObjects === undefined || allObjects.map_polylines.length === 0 || FWP.settings.matches.length === 0 ) {
 		return;
 	}
+
+	console.log( FWP.settings.matches );
 
 	if ( allObjects.map_polylines.length > 0 && FWP.settings.matches.length > 0 ) {
 		var matchedPolylines = allObjects.map_polylines.filter( function( p ) {
@@ -453,6 +456,8 @@ jQuery(document).foundation();
 				scrollTop: $('.archive__grid__masonry').offset().bottom
 			}, 1000);
 		}
+
+		handleFacetsOnMap();
 		
 	});
 
@@ -462,9 +467,6 @@ jQuery(document).foundation();
 		if ( ! FWP.loaded ) {
 			FWP.paged = 1;
 		}
-
-		handleFacetsOnMap();
-
 	});
 
 	// Handle map updates ( on archive pages );
